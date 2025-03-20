@@ -1,0 +1,1131 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Incidents and Accidents section.
+%
+%================================================================================
+\section{Incidents and Accidents (Discursive)} \label{bkm:accidents}
+
+\dsiwgSectionQuote{Hiding within those mounds of data is knowledge that could change the life of a patient, or change the world.}{Atul Butte}
+
+\subsection{General}
+The following `war stories' describe incidents and accidents in which data is considered to have been a contributory factor. A data perspective has been taken to demonstrate the need for data to be given equal footing alongside software, hardware and human factors. The items described here have been arbitrarily selected; the collection is not intended to be exhaustive.
+
+\dsiwgTextBF{Note:} The analysis presented here has no legal standing whatsoever. The purpose of this section is not to discredit, contradict or undermine any existing accident or incident analysis; the aim is simply to view these incidents and accidents from a data perspective. Where possible accident reports have been referenced with the role of data highlighted. All references have been taken at face value and not independently verified.
+
+Two tables are presented to assist the reader in finding incidents and accidents of interest:
+\begin{itemize}
+\item \autoref{tab:IncidentsByDomain} lists the issues and accidents according to the domain where
+  they occurred.
+\item \autoref{tab:Incidents} lists them in reverse chronological order of incorporation -- those entries that have been added to this document most recently appear at the top of the table.
+  This table can also be used to find examples relevant to specific \glspl{data property}.
+\end{itemize}
+\clearpage
+%% Start new ToC table
+\begin{longtable}{|C{\dsiwgColumnWidth{0.07}}|L{\dsiwgColumnWidth{0.43}}|L{\dsiwgColumnWidth{0.07}}|L{\dsiwgColumnWidth{0.43}}|}
+  \caption{Incidents and accidents (by domain)}
+  \label{tab:IncidentsByDomain}
+  \\\hline\TableHeadColourC{Ref.} & \TableHeadColour{Title} & \TableHeadColour{Ref.} & \TableHeadColour{Title}\\\hline
+  \endfirsthead
+  \caption[]{Incidents and Accidents (continued)}
+  \\\hline\TableHeadColourC{Ref.} & \TableHeadColour{Title} & \TableHeadColour{Ref.} & \TableHeadColour{Title}\\\hline
+  \endhead
+  \hline
+  \multicolumn{4}{r}{\sl Continued on next page}
+  \endfoot
+  \endlastfoot
+  %
+  %
+  %
+  \multicolumn{4}{|l|}{\TableDimColour{\sl Accountancy}}\\\hline
+  %%%
+  \ref{bkm:incacc:horizon} & \multicolumn{3}{l|}{Post Office Horizon System}\\
+  \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Air}}\\\hline
+    \ref{bkm:incacc:737max8} & Boeing 737 MAX~8 crashes &
+    %
+    \ref{bkm:incacc:lot282} & LOT Flight 282\\    
+    %%
+    \ref{bkm:accinc:turkisha330} & Turkish Airlines A330 &
+    %
+    \ref{bkm:incacc:comair5191} & Comair Flight 5191\\
+    %%
+    \ref{bkm:incacc:qantastakeoff} & Qantas Boeing 737 Take-Off &
+    %
+    \ref{bkm:incacc:uberlingen} & \"Uberlingen Mid-Air Collision\\
+    %%
+    \ref{bkm:incacc:qantasloading} & Qantas Boeing 737 Loading &
+    %
+    \ref{bkm:incacc:nimitzhill} & Crash into Nimitz Hill, Guam\\
+    %%
+    \ref{bkm:incacc:737-33A} & Boeing 737-33A at Chambery Airport, France & &\\%%%
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Air (Defence)}}\\\hline
+    %%%
+    \ref{bkm:incacc:a400m} & A400M Torque Calibration Parameters &
+    %
+    \ref{bkm:incacc:hermes450} & Loss of Hermes 450\\
+    %
+    \ref{bkm:incacc:mq9reaper} & Loss of MQ-9 reaper & &\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Air (Other)}}\\\hline
+    %%%
+    \ref{bkm:incacc:irishsar} & \multicolumn{3}{l|}{Loss of Irish rescue Helicopter}\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Defence}}\\\hline
+    %%%
+    \ref{bkm:incacc:agincourt} & Battle of Agincourt &
+    %
+    \ref{bkm:incacc:fortdrum} & Fort Drum Artillery Incident\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Internet}}\\\hline
+    %%%
+    \ref{bkm:incacc:log4j} & \multicolumn{3}{l|}{Java log4j Library Vulnerability}\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Maritime}}\\\hline
+    %%%
+    \ref{bkm:incacc:navscor} & Grounding of \dsiwgTextIT{Navigator Scorpio} &
+    %
+    \ref{bkm:incacc:canterbury} & Grounding of \dsiwgTextIT{The Pride of Canterbury}\\
+    %%
+    \ref{bkm:incacc:sichemosprey} & Grounding of \dsiwgTextIT{Sichem Osprey} &
+    %
+    \ref{bkm:incacc:annabella} & Annabella container ship -- Baltic Sea\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Maritime (Defence)}}\\\hline
+    %%%
+    \ref{bkm:incacc:subtrawler} & \multicolumn{3}{l|}{Royal Navy Submarine}\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Medical}}\\\hline
+    %%%
+    \ref{bkm:incacc:w3w} & What3Words systemic ambiguities &
+    %
+    \ref{bkm:incacc:dallasebola} & Dallas Hospital Ebola Incident\\
+    %%
+    \ref{bkm:incacc:immensa} & Immensa False Negative Covid-19 \gls{pcr} Tests &
+    %
+    \ref{bkm:incacc:advocatelutheran} & Advocate Lutheran Hospital\\
+    %%
+    \ref{bkm:incacc:covidexcel} & Covid-19 Test Results Silently Deleted by Excel &
+    %
+    \ref{bkm:incacc:cedarssinai} & Cedars-Sinai Medical Center Scanner\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Oil \& Gas}}\\\hline
+    %%%
+    \ref{bkm:incacc:peigneur} & \multicolumn{3}{l|}{Lake Peigneur Drilling Accident}\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Policing}}\\\hline
+    %%%
+    \ref{bkm:incacc:w3w} & What3Words systemic ambiguities &
+    %
+    \ref{bkm:incacc:washprison} & Early release from Washington State Prison\\
+    %%
+    \ref{bkm:incacc:comintercept} & Interception of Communications & &\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Rail}}\\\hline
+    %%%
+    \ref{bkm:incacc:cambrian} & Cambrian Line Data Loss &
+    %
+    \ref{bkm:incacc:sanbernardino} &
+    San Bernardino derailment and pipeline rupture\\
+    %%
+    \ref{bkm:incacc:cootamundra} & Near Collision of Trains, Cootamundra & &\\
+    \hline
+    %%%
+    \multicolumn{4}{|l|}{\TableDimColour{\sl Space}}\\\hline
+    %%%
+    \ref{bkm:incacc:geminiV} & Gemini V &
+    %
+    \ref{bkm:incacc:schiaparelli} & Loss of Schiaparelli Mars Lander\\
+    %%
+    \ref{bkm:incacc:soyuz} & Loss of Soyuz-2.1b rocket carrying Meteor-M 2-1 weather satellite &
+    %
+    \ref{bkm:incacc:marsclimate} & Mars Climate Orbiter\\
+    \hline
+    %
+\end{longtable}
+%% End new ToC table
+%
+%
+%
+\autoref{tab:Incidents} provides a summary of the items considered in this appendix. More  information on each item is then presented in the following paragraphs.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.07}}|L{\dsiwgColumnWidth{0.16}}|L{\dsiwgColumnWidth{0.37}}|L{\dsiwgColumnWidth{0.14}}|L{\dsiwgColumnWidth{0.1}}|L{\dsiwgColumnWidth{0.15}}|}
+  \caption{Incidents and accidents}
+  \label{tab:Incidents}
+  \\\hline\TableHeadColourC{Ref.} & \TableHeadColour{Title} & \TableHeadColour{Summary} & \TableHeadColour{Domain} & \TableHeadColour{Year} & \TableHeadColour{\index{Property!Data}Data Property}\\\hline
+  \endfirsthead
+  \caption[]{Incidents and accidents (continued)}
+  \\\hline\TableHeadColourC{Ref.} & \TableHeadColour{Title} & \TableHeadColour{Summary} & \TableHeadColour{Domain} & \TableHeadColour{Year} & \TableHeadColour{\index{Property!Data}Data Property}\\\hline
+  \endhead
+  \multicolumn{6}{r}{\sl Continued on next page}
+  \endfoot\endlastfoot
+  %
+  \hline
+  %
+  \ref{bkm:incacc:horizon} & Post Office Horizon System\index[locationidx]{United Kingdom} &
+  Non-atomic transactions and other errors in accounting software lead to false prosecutions, lost livelihoods, and suicides. &
+  Accountancy & 1999 & \Gls{integrity}\index{Integrity Property}, \gls{completeness}\index{Completeness Property}, \gls{traceability}\index{Traceability Property}, \gls{verifiability}\index{Verifiability Property}, \gls{history}\index{History Property}\\ 
+  %TGR I have not included Availability, because SPMs were not authorised to see the transaction information, although arguably they should have been.
+  %TGR I cannot find an appropriate property for "The data can only be changed by those with authority to change it. One of the Horizon issues was that PO staff had higher level access than they were supposed to have had.
+  %
+  \hline
+  %
+  \ref{bkm:incacc:agincourt} & Battle of Agincourt &
+  French misconceptions about English longbow led to devastating losses &
+  Defence & 1415 &
+  \Gls{integrity}\index{Integrity Property}, \gls{completeness}\index{Completeness Property},
+  accuracy\index{Accuracy Property}, \gls{fidelity}\index{Fidelity / Representation Property},
+  \gls{timeliness}\index{Timeliness Property}\\
+  %
+  \hline
+  \ref{bkm:incacc:geminiV} & Gemini V\index{Gemini V} &
+  Erroneous ``schoolchild knowledge'' that Earth rotates 360$^\circ$ per day sends spacecraft off course
+  &
+  Space & 1965 & \index{Accuracy Property}Accuracy,
+  \index{Traceability Property}\gls{traceability},
+  \index{Fidelity / Representation Property}\gls{fidelity}\\
+  \hline
+  %
+  \ref{bkm:incacc:w3w} & What3Words\index{What3Words} systemic ambiguities &
+  What3Words use of homophones and plurals is alleged to have created difficulties in providing emergency services
+  to persons in distress.
+  &
+  Policing and Medical & 2021 & \index{Integrity Property}\Gls{integrity},
+  \index{Consistency Property}\gls{consistency},
+  \index{Aliasing Property}Aliasing\\
+  \hline
+  %
+        \ref{bkm:incacc:log4j} & log4j\index{Log4j} Java\index{Java} library vulnerability &
+        Critical zero-day\index{Zero-day} vulnerability affecting Apache\index{Apache} Log4j2 java library &
+        Internet & 2021 & \index{Integrity Property}\Gls{integrity}\\
+        \hline
+        %
+        \ref{bkm:incacc:immensa} & Immensa False Negative Covid-19\index{Covid-19} \gls{pcr}\index{PCR}\index{Polymerase Chain Reaction|see{PCR}} Tests &
+        43,000 people with Covid-19\index{Covid-19} mistakenly given negative \gls{pcr}\index{PCR} results &
+        Medical & 2021 & \index{Integrity Property}\Gls{integrity}, \index{Accuracy Property}\gls{accuracy}, \gls{traceability}, \gls{verifiability}\index{Verifiability Property}\\
+        \hline
+        \ref{bkm:incacc:covidexcel} & Covid-19\index{Covid-19} test results silently deleted by Excel\index{Excel} &
+        Importing Covid-19\index{Covid-19} test results into an Excel\index{Excel} file truncated the data after 65536 records &
+        Medical & 2020 & \index{Integrity Property}\Gls{integrity}, \index{Completeness!Property}\gls{completeness}, \gls{timeliness}\index{Timeliness Property}, \index{Availability Property}\gls{availability}, \index{Fidelity / Representation Property}\gls{fidelity}\\
+        \hline
+	\ref{bkm:incacc:737max8} & Boeing 737 MAX~8 crashes &
+	On two occasions a single faulty \gls{aoa} sensor repeatedly commanded the nose down,
+        leading to the aircraft flying into the sea / ground
+	& Air & 2018 \& 2019 & \index{Integrity Property}\Gls{integrity}, \index{Completeness!Property}\gls{completeness}, \index{Accuracy Property}\gls{accuracy}, \index{Availability Property}\gls{availability}, \gls{verifiability}\index{Verifiability Property}, \index{Fidelity / Representation Property}\gls{fidelity}\\ 
+	\hline
+        \ref{bkm:incacc:soyuz} & Loss of Soyuz-2.1b\index{Soyuz} rocket carrying Meteor-M\index{Meteor-M} 2-1 weather satellite &
+        The launch vehicle and satellite were lost because programmers gave coordinates for the wrong cosmodrome
+        & Space & 2017 & \index{Fidelity / Representation Property}\Gls{fidelity}, \index{Integrity Property}\gls{integrity}, \gls{verifiability}\index{Verifiability Property} \\
+        \hline
+	\ref{bkm:incacc:cambrian} & Cambrian Line Data Loss &
+	Speed restriction data failed to be passed to trains, placing pedestrians on level crossings at risk.
+	& Rail & 2017 & \index{Availability Property}\gls{availability}, \gls{history}\index{History Property} \\ 
+	\hline
+	\ref{bkm:incacc:irishsar} & Loss of Irish rescue Helicopter & At the time of writing, the investigation\index{Investigation!Incident / Accident} is continuing; possible controlled flight into terrain; possible issues with terrain / obstacle \glspl{database}. Four fatalities. & Air & 2017 & \index{Fidelity / Representation Property}\Gls{fidelity}, \index{Completeness!Property}\gls{completeness}, \index{Accuracy Property}\gls{accuracy} \\
+	\hline
+	\ref{bkm:incacc:schiaparelli} & Loss of Schiaparelli Mars Lander & High rates led to the saturation of the \gls{imu}; the lander prematurely believed it was on the ground and released its parachute; the lander was lost. The high rates should have been expected, but were not due to modelling deficiencies. & Space & 2016 & \index{Fidelity / Representation Property}\Gls{fidelity}, \index{Integrity Property}\gls{integrity} \\
+	\hline
+	\ref{bkm:incacc:comintercept} & Interception of Communications & Incorrect data was disclosed during an investigation\index{Investigation!Criminal} into indecent images. A welfare check was delayed on a child believed to be in crisis. & Policing & 2015 & \index{Integrity Property}\Gls{integrity} \\ 
+	\hline
+	\ref{bkm:incacc:a400m} & A400M Torque Calibration Parameters & A software update apparently wiped the engine torque control parameters. Aircraft crash; four fatalities. & Air (Defence) & 2015 & \index{Completeness!Property}\Gls{completeness} \\
+	\hline
+	\ref{bkm:incacc:subtrawler} & Royal Navy Submarine, Trawler \dsiwgTextIT{Karen}\index{Trawler Karen} & A royal Navy submarine snagged the fishing gear of the trawler \dsiwgTextIT{Karen}. The trawler was dragged backwards at about seven knots and suffered structural damage. & Maritime & 2015 & \Gls{resolution}, \index{Integrity Property}\gls{integrity} \\
+	\hline
+	\ref{bkm:accinc:turkisha330} & Turkish Airlines A330 & Inaccurate navigation data, relating to runway location, led to touchdown with left main gear off the paved surface. Aircraft written off. & Air & 2015 & \index{Accuracy Property}\Gls{accuracy}, \gls{timeliness}\index{Timeliness Property}, \gls{verifiability}\index{Verifiability Property} \\
+	\hline
+	\ref{bkm:incacc:dallasebola} & Dallas Hospital Ebola Incident & A man suffering from Ebola was mistakenly sent home from a Dallas hospital. He later returned to hospital, was diagnosed but died; two nurses contracted Ebola but survived. & Medical & 2014 & \index{Completeness!Property}\Gls{completeness}, \gls{format}{\index{Format Property}} \\
+	\hline
+	\ref{bkm:incacc:qantastakeoff} & Qantas \index{Boeing 737}Boeing 737 Take-Off & Two independent and inadvertent data entry\index{Data!Entry} errors meant weight used when calculating take-off performance was 10 tonnes less than actual weight. Tail strike. & Air & 2014 & \index{Integrity Property}\Gls{integrity}, \gls{verifiability}\index{Verifiability Property} \\
+	\hline
+	\ref{bkm:incacc:qantasloading} & Qantas \index{Boeing 737}Boeing 737 Loading & Default settings meant that children were incorrectly recorded as adults, resulting in incorrect aircraft weight and balance. Take-off safety speed was exceeded by about 25 knots. & Air & 2014 & \index{Completeness!Property}\Gls{completeness}, \index{Fidelity / Representation Property}\gls{fidelity}\\
+	\hline
+	\ref{bkm:incacc:navscor} & Grounding of \dsiwgTextIT{Navigator Scorpio} & The \dsiwgTextIT{Navigator Scorpio} was sailing with out-of-date charts, the planned route was not checked and positional fixes were not taken as often as required. The vessel was grounded, but refloated on the rising tide, with no damage. After the event, false \gls{information} was added to the navigation chart. & Maritime & 2014 & \gls{timeliness}\index{Timeliness Property}, \gls{verifiability}\index{Verifiability Property} \\
+	\hline
+	\ref{bkm:incacc:mq9reaper} & Loss of MQ-9 reaper & The \gls{gcs} station was misconfigured following a change from MQ-1 to MQ-9 operations. The misconfiguration was not spotted. It caused any throttle position aft of full forward to command negative thrust. The aircraft decelerated below stall speed and impacted ground in unpopulated area. & Air (Defence) & 2012 & \index{Consistency!Property}\Gls{consistency}, \gls{verifiability}\index{Verifiability Property} \\
+	\hline
+
+        \ref{bkm:incacc:737-33A} & \index{Boeing 737}Boeing 737-33A at Chambery Airport, France & Misuse of Electronic Flight Bag results in tail strike & Air & 2012 &\Gls{timeliness}\index{Timeliness Property}, \gls{suppression}\index{Suppression Property}, \gls{lifetime}\index{Lifetime Property} \\
+        \hline
+        
+	\ref{bkm:incacc:hermes450} & Loss of Hermes 450 & While attempting an automatic landing the \gls{uas} self-aborted. This abort was due to an incorrect set-up parameter that had been loaded by the crew. The crew elected to intervene rather than let the \gls{uas} self-recover. The air vehicle hit a new, unoccupied hangar; it was ultimately deemed ``non-repairable''. & Air (Defence) & 2011 & \index{Integrity Property}\Gls{integrity} \\
+	\hline
+	\ref{bkm:incacc:advocatelutheran} & Advocate Lutheran Hospital & An infant boy died after a series of medical errors: incorrect \gls{information} was entered into an electronic intravenous order; automatic alerts had been turned off; and a bag was mislabelled. & Medical & 2010 & \index{Integrity Property}\Gls{integrity}, \gls{verifiability}. \\
+	\hline
+	\ref{bkm:incacc:sichemosprey} & Grounding of \dsiwgTextIT{Sichem Osprey} & Anti-collision radar thresholds were apparently set incorrectly; there were also sizeable discrepancies between positions plotted on a chart and those displayed on the radar. The vessel grounded at more than 16 knots; no pollution occurred. & Maritime & 2010 & \index{Integrity Property}\Gls{integrity}, \index{Accuracy Property}\gls{accuracy} \\
+	\hline
+	\ref{bkm:incacc:cootamundra} & Near Collision of Trains, Cootamundra\index[locationidx]{Australia!New South Wales!Cootamundra} & Following a signalling\index{Signalling, Railway} system design error, a passenger train had to unexpectedly apply its brakes; it stopped just 5 m short of a goods train. & Rail & 2009 & \index{Integrity Property}\Gls{integrity}, \index{Completeness!Property}\gls{completeness} \\
+	\hline
+	\ref{bkm:incacc:cedarssinai} & Cedars-Sinai Medical Center Scanner & A software misconfiguration led to 206 patients receiving radiation doses approximately eight times higher than intended; the error persisted for 18 months. & Medical & 2008 & \Gls{verifiability} \\
+	\hline
+	\ref{bkm:incacc:canterbury} & Grounding of \dsiwgTextIT{The Pride of Canterbury} & An unapproved \gls{ecs} was apparently being used as the primary means of navigation for the passenger ferry \dsiwgTextIT{The Pride of Canterbury}. Due to user settings a charted wreck would not have been displayed on this system. The vessel grounded on the wreck, causing severe damage to her port propeller system. & Maritime & 2008 & \index{Accuracy Property}\Gls{accuracy}, \index{Completeness!Property}\gls{completeness}, \gls{intended_destination} \\
+	\hline
+	\ref{bkm:incacc:lot282} & LOT Flight 282 & Incorrect data input to the Flight Management System, `E' rather than `W', meant loss of instruments. Aircraft had to return to \gls{lhr}. & Air & 2008 & \index{Integrity Property}\Gls{integrity}, \index{Fidelity / Representation Property}\gls{fidelity} \\
+	\hline
+        \ref{bkm:incacc:annabella} & Annabella container ship -- Baltic Sea & Software developed loading plan using incorrect container specifications &
+        Maritime & 2007 & \index{Integrity Property}\Gls{integrity}, \gls{verifiability}\index{Verifiability Property}, \index{Fidelity / Representation Property}\gls{fidelity} \\
+        \hline
+        \ref{bkm:incacc:comair5191} & Comair Flight 5191 & Inaccurate (out-of-date) aerodrome charts led to take-off being attempted from the wrong runway. Aircraft overran the runway; 49 fatalities. & Air & 2006 & \Gls{timeliness}\index{Timeliness Property}, \index{Completeness!Property}\gls{completeness} \\
+	\hline
+	\ref{bkm:incacc:uberlingen} & \"Uberlingen Mid-Air Collision & Contradictory advice from \gls{tcas} and an air traffic controller led to a mid-air collision between two \gls{tcas}-equipped aircraft. 71 fatalities. & Air & 2002 & \index{Consistency!Property}\Gls{consistency}, \index{Availability Property}\gls{availability}, Timeliness\index{Timeliness Property} \\
+	\hline
+	\ref{bkm:incacc:fortdrum} & Fort Drum Artillery Incident & Movement of an artillery site led to errors in targeting. Artillery shells were fired more than a mile off target: 2 soldiers killed; 13 injured. & Defence & 2002 & \index{Integrity Property}\Gls{integrity}, \gls{verifiability}\index{Verifiability Property} \\
+	\hline
+	\ref{bkm:incacc:washprison} & Early release from Washington State Prison & A software update led to miscalculation of the time an inmate was due to serve in prison. Although the results of the calculation could easily be checked, the problem persisted for 13 years and over 2,000 offenders were released early. & Policing & 2002 & \index{Integrity Property}\Gls{integrity}, \gls{verifiability}\index{Verifiability Property} \\
+	\hline
+	\ref{bkm:incacc:marsclimate} & Mars Climate Orbiter & A mismatch in the units used by two software teams led to errors in the Flight Management System and, ultimately, the loss of a multi-million dollar space mission. & Space & 1998 & \index{Consistency!Property}\Gls{consistency} \\
+	\hline
+	\ref{bkm:incacc:nimitzhill} & Crash into Nimitz Hill, Guam & \Gls{cfit}; the ground-based \gls{msaw} designed to alert air traffic controllers had been inhibited. 228 fatalities; 26 serious injuries. & Air & 1997 & \index{Continuity Property}\Gls{continuity}, \index{Fidelity / Representation Property}\gls{fidelity}\\
+	\hline
+        \ref{bkm:incacc:sanbernardino} &
+        San Bernardino \index[locationidx]{USA!California!San Bernardino} derailment and pipeline rupture & \Gls{criticality} of train weight not recognized,
+        resulting in multiple fatalities &
+        Rail & 1989 & \index{Integrity Property}\Gls{integrity}, \index{Completeness!Property}\gls{completeness}, \index{Accuracy Property}\gls{accuracy}, \gls{timeliness}\index{Timeliness Property}, \gls{verifiability}\index{Verifiability Property}, \index{Fidelity / Representation Property}\gls{fidelity}, \gls{lifetime}\index{Lifetime Property} \\
+        \hline
+	\ref{bkm:incacc:peigneur} & Lake Peigneur Drilling Accident & While drilling a test well, a rig crew inadvertently caused a flood in a nearby salt mine. The previously freshwater lake became a salt water lake and the flow of a river was reversed. & Oil and Gas & 1980 & \Gls{verifiability}\index{Verifiability Property} \\
+	\hline
+
+\end{longtable}
+
+%\clearpage% Inserted to better format 737 MAX 8 after inserting Soyuz - a new war story may make this unnecessary
+\subsection{Post Office Horizon System}\index[locationidx]{United Kingdom}\label{bkm:incacc:horizon}
+Post Office Limited is a company wholly owned by the UK government, and provides a variety of counter services to the general public. These include postal services, banking services including currency exchange, issue of international driving permits, driving licence renewals, passport application checks, benefits payments, and various other services. A small number of branches are operated by Post Office Limited itself (``Crown Post Offices''), but the vast majority are operated under contract (``Branch Post Offices'') by independent persons known as \glspl{spm}.
+
+In the 1990s, \gls{pocl} (the name at that time for what would become Post Office Limited), the Department of Social Security (the government department at that time responsible for the Post Office) and ICL agreed to replace the paper-based accounting scheme at Post Office branches with an electronic system, in particular to allow the payment of benefits by electronic transfer instead of cash. A pilot system known as Pathway was rolled out to a small number of branches in 1996, but was subsequently abandoned due to ``greater than expected complexity''. However, \gls{pocl} and ICL decided to continue with a system based on Pathway to automate branch post offices. ICL was acquired by Fujitsu in 1998, and the resulting system, known as Horizon (now known as Legacy Horizon), was rolled out from 1999 and a version that combined management accounting functions and electronic point-of-sale functions, Horizon Online, was rolled out from 2010.
+
+From the outset, Horizon has been a \gls{data-driven system} ``in which any requirement which
+might change frequently is encoded as data, rather than software code. The code is
+written and tested to work with all allowed values of the data'' \cite{citation:bates_v_pol_tech}. 
+
+Shortly after the introduction of (legacy) Horizon, there was a sharp increase in \glspl{spm} reporting accounting shortfalls; the products that Horizon showed they had sold far exceeded the money the \glspl{spm} had taken. However, unlike the paper system, Horizon did not allow \glspl{spm} any access to the transaction records, so they were unable to trace the cause of the discrepancy. Under the terms of their contract with Post Office Limited the \glspl{spm} were obliged to make good any shortfall unless they could prove they were not at fault. Without access to the accounting trail there was no possible way for them to do that.
+
+Following the roll out of Horizon, Post Office Limited ``prosecuted more than 700 \glspl{spm}  for crimes such as theft and false accounting. Hundreds of \glspl{spm} were sent to prison and many more received punishments such as being forced to do community service and having to wear electronic tags. [...] Hundreds were made bankrupt, losing their livelihood, and many struggled after being forced to pay the Post Office to cover shortfalls that didn’t exist outside the Horizon system. The lives of the victims and their families were severely impacted, with several suicides linked to the scandal and many cases of illness caused by stress.'' \cite{citation:cw_horizon}. The shortfalls were eventually found to have been due to faults in the Horizon system and to Fujitsu staff changing the accounts, apparently on the instruction of the Post Office, without the knowledge of the \glspl{spm}.
+
+The false prosecutions resulting from the faults in the Horizon system are at the time of writing subject to a public inquiry. The \gls{ccrc} described the prosecutions as ``the most widespread miscarriage of justice the \gls{ccrc} has ever seen and represents the biggest single series of wrongful convictions in British legal history''  \cite{citation:horizon_ccrc}.
+
+The data issues included:
+\begin{itemize}
+	\item Neither \glspl{spm} nor Post Office Limited were able to access the full data necessary to identify the source of accounting discrepancies \cite[\textsection 995]{citation:bates_v_pol} and in particular \glspl{spm}' ``ability to
+	investigate was itself similarly limited. The expert agreement [...]
+	makes it clear in IT terms (based on the transaction data and reporting functions
+	available to \glspl{spm}) that \glspl{spm} simply could not identify apparent or alleged
+	discrepancies and shortfalls, their causes, nor access or properly identify transactions
+	recorded on Horizon, themselves. They required the co-operation of the Post Office \cite[\textsection 1000]{citation:bates_v_pol}''.
+	\item Change control processes for the data representing the products and services provided were inadequate \cite[\textsection 54]{citation:bates_v_pol_tech}.
+	\item Transactions within Horizon were not atomic, so transactional \gls{integrity} was not maintained: if a transaction failed, the payment for the goods or service could be recorded without showing on the \gls{spm}'s point of sale system. In that case \glspl{spm} were instructed to retry the transaction, so the payment would be recorded multiple times for a single transaction. Possible causes of failure of a transaction included the speed with which a button on the point-of-sale terminal was pressed \cite[\textsection 113]{citation:bates_v_pol}.
+	\item Horizon did not maintain correct double-entry bookkeeping even within transactions that were completed normally \cite[\textsection 128ff]{citation:bates_v_pol_tech}
+	\item Fujitsu, apparently on Post Office Limited's instruction, changed accounting transactions without the knowledge of the \glspl{spm} responsible for those transactions \cite[\textsection 61.4]{citation:bates_v_pol_tech}.
+	\item Records were not kept of the occasions accounting transactions were altered by Fujitsu \cite[\textsection 1013, \textsection 1014]{citation:bates_v_pol}
+	\item Post Office Limited staff were given unnecessary top-level security access to the accounting data \cite[\textsection 390]{citation:bates_v_pol}.
+\end{itemize}
+  %
+  % Agincourt - start
+  %
+\subsection{Battle of Agincourt}\index[locationidx]{France}\label{bkm:incacc:agincourt}
+  At the battle of Agincourt (1415), the French cavalry had little regard for the English longbowmen.
+  They appear to have been so proud that they thought little of the power of the English
+  archers.
+  The French underestimated the longbow at Agincourt in several ways.
+  Thomas Walsingham, an English chronicler, described how the French were ``utterly astonished''
+  by the effectiveness of the English longbowmen,
+  noting that ``the French never thought that such weapons could have such power''.
+  This chronicler, among others, demonstrates that the French underestimated the longbow at
+  Agincourt due to their misconceptions about its range, \gls{accuracy}, and impact on their cavalry.
+  This underestimation ultimately contributed to their defeat at the hands of the English army.
+
+  The French assessment of English capability was probably based on their own experience with
+  crossbows, which had more limited range and effectiveness. Thus even when Henry moved his troops
+  closer to the French army, so as to be within longbow range, the French still did not perceive the threat.
+
+  \Glspl{data property} involved: Their assessment was based upon incorrect data, resulting in loss of 
+  \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} and
+  \dsiwgTextIT{\index{Completeness Property}\gls{completeness}}.
+  Although they understood the principles of one type of bow, the French data could be regarded as
+  inaccurate, due to their read-across from one type of weapon to another, resulting in loss of the
+  \index{Accuracy Property}\gls{accuracy} and the
+  \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} property.
+  However another view of the problem was that the French used data from what (to them) was old
+  technology -- the crossbow -- and failed to keep their data up to date as technology advanced,
+  leading to loss of the
+  \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property} property}.
+
+  \dsiwgTextBF{Links}
+  \begin{itemize}
+  \item Agincourt:
+  \href{https://www.longbow-archers.com/historyagincourt.html}
+       {https://www.longbow-archers.com/historyagincourt.html}
+       (Accessed 11 February 2024)
+  \item Walsingham, Historia Anglicana, Volume II:
+  \href{https://archive.org/details/thomwalsinghamh00walsgoog/page/312/mode/2up?view=theater}
+       {https://archive.org/details/thomwalsinghamh00walsgoog/ page/312/mode/2up?view=theater}
+       (Accessed 11 February 2024)
+
+\end{itemize}
+
+  %
+  % Agincourt - end
+  %
+\subsection{Gemini V}\label{bkm:incacc:geminiV}
+The Gemini V crewed spaceflight took place in 1965. It lasted eight days -- twice as long as Gemini IV, thereby demonstrating that a spaceflight long enough to get to the moon and back was feasible.
+
+There had been various system failures during the mission. However during re-entry, systems behaved correctly, and the crew were able to control the descent as planned. However the spacecraft landed eighty miles short of its intended landing zone.
+
+Post-mission analysis revealed that the computing equipment had not failed. The error had been introduced by a simple \gls{error} --
+an assumption that the Earth turns 360$^\circ$ in 24 hours. The 24 hour day was based upon the position of the Sun at midday,
+and a simplistic understanding of Earth's rotation suggests that the ball must have rotated $360^\circ$ for the Sun to appear in the same vertical plane. However the Earth follows an orbit around the Sun, making one full orbit per year.
+Thus on average, every 24 hours, the Earth moves $360\div 365.24 = 0.99^\circ$ along its orbit,
+and must over-rotate by a similar amount for the Sun to appear in the same place.
+In other words, whilst everybody ``knows'' that the Earth rotates 360$^\circ$ per day, that figure is incorrect.
+
+As the computer had been given a parameter of 360$^\circ$, instead of the accurate value, the calculations to reach the landing site were inaccurate.
+
+\Glspl{data property} involved: The approximation was a loss of the \index{Accuracy Property}\gls{accuracy} property.
+Its introduction resulted from a lack of consideration of celestial movement,
+and so could potentially also be regarded as a loss of both the \dsiwgTextIT{\index{Traceability Property}\gls{traceability}} and \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} properties.
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+\item A general outline of the Gemini V mission:
+  \href{https://en.wikipedia.org/wiki/Gemini\_5}
+       {https://en.wikipedia.org/wiki/Gemini\_5}
+       (Accessed 26~January 2022)
+     \item An explanation of how Earth's orbit results in more than 360$^\circ$ rotation in 24 hours: 
+       \href{https://en.wikipedia.org/wiki/Sidereal\_time}
+            {https://en.wikipedia.org/wiki/Sidereal\_time}
+       (Accessed 26 January 2022)
+          \item The Gemini V mission report:
+            \href{https://www.ibiblio.org/apollo/Documents/Gemini5MissionReport.pdf}
+                 {https://www.ibiblio.org/apollo/Documents/Gemini5MissionReport.pdf}
+       (Accessed 26 January 2022)
+\end{itemize}
+
+\subsection{What3Words}\label{bkm:incacc:w3w}
+The What3Words application is intended to provide a means to easily and unambiguously define a location anywhere on the surface of
+the Earth. The ease with which the application can be used has led to its use by emergency services worldwide, for locating people in need of assistance -- in safety terms, it has provided a useful form of \gls{mitigation}, enabling emergency services to easily locate people,
+whether simply at the roadside, or somewhere on a mountainside.
+However there have been a number of claims that What3Words is not suitable for this purpose.
+
+Accoring to the Telegraph (1 June 2021),
+Mountain Rescue England and Wales (MREW) claimed it had been told to go to 45 locations in the past 12 months which had turned out
+to be incorrect, whilst a rescue request that indicated a location in Australia actually emanated from a location in China.
+The article suggested that the problem was a combination of local accents and spelling errors.
+
+However the BBC reported that research by Andew Tierney indicates that the problem is more systemic, and reported:
+\begin{itemize}
+\item The dictionary used by What3Words includes a number of homophones -- words that have the same pronunciation, but different spelling.
+\item Similar sounding words
+\item Plurals
+\end{itemize}
+Cybergibbons illustrated the problem by presenting a list of thirty two pairs of words in the What3Words dictionary that appear to
+be extremely similar in pronunciation. They also pointed out a further algorithmic deficiency -- that plural words can be followed
+by a word beginning with the letter ``s''. Their examples include likely.stage.sock and likely.stages.sock, which denote locations on opposite sides of the River Clyde, and illustrate how in mountain rescue situations, even a small error in location could result in
+a serious delay to emergency provision.
+
+Thus it appears that the system is working as designed, by providing a simple means to carry out geolocation.
+However a tool that was designed as a social application to help friends meet up has now been applied to a safety-related domain,
+without being re-engineered for that more demanding purpose.
+Three words will appear on the screen of the person requiring help, and if those same three words are used by the emergency services,
+the parties will be able to meet up.
+However that transfer is carried out by voice, where ambiguity can introduce error.
+The dictionary appears to contain homophones, plurals are used, and the algorithm permits the selection of pairs of words where the
+ending of one word cannot easily be distinguished from the start of the following word -- each of these failings can lead to
+errors in communication. 
+
+\Glspl{data property} involved: The ambiguities can lead to loss of \dsiwgTextIT{\index{Integrity Property}\gls{integrity}},
+whilst the resulting distortion of world view is a loss of \dsiwgTextIT{\index{Consistency Property}\gls{consistency}},
+and the Data Issue is one of \dsiwgTextIT{\index{Aliasing Property}Aliasing}.
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+\item The Telegraph article:
+  \href{https://www.telegraph.co.uk/news/2021/06/01/rescuers-directed-china-australia-what3words-app-regional-accent/}
+       {https://www.telegraph.co.uk/news/2021/06/01/rescuers-directed-china- australia-what3words-app-regional-accent/}
+       (Accessed 16 January 2022)
+     \item A BBC article: 
+       \href{https://www.bbc.co.uk/news/technology-56901363}
+            {https://www.bbc.co.uk/news/technology-56901363}
+       (Accessed 16 January 2022)
+          \item Cybergibbons report:
+            \href{https://cybergibbons.com/security-2/why-what3words-is-not-suitable-for-safety-critical-applications/}
+                 {https://cybergibbons.com/security-2/why-what3words-is-not-suitable- for-safety-critical-applications/}
+       (Accessed 16 January 2022)
+\end{itemize}
+
+\subsection{Java\index{Java} log4j\index{Log4j} Library Vulnerability}\label{bkm:incacc:log4j}
+On Dec 10th 2021 a new critical zero-day\index{Zero-day} vulnerability was detected that affected Apache\index{Apache} Log4j 2 Java library. 
+It adversely impacted the digital domain and security systems worldwide.
+
+The vulnerability, when exploited, permited remote code execution on the vulnerable server with system-level privileges.
+
+Log4j\index{Log4j} is a highly configurable logging mechanism for Java\index{Java} (“log4j”\index{Log4j}) that is used for documentation and debugging.
+Although originally developed for the Apache\index{Apache} web server, it has been used part of many commercial applications,
+including network monitoring tools and even games such as Minecraft\index{Minecraft}.
+
+The exploit was a combination of the Java\index{Java} code that contains different logging functions
+(typically error(), warn(), info(), debug(), \dots)
+and a configuration file.
+The configuration file specifies which \gls{information} shall be added 
+to the log-file, the associated format, and how to ``interpret'' the logged data.
+
+The security risk was that the logging mechanism was by default configured in a way such that it interpreted the logged data,
+and that the logged data that the user entered could be used to attack the server.
+For example if a user were to enter into the name field of a html-page\index{HTML} instead of his name a ``delete *.*'' command, along with certain escape sequences\index{Escape sequences},
+it might cause huge damage on the server -- if this data were logged from the software and interpreted from the configuration file.
+
+\Gls{data property} involved: \dsiwgTextIT{\index{Integrity Property}\gls{integrity}.}
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item Apache\index{Apache} provides details on security issues with the log4j\index{Log4j} library, including available fixes, on its website \href{https://logging.apache.org/log4j/2.x/security.html}{https://logging.apache.org/log4j/2.x/security.html} (Accessed: 09/01/2022)
+  \item Further details may be found at \href{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228}{https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228} (Accessed: 09/01/2022)
+\end{itemize}
+
+\subsection{Immensa\index{Immensa} False Negative Covid-19\index{Covid-19} \index{PCR}\index{PCR} Tests} \label{bkm:incacc:immensa}
+Failings at the Immensa\index{Immensa} lab in Wolverhampton led to an estimated 43,000 people with Covid-19\index{Covid-19} being mistakenly given negative \gls{pcr}\index{PCR} results;
+they thought they were in the clear, but were actually positive for Covid-19\index{Covid-19}.
+This contributed to soaring rates of infection across the South West and Wales.
+
+It took the government almost a month to identify the issue and to stop sending \gls{pcr}\index{PCR} tests there.
+
+It is unknown how much the virus spread in that time, but the effects of this mismanagement are potentially huge.
+Professor Deepti Gurdasani\index{Gurdasani, Professor Deepti}, a senior lecturer in epidemiology at Queen Mary University\index{Queen Mary University},
+estimates that the false negatives may have caused up to 200,000 further Covid-19\index{Covid-19} infections, and more than 1,000 avoidable deaths.
+
+On Monday, November 1st 2021 the Good Law Project\index{Good Law Project} launched legal proceedings against the Secretary of State, Sajid Javid\index{Javid, Sajid}, over the Immensa\index{Immensa} testing scandal,
+citing the lack of a proper system to monitor the \gls{accuracy} of tests at such labs breached the Department of Health and Social Care's duty to protect life, and the human rights of those affected.
+
+\Glspl{data property} involved: \index{Integrity Property}\gls{integrity}, \index{Accuracy Property}\gls{accuracy} and possibly \dsiwgTextIT{\gls{traceability}} and \gls{verifiability}\index{Verifiability Property}.
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item BBC programme Inside Science containing discussion with Professor Gurdasani: \href{https://www.bbc.co.uk/programmes/m0010q9x}{https://www.bbc.co.uk/programmes/m0010q9x} (Accessed: 09/01/2022)
+  \item\href{https://goodlawproject.org/news/immensa-update/}{https://goodlawproject.org/news/immensa-update/} (Accessed: 09/01/2022)
+  \item\href{https://www.gov.uk/government/news/testing-at-private-lab-suspended-following-nhs-test-and-trace-investigation}{https://www.gov.uk/government/news/testing-at-private-lab-suspended-following-nhs- test-and-trace-investigation} (Accessed: 09/01/2022)
+  \item\href{https://www.theguardian.com/world/2021/dec/21/immensa-lab-month-delay-before-incorrect-covid-tests-stopped}{https://www.theguardian.com/world/2021/dec/21/immensa-lab-month-delay-before-incorrect- covid-tests-stopped} (Accessed: 09/01/2022)
+\end{itemize}
+
+%\clearpage% Inserted to better format 737 MAX 8 after inserting Soyuz - a new war story may make this unnecessary
+\subsection{Covid-19\index{Covid-19} Test Results Silently Deleted by Excel\index{Excel}} \label{bkm:incacc:covidexcel}
+
+In early October 2020 the British Government announced that 15841 positive Covid-19\index{Covid-19} test results had not been reported in the totals for England between 25 September and 2 October. This also meant that the contacts of those people were not traced, or asked to self-isolate, meaning that the virus might have spread further than it would otherwise have done, and possibly have taken additional lives.
+
+The results were silently discarded as they were imported into the Public Health England \gls{database}. Results were delivered as a \gls{csv} file, which was imported into an Excel\index{Excel} spreadsheet ``template'', using the ``.xls'' format, which was then in turn imported into the national \gls{database}. The ``.xls'' format has a limit of 65536 (2$^{16}$) rows, and rows beyond this limit in the \gls{csv} file were silently discarded. (Data category\index{Dynamic Data}: dynamic; properties lost: \dsiwgTextIT{\index{Integrity Property}\gls{integrity}, \index{Completeness!Property}\gls{completeness}, \gls{timeliness}\index{Timeliness Property}, \index{Availability Property}\gls{availability}, \index{Fidelity / Representation Property}\gls{fidelity}})
+
+The newer ``.xlsx'' file format would have increased the row limit to 1048576 (2$^{20}$) rows before suffering the same problem, but the \gls{csv} file format has no limit on the number of rows.
+
+This demonstrates the danger of using \gls{cots}\index{COTS} software for safety-related functions without fully analysing its limitations. A decision had already been made to replace this system, but had not been acted upon. It is also an example of dark data\index{Dark Data}, where it comes under the
+\dsiwgTextIT{data we don’t know are missing: ``unknown unknowns'',}\index{Dark Data!Data We Don't Know are Missing} and the \dsiwgTextIT{Missing What Matters}\index{Dark Data!Missing What Matters} categories.
+
+Finally, it is an example of where an error is known to the system, but not reported (adequately) to the user (Data Category: dynamic\index{Dynamic Data}; \index{Property!Data}properties lost: \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property}, \index{Availability Property}\gls{availability}}).
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item\href{https://www.bbc.co.uk/news/technology-54423988}{https://www.bbc.co.uk/news/technology-54423988} (Accessed: 11/01/21)
+  \item\href{https://www.bbc.co.uk/news/uk-54422505}{https://www.bbc.co.uk/news/uk-54422505} (Accessed: 12/01/21)
+\end{itemize}
+
+
+\subsection{\index{Boeing 737}Boeing 737 MAX 8 Crashes} \label{bkm:incacc:737max8}
+
+On October 29th 2018, Lion Air\index{Lion Air} flight 610 was lost with all on board when it flew into the sea. On March 10th 2019, Ethiopian Airlines\index{Ethiopian Airlines} flight 302 flew into the ground. In each case the aircraft was a \index{Boeing 737}Boeing 737 MAX 8 -- the latest modernised iteration of the 737 airframe design, and in each, a software system called the \gls{mcas}\index{Manoeuvring Characteristics Augmentation System|see{MCAS}}\index{MCAS} has been established as the principle cause of the crashes.
+
+The \gls{mcas}\index{MCAS} system was introduced because bigger, and hence more fuel efficient, engines are used on the 737 MAX 8, which had to be positioned higher on the wing and further forward (to ensure sufficient ground clearance for the larger engines). This changed the aerodynamic properties of the aircraft and meant the 737 MAX~8 tended to pitch up during high angles of attack. \Gls{mcas}\index{MCAS} was introduced to counter this effect by taking input from an \gls{aoa} sensor and commanding the horizontal stabiliser control surfaces to bring the nose down. Although the aircraft has two \gls{aoa} sensors, only one sensor gave input to \gls{mcas}\index{MCAS} at any one time, meaning that a single sensor failure could cause the nose to be forced down incorrectly. The design of \gls{mcas}\index{MCAS} allowed this to happen repeatedly, which if left unchecked would eventually force the aircraft into an unrecoverable dive.
+
+\Gls{mcas}\index{MCAS} did not compare data from the two sensors in order to detect a discrepancy between them, and hence indicate that the sensor data was not trustworthy (data category: {dynamic data}; properties lost: \index{Integrity Property}\gls{integrity}, \index{Accuracy Property}\gls{accuracy}, \index{Fidelity / Representation Property}\gls{fidelity}; \glspl{mitigation}\index{Mitigation} unused: redundancy). Furthermore, the function (outside MCAS\index{MCAS}) to report a discrepancy between the sensors to the pilots was not enabled, reducing the crew's ability to respond appropriately (data category: dynamic\index{Dynamic Data}; \index{Property!Data}properties lost: \dsiwgTextIT{\index{Availability Property}\gls{availability}}).
+
+Several other data-safety-related failures can also be found in the report on flight 610:
+
+\begin{itemize}
+    \item The \gls{mcas}\index{MCAS} system was not described in the pilot's manual and training\index{Training!Personnel} materials (Data Category: Staffing\index{Staffing Data}, \index{Property!Data}Properties lost: \dsiwgTextIT{\index{Availability Property}\gls{availability}})
+    \item There was no indication to the pilots that \gls{mcas}MCAS\index{MCAS} was active (Data Category: Dynamic\index{Dynamic Data}; \index{Property!Data}Properties lost: \dsiwgTextIT{\index{Availability Property}\gls{availability}}).
+    \item The \gls{aoa} sensor fitted to flight 610 was incorrectly calibrated during a previous repair,
+      reporting an angle 21° higher than the correct value.
+      But this was not detected during the repair
+      (Data Category: Justification\index{Justification Data}; \index{Property!Data}Properties lost: \dsiwgTextIT{\index{Availability Property}\gls{availability}, \index{Fidelity / Representation Property}\gls{fidelity}, \gls{verifiability}\index{Verifiability Property}}).
+    \item The evidence of the testing of the \gls{aoa} sensor after fitting to flight 610 by the maintenance crew was erroneous (Data Category: Justification\index{Justification Data}; Properties lost: \dsiwgTextIT{\index{Integrity Property}\gls{integrity}, \index{Availability Property}\gls{availability}, \gls{verifiability}\index{Verifiability Property}})
+    \item 31 pages were missing from the maintenance log-book for flight 610, including the records of the testing of the \gls{aoa} sensor after fitting to the aircraft (Data Category: Asset\index{Asset Data}; \index{Property!Data}Properties lost: \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}, \index{Availability Property}\gls{availability}, \gls{verifiability}\index{Verifiability Property}})
+%Next statement removed as of uncertain provenance:
+%    \item The ability of MCAS to detect a faulty sensor was only tested with faulty sensors giving a value 24° higher than measured (Data Category: Verification; Properties lost: \dsiwgTextIT{Completeness}).
+    \item During the previous flight of the aircraft on flight 610, the pilots experienced repeated activation of the stick shaker, and other alarms, which were caused by the faulty \gls{aoa} sensor.
+      However they did not fully report all the issues in the flight logs, and so the maintenance crew's remediation activities did not lead them to suspect an issue with the sensor. (Data Category: Performance\index{Performance Data}, \index{Property!Data}Properties lost: \dsiwgTextIT{\index{Availability Property}\gls{availability}})
+    \item During flight testing, \gls{adaptation data}\index{Adaptation Data} was changed to give \gls{mcas}\index{MCAS} more authority, without a new safety impact assessment (Data Category: Adaptation\index{Adaptation Data}; \index{Property!Data}Properties lost: \dsiwgTextIT{\gls{verifiability}\index{Verifiability Property}}).
+\end{itemize}
+
+% Additionally, MCAS itself was not redundantly or diversely implemented, leading to another lost opportunity to apply redundancy.
+
+%\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+    \item \raggedright{\href{http://knkt.dephub.go.id/knkt/ntsc\_aviation/baru/2018\%20-\%20035\%20-\%20PK-LQP\%20Final\%20report.pdf}{http://knkt.dephub.go.id/knkt/ntsc\_aviation/baru/ 2018 - 035 - PK-LQP Final report.pdf} (Accessed: 20/12/19)}
+    \item \raggedright{\href{https://en.wikipedia.org/wiki/Boeing\_737\_MAX\_groundings}{https://en.wikipedia.org/wiki/Boeing\_737\_MAX\_groundings} (Accessed: 20/12/19)}
+    \item \raggedright{\href{https://en.wikipedia.org/wiki/Lion\_Air\_Flight\_610}{https://en.wikipedia.org/wiki/Lion\_Air\_Flight\_610} (Accessed: 20/12/19)}
+    \item \raggedright{\href{https://en.wikipedia.org/wiki/Ethiopian\_Airlines\_Flight\_302}{https://en.wikipedia.org/wiki/Ethiopian\_Airlines\_Flight\_302}  (Accessed: 20/12/19)}
+    \item \raggedright{\href{https://www.businessinsider.in/thelife/boeing-reportedly-made-the-flight-control-system-that-mistakenly-activated-during-2-deadly-crashes-4-times-stronger-while-creating-the-737-max/articleshow/68840690.cms}{https://www.businessinsider.in/thelife/boeing-reportedly-made-the-flight-control-system-that- mistakenly-activated-during-2-deadly-crashes-4-times-stronger-while-creating-the-737-max/ articleshow/68840690.cms} (Accessed: 03/01/20)}
+    \item \raggedright{\href{https://www.theverge.com/2019/5/2/18518176/boeing-737-max-crash-problems-human-error-mcas-faa}{https://www.theverge.com/2019/5/2/18518176/ boeing-737-max-crash-problems-human-error-mcas-faa} (Accessed: 04/01/20)}
+    \item The design, development \& Certification of the Boeing 737 MAX, September 2020, The House Committee on Transportation \& Infrastructure. \href{https://transportation.house.gov/committee-activity/boeing-737-max-investigation}{https://transportation.house.gov/committee-activity/boeing-737-max-investigation} (Accessed 22/01/2021)
+\end{itemize}
+%\end{samepage}
+
+%
+% Loss of Soyuz-2.1b rocket
+%
+\subsection{Loss of Soyuz-2.1b\index{Soyuz} Rocket Carrying Meteor-M\index{Meteor-M} 2-1 Weather Satellite} \label{bkm:incacc:soyuz}
+On November 28th, 2017, the second launch took place from russia's new launch site at Vostochny, carrying the Meteor-M\index{Meteor-M} No.2-1 polar-orbiting weather satellite, and 18 small satellites flying as secondary payloads. The launch appeared successful, but several hours later it was announced that it had not been possible to establish communications with the weather satellite, because it was not in its target orbit. An unconfirmed report claimed that the rocket was in the wrong orientation during its initial burn, and crashed into the Atlantic ocean.
+The following January, russian deputy prime minister Dmitry rogozin reported that the 2.6bn-rouble (\$45m) satellite was lost because the Soyuz-2.1b\index{Soyuz} launch vehicle had been programmed to take off from Baikonur, and not from the actual launch site at Vostochny. 
+This is an example of a problem with data in the Adaptation category\index{Adaptation Data}, which did not map correctly to the real-world entity that it was modelling, and hence lost the \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} property. Other properties that were lost include \dsiwgTextIT{\index{Integrity Property}\gls{integrity} and \gls{verifiability}\index{Verifiability Property}.}
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://www.theguardian.com/world/2017/dec/28/russian-satellite-lost-wrong-spaceport-meteor-m}{https://www.theguardian.com/world/2017/dec/28/russian-satellite-lost-wrong-spaceport-meteor-m} (Accessed: 14/01/20)}
+  \item \raggedright{\href{https://www.space.com/39270-russian-weather-satellite-doomed-human-error.html}{https://www.space.com/39270-russian-weather-satellite-doomed-human-error.html} \\(Accessed: 22/01/20)}
+  \item \raggedright{\href{https://www.space.com/38918-russian-satellites-lose-contact-after-launch.html}{https://www.space.com/38918-russian-satellites-lose-contact-after-launch.html} \\(Accessed: 22/01/20)}
+\end{itemize}
+%
+% Cambrian Line Data Loss
+%
+\subsection{Cambrian Line\index{Cambrian Line} Data Loss} \label{bkm:incacc:cambrian}
+
+In the United Kingdom\index[locationidx]{United Kingdom}, railway signalling\index{Signalling, Railway} is primarily implemented through trackside signals\index{Signalling, Railway}. In 2011, a trial system was installed in the Machynlleth\index[locationidx]{United Kingdom!Wales!Machynlleth} signalling\index{Signalling, Railway} control centre, which enabled suitably equipped trains travelling over the part of the rail network that it controlled (the Cambrian lines\index{Cambrian Line}) to acquire data relating to speed restrictions and display these to the driver. The Cambrian lines\index{Cambrian Line} are a collection of rail tracks which run along the Welsh coast and as far inland as Shrewsbury\index[locationidx]{United Kingdom!England!Shrewsbury}. On 20th October 2017, a driver reported that his train had failed to display speed restriction data.
+
+The initiating event was just after 23:00 hrs on 19th October 2017, when a train automatically requested a movement authority (permission to travel on a specified part of the rail network) which had already been allocated to another train. This error condition is known to occur several times per year and causes an automatic software reset to be invoked. A well-established set of processes are used by the signalling\index{Signalling, Railway} centre staff to return the rail system to normal operation. The staff followed their processes, and once the system was functional, allowed the final three trains of the day to complete their journeys. On the following day, it was the driver of the fourth train of the day who noticed the error and reported the failure.
+
+Subsequent investigation\index{Investigation!Incident / Accident} revealed that speed restriction data had been unavailable since the software reset, resulting in six trains completing their journeys without that data, before the driver of the seventh train observed the problem. 
+
+The most significant risk identified thus far by the rail Accident Investigation Board is that a number of the speed restrictions which were in place on the Cambrian lines\index{Cambrian Line} had been invoked to allow pedestrians at level crossings sufficient time to take action, when observing an approaching train. Luckily the failure did not result in an accident -- but this was due to luck, not fail-safe systems on the railway.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Availability Property}\gls{availability}} \index{Property!Data}\gls{data property}, as the data had been silently unavailable to trains. In addition, much of the digital audit trail relating to the failure was lost during repeated attempts to correct the problem and get the rail network running again, a loss of the \dsiwgTextIT{\gls{history}\index{History Property}} \index{Property!Data}\gls{data property}.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+\item Interim report: \raggedright{\href{https://assets.publishing.service.gov.uk/media/5bc871d5e5274a0956564a41/Ir012018_181018_Cambrian_TSrs.pdf}{https://assets.publishing.service.gov.uk/media/5bc871d5e5274a0956564a41/ Ir012018\_181018\_Cambrian\_TSrs.pdf} (accessed 31 December 2018).}
+\item
+  Final report: \raggedright{\href{https://www.gov.uk/government/news/report-172019-loss-of-safety-critical-signalling-data-on-the-cambrian-coast-line}{https://www.gov.uk/government/news/ report-172019-loss-of-safety-critical-signalling-data-on-the-cambrian-coast-line} (accessed 14 January 2020).}
+\end{itemize}
+\end{samepage}
+
+\subsection{Loss of Irish Rescue Helicopter} \label{bkm:incacc:irishsar}
+On 14 March 2017, an Irish \gls{sar} helicopter\index{Search and Rescue} apparently suffered \gls{cfit}\index{CFIT}; all four crew members were killed. \dsiwgTextIT{Note: At the time of writing the investigation\index{Investigation!Incident / Accident} is continuing. The following discussion is based on a preliminary report from the Air Accident Investigation Unit, Ireland}.
+
+The \gls{sar}\index{Search and Rescue} helicopter was responding to a medical emergency on board a fishing vessel. It left Dublin\index[locationidx]{Ireland, republic of!Dublin} and requested a route to Blacksod\index[locationidx]{Ireland, republic of!Blacksod} to refuel. The flight data recorded on the \gls{hums} showed the helicopter was in stable level flight until the final few seconds, when it pitched up rapidly and impacted with terrain at the western end of Black rock\index[locationidx]{Ireland, republic of!Black rock}.
+
+The helicopter was equipped with an \gls{egpws}. This is designed to decrease instances of \gls{cfit}\index{CFIT}\index{Controlled Flight into Terrain|see{CFIT}} by increasing pilot situational awareness, including the use of alerts and warnings: it is not intended to be used for aircraft navigation. The \gls{egpws} can provide terrain alerting using look ahead algorithms, which take \gls{information} from the aircraft (e.g.\ position., attitude, heading) and use this in conjunction with internal terrain and obstacle \glspl{database}. Neither the Black rock\index[locationidx]{Ireland, republic of!Black rock} lighthouse nor the island's terrain were included in the \gls{egpws} \glspl{database}; these \glspl{database} had been sourced from external suppliers by the \gls{egpws} manufacturer.
+
+The preliminary investigation\index{Investigation!Incident / Accident} also notes that the flight crew were following an operator-specific route guide: a review of such guides has been recommended.
+
+This incident potentially illustrates the importance of the \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} and \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} \index{Property!Data}\glspl{data property}, with respect to the \gls{egpws} \gls{database}, and the \index{Accuracy Property}\gls{accuracy} \index{Property!Data}\gls{data property}, with respect to the route guides.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://www.aaiu.ie/sites/default/files/report-attachments/rEPOrT\%202017-006\%20PrELIMINArY.pdf}{http://www.aaiu.ie/sites/default/files/report-attachments/ rEPOrT\%202017-006\%20PrELIMINArY.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Loss of Schiaparelli Mars Lander}\index{Schiaparelli Mars Lander}\index[locationidx]{Mars!Lander, Schiaparelli|see{Schiaparelli Mars Lander}} \label{bkm:incacc:schiaparelli}
+The Schiaparelli\index{Schiaparelli Mars Lander} module, also known as the \gls{edm}, was part of the \gls{esa}'s\index{ESA}\index{European Space Agency|see{ESA}} ExoMars 2016 mission. The objective was to validate and demonstrate entry, descent and landing on Mars in preparation for the ExoMars 2020 mission.
+
+On 19 October 2016, the \gls{edm} entered the Mars atmosphere at 14:42:07 (UTC). During its entry and descent it constantly transmitted telemetry. Its signal was lost at 14:47:22 (UTC), about 43 seconds before expected touchdown. On 20 October, a camera on NASA's\index{NASA} Mars reconnaissance Orbiter\index[locationidx]{Mars!reconnaissance Orbiter} imaged the planned landing site and observed crash debris.
+
+During entry, a parachute was deployed as planned. This triggered oscillations that saturated the \gls{imu}. Integration of this saturated value caused a significant error in predicted attitude. As the descent continued, a \gls{rda} was turned on. The significant attitude error led to large discrepancies between the \gls{imu} and the \gls{rda}. The nature of the guidance and navigation control software meant that this discrepancy led to a premature declaration of touchdown. As such, the parachute was jettisoned too early, causing the \gls{edm} to crash into the planet's surface.
+
+The investigation\index{Investigation!Incident / Accident} determined the rates that saturated the \gls{imu} could have been predicted. Limitations in the modelling of parachute dynamics meant they were not. The investigation also noted issues with the persistence of the flag used to denote \gls{imu} saturation, as well as inadequate handling of this saturation by the guidance software.
+
+This incident illustrates the importance of the \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} \gls{data property}, with respect to the modelling, and the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} \index{Property!Data}\gls{data property}, with respect to the persistence time of the saturation flag.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{http://exploration.esa.int/mars/59176-exomars-2016-schiaparelli-anomaly-inquiry/}{http://exploration.esa.int/mars/59176-exomars-2016-schiaparelli-anomaly-inquiry/} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Interception of Communications} \label{bkm:incacc:comintercept}
+In July 2015, it was reported that a public authority was undertaking an investigation\index{Investigation!Incident / Accident} into the uploading of indecent images\index{Images, Indecent} of children and requested details of the account connected to the \gls{ip} address used to upload the images. Issues with a new upgrade of the communication provider's system resulted in incorrect data being disclosed. Investigations revealed that a further five requests had resulted in incorrect data being disclosed. Data was acquired in six cases that related to individuals unconnected with the investigations. In one of these cases a welfare check was delayed on a child believed to be in crisis.
+
+Under the Regulation of Investigatory Powers Act 2000, internet service providers and indeed other communication service providers (e.g.\ mobile phone network providers) are required to provide data to investigatory bodies such as the police. This data can be used to support criminal investigation\index{Investigation!Criminal} and prosecutions and in the protection of vulnerable children and adults. The data clearly has the potential to be safety related, but there is no obligation for data providers to treat it as such. In this case the \glspl{error} led to a child being exposed to additional risk of harm.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} \index{Property!Data}\gls{data property}. It also shows the applicability of data safety guidance to areas that are not traditionally encompassed by safety engineering.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://www.ipco.org.uk/docs/iocco/2015\%20Half-yearly\%20report\%20(web\%20version).pdf}{https://www.ipco.org.uk/docs/iocco/2015\%20Half-yearly\%20report\%20(web\%20version).pdf} (accessed 9 January 2019).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{A400M\index{Airbus!A400M}, Torque Calibration Parameters\index{Torque Calibration}} \label{bkm:incacc:a400m}
+On 9 May 2015, just minutes into a routine, pre-delivery test flight an Airbus\index{Airbus!A400M} A400M military plane crashed in Spain, killing four of the six crew. Three of the four engines had become stuck at high power and initially did not respond to the crew's attempts to control the power setting in the normal way. Pilots then succeeded in reducing power only after selecting the thrust levers to idle. The engines subsequently remained stuck in this mode. In an attempt to return to the airport, the aircraft struck power lines and crashed.  
+
+Although not confirmed, reports suggest the torque calibration\index{Torque Calibration} parameters for the engines were wiped during a software installation. The torque calibration\index{Torque Calibration} data is needed to measure and interpret \gls{information} coming back from the A400M's engines, and is crucial for the \glspl{ecu} that control the aircraft's power systems. 
+
+This accident highlights the importance of the \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} \index{Property!Data}\gls{data property}, specifically with respect to the torque calibration\index{Torque Calibration} parameters.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://www.bbc.co.uk/news/technology-33078767}{http://www.bbc.co.uk/news/technology-33078767} (accessed 29 November 2017).}
+  \item \raggedright{\href{http://www.reuters.com/article/us-airbus-a400m-idUSKBN0OP2AS20150609}{http://www.reuters.com/article/us-airbus-a400m-idUSKBN0OP2AS20150609} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{RN Submarine\index{Submarine}, Trawler Karen\index{Karen|see{Trawler Karen}}\index{Trawler Karen}} \label{bkm:incacc:subtrawler}
+On 15 April 2015, a submerged royal Navy submarine\index{Submarine} snagged the fishing gear of the UK registered trawler \dsiwgTextIT{Karen}\index{Trawler Karen}, 15 miles south-east of Ardglass\index[locationidx]{United Kingdom!Northern Ireland!Ardglass}, Northern Ireland. \dsiwgTextIT{Karen}\index{Trawler Karen} had been trawling for prawns on a westerly heading at 2.8 knots when its fishing gear was snagged and it was dragged backwards at about 7 knots. \dsiwgTextIT{Karen}'s\index{Trawler Karen} crew managed to release both winch brakes, freeing the trawl warps; the starboard warp ran out completely but the port warp became fouled on the winch drum, causing the vessel to heel heavily to port and its stern to be pulled underwater. \dsiwgTextIT{Karen}\index{Trawler Karen} broke free from the submarine\index{Submarine} when the port warp parted; there was structural damage to the vessel but it returned to Ardglass\index[locationidx]{United Kingdom!Northern Ireland!Ardglass} safely under its own power. Evidence of the collision on board the submarine\index{Submarine} was either not observed or misinterpreted. 
+
+The nature of sub-surface operations requires the use of sonar\index{Sonar} technology to detect collision hazards. Detection in this way is reliant on noise emanating from contacts. In this instance the fishing trawler was detected but misidentified as a merchant vessel rather than a fishing vessel because the submarine's\index{Submarine} sonar\index{Sonar} operators did not detect or report hearing trawl noise. Given the number of vessels operating in the area, it is almost certain that the noise levels being generated would have been extremely high, with noise from one vessel masking the noise from another. Such a situation would make it very difficult for the \index{Sonar} operators to methodically identify and analyse each contact, in particular to identify discrete acoustic classification clues such as trawl noise. As a result the trawler was assessed to be that of a small merchant vessel and the command team's perception would have been that no risk of collision could exist between a submarine\index{Submarine} at safe depth and a merchant vessel. 
+
+review concluded that the submarine\index{Submarine} was operating near to the limit of its capability. Given that all the submarine's\index{Submarine} systems were reported to be functioning properly, it was apparent that the submarine's\index{Submarine} limit of capability had, in reality, been exceeded, with its sonar\index{Sonar} and command teams becoming cognitively overloaded, leading to degraded situational awareness and poor decision making.
+
+In conclusion, the Maritime Accident Investigation Board (\glsfmtshort{maib}) report stated, ``The collision happened because the submarine's\index{Submarine} command team believed \dsiwgTextIT{Karen}\index{Trawler Karen} to be a merchant ship, so they did not perceive any risk of collision or need for avoiding action.''
+
+This incident highlights the importance of the \dsiwgTextIT{\gls{resolution}}\index{Property!Data} \gls{data property}, specifically with regards to resolving a trawler and a merchant vessel. It also highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}}, specifically with regards to the \gls{information} provided from the sonar\index{Sonar} team to the command team. 
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://www.gov.uk/maib-reports/collision-between-the-stern-trawler-karen-and-a-dived-royal-navy-submarine}{https://www.gov.uk/maib-reports/collision-between-the-stern-trawler-karen-and-a-dived-royal- navy-submarine} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Turkish Airlines\index{Turkish Airlines} A330\index{Airbus!A330-303}} \label{bkm:accinc:turkisha330}
+During March 2015, an Airbus A330-303, operated by THY Turkish Airlines, suffered a runway excursion accident upon landing at Kathmandu-Tribhuvan\index[locationidx]{Nepal!Kathmandu!Kathmandu-Tribhuvan Airport} (KTM)\index{KTM|see{Turkey, Kathmandu-Tribhuvan in location index}}.
+
+Flight TK726 was a regular passenger service from Istanbul-Atat{\"u}rk\index[locationidx]{Turkey!Istanbul!Istanbul-Atat{\"u}rk International Airport} (IST)\index{IST|see{Istanbul-Atat{\"u}rk in location index}} to Kathmandu, Nepal\index[locationidx]{Nepal!Kathmandu}. The flight was the first international flight to arrive that morning. After descending from cruising altitude, it entered a holding pattern. It was subsequently cleared for a \gls{vor} / \gls{dme} approach to runway 02. 
+
+This approach was abandoned at about the Missed Approach Point at 1DME and the aircraft performed a go around. The aircraft circled and positioned for a second approach to runway 02. The aircraft touched down to the left of the runway centre line with the left hand main gear off the paved runway surface. It ran onto soft soil and the nose landing gear collapsed. Following the accident the aircraft was written off.
+
+The aircraft touched down to the left of the centreline because the \gls{fmgs} navigation \gls{database} contained threshold coordinates for a proposed displacement of the runway 02 threshold. This was later withdrawn through a \gls{notam}, but had not been updated by the airline in the \gls{database}. Additionally, the coordinates that were initially published were inaccurate, causing the threshold coordinates to be offset to the left of the actual threshold. This had been noticed and reported by a previous Turkish Airlines\index{Turkish Airlines} flight on March 2. The changes had not been performed by the time TK726 landed at Kathmandu\index[locationidx]{Nepal!Kathmandu!Kathmandu-Tribhuvan Airport}. 
+
+Among the safety recommendations stated in the accident report were:
+\begin{itemize}
+  \item ``The operator must ensure that the correct navigation data are uploaded on flight management guidance system''; 
+  \item ``The operator should establish a system of verifying the quality of charts prepared by the service provider''; 
+  \item ``The operator should establish a system of checking the validity of the \gls{fms} \gls{database}''; and
+  \item ``Civil Aviation Authority of Nepal\index[locationidx]{Nepal} must ensure that raw \gls{information aeronautical} / data are provided by the aerodrome authorities taking into account of its \index{Accuracy Property}accuracy and \index{Integrity Property}\gls{integrity} requirements for \gls{aeronautical data} as specified by \gls{icao} Annex 15 and its \ecapitalisewords{\glsentrytext{information aeronautical}} Service Manual.''
+\end{itemize}
+
+This incident highlights the importance of three \index{Property!Data}\glspl{data property}: \index{Accuracy Property}\gls{accuracy}; \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property}}; and \dsiwgTextIT{\gls{verifiability}}\index{Verifiability Property}. All of these apply to data describing the runway's location.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://web.archive.org/web/20170709044727/http://www.tourism.gov.np/downloadfile/TUrKISH_AIrLINE_Final_report_finalcopy4.pdf}{http://www.tourism.gov.np/downloadfile/TUrKISH\_AIrLINE\_Final\_report\_finalcopy4.pdf} (accessed 29 November 2017 -- no longer available from this location, but on 9 January 2019 was still available through archive.org).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Dallas Hospital Ebola Incident\index{Ebola}} \index{Dallas Hospital}\index[locationidx]{USA!Texas!Dallas}\label{bkm:incacc:dallasebola}
+On 26th September 2014, a Dallas hospital\index{Dallas Hospital} mistakenly sent home a man who had the Ebola\index{Ebola} virus having missed what would have appeared to be an obvious potential case: a Liberian citizen with fever and abdominal pain who said he had recently travelled from Liberia. The man later returned to the hospital, was eventually diagnosed with the illness, but subsequently died. Two nurses that had treated the man also contracted the virus but later recovered.
+
+There have been mixed reports on the cause of the problem, but it is clear that external social phenomena such as the Ebola\index{Ebola} outbreak, which are outside the hospital's \gls{ehr}\index{Electronic Health record|see{EHr}}\index{EHR} system and processes, can change the safety significance of data held in the \gls{ehr}. If the importance of the data is not recognized and elevated appropriately in the support tools and processes, then the risk of unintended harm can increase. This conclusion is reinforced by system vendors who subsequently updated their systems to reflect the Ebola\index{Ebola} crisis in light of the Dallas\index{Dallas Hospital} incident.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} and \dsiwgTextIT{\gls{format}}{\index{Format Property}} \index{Property!Data}\glspl{data property}, in that \gls{information} about the Ebola\index{Ebola} outbreak was apparently either not available, or not available in a usable form, to decision makers.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://www.nbcnews.com/storyline/ebola-virus-outbreak/texas-hospital-makeschanges-after-ebola-patient-turned-away-n217296}{http://www.nbcnews.com/storyline/ebola-virus-outbreak/texas-hospital-makeschanges-after- ebola-patient-turned-away-n217296} (accessed 29 November 2017).} 
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Qantas Boeing 737 Take-Off} \index{Qantas}\index{Boeing 737}\label{bkm:incacc:qantastakeoff}
+On 1 August 2014, a \index{Qantas}Qantas \index{Boeing 737}Boeing 737-838 aircraft commenced take-off from Sydney\index[locationidx]{Australia!New South Wales!Sydney} Airport, New South Wales. The flight was a scheduled passenger service from Sydney\index[locationidx]{Australia!New South Wales!Sydney} to Darwin\index[locationidx]{Australia!Northern Territory!Darwin}, Northern Territory.
+
+While the aircraft was climbing to cruise level, a cabin crew member reported hearing a ``squeak'' during rotation. Suspecting a tail strike, the flight crew conducted the tail strike checklist and contacted the operator's maintenance support. With no indication of a tailstrike, they continued to Darwin\index[locationidx]{Australia!Northern Territory!Darwin} and landed normally. After landing, the captain noticed some paint was scraped off the protective tailskid. This indicated the aircraft's tail only just contacted the ground during take-off.
+
+The \gls{atsb} found the tail strike was the result of two independent and inadvertent data entry\index{Data!Entry} errors in calculating the take-off performance data\index{Performance Data}. As a result, the take-off weight used was 10 tonnes lower than the actual weight. This resulted in the take-off speeds and engine thrust setting calculated and used for the take-off being too low. Hence, when the aircraft was rotated, it overpitched and contacted the runway.
+
+The \gls{atsb} also identified that the \index{Qantas}Qantas procedure for conducting a check of the Vref40 speed could be misinterpreted. This negated the effectiveness of that check as a defence for identifying data entry\index{Data!Entry} errors. In this case, uncorrected errors affected the \index{Integrity Property}\gls{integrity} of the data used to calculate take-off parameters.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} and \dsiwgTextIT{\gls{verifiability}}\index{Verifiability Property} \index{Property!Data}\glspl{data property}, with respect to the data used to calculate take-off performance data\index{Performance Data}.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://www.atsb.gov.au/publications/investigation_reports/2014/aair/ao-2014-162.aspx}{http://www.atsb.gov.au/publications/investigation\_reports/2014/aair/ao-2014-162.aspx} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Qantas Boeing 737 Loading} \index{Qantas}\index{Boeing 737}\label{bkm:incacc:qantasloading}
+On 9 May 2014, a \index{Boeing 737}\index{Qantas}Qantas Boeing 737 was preparing for departure from Canberra\index[locationidx]{Australia!ACT!Canberra} to Perth\index[locationidx]{Australia!Western Australia!Perth}. There were 150 passengers, 87 of which were primary school children. These children were all seated together at the rear of the cabin. 
+
+A `name template' was completed by a travel agent on behalf of the school group. This group was travelling from Perth\index[locationidx]{Australia!Western Australia!Perth} to Canberra\index[locationidx]{Australia!ACT!Canberra} and returning back to Perth\index[locationidx]{Australia!Western Australia!Perth}. Despite being marked as mandatory, the ``Gender Description'' field in this template was left blank; options for this field were ``Adult'', ``Child'' and ``Infant''.
+
+As per company procedures, two days before the Perth-Canberra\index[locationidx]{Australia!Western Australia!Perth}\index[locationidx]{Australia!ACT!Canberra} leg of their journey this group was `advance accepted' into the booking system. Since the fields recording the number of children and young passengers in the group were blank, the Customer Service Agent assumed all of the group were adults. No loading-related issues were experienced during this flight.
+
+Two days before the return flight the group was again ``advance accepted'' as all adults. This meant they had all been assigned an `adult weight' of 87 kg. They were checked in at Canberra\index[locationidx]{Australia!ACT!Canberra} Airport and assigned seats at the rear of the aircraft. During take-off the aircraft appeared nose heavy. Significant back pressure was required to rotate the aircraft and lift off from the runway. The aircraft exceeded the calculated take-off safety speed by about 25 kt. The aircraft rose at a higher initial climb speed than usual, but the crew did not receive any warnings. No further issues were experienced during the flight.
+
+This incident demonstrates the importance of the \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} Data \index{Property!Data}y (i.e., ensuring that the mandatory ``Gender Description'' field was completed) and the \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} \index{Property!Data}\gls{data property} (i.e., ensuring the calculated aircraft loads and balances reflect the real situation). It also illustrates some potential difficulties associated with the use of default data.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://www.atsb.gov.au/publications/investigation_reports/2014/aair/ao-2014-088.aspx}{http://www.atsb.gov.au/publications/investigation\_reports/2014/aair/ao-2014-088.aspx} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Grounding of Navigator Scorpio\index{Navigator Scorpio}} \label{bkm:incacc:navscor}
+On 3 January 2014, the liquefied gas carrier \dsiwgTextIT{Navigator Scorpio}\index{Navigator Scorpio} ran aground on Haisborough Sand\index[locationidx]{North Sea!Haisborough Sand} in the North Sea. The vessel was undamaged, no pollution occurred and after two and a half hours the vessel refloated on the rising tide.
+
+The schedule for the \dsiwgTextIT{Navigator Scorpio}\index{Navigator Scorpio} was changed close to the time of its departure. This change meant that additional North Sea coastal charts were required. These charts were delivered to the vessel shortly before its departure. However, they were not up to date with the latest corrections and they were not corrected prior to sailing. In addition, the passage plan (i.e., vessel route) was not checked by the master before sailing.
+
+When the master checked the passage plan, which had been drawn up by the second officer (2/O), he suggested a change to a portion of the route. After discussion with the 2/O the route was left unchanged, but with a requirement that position fixes be obtained every five minutes rather than every fifteen. While acting as the sole bridge watch-keeper the 2/O was distracted by further passage planning activities and lost positional awareness. This led to the grounding of the vessel. After the grounding false \gls{information} was added to the navigation chart to give the appearance that five minute positional fixes had been taken.
+
+This incident highlights the importance of the \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property}} \index{Property!Data}\gls{data property}, with respect to both the additional North Sea charts and the master's check of the passage plan.
+
+In addition, the fluidity of the chart data allowed the 2/O to make false post-grounding additions to create an incorrect impression. According to the \glsfmtshort{maib}'s report, such actions are not uncommon. These actions affect the \dsiwgTextIT{\gls{verifiability}}\index{Verifiability Property} of the chart data, which makes post-accident investigations\index{Investigation!Incident / Accident} more complicated.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://assets.publishing.service.gov.uk/media/547c6f1740f0b6024100000d/NavigatorScorpio.pdf}{https://assets.publishing.service.gov.uk/media/547c6f1740f0b6024100000d/NavigatorScorpio.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Loss of MQ-9 reaper\index{MQ-9 Reaper}} \label{bkm:incacc:mq9reaper}
+On 5 December 2012, an MQ-9 reaperMQ-9 reaper remotely piloted aircraft crashed in an unpopulated area three miles north-east of Mount Irish\index[locationidx]{USA!Nevada!Mount Irish}, Douglas County, Nevada. The crash occurred due to a stall, which was the result of an unrecognized reverse thrust condition. The aircraft and a number of pieces of ancillary equipment were destroyed. The total damage to United States \index{Property!Government}government property was assessed at over \$9 million.
+
+The investigation\index{Investigation!Incident / Accident} board concluded that the throttle settings of the \gls{gcs} were incorrectly configured. This misconfiguration arose as the \gls{gcs} was converted from supporting MQ-1 operations to supporting MQ-9 operations. It persisted despite the presence of a checklist, the completion of which should have identified the error. The misconfiguration meant that reverse thrust was commanded whenever the pilot's throttle was in any position except full forward.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Consistency!Property}\gls{consistency}} \index{Property!Data}\gls{data property}, with respect to the differences between the \gls{gcs} settings and the aircraft it was meant to be controlling. It also highlights the importance of the \dsiwgTextIT{\gls{verifiability}}\index{Verifiability Property} \glspl{data property}, with respect to the \gls{gcs} settings (and, in particular, the limitations of using checklists to verify data).
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{http://www.airforcemag.com/AircraftAccidentreports/Documents/2013/120512_MQ-9_Nevada_full.pdf}{http://www.airforcemag.com/AircraftAccidentreports/Documents/2013/ 120512\_MQ-9\_Nevada\_full.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Boeing 737-33A at Chambery Airport, France} \index{Boeing 737}\index[locationidx]{France!Chambery}\label{bkm:incacc:737-33A} 
+On the 14 April 2012 and prior to departing Chambery\index[locationidx]{France!Chambery} Airport in France, the crew of a \index{Boeing 737}Boeing 737 used an Electronic Flight Bag (EFB) computer to calculate the aircraft’s take-off performance. During the use of the software application the commander omitted to input the aircraft’s take-off weight and it defaulted to the previous flight’s data. Compounding the issue was that none of the crew undertook a cross-check of the EFB’s output and the pilot subsequently employed incorrect speed and thrust \gls{information} for the take-off. The consequence of using the incorrect \gls{information} was that the calculation of the required airspeed for rotation was too low and the pilot continued to increase the aircraft’s pitch angle to the point whereby the tail hit the runway. There were no injuries sustained in this incident but the aircraft suffered damage.
+
+Following its investigation\index{Investigation!Incident / Accident}, which examined the wider employment of computers to derive aircraft performance \gls{information}, the Air Accident Investigation Branch (AAIB) identified that there had been ``a number'' of previous accidents and incidents attributable to the ``incorrect calculation of take-off performance''; and that due to the potential for degraded climb performance a catastrophic outcome could be envisaged. The AAIB also recognized that ``take-off under-performance'' is subtle and many other events of this nature may have been experienced but never reported. In its conclusions the AAIB acknowledged that using computers has ``brought about improvements in \gls{accuracy} and ease with which aircraft performance requirements can be made''. However, there are ``continued vulnerabilities'' associated with the use of incorrect data that it is essential to control through ``appropriately designed software and hardware''. Although there were no injuries in this instance, this incident and the conclusions of the AAIB highlight some important points for ``Safety-related \Gls{information} Systems''.
+
+A clear chain of events was established that involved the use of incorrect \gls{information} as a causal factor leading to an incident, which had the potential to be of a catastrophic nature;
+\begin{itemize}
+\item This was not an isolated incident;
+\item The crew did not appreciate the \gls{criticality} of the EFB’s \gls{information} and it was used without \gls{validation}; 
+\item The AAIB recognized the essential need for appropriate system development. 
+\end{itemize}
+
+It is often recognized that data must be up to date, but the explicit need to prevent the use of old data can be omitted from the \index{Safety requirement}safety requirements. This incident illustrates the importance of the \index{Property!Data}properties \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property}, \gls{suppression}\index{Suppression Property}} and \dsiwgTextIT{\gls{lifetime}\index{Lifetime Property}}. 
+
+\dsiwgTextBF{Links}
+    
+\begin{itemize}
+\item \raggedright{\dsiwgTextIT{Air Accident Investigation Branch April Bulletin 4/2013} [on line] available at \href{http://www.aaib.gov.uk/publications/bulletins/april_2013.cfm}{http://www.aaib.gov.uk/publications/bulletins/april\_2013.cfm} (accessed 17 January 2021).}
+\end{itemize}
+    
+\subsection{Loss of Hermes 450\index{Hermes 450}} \label{bkm:incacc:hermes450}
+On 2 October 2011, a Hermes 450 \gls{uas} crashed at Bastion Airfield\index[locationidx]{Afghanistan!Bastion Airfield}, Afghanistan. The aircraft was unrepairable.
+
+The aircraft sortie was terminated early due to rising engine temperature. Due to the presence of vehicles and people in the vicinity of the runway, the \gls{gtols} was selected to land the aircraft. Shortly after the approach had been initiated, the landing was self-aborted by the \gls{uas}. This abort occurred as a result of an incorrect data parameter in the \gls{gtols} set-up loaded by the crew.
+
+Moments after the self-abort, due to the urgency of the situation and the addition strain on the engine caused by the aborted landing, the crew chose to abbreviate the pre-programmed go-around \gls{gtols} route. Instead, they issued a `fly to coordinate' command. As the aircraft was climbing, the engine temperature rose rapidly, before the engine failed completely. On its descent the aircraft initially impacted an unoccupied hangar, before striking the ground upside down. It eventually came to rest on an empty aircraft dispersal pan.
+
+The Service Inquiry determined that the cause of the accident was engine failure, as a result of overheating caused by oil starvation. Like many incidents, there were a considerable number of interacting factors. In total, thirteen contributory factors were identified, including the error in the \gls{gtols} data.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} \index{Property!Data}\gls{data property}, with respect to the \gls{gtols} data loaded by the crew.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{https://www.gov.uk/government/publications/service-inquiry-investigating-the-accident-involving-unmanned-air-system-uas-hermes-450-zk515-on-02-oct-11}{https://www.gov.uk/government/publications/service-inquiry-investigating-the-accident-involving- unmanned-air-system-uas-hermes-450-zk515-on-02-oct-11} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Advocate Lutheran Hospital\index{Advocate Lutheran Hospital}} \label{bkm:incacc:advocatelutheran}
+A Chicago\index[locationidx]{USA!Illinois!Chicago} hospital paid \$8.25 million to settle a lawsuit brought by the parents of an infant boy who died at the institution in October 2010 after a series of medical errors.
+
+The mother gave birth to her son 4 months prematurely. She stayed by his side with her husband for the next six weeks while the boy remained in the hospital's care. On 15 October, the baby suddenly died after coming out of a heart operation without any clear complications.
+
+The hospital determined that a pharmacy technician had entered \gls{information} incorrectly when processing an electronic \gls{iv} order for the baby. This resulted in an automated machine preparing an \gls{iv} solution containing a massive overdose of sodium chloride, more than 60 times the amount ordered. The problem would have been identified by automated alerts in the \gls{iv} compounding machine, but these were not activated when the customised bag was prepared for the baby. That is, \gls{adaptation data}\index{Adaptation Data} had been used to change the behaviour of the machine.
+
+Investigations\index{Investigation!Incident / Accident} also found that the outermost label on the \gls{iv} bag administered to the baby did not reflect its actual contents. Furthermore, although a blood test on the infant had shown abnormally high sodium levels, a lab technician assumed the reading was inaccurate. This highlights a different perspective on the dangers of defaulting, in this case a default assumption rather than a numerical default value.
+
+Since the incident, staff have been activating alerts for similar \gls{iv} compounders used in the system's hospitals and strengthened ``double check'' policies for all medications leaving pharmacies.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} and \dsiwgTextIT{\gls{verifiability}} \index{Verifiability Property}\glspl{data property}, for example with regard to: the \gls{information} in the \gls{iv} order; the bag label; and the blood test results.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://articles.chicagotribune.com/2012-04-05/news/chi-parents-awarded-825-million-in-infants-death-20120405_1_clear-complications-lab-technician-double-check-policies}{http://articles.chicagotribune.com/2012-04-05/news/chi-parents-awarded-825-million-in-infants- death-20120405\_1\_clear-complications-lab-technician-double-check-policies} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Grounding of Sichem Osprey}\index{Sichem Osprey} \label{bkm:incacc:sichemosprey}
+On 10 February 2010 at 0436 (local), the chemical tanker \dsiwgTextIT{Sichem Osprey}\index{Sichem Osprey}, on her way from Panama\index[locationidx]{Panama} to Ulsan\index[locationidx]{South Korea!Ulsan} (South Korea) stranded at more than 16 knots on the north-easterly part of Clipperton Island\index[locationidx]{France!Clipperton Island}. An \gls{oow} and a lookout were on the bridge at the time and no damage had been reported prior to the accident. A 100 metre fore part of the vessel had been grounded. No pollution was observed.
+
+Anti-collision radar alarm thresholds were apparently not set according to the Captain's instructions. There were also sizeable discrepancies between the fixes plotted on the chart and those displayed on the radar.
+
+This incident highlights the role of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} \index{Property!Data}\gls{data property}, with respect to the chart plots, and the \index{Accuracy Property}\gls{accuracy} \index{Property!Data}\gls{data property}, with respect to the alarm thresholds which did not reflect the Captain's wishes.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{https://www.nautinst.org/download.cfm?docid=F9DA081F-6C1E-40F0-A71F0A89B10F426C}{https://www.nautinst.org/download.cfm?docid=F9DA081F-6C1E-40F0-A71F0A89B10F426C} (accessed 5 December 2017).}
+  \item \raggedright{\href{http://www.bea-mer.developpement-durable.gouv.fr/IMG/pdf/rET_SICHEM_OSPrEY_05-2010_Site.pdf}{http://www.bea-mer.developpement-durable.gouv.fr/IMG/pdf/rET\_SICHEM\_OSPrEY\_05-2010\_\\Site.pdf} (in French) (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Near Collision of Trains, Cootamundra}\index[locationidx]{Australia!New South Wales!Cootamundra} \label{bkm:incacc:cootamundra}
+On 12 November 2009, a passenger train was being routed into Number 1 Platform road at Cootamundra\index[locationidx]{Australia!New South Wales!Cootamundra}, New South Wales. The driver of the passenger train received a signal\index{Signalling, Railway} indicating that the route was clear. However, as he approached, he noticed that the last wagon of a freight train was blocking his path. He applied the train brakes and stopped just short of a collision.
+
+The investigation\index{Investigation!Incident / Accident} determined that a signalling system\index{Signalling, Railway}\index{Railway Signalling|see{Signalling, Railway}} design error had allowed the incorrect signal\index{Signalling, Railway} to occur. The error happened despite the staff involved being suitably qualified and experienced. Working against a tight timescale, they were simultaneously developing a control table and associated software, rather than adopting the normal sequential approach. The control table contains \gls{information} on points, signal\index{Signalling, Railway} and level crossing interlocking logic. The tight timescale also compromised the normal testing process. In addition, the quality control process was somewhat lacking: for example, not all identified queries and issues were appropriately closed out.
+
+This incident illustrates the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} \index{Property!Data}\gls{data property}, with respect to the control table data, and the \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} \index{Property!Data}\gls{data property}, with respect to data produced by the testing and the quality control processes.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{http://www.atsb.gov.au/publications/investigation_reports/2009/rair/ro-2009-009.aspx}{http://www.atsb.gov.au/publications/investigation\_reports/2009/rair/ro-2009-009.aspx} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+%\clearpage
+\subsection{\protect Cedars-Sinai Medical Center\protect\index{Cedars-Sinai Medical Center} Scanner} \label{bkm:incacc:cedarssinai}
+A software misconfiguration\index{Data!Configuration} in a \gls{ct} scanner used for brain perfusion scanning at Cedar Sinai Medical Center\index{Cedars-Sinai Medical Center} in Los Angeles\index[locationidx]{USA!California!Los Angeles}, California, resulted in 206 patients receiving radiation doses approximately eight times higher than intended. This error persisted for an 18 month period, starting in February 2008. Some patients reported temporary hair loss and erythema. 
+
+The problem reportedly arose from an error made by the hospital in resetting the \gls{ct} machine after it began using a new protocol for the procedure in February 2008. The error was not detected until one of the patients reported patchy hair loss in August 2009. ``There was a misunderstanding about an embedded default setting applied by the machine,'' according to a statement from Cedars-Sinai. ``As a result, the use of this protocol resulted in a higher than expected amount of radiation.'' 
+
+This incident highlights the importance of the \dsiwgTextIT{\gls{verifiability}} \index{Verifiability Property}\gls{data property}, especially with regards to default (and \gls{adaptation data}\index{Adaptation Data}).
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://articles.latimes.com/2009/oct/10/local/me-cedars-sinai10}{http://articles.latimes.com/2009/oct/10/local/me-cedars-sinai10} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Grounding of The Pride of Canterbury\index{Pride of Canterbury}} \label{bkm:incacc:canterbury}
+On 31 January 2008, the roll-on roll-off passenger ferry, \dsiwgTextIT{Pride of Canterbury}\index{Pride of Canterbury} grounded on a charted wreck while sheltering from heavy weather in an area known as `The Downs' off Deal\index[locationidx]{United Kingdom!England!Deal}, Kent. The vessel suffered severe damage to her port propeller system but was able to proceed unaided to Dover\index[locationidx]{United Kingdom!England!Dover}, where she berthed with the assistance of two tugs.
+
+The vessel had been in the area for over 4 hours when, while approaching a turn at the northern extremity, the bridge team became distracted by a fire alarm and a number of telephone calls for \gls{information} of a non-navigational nature. The vessel overshot the northern limit of the identified safe area before the turn was started. The \gls{oow} became aware that the vessel was passing close to a charted shoal, but he was unaware that there was a charted wreck on the shoal. The officer was navigating by eye and with reference to an \gls{ecs} which was sited prominently at the front of the bridge, but he was untrained in the use and limitations of the system. The wreck would not have been displayed on the electronic chart due to the user settings in use at the time. A paper chart was available, but positions had only been plotted on it sporadically and it was not referred to at the crucial time.
+
+Although the \gls{vms} was loaded with \glspl{enc} for the vessel's area of operation, the system had not been approved by the \gls{mca} as the owner's policy was for the \gls{vms} to be used as an aid to navigation only, with \dsiwgTextIT{Pride of Canterbury}'s\index{Pride of Canterbury} paper charts being used as the primary means for navigation. relevant admiralty charts were supplied to the vessel for this purpose.
+
+Despite the \gls{vms} being unapproved for use as the primary means of navigation, the officers on \dsiwgTextIT{Pride of Canterbury}\index{Pride of Canterbury} were apparently using it as if it was. Furthermore, many of the officers, including the Chief Officer, who was in charge at the time of the accident, were not fully trained in the use of the system.
+
+This incident highlights the importance of the \index{Accuracy Property}\gls{accuracy} \index{Property!Data}\gls{data property}, with regards to the \gls{information} displayed on the electronic chart. It also highlights the importance of the \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} \index{Property!Data}\gls{data property}, with regards to training\index{Training!Personnel} (and training\index{Training!Personnel} records) and the \dsiwgTextIT{\gls{intended_destination}} \index{Property!Data}\gls{data property}, with regards to the inappropriate use of the \gls{vms} data.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://assets.publishing.service.gov.uk/media/547c700ded915d4c0d000071/PrideofCanterburyreport.pdf}{https://assets.publishing.service.gov.uk/media/547c700ded915d4c0d000071/ PrideofCanterburyreport.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{LOT Flight 282}\index{LOT Flight 282} \label{bkm:incacc:lot282}
+On 4 June 2007, just after take-off from runway 09r at \gls{lhr}\index[locationidx]{United Kingdom!England!London Heathrow Airport}, the pilots noticed that most of the \gls{information} on both of the Electronic Attitude Director Indicators and Electronic Horizontal Situation Indicators had disappeared. The aircraft entered \gls{imc} at about 1,500 feet \gls{aal}, and the co-pilot had no option but to fly using the standby attitude indicator and standby compass. He experienced difficulty in following radar headings. The aircraft returned to land at \gls{lhr}\index{LHR|see{United Kingdom, England, London Heathrow Airport in location index}} after a flight of 27 minutes.
+
+A single error made by the co-pilot during the pre-flight preparation caused the subsequent problems. This was the use of `E' instead of `W' when the longitude coordinates were entered into the \gls{fms}.
+
+The airports around London\index[locationidx]{United Kingdom!England!London}, because of their proximity to the Prime Meridian, can lead flight crews to make coordinate entry errors of this nature. It is of note that the operator's route network is such that there are few destinations to the west of the Prime Meridian and hence the majority of longitude coordinates that need to be entered would be eastings. \gls{irs} alignment warnings should have alerted the crew but may have been dismissed.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} and \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} \index{Property!Data}\glspl{data property}, specifically with respect to coordinates.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/384859/Bulletin_6-2008.pdf}{https://www.gov.uk/government/uploads/system/uploads/attachment\_data/file/384859/ Bulletin\_6-2008.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+\subsection{Annabella Container Ship -- Baltic Sea} \index{Annabella}\index[locationidx]{Baltic Sea}\label{bkm:incacc:annabella}
+On the evening of the 25 June 2007 the container ship the Annabella\index{Annabella} was subjected to heavy seas causing the vessel to pitch and roll heavily. The following morning the ship’s crew discovered that, due to the induced stresses, a ``stack of seven 30 ft cargo containers'' had collapsed resulting in crushing damage to the lowest containers. A number of these containers were transporting Class 2 Dangerous Goods in the form of Butylene\index{Butylene} gas.
+ 
+The Marine Accident Investigation Branch\index{Investigation!Incident / Accident} (\glsfmtshort{maib}) concluded that the container stack had been ``piled too high both for the particular hold location and the stacking limits of the containers''. The \glsfmtshort{maib} identified that one of the incident’s contributing factors had been an incorrect loading plan which had been produced by planning software used by the cargo company. The software application should have taken account of the stability and stowage \gls{information} pertinent to the vessel (as provided by its manufacturer). The application, however, had unknowingly converted the container’s dimensions from 30 ft to 40ft resulting in the wrong stacking limits being detailed. The cargo company passed the loading plan to the shipping terminal prior to it being inputted to the vessel’s on-board loading computer. The computer did not recognize the error and the 40 ft limits were applied. Amongst the \glsfmtshort{maib}’s conclusions it was noted that, although the master is responsible for the final loading plan, appropriate oversight is difficult in practice in light of the ``pace of modern container operations''. The \glsfmtshort{maib} made the following recommendations in relation to the \gls{information} system:
+\begin{itemize}
+\item Loading computer programs should incorporate the full requirements of a vessel’s cargo securing manual and be properly approved to ensure that officers can place full reliance on the \gls{information} provided;
+\item The \index{Availability Property}\gls{availability} of a reliable and approved loading computer programme is a factor to be considered in determining an appropriate level of manning for vessels on intensive schedules; 
+\item Cargo planning software should be able to recognize and alert planners to the consequences of variable data, such as non-standard container specifications.
+\end{itemize}
+
+This incident involved incorrect data, that could have been identified if the software had highlighted the unusual aspects of the data such as the container dimensions to the operator. From a data perspective, the \index{Property!Data}properties that needed to be maintained were \dsiwgTextIT{\index{Integrity Property}\gls{integrity}, \gls{verifiability}}\index{Verifiability Property} and \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}.}
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+\item Marine Accident Investigation Branch report 21 -- \dsiwgTextIT{report on the Investigation of the Collapse of Cargo Containers Annabella Baltic Sea 26 February 2007} [online] available at \href{https://assets.publishing.service.gov.uk/media/547c7032e5274a429000007d/Annabellareport.pdf}{https://assets.publishing.service.gov.uk/media/547c7032e5274a429000007d/Annabellareport.pdf} (accessed 17 January 2021).
+\end{itemize}
+
+\subsection{Comair Flight 5191}\index{Comair Flight 5191} \label{bkm:incacc:comair5191}
+On 27th August 2006, Comair flight 5191\index{Comair Flight 5191} crashed during take-off from Blue Grass Airport, Lexington\index[locationidx]{USA!Kentucky!Lexington}, Kentucky. The flight crew was instructed to take off from runway 22, but instead lined up on runway 26 and began the take-off roll. The airplane ran off the end of the runway and impacted the airport perimeter fence, trees, and terrain. The captain, flight attendant and 47 passengers were killed.
+
+The National Transportation Safety Board determined that the probable cause of the accident was the flight crews' failure to use available cues and aids to identify the airplane's location on the airport surface during taxi and their failure to cross-check and verify that the airplane was on the correct runway before take-off.
+
+The Airport Charts used by the crew were inaccurate. The airport was under construction, and the charts were not kept current with the rapid changes that were taking place during the construction work. The chart did not accurately reflect either the taxiway identifiers or a taxiway that was closed on the day of the accident.
+
+Due to a previously unrecognized software problem, any \gls{information} the chart provider received after normal work hours on Fridays was not included in their regular updates. Furthermore, the chart provider modified the Blue Grass Airport chart after the accident to include a note that runway 8/26 is ``daytime \glsxtrshort{vmc}\footnote{\glsxtrlong{vmc}} use only'', even though this \gls{information} had been published since 2001. Additionally there was a local \gls{notam} issued advising of taxiway closures due to construction work. However the crew was not provided with this \gls{information} in their dispatch paperwork.
+
+This incident highlights the importance of the \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property}} \index{Property!Data}\gls{data property}, specifically with regards to the charts. The \dsiwgTextIT{\index{Completeness!Property}\gls{completeness}} \index{Property!Data}\gls{data property} is also relevant, given that neither the ``after hours'' changes on Fridays nor the local \gls{notam} were communicated appropriately.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://libraryonline.erau.edu/online-full-text/ntsb/aircraft-accident-reports/AAr07-05.pdf}{http://libraryonline.erau.edu/online-full-text/ntsb/aircraft-accident-reports/AAr07-05.pdf} (accessed 29 November 2017).}
+	\item \raggedright{\href{http://en.wikipedia.org/wiki/Comair_Flight_5191}{http://en.wikipedia.org/wiki/Comair\_Flight\_5191} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{\"Uberlingen Mid-Air Collision}\index[locationidx]{Switzerland!Uberlingen} \label{bkm:incacc:uberlingen}
+On 1 July 2002, a passenger jet (Bashkirian Airlines\index{Bashkirian Airlines Flight 2937}) and a cargo jet (DHL Flight 611\index{DHL Flight 611}) collided in mid-air. The collision happened over the south German town of \"Uberlingen\index[locationidx]{Switzerland!{\"Uberlingen}}; it occurred despite both aircraft being equipped with \gls{tcas}.
+
+The two aircraft were in airspace that was controlled from Z\"urich\index[locationidx]{Swizerland!Z\"urich} and were on a collision course. A single controller was on duty and they were responsible for controlling two workstations. This arrangement was against regulations, but was tolerated by management and had become accepted practice. Initially, the controller did not appreciate the dangerous situation that was developing.
+
+Maintenance was being conducted on the main radar system, which meant that the controller was reliant on a backup system. This delayed the presentation of radar \gls{information}. In addition, a ground-based optical system that would have provided warning of the impending collision was turned off, also for maintenance: the controller was unaware of this.
+
+Less than a minute before the collision the controller became aware of the situation. He instructed Flight 2937 to descend\index{Bashkirian Airlines Flight 2937}. Seconds after initiating this decent, the \gls{tcas} on Flight 2937\index{Bashkirian Airlines Flight 2937} requested a climb, with the corresponding system on Flight 611\index{DHL Flight 611} requesting a descent. Flight 2937\index{Bashkirian Airlines Flight 2937} continued to follow the controller's direction, meaning that both aircraft were descending.
+
+Unaware of the \gls{tcas} instructions the controller repeated the request for Flight 2937\index{Bashkirian Airlines Flight 2937} to descend; he also provided Flight 2937 with misleading \gls{information} on the relative location of Flight 611\index{{DHL Flight 611}}. The planes collided, resulting in the deaths of all 69 people on Flight 2937\index{Bashkirian Airlines Flight 2937} and both people on Flight 611\index{Bashkirian Airlines Flight 2937}.
+
+One of the actions resulting from the accident was a clarification from \gls{icao} of how pilots should respond to contradictory \gls{information} from a controller and \gls{tcas}.
+
+This incident illustrates the importance of the following \index{Property!Data}\glspl{data property}: \dsiwgTextIT{\index{Consistency!Property}\gls{consistency}}, with regards to the instructions provided to Flight 2937; \dsiwgTextIT{\index{Availability Property}\gls{availability}}, with regards to \gls{information} from the ground-based optical system; and \dsiwgTextIT{\gls{timeliness}\index{Timeliness Property}}, with regards to \gls{information} from the radar system.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{https://en.wikipedia.org/wiki/\%C3\%9Cberlingen_mid-air_collision}{https://en.wikipedia.org/wiki/\"Uberlingen\_mid-air\_collision} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+\subsection{Fort Drum Artillery Incident} \index[locationidx]{USA!New York!Fort Drum}\label{bkm:incacc:fortdrum}
+Two artillery shells were fired more than a mile off target during an Army firing exercise at Fort Drum\index[locationidx]{USA!New York!Fort Drum} in Northern New York\index[locationidx]{USA!New York!New York} in March 2002. The shells landed near a mess tent where a Battalion were having breakfast. Two soldiers were killed, 13 were injured. 
+
+The initial artillery site was unsuitable so the unit had to move to a different location nearly a mile away. The unit then had trouble setting up its digital and wire communications. The movement of the unit was not taken into account when programming the firing coordinates. Also, in what was termed a `software behavioural shortfall' the system was designed to reset the gun elevation to zero. The correct altitude for the new site was not entered into the safety calculations, and the mistakes were not captured by the data review process.
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} and \dsiwgTextIT{\gls{verifiability}}\index{Verifiability Property} \glspl{data property}, specifically with respect to the location and elevation data.
+
+\dsiwgTextBF{Sources}
+\begin{itemize}
+	\item \raggedright{\href{http://www.apnewsarchive.com/2002/Army-reports-on-Ft-Drum-Accident/id-539bf2ea24b8dd66009c6efee2be926c}{http://www.apnewsarchive.com/2002/Army-reports-on-Ft-Drum-Accident/id- 539bf2ea24b8dd66009c6efee2be926c} (accessed 29 November 2017).}
+\end{itemize}
+
+
+\subsection{Early Release from Washington State Prison\index{Washington State Prison}} \label{bkm:incacc:washprison}
+For over 13 years the Washington State\index[locationidx]{USA!Washington State} \gls{doc} had been releasing certain prison inmates earlier than their sentences allowed.
+
+In 2002 the Supreme Court ruled that the \gls{doc} was erroneously denying offenders credit for early release time earned during pre-sentence detention. In attempting to address that issue the \gls{doc} incorrectly reprogrammed its computer tracking system. This resulted in the early release of offenders with sentencing enhancements. The programming error went undetected for over ten years, with more than 2,000 offenders being released early.
+
+The error was detected when the family of an assault victim hand-calculated the assailant's release date. The family notified the \gls{doc} that it appeared as if the assailant would be released earlier than warranted by statute. It took a further three years before the programming error was finally corrected.
+
+This incident illustrates the importance of the \dsiwgTextIT{\index{Integrity Property}\gls{integrity}} \index{Property!Data}\gls{data property}, with respect to calculated release dates. The \dsiwgTextIT{\gls{verifiability}} \index{Verifiability Property}\gls{data property} is also relevant, noting that the calculation of the release date was readily verifiable (as shown by the actions of the family of the assault victim).
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{http://www.governor.wa.gov/sites/default/files/documents/2016-02-25_DOC_report.pdf}{http://www.governor.wa.gov/sites/default/files/documents/2016-02-25\_DOC\_report.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+
+% \clearpage
+\subsection{Mars Climate Orbiter}\index[locationidx]{Mars!Climate Orbiter} \label{bkm:incacc:marsclimate}
+The Mars Climate Orbiter was a spacecraft launched aboard a Delta II rocket by NASA\index{NASA} from Cape Canaveral on 11th December 1998. Its intended mission was to study the Martian atmosphere and climate, while acting as a communications relay for other spacecraft on or near Mars.
+
+The plan was that the rocket would place the spacecraft into a transfer orbit to Mars, which would be optimized along the way by a series of four trajectory correction manoeuvres. Insertion into Mars orbit was to take place at an altitude of 226 km, but during the week after the final correction manoeuvre, calculations predicted that it would be between 150 km and 170 km; revised to 110 km the day before insertion. The orbiter was able to survive atmospheric stresses down to about 80 km. On 23rd December 1999, the spacecraft passed behind Mars, and so out of radio contact, earlier than expected; communications were never regained.
+
+Final calculations placed the spacecraft in a trajectory that would have taken it within 57 km of the Martian surface, but it is likely to have disintegrated before getting to that point. 
+
+It transpires that the orbiter's \gls{fms} software was designed to work with metric Newton seconds, whereas a \gls{fms} data file generated by ground system software used pound-force seconds. A Newton is about 22.5\% of a pound-force or a factor of 4.45.
+
+The cost of the mission was stated by NASA\index{NASA} to have been \$327.6 million in total (\$193.1 million to develop the spacecraft, \$91.7 million for launch and \$42.8 million for mission operations). 
+
+This incident highlights the importance of the \dsiwgTextIT{\index{Consistency!Property}\gls{consistency}} \index{Property!Data}\gls{data property}.
+
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://en.wikipedia.org/wiki/Mars_Climate_Orbiter}{http://en.wikipedia.org/wiki/Mars\_Climate\_Orbiter} (accessed 29 November 2017).}
+\end{itemize}
+
+
+\subsection{Crash into Nimitz Hill, Guam \label{bkm:incacc:nimitzhill}}
+On 6 August 1997, Korean Air Flight 801\index{Korean Air Flight 801} crashed at Nimitz Hill\index[locationidx]{Guam!Nimitz Hill}, Guam. This is high terrain approximately 3 miles southwest of Guam International Airport\index[locationidx]{Guam!International Airport}, where the aircraft had been cleared to land. Of the 254 people on board, 228 were killed and 26 survived with serious injuries.
+
+Probable causes of the accident were the captain's failure to adequately brief and execute a non-precision approach and the first officer's and flight engineer's failure to effectively monitor and cross-check this approach. Contributing factors included fatigue and inadequate flight crew training\index{Training!Personnel}.
+
+Another contributing factor was the intentional inhibition by the \gls{faa} of the \gls{msaw} system at Guam\index[locationidx]{Guam}, and the agency's failure to adequately manage the system.
+
+The \gls{msaw} system uses a terrain \gls{database}. It is designed to alert a controller if an aircraft equipped with a Mode C transponder descends below, or is predicted to descend below, a predetermined safe altitude.
+
+In 1990, the Guam\index[locationidx]{Guam} terminal \gls{msaw} was installed to provide protection within a 55~nm radius. In 1993, a new software package was produced in which warnings were inhibited within a 54~nm radius; this left a 1~nm annular region within which warnings could be generated. The motivation behind the new configuration was to reduce false alarms. The software became operational in February 1995. A further software update became operational in April 1996. This also had the 54~nm inhibition.
+
+This incident illustrates the importance of the \dsiwgTextIT{\index{Continuity Property}\gls{continuity} \index{Property!Data}}\gls{data property}, with respect to the \gls{msaw} coverage, and the \dsiwgTextIT{\index{Fidelity / Representation Property}\gls{fidelity}} \index{Property!Data}\gls{data property},
+regarding
+the terrain \gls{database} used by the \gls{msaw} system.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+	\item \raggedright{\href{https://www.ntsb.gov/investigations/Accidentreports/reports/AAr0001.pdf}{https://www.ntsb.gov/investigations/Accidentreports/reports/AAr0001.pdf} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+\subsection{San Bernardino Derailment and Pipeline Rupture} \index[locationidx]{USA!California!San Bernardino}\label{bkm:incacc:sanbernardino}
+In May 1989 a Southern Pacific Transportation Company\index{Southern Pacific Transportation Company} freight train derailed in San Bernardino\index[locationidx]{USA!California!San Bernardino}, California. The train derailment accounted for seven fatalities and two serious injuries; however, that accident also damaged a fuel pipe and less than a fortnight later it ruptured causing a further two deaths and three serious injuries.
+
+One of the causal factors of the train’s derailment, as reported by the National Transportation Safety Board, was a ``failure to determine the weight of the train'' and in summary, the operator thought it weighed less than it actually did, resulting in the dynamic braking being insufficient to deal with the downhill gradient it was travelling on. The Company\index{Southern Pacific Transportation Company} had used a computer to determine the train’s weight and because the actual weights had not been entered the system made its calculations based upon estimated weights, which were lower. Clearly this was not a systematic failure of the computation algorithm but again potentially a failure to appreciate the \gls{criticality} of the weight \gls{information} and its potential as a causal factor within an accident sequence.
+
+From the \gls{criticality} of the weight \gls{information}, \index{Safety Requirement!Data!Derived}derived safety requirements could be developed for the various data sources that were used to derive the weight. Such requirements could be expected to highlight the \index{Property!Data}properties of \index{Integrity Property}\gls{integrity}, \index{Completeness!Property}\gls{completeness}, \index{Accuracy Property}\gls{accuracy}, \gls{timeliness}\index{Timeliness Property}, \gls{verifiability}\index{Verifiability Property}, \index{Fidelity / Representation Property}\gls{fidelity} and \gls{lifetime}\index{Lifetime Property}.
+
+T Hardy, \dsiwgTextIT{Software and System Safety -- Accidents, Incidents and Lessons Learned,} Bloomington, Author House, 2012, ISBN 978-1-4685-7470-8
+
+\subsection{Lake Peigneur Drilling Accident} \index[locationidx]{USA!Louisiana!Lake Peigneur}\label{bkm:incacc:peigneur}
+Lake Peigneur\index[locationidx]{USA!Louisiana!Lake Peigneur} is located in Louisiana, United States of America. It was a ten-foot deep freshwater lake popular with sportsmen. On 20th November 1980, an exploration rig drilling for oil in the lake bed was evacuated as it began to sink; this was perceived by the crew as a structural collapse. Meanwhile, the nearby Jefferson Island salt mine was being evacuated due to the sudden onset of flooding. 
+
+The rig crew had been drilling a test well into deposits alongside a salt dome under Lake Peigneur\index[locationidx]{USA!Louisiana!Lake Peigneur}. By some miscalculation, the assembly drilled into the third level of the nearby salt mine. Fresh water from the lake soon began trickling into the mine. Over the course of the morning, the fresh lake water began dissolving the salt and enlarging the hole until water was literally flooding into the mine.
+
+The whirlpool created as the lake drained into the mine sucked in the drilling platform, eleven barges, trees and soil. The Delcambre Canal\index[locationidx]{USA!Louisiana!Delcambre Canal}, which usually drains from the lake into a bay on the Gulf of Mexico\index[locationidx]{Gulf of Mexico}, had its flow reversed. This resulted in Lake Peigneur\index[locationidx]{USA!Louisiana!Lake Peigneur} becoming a salt water lake. Fortunately, no injuries or loss of human life were reported. 
+
+Federal experts from the Mine Safety and Health Administration were not able to determine the cause of the accident due to confusion over whether the rig was drilling in the wrong place or whether the mine's maps were inaccurate.
+
+This incident highlights the importance of the \dsiwgTextIT{\gls{verifiability}} \index{Verifiability Property}\gls{data property}, specifically with regards to the location of the rig. Note that this property was relevant both when the rig started to drill and also during the post-incident investigation\index{Investigation!Incident / Accident}.
+
+\begin{samepage}
+\dsiwgTextBF{Links}
+\begin{itemize}
+  \item \raggedright{\href{http://en.wikipedia.org/wiki/Lake_Peigneur}{http://en.wikipedia.org/wiki/Lake\_Peigneur} (accessed 29 November 2017).}
+\end{itemize}
+\end{samepage}
+
+

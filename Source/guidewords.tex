@@ -1,0 +1,106 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   HAZOP Guidewords section.
+%
+%================================================================================
+\section{\glsfmtshort{hazop} Guidewords -- Detail (Informative)} \label{bkm:guidewords}
+
+\dsiwgSectionQuote{I don't see the logic of rejecting data just because they seem incredible.}{Fred Hoyle}
+
+\autoref{tab:HazopFull}
+expands upon the \gls{hazop} guidewords presented in \autoref{tab:HazopShort} by adding data considerations which may be helpful in determining how to apply the guidewords to a specific instance of a \index{Property!Data}property.
+
+\begin{longtable}{|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.28}}|L{\dsiwgColumnWidth{0.20}}|L{\dsiwgColumnWidth{0.35}}|}
+  \caption{\glsfmtshort{hazop} guidewords: detailed definitions}
+  \label{tab:HazopFull}
+  \\\hline\TableHeadColour{Property} & \TableHeadColour{Description} & \TableHeadColour{\glsfmtshort{hazop} Data Guidewords} & \TableHeadColour{\glsfmtshort{hazop} Data Considerations}\\\hline
+  \endfirsthead
+  \caption[]{\glsfmtshort{hazop} guidewords: detailed definitions (continued)}
+  \\\hline\TableHeadColour{Property} & \TableHeadColour{Description} & \TableHeadColour{\glsfmtshort{hazop} Data Guidewords} & \TableHeadColour{\glsfmtshort{hazop} Data Considerations}\\\hline
+  \endhead
+% * <dave.banham@rolls-royce.com> 2018-06-29T15:01:24.767Z:
+% 
+% Swapped the Data Considerations and Data Guideword column headings
+% 
+% ^ <dave.banham@rolls-royce.com> 2018-06-29T15:02:22.750Z.
+  \multicolumn{4}{r}{\sl Continued on next page}
+  \endfoot\endlastfoot
+  \index{Integrity Property}\Gls{integrity} & The data is correct, true and unaltered & Loss, partial loss, incorrect, multiple & \Gls{correctness}, truth, original, trustworthy, coherency, stability, perfect, unquestionable, faithful, certain, ordered, unadulterated, unmodified, unchanged, clean, uncontaminated, untainted, proper, flawless, organized, exact, undistorted, faultless, guided, connected, linked, traced, unbiased.\\
+  \hline
+  \index{Completeness!Property}\Gls{completeness} &
+  The data has nothing missing or lost &
+  Loss, partial loss, incorrect, multiple, insufficient &
+  Whole, complete, entire, finished, done, stable, qualified, certified.\\
+  \hline
+  \Gls{consistency} & The data adheres to a common world view, e.g., units & Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence & Coherent, compatible, congruent, congruous, harmonious, deconflicted, consistent, appropriate, suitable, sound, cleansed.\\
+  \hline
+  \index{Continuity Property}\Gls{continuity} & The data is continuous and regular without gaps or breaks & Loss, partial loss, incorrect, late, loss of sequence & Smooth, continuous, regular, gapless, whole, complete, entire, unfragmented.\\
+  \hline
+  \Gls{format}{\index{Format Property}} & The data is represented in a way which is readable by those that need to use it & Loss, partial loss, incorrect, multiple & Conformant, suitable, valid, configured, well-formed, set-up, composed, well structured, arranged, compliant, organized, exact, unaliased, migrated, transformed.\\
+  \hline
+  \index{Accuracy Property}\Gls{accuracy} &
+  The data has sufficient detail for its intended use &
+  Loss, partial loss, incorrect, multiple, insufficient &
+  Accurate, true, correct, undistorted, unbiased, faultless.\\
+  \hline
+  \Gls{resolution} &
+  The smallest difference between two adjacent values that can be represented in a data storage, display or transfer system &
+  Loss, partial loss, incorrect, multiple, insufficient &
+  Exact, untruncated, retention of detail, clarity, determination, distinguishable, clear, within range, distinct, separated, discernible, discriminatable, unconfused, divisible, unaliased, granularity, precision.\\
+  \hline
+  \Gls{traceability} & The data can be linked back to its source or derivation & Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence & Traceable, verifiable, indexed, linked, connected, justified, proven, evidenced, substantiated, continuous, unfragmented, complete, networked.\\
+  \hline
+  \Gls{timeliness}\index{Timeliness Property} & The data is as up to date as required & Loss, partial loss & Timely, early, ready, expected, unique, appropriate, opportune, ordered, organized, anticipated, seasonable, converging, settling, on-time, latency, lag, lead time, time slots, real-time, determinism, predictable.\\
+  \hline
+  \Gls{verifiability}\index{Verifiability Property} & The data can be checked and its \index{Property!Data}properties demonstrated to be correct & Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence & Verifiable, provable, checkable, supportable, demonstrable, sustainable, certifiable, defensible, excusable, justifiable, undisputable, irrefutable, validated.\\
+  \hline
+  \index{Availability Property}\Gls{availability} & The data is accessible and usable when an authorized entity demands access & Loss,
+  partial loss, multiple, too early, too late & Ready, available, obtainable, reachable, accessible, serviceable, operable, functional, usable, capable, released, issued, disseminated, distributed.\\
+  \hline
+  \index{Fidelity / Representation Property}\Gls{fidelity} & How well the data maps to the real-world entity it is trying to model & Loss, partial loss, incorrect, multiple, too early, too late & Representative, accurate, faithful, trustworthy, characteristic, normal, standard, real, expected, natural, typical, regular, fit for purpose, validated, separable, associated, correct units / dimensions, stable, unbiased.\\
+  \hline
+  \Gls{priority} & The data is presented / transmitted / made available in the order required & Loss, partial loss, incorrect, multiple, too early, too late & Current, ordered, included, precedence, hierarchy, pre-eminence, retained, ahead, readiness.\\
+  \hline
+  \Gls{sequencing}\index{Sequencing, Data} & The data is preserved in the order required & Loss, partial loss, incorrect, multiple & Ordered, contiguous, unique, ordered, clear, continuous, successive, uninterrupted, sequential.\\
+  \hline
+  \Gls{intended_destination}\index{Intended Destination / Usage Property} & The data is only sent to those that should have it & Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence & Directed, delivered, copied, sent, transmitted, correct recipient, unintercepted, unseen, integral, received, acknowledged, forwarded, filtered.\\
+  \hline
+  \Gls{accessibility}\index{Accessibility Property} & The data is visible only to those that should see it & Loss, partial loss, incorrect, multiple, too early, too late & Secure, open, visible, reachable, seen, usable, accessible, obtainable, uncompromised, secure, encrypted, preserved.\\
+  \hline
+  \Gls{suppression}\index{Suppression Property} & The data is intended never to be used again & Loss, partial loss, incorrect, too early, too late, too much, too little & Hidden, encrypted, private, confidential, erased, unlinked, unavailable, unaccessible, redacted.\\
+  \hline
+  \Gls{history}\index{History Property} & The data has an audit trail of changes & Loss, partial loss, incorrect, multiple & Justifiable, traceable, provable, supportable, demonstrable, sustainable, certifiable, defensible, excusable, justifiable, undisputable, irrefutable.\\
+  \hline
+  \Gls{lifetime}\index{Lifetime Property} & When does the safety-related data expire & Loss, too early, too late, incorrect, multiple, loss of sequence & Expiry date, age, \gls{validity}, currency, applicability, durability, duration, lifespan, stretch, tenure, half-life, longevity, span, in-date, best-before, window, established.\\
+  \hline
+  \Gls{disposability}\index{Disposability / Deletability Property} & The data can be permanently removed when required & Loss, partial loss, incorrect, too early, too late & Unavailable, unaccessible, redacted, hidden, filtered, lost, deleted, destroyed, backup, archive, locked, secured, unlinked.\\
+  \hline
+  \Gls{goldilocks}\index{Goldilocks Property} &
+  There is exactly the right amount of data - not too much, not too little and arrives at the right time &
+  {Loss, partial loss, incorrect, too early, too late, too much, too little (insufficient), spurious} &
+  Manageable data rate, manageable error rate, expected, within acceptable limits, without system overload, size, volume, sufficient\\
+  \hline
+  \Gls{analysability}\index{Analysability Property} &
+  The data is of a suitable size, type and representation (including any \gls{metadata}) to enable it be usefully analysed &
+  {Loss, partial loss, incorrect, too much, too little, loss of sequence, loss of tooling} &
+  Readability, representation, methods \& techniques, statistical, parameters, characteristics, anonymisation, \gls{format}{\index{Format Property}}, media, volume, tools
+  \\
+  \hline
+  \Gls{explainability}\index{Explainability Property} &
+  The data can be meaningfully explained,by a suitable mechanism, to those who need to understand it &
+  {Loss, partial loss, incorrect, too much, too little, loss of sequence, loss of skills, loss of tooling} &
+  Justifiable, traceable, \gls{metadata}, interpretation, evidenced, supported, argued, logical, inference, derived, tools
+  \\
+  \hline
+\end{longtable}

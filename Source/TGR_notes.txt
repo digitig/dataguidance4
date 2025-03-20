@@ -1,0 +1,26 @@
+1. Makefile created.
+2. Longtable styles removed
+3. mainByTim.bib removed
+4. Front and back covers renamed to remove document version number (evident from the directory it's in anyway) so make can automatically update document when it changes.
+5. Claimed a credit for myself in the frontmatter for helping with the editing.
+6. Haven't worked out a way to include entries in both the normative and discursive glossaries. That could lead to confusion anyway - "Data Artefact" is normative but "(data) Artefact" is discursive. A reader who found the latter might not notice it's normative. I suggest adding a note at  the start of the discursive glossary similar to the one at the start of the normative glossary, and only including discursive definitions. In the e-version the hyperlinks will take readers to the right place.
+7. Accuracy (temporal) only appears in the glossary (out of alphabetic order) so I've removed it.
+8. In the frontmatter, should we still refer to the SAIWG as "the latest addition"?
+9. MAIB might be "Maritime Accident Investigation Board" or "Maritime Accident Investigation Branch", apparently depending on jurisdiction, so I've had to manage the long form of the abbreviation manually.
+10. Acronym list defines SIL as "Safety Integrity Level", but the only reference in the text defines it as "System Integrity Level". I think the former is the right one.
+11. I've not referenced "data" because it would have made too many hyperlinks.
+12. I've changed the definition of Hazard Log from "A Hazard Log records all hazard analysis, safety risk assessment and safety risk reduction activities for the 'whole-of-life' of a safety-related system." to "A record of all [...]"
+13. I've added SPM as an acronym.
+14. Data products only appear in the definition of data products, so definition removed.
+14 "Quality attribute" does not appear in the document.
+TODO
+1. Update contributors to current version
+2. Consider adding "mitigation" to definitions.
+3. Check definitions for (data) assurance level. The first definition isn't a definition, and the phrase never appears in the document, only "data safety assurance level". The second is software.
+4. Consider whether we need definitions for "development assurance level", "item development assurance level", and "function development assurance level", or should we have a general definition of "assurance level", not specific to what is being assured?
+5. Is "the assessed assurance level of a data set" in the lifecycle section "the DSAL"? "the DSAL of a data set"? "the assessed DSAL"? "the assessed DSAL of a data set"? None of those?
+6. Review definition of "completeness". At present it's circular.
+7. Review definition of "adaptation data". At present it only applies to ATM.
+8. Review definition of "critical data". At present it's aviation specific and cites absolute integrity levels that may be inappropriate for other industries.
+9. Customisation data defined but not used in document. Appears to overlap with configuration data.
+10. First definition of data chain is aviation-specific, not general.

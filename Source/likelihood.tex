@@ -1,0 +1,152 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Proposed alternate ways to customise the assignment of DSALs 
+%
+%================================================================================
+\section{\glsfmtshort{dsal}\index{Assurance Level!Data} Customisation (Informative)} \label{bkm:DsalCustomisation}
+%\dsiwgSectionQuote{Common sense tells us that the government's attempts to solve large problems more often create new ones. Common sense also tells us that a top-down, one-size-fits-all plan will not improve the workings of a nationwide health-care system that accounts for one-sixth of our economy}{ Sarah Palin}
+
+\dsiwgSectionQuote{One size does not fit all}{Frank Zappa}
+
+%\dsiwgSectionQuote{When we make decisions in our personal and professional lives, we typically start with some form of data. The very word ‘data’ derives from the Latin meaning ‘something given’. But who gave it? Where is it from? Should I accept it at face value?}{Adrian Smith CEO of the Alan Turing Institute}
+\subsection{Introduction}
+Within the body of this document, a method has been provided for the assignment of \glspl{dsal}\index{Assurance Level!Data}. However it is anticipated that, as with the methods used for the assignment of safety criteria within system safety analysis, some programmes may find it desirable to develop alternate approaches. This section presents some possible methods for the determination of likelihood. These methods are intended to serve as approaches for consideration when developing project-specific criteria, as these approaches are less generic than that presented through \autoref {tab:Likelihood}, so it is highly likely that customisation will be required.
+
+\subsection{Significance factors}
+\label{bkm:SignificanceFactors}
+A method of determining likelihood from the different characteristics is to implement a scoring scheme that apportions a quantitative value for each of the characteristics, with the sum giving the total likelihood score. The total score is then compared against a scale, and that in turn determines the overall low, medium or high assessment.
+
+For example, consider the modified version of \autoref {tab:Likelihood} illustrated in \autoref {tab:Likelihood1}
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.19}}|C{\dsiwgColumnWidth{0.27}}|C{\dsiwgColumnWidth{0.27}}|C{\dsiwgColumnWidth{0.27}}|}
+  \caption{Calculation of likelihood -- option 1}
+  \label{tab:Likelihood1}
+  \\\hline
+  \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Score}}\\\cline{2-4}
+  \multirow{-2}*{\TableHeadColourCX{}} & \TableHeadColourCX{2} & \TableHeadColourCX{1} & \TableHeadColourCX{0}\\\hline
+  \endfirsthead
+  \caption[]{Calculation of likelihood -- option 1 (continued)}
+  \\\hline\TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Score}}\\\cline{2-4}
+  \multirow{-2}*{\TableHeadColourCX{}} & \TableHeadColourCX{2} & \TableHeadColourCX{1} & \TableHeadColourCX{0}\\\hline
+  \endhead
+  \multicolumn{4}{r}{\sl Continued on next page}
+  \endfoot
+  \endlastfoot
+  Proximity & %
+    A known use of the data is highly likely to lead to an accident. & %
+    A possible use of the data could lead to an accident. & %
+    All currently foreseen uses of the data could lead to harm only via lengthy and indirect routes.\\
+    \hline
+  Dependency & %
+    Data is completely relied upon. & %
+    Data is indirectly relied upon. & %
+    Little reliance on data.\\
+    \hline
+  Prevention & %
+    Difficult or impossible to guard / barrier against errors. & %
+    Possible to guard / barrier against errors. & %
+    Easy to guard / barrier against error.\\
+    \hline
+  Detection & %
+    Low or no chance of anything else detecting an error. & %
+    Some other people / systems are involved in checking the data. & %
+    Many other people / systems are involved in checking the data.\\
+    \hline
+  Correction & %
+    Difficult or impossible to correct or workaround errors. & %
+    Possible to correct or workaround errors. & %
+    Easy to correct or workaround errors.\\
+    \hline
+\end{longtable}
+
+For each of the characteristics, the applicable assessment of likelihood is then selected and scored. So for example, if it is “Possible to guard / barrier against errors” for Prevention, then the score for that characteristic would be 1. Each characteristic is then scored and they are then summed to give a total score. The range of possible values will run from 0 (all choices in the far right column, favouring low likelihood aspects) through to 10 (all choices in the far left column, favouring high likelihood aspects).
+
+The overall likelihood in the assessed against a scale such that shown in \autoref{tab:Likelihood1a}.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.2}}|C{\dsiwgColumnWidth{0.2}}|C{\dsiwgColumnWidth{0.2}}|}
+  \caption{Likelihood assessment}
+  \label{tab:Likelihood1a}
+  \\\hline
+%  \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Likelihood}}\\\cline{2-4}
+  \TableHeadColourCX{Low} & \TableHeadColourCX{Medium} & \TableHeadColourCX{High}\\\hline
+  \endfirsthead
+  \caption[]{Likelihood assessment (continued)}
+  \\\hline
+%  \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Likelihood}}\\\cline{2-4}
+  \TableHeadColourCX{Low} & \TableHeadColourCX{Medium} & \TableHeadColourCX{High}\\\hline
+  \endhead
+  \multicolumn{3}{r}{\sl Continued on next page}
+  \endfoot
+  \endlastfoot
+  0--2 & 3--6 & >6\\\hline
+\end{longtable}
+
+
+\subsection{Weighted characteristics}
+The method presented in
+\dsiwgRef{section}{bkm:SignificanceFactors}
+may be enhanced to provide a more holistic overall assessment of the likelihood based on all characteristics. Note that the scheme in
+\dsiwgRef{section}{bkm:SignificanceFactors}
+allocated equal significance to each of the characteristics. This method could be further refined if necessary to apply weightings to each of the characteristics, as shown in \autoref{tab:Likelihood2}.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.19}}|C{\dsiwgColumnWidth{0.15}}|C{\dsiwgColumnWidth{0.20}}|C{\dsiwgColumnWidth{0.20}}|C{\dsiwgColumnWidth{0.20}}|}
+  \caption{Calculation of likelihood -- option 2}
+  \label{tab:Likelihood2}
+  \\\hline
+  \TableHeadColour{} & \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Score}}\\\cline{2-4}
+  \multirow{-2}*{\TableHeadColourCX{}} & \TableHeadColourCX{Weighting} & \TableHeadColourCX{2} & \TableHeadColourCX{1} & \TableHeadColourCX{0}\\\hline
+  \endfirsthead
+  \caption[]{Calculation of Likelihood -- Option 2 (continued)}
+  \\\hline
+  \TableHeadColour{} & \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Score}}\\\cline{2-4}
+  \multirow{-2}*{\TableHeadColourCX{}} & \TableHeadColourCX{Weighting} & \TableHeadColourCX{2} & \TableHeadColourCX{1} & \TableHeadColourCX{0}\\\hline
+  \endhead
+  \multicolumn{4}{r}{\sl Continued on next page}
+  \endfoot
+  \endlastfoot
+  Proximity & %
+    1.5 & %
+    \bf A known use of the data is highly likely to lead to an accident. & %
+    A possible use of the data could lead to an accident. & %
+    All currently foreseen uses of the data could lead to harm only via lengthy and indirect routes.\\
+    \hline
+  Dependency & %
+    1.0 & %
+    Data is completely relied upon. & %
+    \bf Data is indirectly relied upon. & %
+    Little reliance on data.\\
+    \hline
+  Prevention & %
+    1.3 & %
+    \bf Difficult or impossible to guard / barrier against errors. & %
+    Possible to guard / barrier against errors. & %
+    Easy to guard / barrier against error.\\
+    \hline
+  Detection & %
+    0.7 & %
+    Low or no chance of anything else detecting an error. & %
+    Some other people / systems are involved in checking the data. & %
+    \bf Many other people / systems are involved in checking the data.\\
+    \hline
+  Correction & %
+    0.5 & %
+    Difficult or impossible to correct or workaround errors. & %
+    Possible to correct or workaround errors. & %
+    \bf Easy to correct or workaround errors.\\
+    \hline
+\end{longtable}
+
+The total score is then calculated by first multiplying the individual characteristic’s score by the weighting before summing all the values. For example, if the selections highlighted in bold were made, then the score would be
+$$(1.5 \times 2) + (1.0 \times 1) + (1.3 \times 2) + (0.7 \times 0) + (0.5 \times 0) = 6.6$$
+resulting in a {\sl High} assessment rather than the {\sl Medium} that would result with no weighting. This is because Proximity and Prevention are considered (in this particular example) more important than Detection and Correction. The weightings within a project-specific version of this table would be chosen by the organization to suit the particular scenario under consideration.
