@@ -1,0 +1,108 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================ 
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   This is the main document file, it simply marks the beginning and end of the
+%   document and 'includes' each of the document sections, in the required order.
+%
+% Notes:
+%   The actual document content is contained in the files that are 'included' by 
+% this one.
+%
+%================================================================================
+
+%\documentclass[letterpaper,10pt]{book}
+%\usepackage[hyperref]{../dsiwg}
+\def\withCovers{}
+\def\withBlueHyperlinks{}
+\def\withChangebars{} %Markers are \cbstart and \cbend. Remember to delete markers for previous changes before starting update.
+\def\withToDo{} %Post-it note in the margin to highlight issues to be resolved before publication
+
+\input{../dsiwgTemplate}
+
+
+\loadglsentries{../glossary}
+\externaldocument[Vol2-]{../Vol2}
+\externaldocument[Vol3-]{../Vol3}
+
+%================================================================================
+%Set-up the data fields for the generated PDF
+%================================================================================
+\hypersetup{pdfinfo=%
+	{%
+		Author={The Data Safety Initiative Working Group (DSIWG)},%
+		CreationDate={D:20250410000000},%
+		Creator={LaTeX with hyperref package},%
+		Keywords={Safety,Data Safety,Guidance,SCSC,DSIWG,SCSC-127J},%
+		ModDate={D:20250410000000},%
+		Producer={MikTeX },%
+		Subject={Data Safety Guidance},%
+		Title={Data Safety Guidance - Version 4.0},%
+}}
+
+%================================================================================
+% Data to go on the internal title page
+%================================================================================
+\title{\textcolor{dsiwgAccentColour}{Data Safety Guidance}}
+\author{The Data Safety Initiative Working Group [DSIWG]}
+\date{\textcolor{dsiwgAccentColour}{February 2026}}
+
+\begin{document}
+
+\ifx\withCovers\undefined
+\else
+\thispagestyle{empty}%suppress page number
+\includepdf{images/front cover}
+\clearpage
+\thispagestyle{empty}
+\phantom{foo}% Needed to make the blank page happen
+\clearpage
+\fi
+
+\begin{styleTextbody}% Default style for the document pages
+	%
+	%Frontmatter - inner title pages, ToC
+	%
+
+\frontmatter
+\include{Frontmatter}
+\mainmatter
+\include{Introduction}
+\todo{extract principles}
+\include{Process}
+\include{Definitions}
+\include{Objectives_and_outputs}
+\include{activities_and_tailoring}
+\include{Linking_principles_and_objectives}
+\include{Lifecycle}
+\include{Tool_qualification}
+
+\backmatter
+\include{Acronyms}
+\include{References}
+\include{history}
+\include{acknowledgements}
+\include{contributors}
+%
+%Finish off
+%
+\end{styleTextbody}
+
+% Insert back cover, if required
+\ifx\withCovers\undefined
+\else
+\thispagestyle{empty}
+\includepdf{images/back cover.png}
+\fi
+%
+
+\end{document}

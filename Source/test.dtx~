@@ -1,0 +1,83 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2025 Safety Critical Systems Club
+%
+% This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy
+% of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons,
+% PO Box 1866, Mountain View, CA 94042, USA. You are free to share the material in any form and adapt the
+% material for any purpose providing you attribute the material to the Safety-Critical Systems Club (SCSC)
+% Data Safety Initiative Working Group, reference the source material, include the licence details above, and
+% indicate if any changes were made. See the license for full details.
+%
+% \fi
+% \iffalse
+%<package>\NeedsTeXFormat{LaTeX2e}[2023-11-01]
+%<package>\ProvidesPackage{dsiwg}
+%<package> [2025-04-02 v0.1 dsiwg style file]
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{dsiwg}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+	\DocInput{dsiwg.dtx}
+\end{document}
+%</driver>
+% \fi
+% \changes{v0.1}{2025-04-02}{Initial version}
+% \GetFileInfo{dsiwg.sty}
+% \DoNotIndex{\#,\$,\%,\&,\@,\\,\{,\},\^,\_,\~,\ }
+% \DoNotIndex{\@ne}
+% \DoNotIndex{\advance,\begingroup,\catcode,\closein}
+% \DoNotIndex{\closeout,\day,\def,\edef,\else,\empty,\endgroup}
+% \title{The \textsf{dsiwg} package\thanks{This document
+% corresponds to \textsf{dsiwg}~\fileversion,
+% dated~\filedate.}}
+% \author{Tim Rowe \\ \texttt{digitig@gmail.com}}
+%
+% \maketitle
+% \section{Introduction}
+% The \texttt{dsiwg} package defines a standard appearance for guidance documents produced by the Data
+% Safety Initiative Working Group, part of the Safety-Critical Systems Club. It was introduced at version 
+% 4.0 of the Data Safety Guidance, but draws extensively on \texttt{Template.tex} used for earlier editions.
+%
+% The motivation for moving from an included \LaTeXe source file to a style file is that at version 4.0 
+% the guidance was split into three separate volumes. Using a style simplifies document organisation. (Using a class
+% might make it even simpler, but that would be more work to produce.)
+% \section{Usage}
+% Invoke the dsiwg style by including |\usepackage| \oarg{options} |dsiwg| to the document preamble, where
+% \textit{options} is a comma-separated list of any of the following:
+% \begin{description}
+% \item[changebars] If present, show changebars marked by |\cbstart| and |\cbend|;
+% \item[covers] If present, include front and back covers;
+% \item[draft] If present, watermark the document with the text ``DRAFT'';
+% \item[hyperref] If present, produce coloured hyperref links; and
+% \item[simple] If present, produce a simple text-only version of the document. Overrules all other options.
+% \end{description}
+% Each option makes a corresponding \LaTeXe switch available in the document. The switch is of the form
+% |if_dsiwg_|\oarg{options}, for example |if_dsiwg_draft|.
+% \MaybeStop{\PrintIndex}
+% \section{Implementation}
+% \subsection{Page Definitions}
+% Include |fancyheadr| to allow page definitions.
+%~~~~\begin{macrocode}
+\RequirePackage{fancyhdr}
+%~~~~\end{macrocode}
+
+% Define page styles.
+%~~~~\begin{macrocode}
+\fancypagestyle{FirstPageFrontCover}{\fancyhf{}
+  \fancyhead[L]{}
+  \fancyfoot[L]{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{}
+  \vspace*{6cm}
+  \pagenumbering{alph}
+  \renewcommand\thepage{\alph{page}}
+}
+%~~~~\end{macrocode}
+% \Finale
+\endinput

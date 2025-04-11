@@ -1,0 +1,36 @@
+%%
+%% This is file `dsiwg.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% dsiwg.dtx  (with options: `package')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2025 Safety Critical Systems Club
+%% 
+%% This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy
+%% of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons,
+%% PO Box 1866, Mountain View, CA 94042, USA. You are free to share the material in any form and adapt the
+%% material for any purpose providing you attribute the material to the Safety-Critical Systems Club (SCSC)
+%% Data Safety Initiative Working Group, reference the source material, include the licence details above, and
+%% indicate if any changes were made. See the license for full details.
+\NeedsTeXFormat{LaTeX2e}[2023-11-01]
+\ProvidesPackage{dsiwg}
+ [2025-04-02 v0.1 dsiwg style file]
+\RequirePackage{fancyhdr}
+
+\fancypagestyle{FirstPageFrontCover}{\fancyhf{}
+  \fancyhead[L]{}
+  \fancyfoot[L]{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{}
+  \vspace*{6cm}
+  \pagenumbering{alph}
+  \renewcommand\thepage{\alph{page}}
+}
+\endinput
+%%
+%% End of file `dsiwg.sty'.

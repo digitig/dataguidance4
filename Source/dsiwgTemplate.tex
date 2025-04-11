@@ -30,11 +30,14 @@
 %   with the prefix of 'dsiwg' to distinguish them from built-in TeX keywords or
 %   those in third-party packages.
 %
+%================================================================================
+% Configuration for different versions of the document
+%================================================================================
 
 %================================================================================
 %Version 2.0 was US Letter paper with a default font of 10pt, this may change
 %================================================================================
-\documentclass[letterpaper,10pt,twoside]{article}
+\documentclass[letterpaper,10pt,twoside]{book}
 
 % May be able to remove in future, when pdflatex default output becomes pdf 1.7 or greater
 \pdfminorversion=7 % Required to read darkknowns.pdf at v1.7, but default from pdflatex is 1.5
@@ -500,6 +503,9 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
 \newcommand{\leftfoot}{\tlap{\llap{\thepage\hspace{0.5em}\blob}\vspace{2em}}}
 \newcommand{\rightfoot}{\tlap{\rlap{\blob\hspace{0.5em}\thepage}\vspace{2em}}}
 
+% Allow references between documents
+\usepackage{xr}
+
 %================================================================================
 %Set-up the different page styles used within the document
 %================================================================================
@@ -532,7 +538,7 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
   \fancyheadoffset\OurHeadOffset% How far to put header and footer outside of text width
   \fancyfootoffset\OurFootOffset% How far to put header and footer outside of text width
   \fancyhead[LO]{}
-%  \fancyhead[LE, RO]{\large\color{dsiwgAccentColour} {\rotatebox{90}{\llap{\leftmark\hspace{2em}}}}}
+  \fancyhead[LE, RO]{\large\color{dsiwgAccentColour} {\rotatebox{90}{\llap{\leftmark\hspace{2em}}}}}
   \fancyfoot[LO]{}
   \fancyfoot[LE]{\leftfoot}
   \fancyfoot[RO]{\rightfoot}
@@ -544,7 +550,7 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
   \fancyheadoffset\OurHeadOffset% How far to put header and footer outside of text width
   \fancyfootoffset\OurFootOffset% How far to put header and footer outside of text width
   \fancyhead[LO]{}
-  %\fancyhead[LE, RO]{\large\color{dsiwgAccentColour} {\rotatebox{90}{\llap{\leftmark\hspace{2em}}}}}
+  \fancyhead[LE, RO]{\large\color{dsiwgAccentColour} {\rotatebox{90}{\llap{\leftmark\hspace{2em}}}}}
   \fancyfoot[LO]{}
   \fancyfoot[LE]{\leftfoot}
   \fancyfoot[RO]{\rightfoot}
@@ -647,5 +653,5 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
 \setabbreviationstyle[acronym]{long-short}
 \newglossary*{normative}{Normative Definitions}
 \makeglossaries
-\loadglsentries{glossary}
+%\loadglsentries{glossary}
 \renewcommand{\glossarysection}[2][]{} %  Handle sections ourself
