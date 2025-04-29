@@ -1,0 +1,657 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   This file contains all of the LaTeX macros to control the template for the
+%   Data Safety Guidance Document.
+%
+% !!WARNING!!
+%   CHANGING THE CONTENT OF THIS PARTICULAR FILE CAN SERIOUSLY AFFECT THE
+%   APPEARANCE AND LAYOUT OF THE GENERATED DOCUMENT, SO PLEASE BE CAREFUL.
+%
+% Label formats:
+%   bkm: ==>      Reference to another part of this document
+%   citation: ==> Reference to an external document listed in bibTex
+%   fig: ==>      Reference to a figure within this document
+%   ftn: ==>      Reference to a footnote within this document
+%   tab: ==>      Reference to a table within this document
+%
+% Notes:
+%   All commands, styles, colours, etc. defined within this template shall begin
+%   with the prefix of 'dsiwg' to distinguish them from built-in TeX keywords or
+%   those in third-party packages.
+%
+%================================================================================
+% Configuration for different versions of the document
+%================================================================================
+
+%================================================================================
+%Version 2.0 was US Letter paper with a default font of 10pt, this may change
+%================================================================================
+\documentclass[letterpaper,10pt,twoside]{book}
+
+% May be able to remove in future, when pdflatex default output becomes pdf 1.7 or greater
+\pdfminorversion=7 % Required to read darkknowns.pdf at v1.7, but default from pdflatex is 1.5
+
+%================================================================================
+%Set the default font family and series for the document to 'Open Sans Light'
+%================================================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[default,defaultsans]{opensans}% On TeXLive 2018, "default" was enough. Need "defaultsans" from TeXLive 2019
+\usepackage{textcomp}           %Required for complete font support
+\renewcommand{\seriesdefault}{l}% Select Open Sans Light as the default font
+
+%================================================================================
+%Load all other required packages
+%================================================================================
+\usepackage[
+  title,%
+  titletoc%
+]{appendix}                     %Used to add appendices into the ToC
+\usepackage{tocvsec2}           %Allow suppression of selected entries within TOC
+%--------------------------------------------------------------------------------
+\usepackage{calc}               %Used for infix calculations, e.g. column widths 
+\usepackage{color}              %Used to set foreground and background colours
+\usepackage{colortbl}           %Used to add colour to LaTeX tables
+\usepackage{enumitem}           %Used to control the different list environments
+\usepackage{fancyhdr}           %Used to define the header and footer layout
+\usepackage{float}              %Used to force specific placement of images
+\usepackage[hang]{footmisc}     %Used to make footnotes a numbered list
+%--------------------------------------------------------------------------------
+\ifx\withChangebars\undefined
+% Shortcut to create version without changebars
+\newcommand{\cbstart}{}
+\newcommand{\cbend}{}
+\else
+\usepackage{changebar}          %Markers are \cbstart and \cbend.
+\fi
+%--------------------------------------------------------------------------------
+\usepackage[
+  dvips =false,%
+  pdftex=false,%
+  vtex  =false,%
+  bottom=1.5cm,%
+  left  =2.5cm,%
+  right =2.5cm,%
+  top   =1.5cm,%
+  head  =18pt  %
+]{geometry}                     %Used to set-up the page layout and margins
+%--------------------------------------------------------------------------------
+\usepackage[pdftex]{graphicx}   %Used to insert diagrams into the document
+%--------------------------------------------------------------------------------
+%\usepackage[
+%  acronyms,%
+%  toc
+%]{glossaries}                   %Used to create and print the glossary - very sensitive to package order
+%--------------------------------------------------------------------------------
+\usepackage[none]{hyphenat}     %Used to prevent hyphenation in the document
+\usepackage{longtable}          %Used for tables that break across pages
+\usepackage{caption}            %Adds longtable* which is needed to create longtables that do not increment the table counter
+\usepackage{multirow}           %Used to allow multiple row spanning in tables
+\usepackage{pifont}             %Used to print ZipfDingbats characters (\ding)
+\usepackage[many]{tcolorbox}    %Used to place coloured boxes around text
+
+\ifx\withToDo\undefined
+% Shortcut to create version without todo notes
+\newcommand{\todo}[1]{}
+\newcommand{\listoftodos}{}
+\else
+\usepackage[textwidth=2cm]{todonotes} %Allows multi-line markup of text which needs to be amended/reviewed ie, yellow highlighter
+\fi
+
+\usepackage{pdfpages}           %Handy way to insert covers
+\usepackage{wrapfig}            %Wrap text around a figure
+\usepackage{imakeidx}
+
+\usepackage[framemethod=tikz]{mdframed}           %Put text in a box that can break across pages
+\newmdenv[frametitle=Response of the AI,%
+  roundcorner=10pt,
+linewidth=2pt]{aibox} % Environment to display AI-generated text
+%--------------------------------------------------------------------------------
+% Set up indexes.
+% Page style gets upset for indexes, unless we set it explicitly
+%
+\makeindex[name=locationidx,title=Index of Locations,intoc]
+\makeindex[title=Index,intoc]
+\indexsetup{
+  othercode={%
+    \thispagestyle{Standard}%
+  }
+}
+% Break long URLs
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+%--------------------------------------------------------------------------------
+%The hyperref is best loaded last to avoid conflicts, e.g. with glossaries
+%TGR: the glossaries package documentation says it must be loaded after the hyperref package.
+%--------------------------------------------------------------------------------
+\ifx\withBlueHyperlinks\undefined
+\usepackage[                    %Could use \hypersetup but easier to do it here
+  breaklinks,%
+  bookmarksnumbered,%
+  pdftex,%
+  pdfpagelayout=OneColumn,% "OneColumn" produces a single continous scrolling viewer display; was previously set to "TwoColumnRight" for two pages side by side with odd pages on the right.
+  pdfpagelabels,%
+  hidelinks,% Make the links visually just normal text
+  linktoc=page
+]{hyperref}                     %Creates property fields & hyperlinks in the PDF - For details see http://www.tug.org/applications/hyperref/manual.html#x1-110003.7
+\else
+\usepackage[                    %Could use \hypersetup but easier to do it here
+  bookmarksnumbered,%
+  pdftex,%
+  pdfpagelayout=OneColumn,% "OneColumn" produces a single continous scrolling viewer display; was previously set to "TwoColumnRight" for two pages side by side with odd pages on the right.
+  pdfpagelabels,%
+  colorlinks=true,% Select coloured text, rather than coloured boxes around links
+  linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+  citecolor=blue,        % color of links to bibliography
+  filecolor=blue,      % color of file links
+  urlcolor=blue,           % color of external links
+  linktoc=page
+]{hyperref}                     %Creates property fields & hyperlinks in the PDF - For details see http://www.tug.org/applications/hyperref/manual.html#x1-110003.7
+\fi
+
+%================================================================================
+%Create some new commands to quickly change local font style
+%================================================================================
+\DeclareRobustCommand\ebseries{\fontseries{eb}\selectfont}
+\DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
+\DeclareRobustCommand\ltseries{\fontseries{l}\selectfont}
+\DeclareRobustCommand\clseries{\fontseries{cl}\selectfont}
+\DeclareRobustCommand\regseries{\fontseries{m}\selectfont}
+
+\DeclareTextFontCommand{\dsiwgTextEB}{\ebseries}    %Extra-Bold typeface
+\DeclareTextFontCommand{\dsiwgTextSB}{\sbseries}    %Semi-Bold typeface
+\DeclareTextFontCommand{\dsiwgTextLT}{\ltseries}    %Light typeface
+\DeclareTextFontCommand{\dsiwgTextCL}{\clseries}    %Condensed-light typeface
+\DeclareTextFontCommand{\dsiwgTextREG}{\regseries}  %Regular typeface
+
+\DeclareTextFontCommand{\dsiwgTextBF}{\sbseries}    %What 'bold-face' looks like
+\DeclareTextFontCommand{\dsiwgTextIT}{\itshape}     %What 'italic' looks like
+
+%
+%Create a new environment to change the font shape for large blocks of text.
+%Using begin/end is more obvious than just using one of the above commands.
+%
+\newenvironment{dsiwgBold}{\sbseries}{}
+\newenvironment{dsiwgItalic}{\itshape}{}
+
+%
+%Unfortunately the Open Sans font doesn't support a typewriter style in 'light'
+%series, so we have to declare a special version to avoid warnings when compiling
+%the document.
+%
+% For manual use:
+\newcommand{\dsiwgTextTT}[1]{\usefont{T1}{cmtt}{m}{n}{#1}}
+%
+% To make \url use the right font
+% We need these next two lines, but they fail to load T1/cmtt/m/n, so we put up with warning for now
+%\DeclareFontFamily{T1}{cmtt}{\hyphenchar\font=-1}
+%\DeclareFontShape{T1}{cmtt}{l}{n}{ <-> ssub * cmtt/m/n }{}
+
+%
+%Set the character to be used for the check box on the ODR forms, etc.
+%
+\newcommand{\dsiwgCheckBox}{\large{\ding{111}}}
+
+%================================================================================
+%Space things out a bit
+%================================================================================
+\linespread{1.2}
+
+%================================================================================
+%Mark intentionally blank pages as such
+%================================================================================
+\makeatletter
+\def\dsiwg@intblankpage{%
+	\clearpage% this line has no effect if invoked from dsiwg@cleardoublepage
+	\null\vfil
+	\centerline{This page is intentionally blank}%
+	\newpage
+        \phantomsection% Required to move page counter in \label associated with following \section point to correct page
+}
+
+\def\dsiwg@cleardoublepage{%
+    \clearpage%needed here so that we test AFTER the page throw
+	\ifodd\c@page\else
+		\dsiwg@intblankpage
+	\fi
+}
+\let\cleardoublepage=\dsiwg@cleardoublepage
+\makeatother
+
+%================================================================================
+%Define the colours to be used for this template style
+%================================================================================
+%
+%Document accent colour for headings, etc. (set to a shade of blue)
+%
+%\definecolor{dsiwgAccentColour}{RGB}{233,33,33} %Red - v2.0
+\definecolor{dsiwgAccentColour}{RGB}{0,102,255} %Blue - v3.0
+\definecolor{dsiwgDimColour}{RGB}{51,153,255} %Pale Blue - v3.6
+%
+%Colours to be used for the objectives list box at the start of each section 
+%
+%\definecolor{dsiwgObjectiveBackgroundColour}{RGB}{233,15,12}
+%\definecolor{dsiwgObjectiveFrameColour}{RGB}{233,132,132}
+
+%================================================================================
+%Assign colours to the various document elements
+%================================================================================
+%
+%Set the colours for all of the section headings
+%
+\colorlet{dsiwgSectionColour}{dsiwgAccentColour}
+\colorlet{dsiwgSubSectionColour}{dsiwgSectionColour}
+\colorlet{dsiwgSubSubSectionColour}{dsiwgSectionColour}
+\colorlet{dsiwgParagraphColour}{dsiwgSectionColour}
+
+%
+%Set the colours for all four levels of enumerated list
+%
+\preto\labelenumi{\color{dsiwgAccentColour}}
+\preto\labelenumii{\color{dsiwgAccentColour}}
+\preto\labelenumiii{\color{dsiwgAccentColour}}
+\preto\labelenumiv{\color{dsiwgAccentColour}}
+
+%
+%Set the colours for all four levels of bulleted list
+%Also make the top-level bullet large
+%
+%\preto\labelitemi{\large\color{dsiwgAccentColour}}
+\renewcommand\labelitemi{\large\color{dsiwgAccentColour}$\bullet$}
+\preto\labelitemii{\color{dsiwgAccentColour}}
+\preto\labelitemiii{\color{dsiwgAccentColour}}
+\preto\labelitemiv{\color{dsiwgAccentColour}}
+
+%
+%Set the background and edge colours for the quotes
+%
+\definecolor{dsiwgQuoteBackColour}{gray}{0.95}
+\definecolor{dsiwgQuoteFrameColour}{gray}{0.65}
+
+%
+%Set up colour for TBD highlighting - stuff to be fixed prior to release
+%
+%\definecolor{dsiwgTbdColour}{rgb}{1,1,0}
+%\newcommand{\dsiwgTbd}[1]{{\todo[color=dsiwgTbdColour,inline]{#1}}}
+\setlength{\marginparwidth}{2cm}%Keeps todo note in margin
+
+%================================================================================
+% Enhancements to allow fixed width columns, with left, centred or right aligned
+% text (the usual m option only allows justified, creating underfull hboxes)
+%================================================================================
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%================================================================================
+%Format the quotes at the beginning of each section. This takes two arguments:
+%1) the quote, 2) the author (can be empty if the quote is not attributed)
+%================================================================================
+\newcommand\dsiwgSectionQuote[2]{
+  \begin{center}
+    \begin{tcolorbox}
+      [ boxsep=0mm,
+        colback=dsiwgQuoteBackColour,
+        colframe=dsiwgQuoteFrameColour,
+        bottomrule=0mm,
+        toprule=0mm,
+        leftrule=4pt,
+        rightrule=4pt,
+        sharp corners,
+        width=0.89\linewidth
+      ]
+      \begin{center}
+        \dsiwgTextIT{#1}
+        \ifx&#2&
+          %Empty field, do nothing.
+        \else
+          \\\dsiwgTextBF{\dsiwgTextIT{{#2}}}
+        \fi
+      \end{center}
+    \end{tcolorbox}
+  \end{center}
+}
+
+\newcommand\dsiwgColumnWidth[1]{#1\linewidth-2\tabcolsep-1.25\arrayrulewidth}
+
+%================================================================================
+%Create a new environment for the objectives box used at the start of a section.
+%================================================================================
+\usetikzlibrary{shadings}
+\newenvironment{dsiwgObjectiveList}{\begin{enumerate}[label=\arabic*.\color{white}] \color{white} \sbseries \slshape}{\end{enumerate}}
+\tcolorboxenvironment{dsiwgObjectiveList}
+{%
+  enhanced jigsaw,
+  boxsep=0mm,
+  colframe=dsiwgObjectiveFrameColour,
+  boxrule=4pt,
+  sharpish corners,
+  drop shadow=black,
+  interior style={left color=dsiwgObjectiveBackgroundColour!95!white,right color=dsiwgObjectiveBackgroundColour!95!white,middle color=dsiwgObjectiveBackgroundColour!75!white,opacity=0.75},
+  width=0.89\textwidth
+}
+
+%================================================================================
+%Set-up the table header colour scheme and fonts
+%================================================================================
+
+%
+%There are so many ``centered'' or ragged entries that it was worth adding
+%special commands for these.
+%
+\newcommand\TableHeadColour[1]{\cellcolor{dsiwgAccentColour}{\ebseries\small\color{white}{#1}}}
+\newcommand\TableHeadColourC[1]{\centering\TableHeadColour{#1}}% Version with contents centred
+\newcommand\TableHeadColourR[1]{\raggedleft\TableHeadColour{#1}}% Version with contents raggedleft
+\newcommand\TableDimColour[1]{\cellcolor{dsiwgDimColour}{\ebseries\small\color{white}{#1}}}
+%
+%Special versions with contents centred, and \\ bug correction for right hand column
+%Modification of above form doesn't work - the position of the \arraybslash seems to be critical
+%
+\newcommand\TableHeadColourCX[1]{\cellcolor{dsiwgAccentColour}\centering\arraybslash{\ebseries\small\color{white}#1}}
+\newcommand\TableDimColourCX[1]{\cellcolor{dsiwgDimColour}\centering\arraybslash{\ebseries\small\color{white}#1}}
+
+%
+%Set table fonts here to avoid setting on every table cell
+%
+\makeatletter
+% Thanks to Axel Sommerfeldt [2007/01/07] for this macro:
+\providecommand*\AtBeginEnvironment[1]{%
+  \@ifundefined{#1}%
+               {\@latex@error{Environment #1 undefined}\@ehc
+                 \@gobble}%
+               {\@ifundefined{ABE@env@#1}%
+                 {\expandafter\let\csname ABE@env@#1\expandafter\endcsname
+                   \csname #1\endcsname
+                   \expandafter\let\csname ABE@hook@#1\endcsname\@empty
+                   \@namedef{#1}{\@nameuse{ABE@hook@#1}\@nameuse{ABE@env@#1}}}%
+                 {}%
+                 \expandafter\g@addto@macro\csname ABE@hook@#1\endcsname}}
+\@onlypreamble\AtBeginEnvironment
+\makeatother
+
+%
+%Whenever we create a longtable set the font size
+%
+\AtBeginEnvironment{longtable}{\small}
+
+%================================================================================
+%Set-up some text styles
+%================================================================================
+
+%
+%Colour for numbers in section, subsection and subsubsection
+%
+\newcommand\textstyleNumberingSymbols[1]{\textsf{\textcolor{dsiwgAccentColour}{#1}}}
+\newcommand\textstyleBulletSymbols[1]{{\normalsize\selectfont\textsf{\textbf{\textcolor{dsiwgAccentColour}{#1}}}}}
+\newcommand\textstyleCitation[1]{\textit{#1}}
+\newcommand\textstyleFootnoteanchor[1]{{\normalsize\selectfont\textsf{\textmd{\textsuperscript{#1}}}}}
+
+%================================================================================
+%Set up spacing heading/section spacing, as per original Version 2.0 template
+%================================================================================
+\makeatletter
+  %Heading Level 1
+  \renewcommand\chapter%
+  {%
+    \@startsection{chapter}{1}{0pt}{4pt}{0.1mm}%
+    {\cleardoublepage\pagestyle{Standard}\thispagestyle{FirstPage}\raggedright\normalfont\LARGE\regseries\normalcolor\color{dsiwgSectionColour}}%
+  }
+
+  %Heading Level 2
+  \renewcommand\section%
+  {%
+    \@startsection{section}{2}{0pt}{18pt}{0.1mm}%
+    {\normalfont\Large\regseries\normalcolor\color{dsiwgSubSectionColour}}%
+  }
+
+  %Heading Level 3
+  \renewcommand\subsection%
+  {%
+    \@startsection{subsection}{3}{0pt}{18pt}{0.1mm}%
+    {\normalfont\large\regseries\normalcolor\color{dsiwgSubSubSectionColour}}%
+  }
+
+  %Heading Level 4
+  \renewcommand\subsubsection%
+  {%
+    \@startsection{subsubsection}{4}{0pt}{18pt}{0.1mm}%
+    {\normalfont\normalsize\regseries\normalcolor\color{dsiwgParagraphColour}}%
+  }
+	
+\makeatother
+
+%A Non-numbered version of paragraph
+\newcommand\nonumparagraph[1]{{\normalfont\normalsize\regseries\normalcolor\textcolor{dsiwgParagraphColour}{#1}}}
+
+
+%================================================================================
+%Set-up the headings and outline numbering
+%================================================================================
+\makeatletter
+  \renewcommand\@seccntformat[1]{\csname @textstyle#1\endcsname{\csname the#1\endcsname}\csname @distance#1\endcsname}
+  \setcounter{secnumdepth}{4}
+  \newcommand\@distancechapter{\hspace{1cm}}
+  \newcommand\@textstylechapter[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
+  \newcommand\@distancesection{\hspace{1.27cm}}
+  \newcommand\@textstylesection[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
+  \newcommand\@distancesubsection{\hspace{1.27cm}}
+  \newcommand\@textstylesubsection[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
+  \newcommand\@distancesubsubsection{\hspace{1.52cm}}\newcommand\@textstyleparagraph[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
+\makeatother
+
+\makeatletter
+  \newcommand\arraybslash{\let\\\@arraycr}
+\makeatother
+\raggedbottom
+
+%================================================================================
+%Set-up the paragraph styles
+%================================================================================
+\renewcommand\familydefault{\sfdefault}
+
+\newenvironment{styleTextbody}{\setlength\leftskip{0cm}\setlength\rightskip{0cm}\setlength\parindent{0cm}\setlength\parfillskip{0pt plus 1fil}\setlength\parskip{0.349cm plus 0.0349cm}\leavevmode\normalfont\normalsize\normalcolor\ignorespaces}{\unskip\vspace{0cm plus 1pt}\par}
+
+\newenvironment{styleMainTitle}{\clearpage\setcounter{page}{1}\pagestyle{FirstPageFrontMatter}
+  \thispagestyle{FirstPageTitle}
+  \setlength\leftskip{3.551cm}\setlength\rightskip{2cm}\setlength\parindent{0cm}\setlength\parfillskip{0pt plus 1fil}\setlength\parskip{0cm plus 1pt}\leavevmode\normalfont\huge\normalcolor\color{dsiwgAccentColour}\ignorespaces}{\unskip\vspace{0.28cm plus 0.027999999cm}\par}
+
+\newenvironment{styleTitlePageAuthor}{\setlength\leftskip{3.551cm}\setlength\rightskip{5.001cm}\setlength\parindent{0cm}\setlength\parfillskip{0pt plus 1fil}\setlength\parskip{0cm plus 1pt}\leavevmode\normalfont\Large\normalcolor\color{dsiwgAccentColour}\ignorespaces}{\unskip\vspace{0cm plus 1pt}\par}
+
+\newenvironment{styleTitlePageDate}{\setlength\leftskip{3.551cm}\setlength\rightskip{2cm}\setlength\parindent{0cm}\setlength\parfillskip{0pt plus 1fil}\setlength\parskip{0.28cm plus 0.027999999cm}\leavevmode\normalfont\normalsize\normalcolor\sffamily\mdseries\color{dsiwgAccentColour}\ignorespaces}{\unskip\vspace{0cm plus 1pt}\par}
+
+\newenvironment{styleQuotation}{\setlength\leftskip{0cm plus 1fil}\setlength\rightskip{0cm plus 1fil}\setlength\parindent{0cm}\setlength\parfillskip{0pt}\setlength\parskip{0.349cm plus 0.0349cm}\leavevmode\normalfont\small\normalcolor\ignorespaces}{\unskip\vspace{0cm plus 1pt}\par}
+
+%
+%Footnote rule
+%
+\setlength{\skip\footins}{0.119cm}
+\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+
+%================================================================================
+%Define the coloured blob to go in the footer, near the page number
+%================================================================================
+%
+%The blob itself
+%
+\newcommand{\blob}{\textcolor{dsiwgAccentColour}{\rule[-1em]{0.5em}{4em}}}
+
+%
+%Make it take up zero vertical space and set up header and footer offsets for it
+%
+\newcommand{\tlap}[1]{\mbox{\vbox to 0pt{\vss\hbox{#1}}}}
+\newlength\OurHeadOffset
+\setlength\OurHeadOffset{30pt}
+\newlength\OurFootOffset
+\setlength\OurFootOffset\OurHeadOffset
+\addtolength\OurFootOffset{-1em}
+
+%
+%Then define the two footers
+%
+\newcommand{\leftfoot}{\tlap{\llap{\thepage\hspace{0.5em}\blob}\vspace{2em}}}
+\newcommand{\rightfoot}{\tlap{\rlap{\blob\hspace{0.5em}\thepage}\vspace{2em}}}
+
+% Allow references between documents
+\usepackage{xr}
+
+%================================================================================
+%Set-up the different page styles used within the document
+%================================================================================
+\fancypagestyle{FirstPageFrontCover}{\fancyhf{}
+  \fancyhead[L]{}
+  \fancyfoot[L]{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{}
+  \vspace*{6cm}
+  \pagenumbering{alph}
+  \renewcommand\thepage{\alph{page}}
+}
+\fancypagestyle{ContinuationInsideFrontCover}{\fancyhf{}
+  \fancyhead[L]{}
+  \fancyfoot[L]{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{}
+  \vspace*{4cm}
+  \renewcommand\thepage{\alph{page}}
+}
+\fancypagestyle{FirstPageFrontMatter}{\fancyhf{}%Always page i, so that's a RO page
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \pagenumbering{roman}
+  \renewcommand\thepage{\roman{page}}
+}
+\fancypagestyle{ContinuationPageFrontMatter}{\fancyhf{}
+  \fancyheadoffset\OurHeadOffset% How far to put header and footer outside of text width
+  \fancyfootoffset\OurFootOffset% How far to put header and footer outside of text width
+  \fancyhead[LO]{}
+  \fancyhead[LE, RO]{\large\color{dsiwgAccentColour} {\rotatebox{90}{\llap{\leftmark\hspace{2em}}}}}
+  \fancyfoot[LO]{}
+  \fancyfoot[LE]{\leftfoot}
+  \fancyfoot[RO]{\rightfoot}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{\roman{page}}
+}
+\fancypagestyle{Standard}{\fancyhf{}
+  \fancyheadoffset\OurHeadOffset% How far to put header and footer outside of text width
+  \fancyfootoffset\OurFootOffset% How far to put header and footer outside of text width
+  \fancyhead[LO]{}
+  \fancyhead[LE, RO]{\large\color{dsiwgAccentColour} {\rotatebox{90}{\llap{\leftmark\hspace{2em}}}}}
+  \fancyfoot[LO]{}
+  \fancyfoot[LE]{\leftfoot}
+  \fancyfoot[RO]{\rightfoot}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{\arabic{page}}
+}
+\fancypagestyle{FirstPageAppendix}{\fancyhf{}
+  \fancyhead[LO]{\large\color{dsiwgAccentColour} [Warning: Draw object ignored]}
+  \fancyhead[LE]{\large\color{dsiwgAccentColour} [Warning: Draw object ignored]}
+  \fancyfoot[LO]{}
+  \fancyfoot[LE]{}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{\arabic{page}}
+}
+\fancypagestyle{FirstPageTitle}{\fancyhf{}
+  \fancyhead[L]{\large\color{dsiwgAccentColour} [Warning: Draw object ignored]}
+  \fancyfoot[L]{\large{\scriptsize\textcolor[rgb]{0.5019608,0.0,0.0}{MISRA internal use only}}\hfill \thepage{}}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}
+  \renewcommand\thepage{\roman{page}}
+}
+\fancypagestyle{FirstPage}{\fancyhf{}
+  \fancyfootoffset\OurFootOffset% How far to put header and footer outside of text width
+  \fancyhead[LO,LE,RO,RE]{}
+  \fancyfoot[LO,RE]{}
+  \fancyfoot[LE]{\leftfoot}
+  \fancyfoot[RO]{\rightfoot}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\footrulewidth{0pt}}
+
+\setlength\tabcolsep{1mm}
+\renewcommand\arraystretch{1.3}
+\sloppy
+
+%================================================================================
+%Utility to make it easier for us to make "section X" a hyperlink, rather than just the X
+% Needed because \autoref is inconsistent in references appendices -
+% Some were shown as "section M", others as "Appendix O".
+% Also useful for referencing subsubsections.
+%================================================================================
+
+\newcommand{\dsiwgRef}[2]{\hyperref[#2]{#1}~\ref{#2}}
+
+%================================================================================
+% Utility to make it easier to add entries to the acronym list
+%================================================================================
+%\newcommand{\acrentry}[1]{\acrshort{#1}&\acrlong{#1}\\\hline}
+
+%================================================================================
+%Prevent the bibliography macros from inserting their own ``References'' heading.
+%================================================================================
+\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+
+%================================================================================
+%Set-up the list of Abbreviations and Glossary
+%================================================================================
+% TGR moved to end
+% \loadglsentries{glossary}
+% Next line commented out as glossaries not yet generated by package glossaries
+%\makeglossaries
+
+%================================================================================
+%Allow searching of ligatures in Adobe Reader
+%================================================================================
+\input{glyphtounicode}
+
+\pdfglyphtounicode{f_f}{FB00}
+\pdfglyphtounicode{f_f_i}{FB03}
+\pdfglyphtounicode{f_f_l}{FB04}
+\pdfglyphtounicode{f_i}{FB01}
+
+\pdfgentounicode=1
+%
+% Define the tick mark for use in tables 
+%
+\newcommand\tick{\ding{51}}
+%
+% Make table and figure captions use section-counter format
+%
+%\usepackage{chngcntr}
+%\counterwithin{figure}{section}
+
+
+\usepackage[
+	style=listdotted,%
+	section=subsection,%
+	numberedsection=autolabel,%
+	nonumberlist,%
+	hyperfirst=false,% doesn't work, for some reason.
+	acronym,%
+	automake,%
+	xindy,%
+	toc
+	]{glossaries-extra}
+	% hyperfirst=false suppresses all first-reference hyperlinks, but we want hyperlinks for all main glossary entries.
+	% This sets them as if they've already been referenced.
+	\glsunsetall[main]
+\setabbreviationstyle[acronym]{long-short}
+\newglossary*{normative}{Normative Definitions}
+\makeglossaries
+%\loadglsentries{glossary}
+\renewcommand{\glossarysection}[2][]{} %  Handle sections ourself

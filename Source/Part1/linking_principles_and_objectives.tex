@@ -1,0 +1,164 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Activities and Tailoring section.
+%
+%================================================================================
+\chapter{Linking Principles and Objectives (Informative)} \label{bkm:principlesobjectives}
+
+\dsiwgSectionQuote
+  {I'm a bit of a freak for evidence-based analysis. I strongly believe in data.}
+  {Gus O'Donnell}
+
+
+\section{General}
+
+The data safety assurance principles provide the underpinning philosophy for \gls{dsg}. Conversely, an implementation of the guidance would be based around the objectives. It is thus appropriate to consider how meeting the objectives results in the principles being satisfied. To that end, each principle is considered in turn in the following paragraphs.
+
+
+\section{Principle 1}
+\dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} shall be defined to address the data contribution to system hazards.}}
+
+This principle asks that requirements be defined. Hence, it is related to the objective that:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{4-1} \index{Safety Requirement!Data}\Glspl{data safety requirement} SHALL be established and elaborated.
+\end{itemize}
+
+However, that relationship does not tell the full story. In particular, the principle is focused at a system level, whereas the above objective is most likely to apply at more detailed levels of design. The following two objectives provide a system-level perspective on risks (from which specific requirements are developed) and hence both objectives directly support this principle:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{1-3} \index{Artefact, Data}\Glspl{data artefact} SHALL be identified.
+	\item \textcolor{dsiwgAccentColour}{2-3} Risks SHALL be identified and linked to \index{Artefact, Data}\glspl{data artefact} and \index{Property!Data}\glspl{data property}.
+\end{itemize}
+
+
+\section{Principle 2}
+\dsiwgTextBF{\dsiwgTextIT{The intent of \index{Safety Requirement!Data}\glspl{data safety requirement} shall be maintained throughout requirements decomposition.}}
+
+This principle is based on standard systems engineering practices whereby a system is gradually developed at increasing levels of design detail. In order to cater for a wide range of systems, across a wide range of economic sectors, \gls{dsg} does not specifically require an explicit hierarchical decomposition of requirements. However, it does note that, if necessary, \index{Artefact, Data}\glspl{data artefact} may be defined at a number of levels of increasing detail. Hence, the following two objectives are related to principle 2:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{1-3} \index{Artefact, Data}\Glspl{data artefact} SHALL be identified.
+	\item \textcolor{dsiwgAccentColour}{2-3} Risks SHALL be identified and linked to \index{Artefact, Data}\glspl{data artefact} and \index{Property!Data}\glspl{data property}.
+\end{itemize}
+
+At a more fundamental level, this principle is concerned with translating from high-level requirements to something that can be implemented. \Glspl{dsal} are a key element of this translation. As such, the following three objectives are also relevant:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{3-1} \index{Assurance Level!Data}\Glspl{dsal} SHALL be established.
+	\item \textcolor{dsiwgAccentColour}{3-2} \index{Assurance Level!Data}\Glspl{dsal} SHALL be justified.
+	\item \textcolor{dsiwgAccentColour}{3-3} \index{Assurance Level!Data}\Glspl{dsal} SHALL be incorporated into system safety activities.
+\end{itemize}
+
+Note that the third of these objectives could also provide a direct link to hierarchical decomposition, if that activity is part of the system safety activities conducted by the organization implementing \gls{dsg}.
+
+As noted earlier, this principle is about identifying low-level design descriptions that, firstly, satisfy the intent of the high-level requirements and, secondly, are described in sufficient detail to allow them to be implemented (and for this implementation to be verified). From the perspective of \gls{dsg} these low-level items are \index{Safety Requirement!Data}\glspl{data safety requirement}. Consequently, the following objective also supports this principle:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{4-1} \index{Safety Requirement!Data}\Glspl{data safety requirement} SHALL be established and elaborated.
+\end{itemize}
+
+
+\section{Principle 3}
+\dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} shall be satisfied.}}
+
+This principle is straightforward. It involves implementing the low-level design descriptions and verifying these implementations. As such, it is directly supported by the following objectives:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{4-2} Methods used to provide Data Safety assurance SHALL be defined and implemented.
+	\item \textcolor{dsiwgAccentColour}{4-3} Compliance with \index{Safety Requirement!Data}\glspl{data safety requirement} SHALL be demonstrated.	
+\end{itemize}
+
+
+\section{Principle 4}
+\dsiwgTextBF{\dsiwgTextIT{Hazardous system behaviour arising from the system's use of data shall be identified and mitigated\index{Mitigation}.}}
+
+From one perspective this principle is about looking bottom-up to determine whether the detailed design decisions have introduced any new system-level risks. A \gls{hazop} is one way this can be achieved. Similarly, a \gls{hazop} is one of several techniques that \gls{dsg} suggests can be used to achieve the following objectives, which consequently may support principle 4:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{2-2} Unintended behaviour resulting from data SHALL be identified and analysed.
+	\item \textcolor{dsiwgAccentColour}{2-3} Risks SHALL be identified and linked to \index{Artefact, Data}\glspl{data artefact} and \index{Property!Data}\glspl{data property}.
+\end{itemize}
+
+More generally, identifying potential new system-level hazards introduced by detailed design decisions involves looking at the system from a variety of perspectives. One perspective that is useful is provided by historical accidents and incidents; another useful perspective is provided by top-level generic data-related issues, distilled from experience across a wide range of systems and activities. Hence, the following objective also supports principle 4:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{2-1} Historical data-related accidents and incidents SHALL be reviewed.
+\end{itemize}
+
+In addition, understanding the system context and intended use, as well as perspectives provided by a suitably wide collection of \index{Stakeholder}\glspl{stakeholder} can inform risk considerations. Likewise, potential issues can also be identified by considering the boundaries of the system. It follows that the following three objectives are also relevant to principle 4:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{1-1} System context and intended use SHALL be established.
+	\item \textcolor{dsiwgAccentColour}{1-2} Key \index{Stakeholder}\glspl{stakeholder} SHALL be identified.
+	\item \textcolor{dsiwgAccentColour}{1-4} Interfaces\index{Interface!System} SHALL be defined and managed.
+\end{itemize}
+
+
+\section{Principle 4 + 1}
+\dsiwgTextBF{\dsiwgTextIT{The confidence established in addressing the data safety assurance principles shall be commensurate to the contribution of data to system risk.}}
+
+This principle provides a means of balancing available effort against risk. From the perspective of \gls{dsg}, this is provided by \index{Assurance Level!Data}\glspl{dsal}. As such, this principle is directly supported by the following three objectives:
+
+\begin{itemize}
+	\item \textcolor{dsiwgAccentColour}{3-1} \index{Assurance Level!Data}\Glspl{dsal} SHALL be established.
+	\item \textcolor{dsiwgAccentColour}{3-2} \index{Assurance Level!Data}\Glspl{dsal} SHALL be justified.
+	\item \textcolor{dsiwgAccentColour}{3-3} \index{Assurance Level!Data}\Glspl{dsal} SHALL be incorporated into system safety activities.
+\end{itemize}
+
+
+\section{Summary Table}
+
+For ease of reference, \autoref{tab:PrinciplesObjectivesSummary} summarises links between the principles and objectives; these are shown by an ``X'' in the relevant cell. For completeness, this table shows the phase associated with each group of objectives. 
+
+Two things are apparent from this table. Firstly, each principle is supported by at least two objectives. Secondly, with one exception, each objective supports at least one principle. The exception is the objective that ``A \index{Safety Assessment!Data}\gls{safety assessment} SHALL be planned'', which acts as an overarching objective to ensure there is sufficient resource to meet the other objectives. For this reason it is loosely associated with each principle; this is shown by an ``o'' in relevant cells.
+
+Having each principle supported by at least two objectives, along with the descriptive text above, provides confidence that meeting the objectives will satisfy the principles; equivalently, it provides confident that the collection of objectives is \dsiwgTextIT{sufficient} to satisfy the principles. 
+
+In addition, every objective supporting at least one principle (with the exception noted above) indicates that there is value in each objective being included in \gls{dsg}. This observation is not quite enough to demonstrate that the collection of objectives is \dsiwgTextIT{necessary} to satisfy the principles. However, given the small number of objectives and the apparent lack of overlap between them, it is sufficient to suggest the necessity of the objectives.
+
+\begin{longtable}{|L{\dsiwgColumnWidth{0.05}}L{\dsiwgColumnWidth{0.45}}|C{\dsiwgColumnWidth{0.08}}|C{\dsiwgColumnWidth{0.08}}|C{\dsiwgColumnWidth{0.08}}|C{\dsiwgColumnWidth{0.08}}|C{\dsiwgColumnWidth{0.08}}|}
+  \caption{Principles and objectives: summary table}
+  \label{tab:PrinciplesObjectivesSummary}
+  \\\hline
+  \TableHeadColour{} & \TableHeadColour{} & \multicolumn{5}{c|}{\TableHeadColourCX{Principle}}\\\cline{2-6}
+  \multirow{-2}*{\TableHeadColourCX{}} & \TableHeadColour{} & \TableHeadColourCX{P1} & \TableHeadColourCX{P2} & \TableHeadColourCX{P3} & \TableHeadColourCX{P4} & \TableHeadColourCX{P4+1}\\\hline
+  \endfirsthead
+  \caption[]{Principles and objectives: summary table (continued)}
+  \\\hline
+  \TableHeadColour{} & \TableHeadColour{} & \multicolumn{5}{c|}{\TableHeadColourCX{Principle}}\\\cline{2-6}
+  \multirow{-2}*{\TableHeadColourCX{}} & \TableHeadColour{} & \TableHeadColourCX{P1} & \TableHeadColourCX{P2} & \TableHeadColourCX{P3} & \TableHeadColourCX{P4} & \TableHeadColourCX{P4+1}\\\hline
+  \endhead
+  \multicolumn{7}{r}{\sl Continued on next page}
+  \endfoot
+  \endlastfoot
+  \multicolumn{7}{|c|}{\dsiwgTextBF{Establish Context}}\\ \hline
+	1-1 & System context and intended use SHALL be established. & & & & X & \\ \hline
+	1-2 & Key \index{Stakeholder}\glspl{stakeholder} SHALL be identified. & & & & X & \\ \hline
+	1-3 & \Glspl{data artefact}\index{Artefact, Data} SHALL be identified. & X & X & & & \\ \hline
+	1-4 & Interfaces\index{Interface!System} SHALL be defined and managed. & & & & X & \\ \hline
+	1-5 & A \index{Safety Assessment!Data}\Gls{safety assessment} SHALL be planned. & o & o & o & o & o\\ \hline
+  \multicolumn{6}{|c|}{\dsiwgTextBF{Identify Risks}}\\ \hline
+	2-1 & Historical data-related accidents and incidents SHALL be reviewed. & & & & X & \\ \hline
+	2-2 & Unintended behaviour resulting from data SHALL be identified and analysed. & & & & X & \\ \hline
+	2-3 & Risks SHALL be identified and linked to \glspl{data artefact}\index{Artefact, Data} and \index{Property!Data}\glspl{data property}. & X & X & & X & \\ \hline
+  \multicolumn{7}{|c|}{\dsiwgTextBF{Analyse Risks}}\\ \hline
+	3-1 & \index{Assurance Level!Data}\Glspl{dsal} SHALL be established. & & X & & & X \\ \hline
+	3-2 & \index{Assurance Level!Data}\Glspl{dsal} SHALL be justified. & & X & & & X \\ \hline
+	3-3 & \index{Assurance Level!Data}\Glspl{dsal} SHALL be incorporated into system safety activities. & & X & & & X \\ \hline
+  \multicolumn{7}{|c|}{\dsiwgTextBF{Evaluate and \Glsfmttext{treat} Risks}}\\ \hline
+	4-1 & \index{Safety Requirement!Data}\Glspl{data safety requirement} SHALL be established and elaborated. & X & X & & & \\ \hline
+	4-2 & Methods used to provide Data Safety assurance SHALL be defined and implemented. & & & X & & \\ \hline
+	4-3 & Compliance with \index{Safety Requirement!Data}\glspl{data safety requirement} SHALL be demonstrated.	& & & X & & \\ \hline
+\end{longtable}

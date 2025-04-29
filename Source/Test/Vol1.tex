@@ -1,0 +1,9 @@
+\documentclass[]{article}
+\usepackage{xr}
+\externaldocument[Vol2-]{Vol2}
+\begin{document}
+\section{A Section in Volume 1}\label{sec1}
+This section references \ref{Vol2-sec1} in volume 2.
+\section{Another Section in Volume 1}
+This section references \ref{sec1} in this volume.
+\end{document}

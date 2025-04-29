@@ -49,6 +49,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[default,defaultsans]{opensans}% On TeXLive 2018, "default" was enough. Need "defaultsans" from TeXLive 2019
 \usepackage{textcomp}           %Required for complete font support
+\usepackage{xr}
 \renewcommand{\seriesdefault}{l}% Select Open Sans Light as the default font
 
 %================================================================================
@@ -403,30 +404,30 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
 %================================================================================
 \makeatletter
   %Heading Level 1
-  \renewcommand\section%
+  \renewcommand\chapter%
   {%
-    \@startsection{section}{1}{0pt}{4pt}{0.1mm}%
+    \@startsection{chapter}{1}{0pt}{4pt}{0.1mm}%
     {\cleardoublepage\pagestyle{Standard}\thispagestyle{FirstPage}\raggedright\normalfont\LARGE\regseries\normalcolor\color{dsiwgSectionColour}}%
   }
 
   %Heading Level 2
-  \renewcommand\subsection%
+  \renewcommand\section%
   {%
-    \@startsection{subsection}{2}{0pt}{18pt}{0.1mm}%
+    \@startsection{section}{2}{0pt}{18pt}{0.1mm}%
     {\normalfont\Large\regseries\normalcolor\color{dsiwgSubSectionColour}}%
   }
 
   %Heading Level 3
-  \renewcommand\subsubsection%
+  \renewcommand\subsection%
   {%
-    \@startsection{subsubsection}{3}{0pt}{18pt}{0.1mm}%
+    \@startsection{subsection}{3}{0pt}{18pt}{0.1mm}%
     {\normalfont\large\regseries\normalcolor\color{dsiwgSubSubSectionColour}}%
   }
 
   %Heading Level 4
-  \renewcommand\paragraph%
+  \renewcommand\subsubsection%
   {%
-    \@startsection{paragraph}{4}{0pt}{18pt}{0.1mm}%
+    \@startsection{subsubsection}{4}{0pt}{18pt}{0.1mm}%
     {\normalfont\normalsize\regseries\normalcolor\color{dsiwgParagraphColour}}%
   }
 	
@@ -442,13 +443,13 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
 \makeatletter
   \renewcommand\@seccntformat[1]{\csname @textstyle#1\endcsname{\csname the#1\endcsname}\csname @distance#1\endcsname}
   \setcounter{secnumdepth}{4}
-  \newcommand\@distancesection{\hspace{1cm}}
+  \newcommand\@distancechapter{\hspace{1cm}}
+  \newcommand\@textstylechapter[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
+  \newcommand\@distancesection{\hspace{1.27cm}}
   \newcommand\@textstylesection[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
   \newcommand\@distancesubsection{\hspace{1.27cm}}
   \newcommand\@textstylesubsection[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
-  \newcommand\@distancesubsubsection{\hspace{1.27cm}}
-  \newcommand\@textstylesubsubsection[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
-  \newcommand\@distanceparagraph{\hspace{1.52cm}}\newcommand\@textstyleparagraph[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
+  \newcommand\@distancesubsubsection{\hspace{1.52cm}}\newcommand\@textstyleparagraph[1]{\protect\makebox[0cm][l]{\textstyleNumberingSymbols{#1}}}
 \makeatother
 
 \makeatletter
