@@ -1,0 +1,26 @@
+obj/*
+*.log
+*.idx
+*.old
+*.ilg
+*.ind
+*.aux
+*.bbl
+*.blg
+*.cb*
+*.lof
+*.lot
+*.out
+part1.pdf
+*.odt
+*.gz
+*.zip
+*.toc
+*.*glg
+*.*glo
+*.*gls
+*.xdy
+*.acn
+*.acr
+*.alg
+Complex System Guidance/*

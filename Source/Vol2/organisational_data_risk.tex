@@ -1,0 +1,333 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Organizational Data Risk Assessment section.
+%
+%================================================================================
+\chapter{\ecapitalisewords{\glsentrylong{odr}} (Informative)} \label{bkm:assessment}
+
+\dsiwgSectionQuote{Data is becoming the new raw material of business.}{Craig Mundie}
+
+\dsiwgTextBF{Note: this questionnaire only provides an initial \gls{odr} assessment. Further work is required to establish the safety data risks in detail such as determining a \gls{dsal}\index{Assurance Level!Data} for relevant \glspl{dataset}.}
+
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|L{\dsiwgColumnWidth{0.31}}|L{\dsiwgColumnWidth{0.23}}|L{\dsiwgColumnWidth{0.23}}|L{\dsiwgColumnWidth{0.23}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{\Glsfmtshort{odr} Assessment Form}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{\gls{odr} Assessment Form}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  %
+  %Large block of text explaining the form, spanning all four columns
+  %Need to have each paragraph as its own table entry, along with blank entries
+  %spanning all of the columns for space between the paragraphs.
+  %
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This form is used to determine the safety risk related to data for a particular organization and usage.}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This form must be completed from the perspective of \dsiwgTextBF{one} of the organizations involved; typically this will be the organization using the data or the contractor supplying the system that handles the data. This form needs to be completed for each instance / application / scope / risk profile and should consider a defined boundary for the analysis, e.g.\ the scope of supply for the contractor or the limit of the data user's operational responsibility. It may be useful for both contracting parties to complete the form from their respective positions to check the data risk responsibilities and apportionment.}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{It is anticipated that this form will be used during early phases of a procurement or supply and also for changes to existing supplies. It can also be used to assess existing legacy scenarios.}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{Answer the questions as they apply in the context of the scope of supply. Mark the \index{Response}response with the ``best'' fit for the given scenario. Note that not all elements have to be satisfied. For each \index{Response}response also add a brief justification for that particular selection as opposed to any other choice.}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{If the answer to a question is completely unknown at this stage, it is suggested that the middle value or higher is chosen and an explanation added to the justification.}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{When all the relevant questions have been answered and justified, add the scores together to give a final total and record the value in the appropriate field. Use this total to determine the final \gls{odr} level based on the stated ranges.}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{The \gls{odr} level determined may be used to
+      support process \gls{tailoring}\index{Tailoring} and to
+      determine the management regime required to mitigate the risk associated with the data.}}\\
+  \hline
+  %
+  %Now the details of the form
+  %
+  Data Scenario / Context Name: & \multicolumn{3}{l|}{}\\
+  \hline
+  Data Scenario / Context Description: & \multicolumn{3}{l|}{}\\
+  \hline
+  Scope / Data Boundary and Perspective: & \multicolumn{3}{l|}{}\\
+  \hline
+  Completed By: & & Date Completed: & \\
+  \hline
+  %
+  %Finally the last instruction for this part of the form.
+  %Again, a block of text spanning all four columns.
+  %
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{Answer each question using the \index{Response}response that forms the best match for the particular scenario. Not all statements have to be satisfied and some judgement is required; it is expected that the majority of statements in the selected \index{Response}response can be satisfied with some interpretation. The use of multiple criteria in each question enables a smaller and manageable set of questions to be posed to provide a holistic view of the overall risk.}}\\
+  \hline
+\end{longtable*}
+
+%================================================================================
+%Now the actual question tables themselves
+%================================================================================
+\clearpage %Start these on a new page
+
+%
+%Question 1
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 1 -- SEVERITY AND PROXIMITY}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 1 -- SEVERITY AND PROXIMITY}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{How severe could an accident be that is related to the data? Could it be caused directly by the data?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers the safety consequence, the proximity and contribution of the data to the accident sequence.}}\\
+  \hline
+  1a & All currently foreseen usages of the data could not contribute to an accident. The data is not relied upon for safe operation. Negligible environmental impact. & 1 & \dsiwgCheckBox \\
+  \hline
+  1b & A possible use of data could contribute to a minor accident, but only via lengthy and indirect routes. Could lead to minor injury or temporary discomfort for 1 or 2 people. Many other people / systems are involved in checking the data. Some aspects of safe operation rely very indirectly on the data. Minor environmental impact only via indirect routes. & 2 & \dsiwgCheckBox \\
+  \hline
+  1c & A use of the data could lead to a significant accident resulting in minor injuries affecting several people or one serious injury. Several other people / systems are involved in checking the data. There is a dependency on the data for safe operation. Environmental impact is possible. & 4 & \dsiwgCheckBox \\
+  \hline
+  1d & A likely use of the data could directly lead to a serious accident resulting in serious injuries affecting a number of people, or a single death. One human or independent check is involved for all data. There is major dependency on the data for safe operation. Major environmental impact is possible. & 8 & \dsiwgCheckBox \\
+  \hline
+  1e & An intended use of the data could lead to an accident resulting in death for several people. The accident could be caused by the data with little chance of anything else detecting and mitigating the data issues. The accident could affect the general public or cause catastrophic environmental impact. & 16 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%Question 2
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 2 -- ORGANIZATIONAL AND SOCIETAL IMPACT}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 2 -- ORGANIZATIONAL AND SOCIETAL IMPACT}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{What would be the impact on the organization, client or public if an accident occurred related to the data?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers the tolerability within this industry sector and the general public. How much would it affect the organization or society? Would a claim be likely? Would it generate press interest? Would a formal investigation ensue?}}\\
+  \hline
+  2a & Little interest, accidents happen all the time in this sector; very high societal tolerability. Negligible chance of claims or investigations. No adverse publicity likely. & 1 & \dsiwgCheckBox \\
+  \hline
+  2b & Some concern from the client, but accidents happen occasionally; high societal tolerability. Small chance of claim against the organization. Local or specialist press interest. Minor investigation or audit. & 2 & \dsiwgCheckBox \\
+  \hline
+  2c & Public would be concerned, accidents are rare in this sector; some societal tolerability. Significant chance of claim against the organization. Regional press interest. Client inquiry or investigation likely. & 4 & \dsiwgCheckBox \\
+  \hline
+  2d & Public would be alarmed and consider the accident a result of poor practice; little societal tolerability. Claims very likely. National press or media coverage a possibility. Legal or independent inquiry may follow. & 8 & \dsiwgCheckBox \\
+  \hline
+  2e & Public would be outraged and consider such an accident unacceptable; almost no societal tolerability. Multiple claims / fines from regulators or courts are likely. International press or media coverage. Official and / or public enquiry possible. & 16 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%Question 3
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 3 -- RESPONSIBILITY}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 3 -- RESPONSIBILITY}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{How much responsibility does this organization have for data safety?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers how much legal and other responsibility and ownership the organization has for data safety aspects within this scenario. What liabilities for consequential losses / 3rd party claims does the organization have via the contract or other means? What is the scale of the organization's contribution to the overall scope?}}\\
+  \hline
+  3a & The organization is not responsible for any data safety aspects. No liabilities for accident claims related to the data lie with the organization. Client or other party has accepted full data safety responsibility. The organization is fully covered and indemnified by the client or a 3rd party. & 1 & \dsiwgCheckBox \\
+  \hline
+  3b & The organization is a small part of a large consortium. It has minimal liability for data safety via the contract. It is partly covered by explicit client or 3rd party protections. All safety data is managed by subcontractors, the organization only reviews and monitors. & 2 & \dsiwgCheckBox \\
+  \hline
+  3c & The organization is a significant part of the consortium team. It has some share of the data safety responsibility. Specific data safety liabilities to the client via the contract are mentioned. There are no indemnities in the organization's favour. All key safety data obligations are explicitly flowed down to subcontractors. & 4 & \dsiwgCheckBox \\
+  \hline
+  3d & The organization is prime for a small programme or has the bulk of the data safety responsibility within a team. Specific accident-related liabilities in the contract are significant. The organization provides some indemnities to others via the contract. Some significant data safety obligations are not flowed down to subcontractors. & 7 & \dsiwgCheckBox \\
+  \hline
+  3e & The organization is priming a major programme or has total data safety responsibility. Specific accident-related liabilities in the contract are large (or unlimited). The organization provides explicit indemnities in favour of the client / 3rd parties for accidents. Safety data obligations have not been discussed or are not flowed down to subcontractors. & 12 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%Question 4
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 4 -- LEGAL AND REGULATORY FRAMEWORK}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 4 -- LEGAL AND REGULATORY FRAMEWORK}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{What legal and regulatory environment will this work be subject to?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers the legal and regulatory obligations that this work will have to conform to. How well is the legal framework defined and understood? Is there an established standards culture? Is there a regulator and certification process?}}\\
+  \hline
+  4a & Well-understood and tested legal framework, one jurisdiction. Highly regulated sector with one overseeing body. Well-established industry guidelines and standards for safety data. Formal certification processes. & 1 & \dsiwgCheckBox \\
+  \hline
+  4b & Understood and established legal framework, a few related jurisdictions. Regulated sector, more than one overseeing body. Industry guidelines and standards for safety data. Some formal certification processes. & 2 & \dsiwgCheckBox \\
+  \hline
+  4c & Some understanding of legal position, several jurisdictions. Partially regulated sector, several possible overseeing bodies. Some industry guidelines and standards that refer to data. Informal certification processes. & 4 & \dsiwgCheckBox \\
+  \hline
+  4d & Complex, poorly defined legal position, multiple different jurisdictions. Largely unregulated sector with no established overseeing body. Some industry guidelines and standards that mention data. Some informal certification processes. & 6 & \dsiwgCheckBox \\
+  \hline
+  4e & Very complex, untested and unclear legal position, many diverse jurisdictions. Unregulated sector with no overseeing body. No industry guidelines or standards for data. No certification processes. & 10 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%Question 5
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 5 -- ORGANIZATIONAL MATURITY}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 5 -- ORGANIZATIONAL MATURITY}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{How mature is this organiZation regarding data safety?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers the maturity of the organization in relation to awareness and management of the risks associated with safety data. Are staff trained, managed and resourced to enable proper handling of data safety risk?}}\\
+  \hline
+  5a & Explicit recognition of data as a source of safety risk. Formal and established processes and procedures in place for the identification and control of safety data. Staff trained and fully aware of safety data risks. Senior management fully aware and supportive of data safety management activities. Management of safety data risks fully supported and funded. & 1 & \dsiwgCheckBox \\
+  \hline
+  5b & Awareness of data as a source of safety risk. Informal processes and procedures in place for the identification and control of safety data. Staff awareness of safety data risks. Senior management awareness of data safety management issues. Good support and funding for management of safety data risks. & 2 & \dsiwgCheckBox \\
+  \hline
+  5c & Some awareness of data as a source of safety risk. Some ad-hoc processes and procedures in place for the identification and control of safety data. Some staff awareness of safety data risks. Some senior management awareness of data safety management issues. Some support or partial funding for management of safety data risks. & 4 & \dsiwgCheckBox \\
+  \hline
+  5d & Little awareness of data as a source of safety risk. Minimal processes or procedures in place for the identification and control of safety data. Little staff awareness of safety data risks. Little senior management awareness of data safety management issues. Little support or minimal funding for management of safety data risks. & 7 & \dsiwgCheckBox \\
+  \hline
+  5e & No recognition of data as a source of safety risk. No processes or procedures in place for the identification or control of safety data. No staff training\index{Training!Personnel} or awareness of safety data risks. Senior management not aware or in denial of safety data risks. No support or funding for management of safety data risks. & 10 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%Question 6
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 6 -- OWNERSHIP AND USAGE}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 6 -- OWNERSHIP AND USAGE}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{How widely is the data used and who by?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers how much usa and what type of users there are likely to be of the data. How complex is the data supply chain? In what geographies is it used? How many \index{Data!Owner}owners and interfaces\index{Interface!Organizational} are there?}}\\
+  \hline
+  6a & Minimal or infrequent use. One \index{Data!Owner}\gls{data owner}, a specialist highly trained user group. Single organization or recipient use only. & 1 & \dsiwgCheckBox \\
+  \hline
+  6b & A number of operational data users. Simple linear supply chain. More than one \index{Data!Owner}\glspl{data owner}. Specialist user or limited public access. Small-scale operation. No general web access. Few user organizations or recipients. & 2 & \dsiwgCheckBox \\
+  \hline
+  6c & Regional use. Some public or mainstream use. A few supply chains. A few \index{Data!Owner}\glspl{data owner}. Some web access. Several user organizations or recipients. & 4 & \dsiwgCheckBox \\
+  \hline
+  6d & National use. Public or mainstream use. Several supply chains. Several \index{Data!Owner}\glspl{data owner}. Web access. Some or varied user organizations or recipients. & 7 & \dsiwgCheckBox \\
+  \hline
+  6e & International use. Extensive public or mainstream use. Extensive web access. Many complex supply chains. Many and diverse \index{Data!Owner}\glspl{data owner}. Many and diverse user organizations or recipients. & 12 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+\clearpage
+%
+%Question 7
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 7 -- SIZE, COMPLEXITY AND NOVELTY}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 7 -- SIZE, COMPLEXITY AND NOVELTY}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{What is the scale, sophistication and complexity of the data and its manipulation?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers the nature of the data, its lifecycle and how easy it is to detect errors in the data.}}\\
+  \hline
+  7a & Simple data structures. Mature and established data storage and manipulation techniques and technologies. One or two interfaces\index{Interface!System}. No \gls{timeliness}\index{Timeliness Property} aspects. No transformations. Data is easily verifiable. Data is easily traceable to original source. & 1 & \dsiwgCheckBox \\
+  \hline
+  7b & Varied data structures. Mainstream data storage and manipulation techniques and technologies. Several interfaces\index{Interface!System}. Few \gls{timeliness}\index{Timeliness Property} aspects. Few data transformations. Data is verifiable. Data is traceable to original source. & 2 & \dsiwgCheckBox \\
+  \hline
+  7c & Complex with some unstructured data. Current data storage and manipulation techniques and technologies. Multiple interfaces\index{Interface!System}. Some \gls{timeliness}\index{Timeliness Property} aspects. Some data transformations. Data is difficult to verify. Data is difficult to trace back to original source. & 4 & \dsiwgCheckBox \\
+  \hline
+  7d & Complex, varied or partially unstructured data. Novel storage and manipulation techniques and technologies. Multiple complex interfaces\index{Interface!System}. Time critical. Complex data transformations. Data is very difficult to verify. Data is very difficult to trace back to original source. & 7 & \dsiwgCheckBox \\
+  \hline
+  7e & Highly complex, varied or unstructured data. Highly novel storage and manipulation techniques and technologies. Many and complex, ill-defined or dynamic interfaces\index{Interface!System}. Highly time critical. Many and complex data transformations. Data is infeasible to verify. Data is impossible to trace back to original source. & 10 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%Question 8
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|C{\dsiwgColumnWidth{0.05}}|L{\dsiwgColumnWidth{0.85}}|C{\dsiwgColumnWidth{0.05}}|C{\dsiwgColumnWidth{0.05}}|}
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 8 -- BOUNDARIES AND INTERFACES}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{4}{|c|}{\TableHeadColour{QUESTION 8 -- BOUNDARIES AND INTERFACES}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{How well defined and understood are the boundaries and interfaces\index{Interface!System} for this data scenario?}}\\
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This question considers the number, complexity and definition status of the boundaries and interfaces\index{Interface!System} where data is exchanged. How well understood are the boundaries and interfaces\index{Interface!System}? Are standard formats and protocols used? Is data exchange time critical? Are all assumptions and ambiguities relating to the data exchange resolved?}}\\
+  \hline
+  8a & One well-understood boundary and few, well-defined interfaces\index{Interface!System}. Standard interface formats and protocols. No \gls{timeliness}\index{Timeliness Property} aspects to data exchange. No remaining ambiguities, TBCs or TBDs. No assumptions. & 1 & \dsiwgCheckBox \\
+  \hline
+  8b & A few, understood boundaries and several defined interfaces\index{Interface!System}. Mainly standard interface formats and protocols. Few \gls{timeliness}\index{Timeliness Property} aspects to data exchange. Few areas of ambiguity, few TBCs and TBDs. Few assumptions. & 2 & \dsiwgCheckBox \\
+  \hline
+  8c & Several, established boundaries, some defined, some undefined and some ambiguous interfaces\index{Interface!System}. Mixture of standard and non-standard interface formats and protocols. Some timely data exchanges. Some areas of ambiguity, some TBCs and TBDs. Some assumptions. & 4 & \dsiwgCheckBox \\
+  \hline
+  8d & Many, poorly understood boundaries, many undefined or ambiguous interfaces\index{Interface!System}. Mostly non-standard interface formats and protocols. Time sensitive data exchange. Many areas of ambiguity, many TBCs and TBDs. Many assumptions. & 6 & \dsiwgCheckBox \\
+  \hline
+  8e & A large number of unclear boundaries; a large number of unknown and undefined interfaces\index{Interface!System}. Completely non-standard, complex interface formats and protocols. Real-time data exchange. Large areas of ambiguity, a large number of TBCs and TBDs. A large number of assumptions. & 10 & \dsiwgCheckBox \\
+  \hline
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Justification:}}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
+  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
+  \hline
+\end{longtable*}
+
+%
+%ODR Level Table
+%
+\addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
+\begin{longtable*}{|L{\dsiwgColumnWidth{0.75}}|C{\dsiwgColumnWidth{0.25}}|}
+  \hline\multicolumn{2}{|c|}{\TableHeadColour{\GLSfmttext{odr} LEVEL}}\\\hline
+  \endfirsthead
+  \hline\multicolumn{2}{|c|}{\TableHeadColour{\GLSfmttext{odr} LEVEL}}\\\hline
+  \endhead
+  \endfoot\endlastfoot
+  \multicolumn{2}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Record the total score and use it to determine the \gls{odr} level based on the ranges given below. \underline{If the first three questions' scores sum up to 6 or less then disregard the scores for the remaining} \underline{questions.}}}\\
+  \hline
+  Score 14 or less & ODR0 \\
+  \hline
+  Score 15 to 21 & ODR1 \\
+  \hline
+  Score 22 to 37 & ODR2 \\
+  \hline
+  Score 38 to 47 & ODR3 \\
+  \hline
+  Score 48 and above & ODR4 \\
+  \hline
+  \dsiwgTextBF{Total Score for this scenario /context:} & \\
+  \hline
+  \dsiwgTextBF{\gls{odr} Level for this scenario / context:} & \\
+  \hline
+\end{longtable*}

@@ -1,0 +1,73 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Miscellanea section.
+%
+%================================================================================
+\chapter{Scenarios\index{Scenario|textbf} (Discursive)} \label{bkm:scenario}
+
+\dsiwgSectionQuote{Scenarios help solve problems differently because they can illuminate new possibilities and ignite hope.}{Roger Spitz}
+
+Table \ref{tab:Scenarios} section identifies several scenarios under which it might be useful to recognise data as safety significant.
+
+The levels of necessary assurance given in \todo{Insert reference}
+depend on the relevant scenario, and these scenarios
+are also used in subsequent chapters to indicate the relevance of
+different tools and techniques. 
+\begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.77}}|}
+	\caption{Data Safety Scenarios}
+	\label{tab:Scenarios}
+	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Scenario} & \TableHeadColour{Description} \\\hline
+	\endfirsthead
+	\caption[]{Data Safety Scenarios (continued)}
+	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Scenario} & \TableHeadColour{Description} \\\hline
+	\endhead
+	\multicolumn{3}{r}{\sl Continued on next page}
+	\endfoot\endlastfoot
+	\hline
+	S-0 & Check & A system is to be checked for new or changed data outputs or new or changed data dependencies.
+	
+	This could be a scheduled (regular) check or ad-hoc.\\
+	\hline
+	S-1 & New build & A system that uses or produces data is to be built largely from scratch.\\
+	\hline
+	S-2 & Assembly & A system that uses or produces data is to be built primarily using pre-existing components.\\
+	\hline
+	S-3 & Restructure & An existing system that uses or produces data is to undergo major restructuring. \\
+	\hline
+	S-4 & Assure & An assurance position is to be created for an existing system that uses or produces data to mitigate potential safety concerns.
+	
+	This may be due to impending deployment, change of use, change to the way problems are handled, changing legislation or increased public concern. This also occurs when a system has been incrementally extended (or combined with other systems).\\
+	\hline
+	S-5 & New use & An existing system which uses or produces data, which was not safety-affecting, is to be deployed in a context where it will be safety-affecting.\\
+	\hline
+	S-6 & Degraded & As a result of a failure, a system which uses or produces data is running in degraded mode and this level of operation is likely to persist for some time.
+	
+	A new safety analysis and position need to be created.\\
+	\hline
+	S-7 & Investigation & A significant safety-affecting incident has occurred.
+	
+	The cause of this needs to be understood and mitigations proposed to reduce the risk of such an incident in the future.\\
+	\hline
+	S-8 & Migrate & Data is to be migrated from one system to another. This may involve data selection, cleansing and transformation. \\
+	\hline
+	S-9 & Combine & Data sets are combined within a system to produce new resulting data.\\
+	\hline
+	S-10 & Cleanse & \\
+	\hline
+	S-11 & Audit & \\
+	\hline
+	S-12 & Filter & Data is to be filtered or selected within a system to produce a new subset ot data\\
+	\hline
+\end{longtable}\todo{Provide description of ``Cleanse'' and ``Audit''}
+
