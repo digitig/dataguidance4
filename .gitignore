@@ -11,7 +11,7 @@ obj/*
 *.lof
 *.lot
 *.out
-part1.pdf
+source/part1/part1.pdf
 *.odt
 *.gz
 *.zip
