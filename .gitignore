@@ -24,3 +24,4 @@ source/part1/part1.pdf
 *.acr
 *.alg
 Complex System Guidance/*
+*.db
