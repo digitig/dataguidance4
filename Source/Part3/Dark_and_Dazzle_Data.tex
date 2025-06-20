@@ -28,7 +28,7 @@ Dark\index{Data!Dark} and dazzle data\index{Data!Dazzle} may be viewed as two si
 \label{bkm:darkdata}
 %
 \subsection{Introduction to Dark Data}
-This appendix outlines some of the safety implications arising from the issues identified by Prof. David Hand in his work on ``dark data'' presented in his book: ``Dark Data: Why What You Don't Know Matters'' \cite{citation:darkdata:hand} and website \cite{citation:darkdata:website}. Dark data relates to data that is not available, but nevertheless is important, and indeed, in some cases, more important than the data that is available.
+This \cbstart section\cbend\ outlines some of the safety implications arising from the issues identified by Prof. David Hand in his work on ``dark data'' presented in his book: ``Dark Data: Why What You Don't Know Matters'' \cite{citation:darkdata:hand} and website \cite{citation:darkdata:website}. Dark data relates to data that is not available, but nevertheless is important, and indeed, in some cases, more important than the data that is available.
 
 Unintentionally Donald Rumsfeld\index{Rumsfeld, Donald} popularised the concept of dark data with his famous speech:
 
@@ -85,7 +85,7 @@ This case is very common in safety justifications\index{Justification, Safety} w
 \subsubsection{Data We Don’t Know Are Missing: ``Unknown unknowns''}\index{Dark Data!Data We Don't Know are Missing|textbf}\index{Unknown Unknowns}\label{bkm:dark2}
 This is the most serious and far-reaching case. Occurrence is hopefully less common than case~\ref{bkm:dark1}, but it is important to acknowledge that it does happen. Some examples are:
 \begin{itemize}
-  \item The recent Covid-19 Track and Trace data loss (\autoref{bkm:incacc:covidexcel}), where the organisation handling the data was unaware that rows were missing from a spreadsheet for some time is illustrated in \autoref {fig:darknewcases}
+  \item The Covid-19 Track and Trace data loss (Part 2 Section~\ref*{Part2-bkm:incacc:covidexcel}), where the organisation handling the data was unaware that rows were missing from a spreadsheet for some time is illustrated in \autoref {fig:darknewcases}
   \item Somebody knows a problem with a system but does not tell
   \item Machine learning training\index{Training!AI} data\index{Machine Learning Data} missing edge / corner cases
   \item Key \index{Safety Requirement}safety requirements missed
@@ -271,27 +271,9 @@ A number of resources are available for further \gls{information} on how dark da
 %\dsiwgSectionQuote{Camouflage is a game we all like to play, but our secrets are as surely revealed by what we want to seem to be as by what we want to conceal}{Russell Lynes}
 
 \subsection{Introduction to Dazzle Data\index{Data!Dazzle}}
-This appendix outlines some of the safety implications arising from the issues identified by
-``Dazzle data''\index{Data!Dark} in contrast to ``dark data''\index{Data!Dark} presented in David Hand's book:
-``Dark Data: Why What You Don't Know Matters'' \cite{citation:darkdata:hand}
-and website \cite{citation:darkdata:website}.
-Dark Data\index{Dark Data} relates to data that is not available but nevertheless is important.
+\cbstart ``Dazzle data''\index{Data!Dazzle} refers to data hiding by spurious, superfluous or unwanted data; this obscuring data confuses and can reduce the ability to see the whole picture. The data which is obscured becomes `dark' because you can't see it or use it. Examples of dazzle data\index{Data!Dazzle} might be electrical noise masking a weak signal or camouflage hiding military assets. Dazzle data\index{Data!Dazzle} may be data that you don’t want, arrives more frequently than expected or data that arrives at an unexpected or inconvenient time.
 
-``Dazzle data''\index{Data!Dark} refers to spurious, superfluous or unexpected data that masks and confuses the picture and can reduce your ability to see details, and indeed the whole picture -- a bit like noise or camouflage.
-
-\begin{quote}
-  It is data you don't want, didn't ask for, arrives more frequently than expected, is redundant, or data that arrives at an unexpected or inconvenient time or in the wrong format or sequence, so requiring extra resources to deal with\dots
-\end{quote}
-
-At first sight it might be thought this is just an annoyance rather than a problem,
-however Dazzle data\index{Data!Dazzle} can mask, distort or prevent use of the real or desired data.
-It can hide the true picture as in ``wood for the trees'' and in the worst case create real problems. 
-
-Some examples of such false positive alerts that cause real alerts to be ignored are:
-\begin{itemize}
-  \item The classic case of ``Crying Wolf''.
-  \item Denial of service attack, when servers can be blocked with useless requests that cannot be distinguished from the real requests.
-\end{itemize}
+At first sight it might be thought that dazzle data\index{Data!Dazzle} hiding the wanted data is just an annoyance rather than a problem; however, this can lead to prevention of use of the real data. It can hide the true picture as in ``wood for the trees'' and in the worst case create serious problems. Examples include false positive alerts that cause real alerts to be ignored as in the classic case of ``Crying Wolf''. Another example is a \gls{dos}\index{Denial of Service} attack, when servers can be blocked with useless requests that cannot be distinguished from the real requests. Data which is truly missed (e.g. masked by extensive electrical noise, or hidden by fabricated data to mask a fraud) could lead to potentially hazardous results.
 
 Data which is truly spurious and believable (e.g. generated by extensive electrical noise, or fabricated to mask a fraud) may be accepted as valid data, leading to potentially hazardous results. 
 
@@ -299,7 +281,7 @@ Varieties of dazzle data\index{Data!Dazzle} may be identified in the same grid m
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=\textwidth/2]{images/dazzleknowns.pdf}
+  \includegraphics[width=\textwidth/2]{images/dazzleknowns.png}
   \caption{Dazzle data\index{Data!Dazzle} varieties}
   \label{fig:dazzle}
 \end{figure}
@@ -307,16 +289,16 @@ Varieties of dazzle data\index{Data!Dazzle} may be identified in the same grid m
 \clearpage
 \subsection{Dazzle Data Examples}
 
-\subsubsection{Data We Are Aware Of -- Recognised as Spurious}\index{Data!Dazzle}
+\subsubsection{Data We Are Aware Of -- Recognised as Obscured}\index{Data!Dazzle}
 Repeated false positive alerts (e.g. from faulty sensors or alarms). These tend to be annoying irritants rather than safety issues, however they can lead to alarms being permanently switched off, masking true problems. An example from everyday life might be removing the battery from a badly place smoke alarm in a kitchen which repeatedly sounds when the toaster is used.
 
-\subsubsection{Data We Are Aware Of -- Not Recognised as Spurious}\index{Data!Dazzle}
+\subsubsection{Data We Are Aware Of -- Not Recognised as Obscured}\index{Data!Dazzle}
 Electromagnetic interference (EMI) affecting transmitted data is a good example of this case; we know it exists as a possibility but don't know how it might affect data in a system or a communications path, and this could be in different ways at different times or days.
 
-\subsubsection{Data We Are Not Aware Of -- Recognised as Spurious}\index{Data!Dazzle}
+\subsubsection{Data We Are Not Aware Of -- Recognised as Obscured}\index{Data!Dazzle}
 In many cases we do not know what changes or corruptions may affect the data, but we have strong correction mechanisms to cope with the problems regardless. A good example is data stores on a spacecraft which have redundancy and error correcting codes built-in and so can deal with the majority of corruptions caused by cosmic rays.
 
-\subsubsection{Data We Are Not Aware Of -- Not Recognised as Spurious}\index{Data!Dazzle}
+\subsubsection{Data We Are Not Aware Of -- Not Recognised as Obscured}\index{Data!Dazzle}
 An example of this is where data is mistakenly added to a machine learning training\index{Training!AI} \gls{dataset}\index{Machine Learning Data} resulting in bizarre and possibly hazardous behaviours of the system using it (e.g. an autonomous road vehicle). It is paramount that data used for such image recognition systems filters and excludes potentially dangerous extraneous data arising from unanticipated situations 
 
 \subsection{Dazzle Data Varieties\index{Data!Dazzle} and Safety Examples}
@@ -590,4 +572,8 @@ The opposite attributes of dark data\index{Data!Dark} and dazzle data\index{Data
   If the data can’t be explained it may not be able to be used causing a dark data issue. If there is too much of it or suitable management and analysis tools are not available then it is potentially both cases.\\
   \hline
   %
+  \Gls{clarity}\index{Clarity Property} (K) & The data is visible, unmasked, not hidden or obscured, and not camouflaged &
+  \tick & \tick &
+  Clarity covers the cases where data is invisible or not included for some reason, often because it is hidden by other data. This could be due to either.\\
+  \hline
 \end{longtable}
