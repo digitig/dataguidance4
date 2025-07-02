@@ -116,7 +116,7 @@ The full set of data categories which can have safety implications is large: to 
 \subsection{Historical Accidents and Incidents}
 Ideally, data safety risks would be identified and mitigated before they lead to an accident or incident. However, this is not always the case. Historical occurrences can provide an indication of the data safety risks present in planned or existing systems. In particular, accidents and incidents can be analysed to identify potential contributory causes relating to data.
 
-To support this type of analysis a number of previous accidents and incidents have been collected in \autoref{bkm:accidents}.
+To support this type of analysis a number of previous accidents and incidents have been collected in Part 3 Chapter \autoref{Part3-bkm:accidents}.
 These include cases which relate to a number of \glspl{data property} (see
 \hyperref[bkm:guidance:dataproperties]{section}~\ref{bkm:guidance:dataproperties}), %Clunky, but \autoref inserted "subsubsection"
 for example the properties of \index{Completeness!Property}\gls{completeness}, \index{Integrity Property}\gls{integrity} and \gls{timeliness}\index{Timeliness Property}.
@@ -163,13 +163,13 @@ Sentinels can be a particular risk in long-lived systems and \glspl{dataset}. As
 One specific case of aliasing  concerns homophones -- words which sound the same but are different such as ``flower'' / ``flour'' and ``bare'' / ``bear'' \cite{citation:homonym}.
 If these words are read out over a phone there may be confusion as to which is intended.
 Location services based on a number of words such as W3W don't avoid all homophones,
-and so there may be issues when the words are given verbally in an emergency. The issue is discussed further in \autoref{bkm:incacc:w3w}.
+and so there may be issues when the words are given verbally in an emergency. The issue is discussed further in Part 3 Section \autoref{Part3-bkm:incacc:w3w}.
 
 \item[Disassociation:] This effect is, in some senses, the opposite of aliasing: there are several records when there should only be one. This could occur, for example, if two records are created for the same individual using slightly different names. It could also arise if different systems use different indexing methods and the association between the indexes becomes corrupted. Again, methods to maintain data resolution can be beneficial.
 
 \item[Masking:] This issue can arise if a notable proportion of a \gls{dataset} is of a poor \gls{quality}, for example, if sensors producing the data are faulty or measurements are taken from the wrong source. This poor quality data can mask errors in the way that the system handles the good quality data. One way of protecting against this issue is the generation and use of test sets of appropriate size and quality, although for some applications this may be a non-trivial task.
 
-\item[Incompleteness:]\index{Completeness!Property} Not all the data that is needed is always available; there may be known, and sometimes, unknown gaps or missing data points. The missing data points ("dark data"\index{Dark Data} -- see Part 3 Section \ref*{Part3-bkm:darkdata}) can be critical and in some cases, more important than the data that is available. Incomplete data can arise, for example, from limitations on how much data can be physically captured (e.g. sampling frequencies, storage / time constraints) or from the unintentional or deliberate darkening of data (e.g. for privacy, security, political or commercial reasons).
+\item[Incompleteness:]\index{Completeness!Property} Not all the data that is needed is always available; there may be known, and sometimes, unknown gaps or missing data points. The missing data points ("dark data"\index{Dark Data} -- see Section \ref{bkm:darkdata}) can be critical and in some cases, more important than the data that is available. Incomplete data can arise, for example, from limitations on how much data can be physically captured (e.g. sampling frequencies, storage / time constraints) or from the unintentional or deliberate darkening of data (e.g. for privacy, security, political or commercial reasons).
 
 item[Volume:] Data can be so large and unstructured that it is not manageable in practicable timeframes.
 For example, video records of rail track could take days to inspect manually.
@@ -409,9 +409,9 @@ The list is non-exhaustive. Other guidewords may be useful for particular system
 \section{Analyse Risks}
 \subsection{Establishing \glsfmtplural{dsal}}\index{Assurance Level!Data}
 \label{bkm:Establishing-DSALS}
-Part 1 Paragraph \ref*{Part1-bkm:DSAL-table-section}
-presented a method for assigning \glspl{dsal}, by combining severity and likelihood through a risk matrix, such as Part 1 Table~\ref{Part1-tab:DSAL-risk-matrix}. This section describes approaches that may be used to determine the severity and likelihood appropriate to the loss of any given \index{Property!Data}property. In principle, \autoref {tab:Likelihood} and \autoref{tab:Severity} are used together with Part 1 Table~\ref{Part1-tab:DSAL-risk-matrix} to determine a \gls{dsal}. However, the methods to determine severity and likelihood, and to combine them to determine a \gls{dsal}, should not be followed rigidly, but should be defined based upon the overall \index{Safety Requirement!System}safety requirements of the system being assessed. Examples of situations that may require such alternate approaches are described in
-Part 1 Paragraph~\ref{Part1-bkm:activities:analyse:partofsystemsafetyactivities},
+Paragraph \ref*{bkm:DSAL-table-section}
+presented a method for assigning \glspl{dsal}, by combining severity and likelihood through a risk matrix, such as Table~\ref{tab:DSAL-risk-matrix}. This section describes approaches that may be used to determine the severity and likelihood appropriate to the loss of any given \index{Property!Data}property. In principle, \autoref {tab:Likelihood} and \autoref{tab:Severity} are used together with Table~\ref{tab:DSAL-risk-matrix} to determine a \gls{dsal}. However, the methods to determine severity and likelihood, and to combine them to determine a \gls{dsal}, should not be followed rigidly, but should be defined based upon the overall \index{Safety Requirement!System}safety requirements of the system being assessed. Examples of situations that may require such alternate approaches are described in
+Paragraph~\ref{bkm:activities:analyse:partofsystemsafetyactivities},
 while potential approaches to customisation are described in \autoref{bkm:DsalCustomisation}.
 It is essential that any customised approach is recorded in the \gls{dsmp}.
 
@@ -705,7 +705,7 @@ These detailed methods and approaches tables have been organized into eight, loo
 
 The method for using these tables when considering any given \index{Artefact, Data}\gls{data artefact} is:
 \begin{itemize}
-    \item Determine the \gls{dsal}\index{Assurance Level!Data} applicable to the \index{Artefact, Data}\gls{data artefact}, using Part 1 Table~\ref*{Part1-tab:DSAL-risk-matrix} in association with \autoref{tab:Likelihood} and \autoref{tab:Severity}.
+    \item Determine the \gls{dsal}\index{Assurance Level!Data} applicable to the \index{Artefact, Data}\gls{data artefact}, using Table~\ref*{tab:DSAL-risk-matrix} in association with \autoref{tab:Likelihood} and \autoref{tab:Severity}.
     \item Determine the data category\index{Category!Data}, using the abbreviations in \autoref{tab:DataCategoryAbbreviations}.
     \item Determine the list of applicable \index{Property!Data}\glspl{data property}, using the abbreviations in \autoref{tab:PropertiesOfData}. This will generally provide a list of several applicable abbreviations.
 \end{itemize}
