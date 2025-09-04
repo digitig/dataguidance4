@@ -11,9 +11,6 @@ obj/*
 *.lof
 *.lot
 *.out
-Source/Part1/Part1.pdf
-source/part2/part2.pdf
-source/part3/part3.pdf
 *.gz
 *.zip
 *.toc
