@@ -36,6 +36,10 @@
 \loadglsentries{../glossary}
 \externaldocument[Part2-]{../Part2/Part2}
 \externaldocument[Part3-]{../Part3/Part3}
+% Add part number to index entries
+\let\LATEXindex\index % save old definition to prevent recursion
+\renewcommand\index[1]{\LATEXindex{#1|docname{1}}}
+\newcommand\docname[2]{#2}
 
 %================================================================================
 %Add a DRAFT watermark
@@ -104,12 +108,24 @@
 \include{Introduction}
 \todo{extract principles}
 \include{Principles}
+%\include{objectives_and_outputs}
+\include{Objectives}
 \include{Definitions}
-%\include{Objectives_and_outputs}
 \backmatter
 \include{Acronyms}
 \include{References}
 \include{history}
+%\cbstart
+%Check this \cbstart - have any new locations been added?
+%Include the index
+\printindex[locationidx]
+\printindex
+%\cbend
+\clearpage% Needed to avoid a Roman page number on last page!
+%
+%\section{Feedback (Discursive)}
+%\listoftodos% Comment out in final version
+
 %
 %Finish off
 %

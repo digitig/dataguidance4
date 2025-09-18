@@ -11,10 +11,10 @@
 %================================================================================
 %
 % Description:
-%   Principles and Process section.
+%   Process section.
 %
 %================================================================================
-\chapter{Data Safety Management Process (Informative)} \label{bkm:principlesprocess}
+\chapter{Data Safety Management Process (Informative)} \label{bkm:process}
 
 \dsiwgSectionQuote{If you can't describe what you are doing as a process, you don't know what you're doing.}{W. Edwards Deming}
 
@@ -24,9 +24,9 @@ in due course, their safety management system, an outline data safety management
 been developed.
 
 This is structured around ISO 31000 \cite{citation:iso310002018risk}, and takes into account the data safety assurance principles.
-Links between the process objectives and the assurance principles are described in Section \ref*{bkm:principlesobjectives}. The
+Links between the process objectives and the assurance principles are described in \textbf{1:}\ref*{Part1-bkm:objectives}. The
 adoption of ISO 31000 means that a relatively simple process, which focuses on data-related
-aspects, can be presented here and applied by individual organizations.
+aspects, can be presented here and applied by individual organizations. The ISO 31000 approach was selected as it results in a structure that is easily adapted to align with various existing safety standards. Alignment of this process with an organisation's existing safety processes should therefore be straightforward.
 
 To simplify the presentation, the process is presented as a series of sequential phases. In practice, a
 degree of iteration is likely to be required (e.g., measures adopted to \gls{treat} risks may lead to refined
@@ -39,7 +39,7 @@ process to run in parallel (i.e., a subsequent phase may start before a precedin
 \label{fig:process_phases}
 \end{figure}
 
-The data safety management process occurs over four key steps, each shown as green circles in \autoref{fig:process_phases}, and the specific
+The data safety management process occurs over four key steps, each shown as a circle in \autoref{fig:process_phases}, and the specific
 objectives and outputs of each step are described in more detail in Section~\autoref{bkm:activitiestailoring}. The last outcome of the
 process is a `post \gls{treatment} risk assessment'. If the risk reduction is not considered adequate, then
 the process will iterate again. The whole process is intended to be repeated through the lifecycle of
@@ -76,26 +76,23 @@ the \gls{dsmp} are intended to assist from the perspective of data safety.
 	\caption{Simplified process overview}
 	\label{fig:process}
 \end{figure}
-\autoref{fig:process} provides an overview of how the of the \gls{dsmp}
-integrates with a typical system lifecycle. 
+\autoref{fig:process} provides an overview of how the of the data safety management processes
+integrate with a typical system lifecycle. 
 The system lifecycle is illustrated in the diagram as a simple
-model of sequential phases, with each phase shown as a coloured rectangle (phases are coloured for
-clarity; colour otherwise imbues no other particular meaning. Lifecycles may of course be more
-iterative, involve parallel streams etc., but this simple model suffices to illustrate the concepts).
-Further examples of system lifecycles are given in Appendix I.
+model of sequential phases, with each phase shown as a coloured rectangle. Lifecycles may of course be more
+iterative, involve parallel streams etc., but this simple model suffices to illustrate the concepts.
+Further examples of system lifecycles are given in Part 3 Chapter \ref{Part3-bkm:lifecycle}.
 
-In practice, the main \gls{safety assessment} activities will
-occur as part of the normal safety assessment process lifecycles, so, for example, when considering risks arising
-from failures of the software and hardware of a system, loss of properties of data should also be
+In practice, the main safety management activities will
+occur as part of the normal safety management process, so, for example, when considering risks arising
+from failures of the software and hardware of a system, issues arising from data should also be
 considered.
 
-Data, however, pervades all aspects of a systems lifecycle so the \gls{safety assessment}
+Data, however, pervades all aspects of a systems lifecycle so the safety management
 process can occur throughout the system lifecycle depending on the type of data that is being
-assessed. Some \glspl{item data} such as context, implementation and built system data are relevant for
-specific process phases of the lifecycle, while others such as configuration, capability, compliance and
-liability data apply throughout the entire lifecycle. The meta-property data of trustworthiness
-covers data that is used to inform on the overall trustworthiness of the system. The specific data
+assessed. Some \glspl{item data} are relevant for
+specific phases of the lifecycle, while others apply throughout the entire lifecycle. This guidance also introduces a meta-property data of trustworthiness
+to cover data that is used to inform on the overall trustworthiness of the system. The specific data
 categories are covered in more detail in \autoref{bkm:datacategories} and \autoref{bkm:categories}.
 
-The types of data that are of concern for each process step including those that apply to all steps are
-shown and these feed into the data safety assessment process.
+\autoref{fig:process} shows the types of data that are of concern for each process step, including those that apply to all steps, and how these feed into the data safety assessment process.

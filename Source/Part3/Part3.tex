@@ -37,6 +37,11 @@
 \externaldocument[Part1-]{../Part1/Part1}
 \externaldocument[Part2-]{../Part2/Part2}
 
+% Add part number to index entries
+\let\LATEXindex\index % save old definition to prevent recursion
+\renewcommand\index[1]{\LATEXindex{#1|docname{2}}}
+\newcommand\docname[2]{#2}
+
 %================================================================================
 %Add a DRAFT watermark
 %================================================================================

@@ -88,6 +88,8 @@
   head  =18pt  %
 ]{geometry}                     %Used to set-up the page layout and margins
 %--------------------------------------------------------------------------------
+\usepackage{array}              %Automation of column widths
+%--------------------------------------------------------------------------------
 \usepackage[pdftex]{graphicx}   %Used to insert diagrams into the document
 %--------------------------------------------------------------------------------
 %\usepackage[
@@ -145,7 +147,8 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
   pdfpagelayout=OneColumn,% "OneColumn" produces a single continous scrolling viewer display; was previously set to "TwoColumnRight" for two pages side by side with odd pages on the right.
   pdfpagelabels,%
   hidelinks,% Make the links visually just normal text
-  linktoc=page
+  linktoc=page,
+  hyperindex=false % Suppress index hyperlinks because they won't work between documents
 ]{hyperref}                     %Creates property fields & hyperlinks in the PDF - For details see http://www.tug.org/applications/hyperref/manual.html#x1-110003.7
 \else
 \usepackage[                    %Could use \hypersetup but easier to do it here
@@ -159,6 +162,7 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
   filecolor=blue,      % color of file links
   urlcolor=blue,           % color of external links
   linktoc=page
+  hyperindex=false % Suppress index hyperlinks because they won't work between documents
 ]{hyperref}                     %Creates property fields & hyperlinks in the PDF - For details see http://www.tug.org/applications/hyperref/manual.html#x1-110003.7
 \fi
 

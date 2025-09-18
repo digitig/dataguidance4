@@ -36,11 +36,11 @@ These factors help determine the risk appetite: essentially, how much effort wil
 There are four activities associated with this phase.
 
 \subsubsection{Describe the organizational context}
-Part of this activity involves understanding the system \index{Stakeholder}\glspl{stakeholder}. It is important to define how the \index{Stakeholder}\glspl{stakeholder} will interact, determine the derived requirements applicable to each \index{Stakeholder}\gls{stakeholder}, and identify how these requirements will be managed through interface control\index{Interface!organizational} (similarly to systems engineering interface control procedures already in place in many industries). External factors (e.g., economic, social, regulatory) and internal factors (e.g., cultural, processes, strategic) factors are key to defining appropriate interface control measures. Interface control may be iterative throughout the \cbstart data safety management process\cbend. In particular, interface control may need to be amended to take account of implemented data safety \glspl{mitigation}\index{Mitigation}.
+Part of this activity involves understanding the system \index{Stakeholder}\glspl{stakeholder}. It is important to define how the \index{Stakeholder}\glspl{stakeholder} will interact, determine the derived requirements applicable to each \index{Stakeholder}\gls{stakeholder}, and identify how these requirements will be managed through interface control\index{Interface!organizational} (similarly to systems engineering interface control procedures already in place in many industries). External factors (e.g., economic, social, regulatory) and internal factors (e.g., cultural, processes, strategic) are key to defining appropriate interface control measures. Interface control may be iterative throughout the \cbstart data safety management process\cbend. In particular, interface control may need to be amended to take account of implemented data safety \glspl{mitigation}\index{Mitigation}.
 
-The \gls{odr} assessment (Section~\ref*{bkm:assessment}) can be used to form a high-level understanding of each organization's risk. It can be used at programme level to cover all \index{Stakeholder}\glspl{stakeholder} or used by each individual \index{Stakeholder}\gls{stakeholder} to determine the
+The \gls{odr} assessment (Section~\ref{bkm:assessment}) can be used to form a high-level understanding of each organization's risk. It can be used at programme level to cover all \index{Stakeholder}\glspl{stakeholder} or used by each individual \index{Stakeholder}\gls{stakeholder} to determine the
 risk appropriate to their area. However, when adopting such a formulaic approach to risk \cbstart management\cbend, care should be taken 
-to ensure that the resulting system can meet its cumulative requirements and that that ``fallen through the cracks''. This is part of the requirements decomposition and \gls{verification} / \gls{validation} activities described later in the data safety management process.
+to ensure that the resulting system can meet its cumulative requirements and that nothing has ``fallen through the cracks''. This is part of the requirements decomposition and \gls{verification} / \gls{validation} activities described later in the data safety management process.
 
 Among other things, the \gls{odr} assessment considers:
 \begin{itemize}
@@ -74,9 +74,9 @@ In cases where the \gls{odr} assessment has not been explicitly conducted, the q
 
 In the case of an ODR0, no further work is required.
 
-The \gls{odr} can be used to help identify key \index{Stakeholder}\glspl{stakeholder} and necessary approvers (i.e., those who need to formally accept the system). Some approvers might be within the organization, while others may represent external bodies. Approvers could be customers or regulatory authorities.
+The \gls{odr} can be used to help identify additional key \index{Stakeholder}\glspl{stakeholder} and necessary approvers (i.e., those who need to formally accept the system). Some approvers might be within the organization, while others may represent external bodies. Approvers could be customers or regulatory authorities.
 
-The process of establishing the internal context includes understanding organizational culture. A short data safety culture questionnaire is given in Section~\ref*{bkm:culture}, which may help. It can be applied at an organization level or, more likely, within an individual project team. It could also be used to highlight the importance of data safety related issues within a project team, and before and after measurements could be taken to establish the effectiveness of data safety related training\index{Training!Personnel}.
+The process of establishing the internal context includes understanding organizational culture. A short data safety culture questionnaire is given in Section~\ref{bkm:culture}, which may help. It can be applied at an organization level or, more likely, within an individual project team. It could also be used to highlight the importance of data safety related issues within a project team, and before and after measurements could be taken to establish the effectiveness of data safety related training\index{Training!Personnel}.
 
 \subsubsection{Describe the system context}
 This activity is concerned with describing the system under analysis, as well as the key external influences on that system (for example, interfacing systems and human operators). There are many aspects to this activity; for brevity, only aspects directly relevant to data safety are discussed here.
@@ -88,20 +88,20 @@ As development progresses, the system description is likely to be refined. This 
 \subsubsection{Plan the safety management}
 This activity involves scheduling the phases associated with the data safety management process and acquiring the necessary resources to complete them. It also involves \gls{tailoring}\index{Tailoring} the generic process to meet the specific needs of a particular system development. 
 
-Details of the planned \cbstart safety management\cbend\ may be recorded in a \gls{dsmp} \cbstart(The \gls{dsmp} may in turn be part of a higher-level planning document such as a project plan or project  safety management)\cbend. This could also be used to capture the scope of the analyses and the associated context. Together, this constitutes the first section of the \gls{dsmp}. Note that if a \gls{dsmp} is used, it would typically be updated with details from subsequent phases. 
+Details of the planned \cbstart safety management\cbend\ may be recorded in a \gls{dsmp} \cbstart(The \gls{dsmp} may in turn be part of a higher-level planning document such as a project plan or project safety management plan)\cbend. This could also be used to capture the scope of the analyses and the associated context. Together, this constitutes the first section of the \gls{dsmp}. Note that if a \gls{dsmp} is used, it would typically be updated with details from subsequent phases. 
 
 Planning of the \cbstart data safety management\cbend\ requires some knowledge of the quantity and complexity of data that requires \cbstart management\cbend. Therefore, the \gls{dsmp} needs to be updated in subsequent phases once these details are known.
 
-Planning of the \cbstart data safety management\cbend\ may be done through a procurement process. Procurers may wish to know their potential supplier's understanding of data safety and their plans to implement a \index{Safety Assessment!Data}\gls{safety assessment}. A data safety supplier questionnaire is given in Section\ref*{bkm:maturity}) and may be used to determine the potential supplier's understanding and plans, and for auditing purposes.
+Planning of the \cbstart data safety management\cbend\ may be done through a procurement process. Procurers may wish to know their potential supplier's understanding of data safety and their plans to implement a \index{Safety Assessment!Data}\gls{safety assessment}. A data safety supplier questionnaire is given in Section\ref{bkm:maturity} and may be used to determine the potential supplier's understanding and plans, and for auditing purposes.
 
 \subsubsection{Identify \index{Artefact, Data}{\glsentryplural{data artefact}}}
-\index{Artefact, Data}\Glspl{data artefact} are the key pieces of data that are generated, processed or consumed by the system, or used for training\index{Training!Personnel} in its use or maintenance. They provide the foundation for the remaining phases of data risk management.
+\index{Artefact, Data}\Glspl{data artefact} are the key pieces of data associated with the system. They may be generated, processed or consumed by the system, or used for training\index{Training!Personnel} in its use or maintenance. They provide the foundation for the remaining phases of data risk management.
 
 A wide variety of Data Categories have been enumerated to support the identification of \index{Artefact, Data}\glspl{data artefact}. Cross-referencing these categories against the system description can highlight the relevant artefacts. 
 
 Another way of identifying \index{Artefact, Data}\glspl{data artefact} is to consider the functions that the system performs and to establish the data that is required to support these.
 
-A way to confirm that all relevant \index{Artefact, Data}\glspl{data artefact} have been identified is to consider the different phases of the system lifecycle\index{Lifecycle!System}. This can help prevent an inappropriate focus on operational use of the system at the expense of, for example, \glspl{data artefact} associated with system test and evaluation.
+A way to confirm that all relevant \index{Artefact, Data}\glspl{data artefact} have been identified is to consider the different phases of the system lifecycle\index{Lifecycle!System}. This can help prevent too narrow a focus on operational use of the system at the expense of, for example, \glspl{data artefact} associated with system test and evaluation.
 
 \subsection{\Glsfmttext{tailoring}}\index{Tailoring}
 The level of
@@ -140,7 +140,7 @@ There are three complementary activities that can be used to identify risks. The
 
 \subsubsection{Review the general, historical perspective}
 Some insight into potential risks may be gained by reviewing historical accidents and incidents, a collection of which is included in
-Part 3 Section~\ref{Part3-bkm:accidents}. Each domain might have its own catalogue of historical incidents, which can be consulted during a data-focused review.
+Part 3 Section~\ref{Part3-bkm:accidents}. Each domain might have its own catalogue of historical incidents, which can be consulted during a data-focused review. Some organisations carry out a ``lessons learned'' review at the end of projects, which can also give insight into potential risks.
 
 \subsubsection{Conduct a top-down approach}
 If the system under consideration has clearly identified functions, data-related risks can be assessed by considering each function in turn and analysing \cbstart which\cbend\index{Artefact, Data}\glspl{data artefact} and, more particularly, \cbstart which\cbend\ data properties the function depends on. This may be achieved by a variety of methods, including \gls{hazop}\index{HAZOP} and \gls{swift}\index{SWIFT}.
@@ -159,7 +159,7 @@ The general, historical perspective review is a simple activity that does not re
 
 When conducting a bottom-up approach, it may not be appropriate to explicitly consider every possible property for every single artefact. For low-risk (ODR1) and medium-risk (ODR2 / ODR3) systems some form of \gls{tailoring}\index{Tailoring} may be expected. This might, for example, take the form of pre-selecting the properties that are most relevant, or limiting the layer of abstraction at which the system is considered.
 
-\Gls{tailoring}\index{Tailoring} of the bottom-up approach may also be appropriate for some high-risk (ODR4) systems, but in this case an explicit argument that the \gls{tailoring}\index{Tailoring} has not adversely affected system safety would be expected. Furthermore, the risk identification process for high-risk (ODR4) systems is expected to be highly structured. To support this, a number of data-related \gls{hazop}\index{HAZOP} guidewords are presented in Chapter~\ref*{bkm:guidewords}.
+\Gls{tailoring}\index{Tailoring} of the bottom-up approach may also be appropriate for some high-risk (ODR4) systems, but in this case an explicit argument that the \gls{tailoring}\index{Tailoring} has not adversely affected system safety would be expected. Furthermore, the risk identification process for high-risk (ODR4) systems is expected to be highly structured. To support this, a number of data-related \gls{hazop}\index{HAZOP} guidewords are presented in Chapter~\ref{bkm:guidewords}.
 
 The top-down and bottom-up approaches provide different perspectives on data-related risks. For low-risk (ODR1) systems it may be appropriate to consider just one of these perspectives. Both perspectives would be expected to be considered (to some degree) for medium-risk (ODR2 / ODR3) and high-risk (ODR4) systems.
 
@@ -204,8 +204,8 @@ To analyse risks and, more particularly, to align data safety with other risk ma
 \end{longtable}
 
 Definitions for severity and likelihood in \autoref{tab:DSAL-risk-matrix} may be customised for a specific application. A default approach to the assessment of likelihood is presented in
-Subsection~\ref*{bkm:Establishing-DSALS}\index{Assurance Level!Data}
-and Table~\ref*{tab:Likelihood}, while default definitions for severity are presented in Table~\ref*{tab:Severity}.
+Subsection~\ref{bkm:Establishing-DSALS}\index{Assurance Level!Data}
+and Table~\ref{tab:Likelihood}, while default definitions for severity are presented in Table~\ref{tab:Severity}.
 
 Although this allocation of \glspl{dsal}\index{Assurance Level!Data} is typically used, there are some situations where a different allocation matrix may be more appropriate. Hence, it may be appropriate for a tailored allocation matrix to be used. Regardless of whether \gls{tailoring}\index{Tailoring} is used, the matrix should be reviewed and confirmed as being suitable for the intended application.
 
@@ -264,4 +264,4 @@ As outlined in
 \hyperref[bkm:activities:analyse:tailoring]{section}~\ref{bkm:activities:analyse:tailoring}, %Clunky, but \autoref inserted "subsubsection"
 \glspl{dsal}\index{Assurance Level!Data} can be applied at varying levels of abstraction. For small-scale or low-risk (ODR1) systems it may be appropriate to consider \index{Treatment!Risk}\glspl{treatment} at higher levels of system abstraction. For example, this could involve applying a single \gls{dsal} to a sub-system or even to the system in its entirety and implementing risk \index{Treatment!Risk}\gls{treatment} techniques at that level. The latter approach could be appropriate where the data in the system interacts in complex ways and the associated safety risk does not warrant a detailed investigation of these interactions.
 
-A significant amount of \gls{tailoring}\index{Tailoring} is implicit in the way the tables of methods and approaches \cbstart Chapter~\ref*{bkm:activitiestailoring}\cbend\ are constructed. At best a method / approach may be highly recommended as a way of maintaining a required \index{Property!Data}data property at a given \gls{dsal}\index{Assurance Level!Data}. The tables are not exhaustive; additional or alternative methods and approaches can be used.
+A significant amount of \gls{tailoring}\index{Tailoring} is implicit in the way the tables of methods and approaches \cbstart in Chapter~\ref{bkm:activitiestailoring}\cbend\ are constructed. At best a method / approach may be highly recommended as a way of maintaining a required \index{Property!Data}data property at a given \gls{dsal}\index{Assurance Level!Data}. The tables are not exhaustive; additional or alternative methods and approaches can be used.
