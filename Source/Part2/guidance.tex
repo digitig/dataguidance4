@@ -14,8 +14,8 @@
 %   Guidance section.
 %
 %================================================================================
-\chapter{Detailed Guidance (Informative)} \label{bkm:guidance}
-
+\chapter{Detailed Guidance} \label{bkm:guidance}
+%\hl{This chapter to be removed when Chapter \ref{bkm:activities} is completed.}
 \dsiwgSectionQuote{I wanted to separate data from programs, because data and instructions are very different.}{Ken Thompson}
 
 
@@ -26,13 +26,13 @@ The interfaces between \index{Data!Owner}\glspl{data owner}, and indeed data own
 The \index{Data!Owner}\glspl{data owner} or lack of data owner throughout the lifecycle\index{Lifecycle!Data} of data within the system should be identified, including where data is merged or modified through the system operation. This will help gain a greater understanding of how data safety issues can be controlled within the assessment at a particular organizational level.
 
 \subsection{\ecapitalisewords{\glsentrylong{odr}} Form}
-\autoref{bkm:assessment} presents an \gls{odr} assessment form capture a high-level perspective on the risk posed to an organization by data safety issues within a specific project. How the assessment integrates with an organization's existing risk (or safety) management processes is the responsibility of the implementing organization. Ihe form could be used to help tailor the data safety process. The following paragraphs describe the connections between the \gls{odr} and the
+\autoref{bkm:assessment} presents an \gls{odr} assessment form capture a high-level perspective on the risk posed to an organization by data safety issues within a specific project. How the assessment integrates with an organization's existing risk (or safety) management processes is the responsibility of the implementing organization. The form could be used to help tailor the data safety process. The following paragraphs describe the connections between the \gls{odr} and the
 \gls{iso} 31000 \cite{citation:iso310002018risk}
 standard for risk management.
 
 Establishing the context of a risk assessment ensures that the system being considered and the scope of any assessment is well defined. This helps prevent an overrun of the assessment's boundaries and allows which items are in or out of scope to be explicitly communicated to all \index{Stakeholder}\glspl{stakeholder}. In addition, it is the role of this activity to determine the criteria that a system will be judged on. The \gls{odr} assessment links directly to the sub-tasks identified by \gls{iso} 31000 for establishing the risk assessment context and introduces aspects to guide the assessor in assessing  data-specific risks.
 
-Questions 2, 3 and 4 of the \gls{odr} align directly with activity 6.3.3 from \gls{iso} 31000: establishing the external context of the risk assessment.
+\hl{???This isn't process - should it be in part 3 or removed completely?}Questions 2, 3 and 4 of the \gls{odr} align directly with activity 6.3.3 from \gls{iso} 31000: establishing the external context of the risk assessment.
 They guide the assessor in assessing the risk appetite of external \index{Stakeholder}\glspl{stakeholder}, the level of risk that is allocated to the organization, and the regulatory environment within the project will operate.
 
 Question 5 establishes the internal context of the risk assessment (Activity 6.3.3 from \gls{iso} 31000),
@@ -42,7 +42,7 @@ Question 6 explores \index{Data!Owner}data ownership through the use cases of th
 defining risk criteria, which requires an assessor to identify ``the nature and types of causes and consequences that can occur and how they will be measured''. Questions 1, 7 and 8 expand on this, considering data-driven specifics of failure consequences and the issues raised by data complexity, boundary complexity, and system complexity for the project.
 
 Finally, the scoring system of the \gls{odr} provides a heuristic for defining the risk criteria
-(Activity 6.3.4 from gls{iso} 31000)
+(Activity 6.3.4 from \gls{iso} 31000)
 which determines how to combine these different aspects of risk into a single, high-level estimate of the data-related risks associated with a given project. This means that the \gls{odr} can, for example, provide some guidance on data safety assurance principle ``4 + 1''; that is, it provides some guidance on the amount of effort that should be directed towards the management of data safety issues.
  
 While the completion of an \gls{odr} fits within the context establishment activity, it also augments the ongoing communication and consultation activity both by providing a standardised format for capturing the relevant \gls{information} and securing endorsement.
@@ -60,58 +60,9 @@ As already noted, some usage scenarios involve data being supplied by subcontrac
 
 \subsection{Data Categories\index{Category!Data|textbf}}
 \label{bkm:datacategories}
-The full set of data categories which can have safety implications is large: to date more than twenty categories (and one meta-category) have been identified. 
+The full set of data categories which can have safety implications is large: to date more than twenty categories and one meta-category have been identified. 
 
-\autoref{tab:CategoriesShort} gives the current view of the categories of safety-related data that contribute to, are used by, produced by, or affected by safety-related systems. They are roughly organized into a number of categories\index{Category!Data}, which aim to cover all aspects of the system lifecycle\index{Lifecycle!System}. The list in \autoref{tab:CategoriesShort} is not exhaustive. A more detailed version of this table is given in \autoref{bkm:categories}.
-
-\begin{longtable}{|C{\dsiwgColumnWidth{0.1}}|L{\dsiwgColumnWidth{0.2}}|L{\dsiwgColumnWidth{0.7}}|}
-  \caption{Categories\index{Category!Data} of safety-related data: concise definitions}
-  \label{tab:CategoriesShort}
-  \\\hline\TableHeadColourCX{No.} & \TableHeadColour{Category} & \TableHeadColour{Description}\\\hline
-  \endfirsthead
-  \caption[]{Categories of safety-related data: concise definitions (continued)}
-  \\\hline\TableHeadColourCX{No.} & \TableHeadColour{Category} & \TableHeadColour{Description}\\\hline
-  \endhead
-  \multicolumn{3}{r}{\sl Continued on next page}
-  \endfoot
-  \endlastfoot
-  \multicolumn{3}{|c|}{\dsiwgTextBF{Context}}\\\hline
-  {1} & {Predictive}\index{Predictive Data} & {Data used to model or predict behaviours and performance}\\\hline
-  {2} & {Scope, assumption and context}\index{Scope, Assumption and Context Data} & {Data used to frame the development, operations or provide context}\\\hline
-  {3} & {Requirements}\index{Requirement Data} & {Data used to specify what the system has to do}\\\hline
-  {4} & {Interface}\index{Interface Data} & {Data used to enable interfaces between this system and other systems:  for operations, initialisation or export from the system}\\\hline
-  {5} & {Reference or lookup}\index{Reference or Lookup Data} & {Data used across multiple systems with generic usage}\\\hline
-  \multicolumn{3}{|c|}{\dsiwgTextBF{Implementation}}\\\hline
-  {6} & {Design and development}\index{Design and Development Data} & {Data produced during development  and implementation}\\\hline
-  {7} & {Software}\index{Software Data} & {Data that is compiled (or interpreted) and executed to achieve the desired system behaviour}\\\hline
-  {8} & {\Gls{verification}}\index{Verification Data} & {Data used to test and analyse the system,
-    specifically to determine whether it has been built as intended}\\\hline
-  \multicolumn{3}{|c|}{\dsiwgTextBF{Configuration}}\\\hline
-	{9} & {\Gls{ml}}\index{Machine Learning Data} & {Data used to train the system}\\\hline
-  {10} & {Infrastructure}\index{Infrastructure Data} & {Data used to configure, tailor or instantiate the system itself}\\\hline
-  {11} & {Behavioural}\index{Behavioural Data} & {Data used to change the functionality of the system}\\\hline
-  {12} & {Adaptation}\index{Adaptation Data} & {Data used to configure to a particular site}\\\hline
-  \multicolumn{3}{|c|}{\dsiwgTextBF{Capability}}\\\hline
-  {13} & {Staffing}\index{Staffing Data} & {Data related to staff training\index{Training!Personnel}, competency, certification and permits}\\\hline
-  \multicolumn{3}{|c|}{\dsiwgTextBF{The Built System}}\\\hline
-  {14} & {Asset}\index{Asset Data} & {Data about the installed or deployed system and its parts, including maintenance data}\\\hline
-  {15} & {Performance}\index{Performance Data} & {Data collected or produced about the system during trials, pre-operational phases and live operations}\\\hline
-  {16} & {Release}\index{Release Data} & {Data used to ensure safe operations per release instance}\\\hline
-  {17} & {Instructional}\index{Instructional Data} & {Data used to warn, train or instruct users about the system}\\\hline
-  {18} & {Evolution}\index{Evolution!Data} & {Data about changes after deployment}\\\hline
-  {19} & {End of Life}\index{End of Life Data} & {Data about how to stop, remove, replace or dispose of the system}\\\hline
-  {20} & {Stored}\index{Stored Data} & {Data stored by the system during operations}\\\hline
-  {21} & {Dynamic}\index{Dynamic Data} & {Data manipulated and processed by the system during operations}\\\hline
-  {22} & {Twinning}\index{Twinning Data} & {Data used to create and maintain a digital counterpart of a physical object or process}\\\hline
-%
-  \multicolumn{3}{|c|}{\dsiwgTextBF{Compliance and Liability}}\\\hline
-  {23} & {Standards and regulatory}\index{Standards and Regulatory Data} & {Data that governs the approaches,  processes and procedures used to develop safety systems}\\\hline
-  {24} & {Justification} & {Data used to justify the safety position of the system}\\\hline
-  {25} & {Investigation}\index{Investigation Data} & {Data used to support accident or incident investigations (i.e., potential evidence)}\\\hline
-  \multicolumn{3}{|c|}{\dsiwgTextBF{Meta-Property}}\\\hline
-  {+1} & {Trustworthiness}\index{Trustworthiness} & {(Meta) data which tells us how much the system can be trusted}\\\hline
-\end{longtable}
-
+\autoref{bkm:categories} gives the current view of the categories of safety-related data that contribute to, are used by, produced by, or affected by safety-related systems. They are roughly organized according to the system lifecycle\index{Lifecycle!System}. 
 \section{Identify Risks}
 \subsection{Historical Accidents and Incidents}
 Ideally, data safety risks would be identified and mitigated before they lead to an accident or incident. However, this is not always the case. Historical occurrences can provide an indication of the data safety risks present in planned or existing systems. In particular, accidents and incidents can be analysed to identify potential contributory causes relating to data.
@@ -126,6 +77,7 @@ Most of the current collection of accidents and incidents fall into three catego
 
 \subsection{Ways that Data Can Cause Problems}
 \label{tab:issues}
+\hl{???I can't fit this into the process. Does it belong in Part 3 or Volume 3?}
 There are some risk-inducing issues that are different or more prevalent for data than for other system elements. An incomplete collection of examples is provided below. This list may provide a quick way of identifying risks, which could be especially useful at an early stage of a project:
 
 \begin{description}
@@ -190,6 +142,7 @@ There are several parts to this problem:
 Further examples of how data may cause issues in many scenarios is given in the book \dsiwgTextIT{Data-Centric Safety: Challenges, Approaches, and Incident Investigation} \cite{citation:datacentric}.
 
 \subsection{\ecapitalisewords{\glsentryplural{data property}}}\label{bkm:guidance:dataproperties}
+\hl{I can't fit this into the process. Does it belong in Part 3 or Volume 3?}
 \Glspl{data property} are used to establish what aspects of the data (e.g., \gls{timeliness}\index{Timeliness Property}, \gls{accuracy}\index{Accuracy Property}) need to be guaranteed in order that the system operates in a safe manner.
 
 James Inge's work \cite{citation:inge2008improving} produced a useful taxonomy of data categories, and went on to look at faults in data. He concluded that a rigid taxonomy of data categories was unhelpful due to various properties or characteristics of the data which vary independently. In short, it is the combination of data category\index{Category!Data} with the required \index{Property!Data}\glspl{data property} that facilitates safety analysis.
@@ -360,51 +313,11 @@ loss of one or more \index{Property!Data}data properties (x = potential loss of 
 \end{longtable}
 \clearpage
 \subsection{\glsfmtshort{hazop} Guidewords}\index{HAZOP}
-\label{bkm:HazopGuidewords}
 A \gls{hazop} \cite{citation:iec61882:2016}
 provides a structured approach for identifying hazards. It involves a multidisciplinary team collaborating to identify potential hazards and operability problems. Structure and \index{Completeness!Hazard Identification}\gls{completeness} are supported through the use of guideword prompts, for example, considering the implications if software components perform functions early, late or not at all. These prompts are intended to stimulate imaginative thinking, to focus the study and to elicit ideas and discussion.
 
-\autoref{tab:HazopShort}\index{HAZOP} lists a set of guidewords for a data-focused \gls{hazop}, based upon the \index{Property!Data}properties defined in \autoref{tab:PropertiesOfData}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity Property}\gls{integrity}, and so on.
-The list is non-exhaustive. Other guidewords may be useful for particular systems or may be used to ensure the data safety assessment is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment|see{Safety Assessment, System}}. A more detailed version of this table, including specific \gls{hazop}\index{HAZOP} data considerations, is available at \autoref{bkm:guidewords}.
-
-\begin{longtable}{|L{\dsiwgColumnWidth{0.25}}|L{\dsiwgColumnWidth{0.75}}|}
-  \caption{\glsfmtshort{hazop} guidewords: concise guide}\index{HAZOP}
-  \label{tab:HazopShort}
-  \\\hline\TableHeadColour{Property} & \TableHeadColour{\glsfmtshort{hazop} Data Guidewords}\\\hline
-  \endfirsthead
-  \caption[]{\glsfmtshort{hazop} guidewords: concise guide (continued)}
-  \\\hline\TableHeadColour{Property} & \TableHeadColour{\glsfmtshort{hazop} Data Guidewords}\\\hline
-  \endhead
-  \multicolumn{2}{r}{\sl Continued on next page}
-  \endfoot
-  \endlastfoot
-  {\Gls{integrity}}\index{Integrity Property} & {Loss, partial loss, incorrect, multiple}\\\hline
-  {\Gls{completeness}}\index{Completeness!Property} & {Loss, partial loss, incorrect, multiple, insufficient, missing, hidden, unknown, obscured}\\\hline
-  {\Gls{consistency}}\index{Consistency!Property} & {Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence}\\\hline
-  {\Gls{continuity}}\index{Continuity Property} & {Loss, partial loss, incorrect, late, loss of sequence, missing, hidden, unknown, obscured}\\\hline
-  {\Gls{format}}\index{Format Property} & {Loss, partial loss, incorrect, multiple}\\\hline
-  {\Gls{accuracy}}\index{Accuracy Property} & {Loss, partial loss, incorrect, multiple, insufficient}\\\hline
-  {\Gls{resolution}\index{Resolution Property}} & {Loss, partial loss, incorrect, multiple, insufficient}\\\hline
-  {\Gls{traceability}}\index{Traceability Property} & {Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence}\\\hline
-  {\Gls{timeliness}\index{Timeliness Property}} & {Loss, partial loss}\\\hline
-  {\Gls{verifiability}}\index{Verifiability Property} & {Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence}\\\hline
-  {\Gls{availability}}\index{Availability Property} & {Loss, partial loss, multiple, too early, too late, missing, hidden}\\\hline
-  {\Gls{fidelity}}\index{Fidelity / Representation Property} & {Loss, partial loss, incorrect, multiple, too early, too late}\\\hline
-  {\Gls{priority}}\index{Priority Property} & {Loss, partial loss, incorrect, multiple, too early, too late}\\\hline
-  {\Gls{sequencing}\index{Sequencing, Data}} & {Loss, partial loss, incorrect, multiple}\\\hline
-  {\Gls{intended_destination}\index{Intended Destination / Usage Property}} & {Loss, partial loss, incorrect, multiple, too early, too late, loss of sequence}\\\hline
-  {\Gls{accessibility}}\index{Accessibility Property} & {Loss, partial loss, incorrect, multiple, too early, too late}\\\hline
-  {\Gls{suppression}}\index{Suppression Property} & {Loss, partial loss, incorrect, too early, too late, too much, too little}\\\hline
-  {\Gls{history}}\index{History Property} & {Loss, partial loss, incorrect, multiple}\\\hline
-  {\Gls{lifetime}}\index{Lifetime Property} & {Loss, too early, too late, incorrect, multiple, loss of sequence}\\\hline
-  {\Gls{disposability}}\index{Disposability / Deletability Property} & {Loss, partial loss, incorrect, too early, too late}\\\hline
-  {\Gls{goldilocks}\index{Goldilocks Property}} & {Loss, partial loss, incorrect, too early, too late, too much,
-    too little (insufficient), spurious}\\\hline
-  {\Gls{analysability}\index{Analysability Property}} & {Loss, partial loss, incorrect, too much, too little, loss of sequence, loss of tooling}\\\hline
-  {\Gls{explainability}\index{Explainability Property}} & {Loss, partial loss, incorrect, too early, too late, too much, too little, loss of sequence, loss of skills, loss of tooling}\\\hline
-  {\Gls{clarity}\index{Clarity Property}} & { Camouflaged, hidden, obscured, masked, invisible, dark, indistinct, noisy}\\\hline
-\end{longtable}
-
+\autoref{bkm:guidewords} lists a set of guidewords for a data-focused \gls{hazop}, based upon the \index{Property!Data}properties defined in \autoref{bkm:categories}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity Property}\gls{integrity}, and so on.
+The list is non-exhaustive. Other guidewords may be useful for particular systems or may be used to ensure the \gls{data safety assessment}\index{Safety Assessment!Data} is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment|see{Safety Assessment, System}}. Some guidewords might not be relevant for some systems.
 \clearpage
 \section{Analyse Risks}
 \subsection{Establishing \glsfmtplural{dsal}}\index{Assurance Level!Data}

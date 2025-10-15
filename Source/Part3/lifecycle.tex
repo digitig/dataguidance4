@@ -14,12 +14,12 @@
 %   Miscellanea section.
 %
 %================================================================================
-\chapter{Lifecycle\index{Lifecycle|textbf} Considerations (Discursive)} \label{bkm:lifecycle}
+\chapter{Lifecycle\index{Lifecycle|textbf} Considerations} \label{bkm:lifecycle}
 
 \dsiwgSectionQuote{Failure is an amazing data point that tells you which direction not to go.}{Payal Kadakia}
 
 \section{Usage Scenarios}
-If safety-related data is incorrect it can become dangerous when used, either by making a computer or control system perform incorrect actions, or by misleading human users into making incorrect decisions. Since the danger can only be determined when the usage of the data is understood, risk assessment should involve both the consumer of the data and the producer.
+If safety-related data is incorrect it can become dangerous when used, either by making a computer or control system perform inappropriate actions, or by misleading human users into making inappropriate decisions. Since the danger can only be determined when the usage of the data is understood, risk assessment should involve both the consumer and the producer of the data.
 
 \begin{figure}[htbp]
   \centering
@@ -29,9 +29,9 @@ If safety-related data is incorrect it can become dangerous when used, either by
   \label{fig:producerconsumer}
 \end{figure}
 
-The consumer assesses the use of the safety-related data. (In later phases of the data safety management process this \gls{information} is used to define the required \glspl{data property}: for example, how accurate a particular safety-related \index{Artefact, Data}\gls{data artefact} must be.)
+The producer investigates how the safety-related data is collected and what errors might occur. Building on activities in later phases of the data safety management process, the producer can provide some form of guarantee, or level of confidence, that the safety-related data meets the specific data-related requirements.
 
-The producer investigates how the safety-related data is collected and what errors might occur. (Building on activities in later phases of the data safety management process, the producer can provide some form of guarantee, or level of confidence, that the safety-related data meets the specific data-related requirements.)
+The consumer assesses the use of the safety-related data. In later phases of the data safety management process this \gls{information} is used to define the required \glspl{data property}: for example, how accurate a particular safety-related \index{Artefact, Data}\gls{data artefact} must be.
 
 In some cases a producer will be providing safety-related data without any knowledge of a specific user (e.g., mapping data or generic \glspl{database} that are sold to many users). In these cases the producer will need to make some assumptions about possible users, and then clearly state what level of \index{Integrity Property}\gls{integrity} the data has been produced to. It is then up to the users to check whether the declared \index{Integrity Property}\gls{integrity} matches their need.
 

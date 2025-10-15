@@ -1,0 +1,426 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Activities and Tailoring section.
+%
+%================================================================================
+\chapter{Activities (TGR Revised)}\index{Tailoring|textbf}\label{bkm:activities}
+\hl{This chapter is intended to ultimately replace Activities, Guidance and Tailoring. }
+\dsiwgSectionQuote
+  {It is a capital mistake to theorise before one has data.}
+  {Sherlock Holmes - ``A Study in Scarlet'' (Sir Arthur Conan Doyle)}
+
+
+\section{Phase 1: Establish Context}
+\subsection{Overview}
+The system under consideration should be understood and documented, including interfaces\index{Interface!System} and safety-related data aspects. The process of documenting the system of interest furthers the understanding of \index{Stakeholder}\glspl{stakeholder} and approvers so they can make sensible judgements about the system. It also formally declares assumptions that are being made in the system assessment and clearly defines the limits of the assessment. In addition, different levels of risk may be associated with composites of safety-related data, which may be easier to manage than individual \index{Artefact, Data}\glspl{data artefact}, or where independence cannot be demonstrated or maintained. Hence, the partitioning of \glspl{dataset} should also be considered during this phase.
+
+This phase involves developing:
+\begin{itemize}
+	\item an understanding of the context of system within its environment; 
+	\item an understanding of the system requirements; and 
+	\item an understanding of the system design.
+\end{itemize}
+
+These factors help determine the risk appetite: essentially, how much effort will be devoted to making risks as low as practicable. In turn, this will inform the nature and scope of assessments that are conducted during system development, introduction to service, and operation.
+
+The guidance in this document is general in nature, and so it is likely to need \gls{tailoring}\index{Tailoring} to align with the organization's attitude to risk, its existing processes, and the relevant sector's regulatory environment. The \gls{odr} described below, or a version customised to suit the organization's needs, may therefore provide a structured approach to data safety management.
+
+There are four activities associated with this phase:
+\begin{itemize}
+	\item Describe the organisational context;
+	\item Identify risks;
+	\item Analyse risks; and
+	\item Evaluate and treat risks.
+\end{itemize}
+
+\subsection{Describe the organizational context}
+This activity includes identifying:
+\begin{itemize}
+	\item \Glspl{stakeholder} and approvers;
+	\item Applicable legal and regulatory requirements;
+	\item The organisational data risk maturity and appetite;
+	\item The \glspl{data safety requirement};
+	\item How \glspl{data safety requirement} will be managed;
+\end{itemize}
+An \gls{odr} assessment can be helpful in this identification. It results in a rating from ODR0 (the lowest risk) to ODR4 (the highest risk). The intepretation of thse ratings is shown in \ref{tab:Qualitative-ODR}. This rating provides an initial, top-level view of the magnitude of data-related risk. As such, it could form the basis for process \gls{tailoring}\index{Tailoring}; it also gives an indication of the effort that would be proportionate in the management of data safety risks. A detailed questionnaire for conducting an \gls{odr} assessment is given in \ref{bkm:assessment}. 
+
+If the rating is ODR0, no further data safety work would normally be needed.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.21}}|L{\dsiwgColumnWidth{0.39}}|}
+	\caption{Interpretation of \glsfmtshort{odr}}
+	\label{tab:Qualitative-ODR}
+	\\\hline\TableHeadColourCX{\glsfmtshort{odr} Rating} & \TableHeadColour{Qualitative Description}\\\hline
+	\endfirsthead
+	\caption[]{Interpretation of \glsfmtshort{odr} (continued)}
+	\\\hline\TableHeadColourCX{\glsfmtshort{odr} Rating} & \TableHeadColour{Qualitative Description}\\\hline
+	\endhead
+	\multicolumn{2}{r}{\sl Continued on next page}
+	\endfoot
+	\endlastfoot
+	{ODR4} & {High risk}\\\hline
+	{ODR3} & \multirow{2}*{Medium risk}\\\cline{1-1}
+	{ODR2} &\\\hline
+	{ODR1} & {Low risk}\\\hline
+	{ODR0} & {Very low risk}\\\hline
+\end{longtable}
+
+The \gls{odr} assessment can be conducted on the product line or individual product or system, as appropriate for the organization. It is generally not recommended to conduct the \gls{odr} without the context of a system type.
+
+The \gls{odr} assessment is likely to be most useful for organizations that do not have significant safety engineering experience and that are operating in industrial sectors that are not strongly regulated. Organizations with considerable experience in the development of safety-critical systems in heavily regulated environments might also find it useful for defining data context and for augmenting any existing safety standards which do not explicitly consider data. If this assessment is not conducted, some high-level qualitative estimate of risk may still be required (e.g., to support process \gls{tailoring}\index{Tailoring}).
+
+\subsubsection{Stakeholders and approvers}
+It is important to define how the \index{Stakeholder}\glspl{stakeholder} will interact, determine the derived requirements applicable to each \index{Stakeholder}\gls{stakeholder}, and identify how these requirements will be managed through organizational interface control\index{Interface!organizational} (similarly to systems engineering interface control procedures already in place in many industries). External factors (e.g., economic, social, regulatory) and internal factors (e.g., cultural, processes, strategic) are key to defining appropriate organizational interface control measures. Organizational interface control may be iterative throughout the data safety management process. In particular, organizational interface control may need to be amended to take account of implemented data safety \glspl{mitigation}\index{Mitigation}.
+
+The level of organizational interface control\index{Interface!organizational} required will depend heavily on the number of \index{Stakeholder}\glspl{stakeholder}, complexity of their interactions, and the contractual controls already in place. Many programmes already require \glspl{icd}\index{Interface!Control Document} to be developed for systems or equipment. The level of detail required in other programme interface control plans may be used as a guide for the requirements of organizational interface control. 
+
+The \gls{odr} can be used to help identify additional\hl{???Additional to what?} key \index{Stakeholder}\glspl{stakeholder} and necessary approvers (i.e., those who need to formally accept the system). Some approvers might be within the organization, while others may represent external bodies. Approvers could be customers or regulatory authorities.
+
+\subsubsection{Applicable legal and regulatory requirements}\hl{???need content}
+\subsubsection{Organisational data risk maturity and appetite}
+The \gls{odr} assessment includes assessing the organization's maturity in managing data safety risks; the questions are aimed at establishing the depth of awareness of data safety and the associated management processes within the organization. However, measuring the level of awareness of processes and concepts in an organization is not always easy. There may be sufficient high-level knowledge of this for the purposes of the \gls{odr}, but it still may be an area that warrants further investigation.
+
+To support this, \autoref{bkm:culture} \hl{???Could be clearer on the relationship between ``safety culture'' and ``data risk maturity and appetite''. Can we eliminate any of those terms?}includes a separate data safety culture questionnaire to explore the specific area of assessing the data safety culture for a particular activity, whether this be for the organization as a whole or for a particular project, service, or activity. Here the focus is on a personal view rather than a project or company view, so the questionnaire would be completed by all or a significant subset of staff. \index{Response}\Glspl{response} can be aggregated to give an overall data safety culture value. This approach can be periodically repeated to determine trends. For example, if overall scores are declining this may suggest that further training\index{Training!Personnel} and briefings will be required.
+
+The data safety culture questionnaire can be applied at an organization level or, more likely, within an individual project team. It can also be used to highlight the importance of data safety related issues within a project team, and before and after measurements could be taken to establish the effectiveness of data safety related training\index{Training!Personnel}.
+The Data Safety Culture questionnaire is likely to be of most use for low-risk (i.e., ODR1) systems. Developers of higher risk systems will typically have existing processes to develop, maintain and monitor safety cultures, although the data-oriented questionnaire could help inform those existing processes.
+
+Some usage scenarios involve data being supplied by subcontracted organizations. Some formal process will typically be used to select these suppliers. \autoref{bkm:maturity} includes a questionnaire to help ensure that the supplier has suitable processes in place to manage data safety-related issues.
+\subsubsection{Data safety requirements}\hl{???need more more content}
+Different levels of risk may be associated with composites of safety-related data, which may be easier to manage than individual \index{Artefact, Data}\glspl{data artefact}, or where independence cannot be demonstrated or maintained. Hence, the partitioning of \glspl{dataset} should also be considered during this phase.
+\subsubsection{Data safety requirement management}\hl{???Need content. Note that data safety management comes up again in the next phase}
+
+\subsection{Describe the system context}
+This activity is concerned with describing the system under analysis, as well as the key external influences on that system (for example, interfacing systems and human operators). There are many aspects to this activity; for brevity, only aspects directly relevant to data safety are discussed here.
+
+When describing the system, it is often helpful to think in terms of producers and consumers of data. These may be external systems, sub-systems, or a combination of both. It may also be necessary to consider data supply chains, especially when there are a number of separate organizations involved. Note that this activity is to be addressed at a high level. The identification of specific pieces of data is a separate, but related, activity, and the identification of required properties is another activity.
+
+As development progresses, the system description is likely to be refined. This may enable refinement of the data safety system context, supporting the data safety management planning.
+
+\subsection{Plan the safety management}
+This activity involves scheduling the phases associated with the data safety management process and acquiring the necessary resources to complete them. It also involves \gls{tailoring}\index{Tailoring} the generic process to meet the specific needs of a particular system development. 
+
+Details of the planned safety management may be recorded in a \gls{dsmp} (The \gls{dsmp} may in turn be part of a higher-level planning document such as a project plan or project safety management plan). This could also be used to capture the scope of the analyses and the associated context. Together, this constitutes the first section of the \gls{dsmp}. Note that if a \gls{dsmp} is used, it would typically be updated with details from subsequent phases. 
+
+Planning of the data safety management requires some knowledge of the quantity and complexity of data that requires management. Therefore, the \gls{dsmp} needs to be updated in subsequent phases once these details are known.
+
+Planning of the data safety management may be done through a procurement process. Procurers may wish to know their potential supplier's understanding of data safety and their plans to implement a \index{Safety Assessment!Data}\gls{data safety assessment}. A data safety supplier questionnaire is given in Section\ref{bkm:maturity} and may be used to determine the potential supplier's understanding and plans, and for auditing purposes.
+
+\subsection{Identify \index{Artefact, Data}{\glsentryplural{data artefact}}}
+\index{Artefact, Data}\Glspl{data artefact} are the key pieces of data associated with the system. They may be generated, processed or consumed by the system, or used for training\index{Training!Personnel} in its use or maintenance. They provide the foundation for the remaining phases of data risk management.
+
+A wide variety of Data Categories have been enumerated to support the identification of \index{Artefact, Data}\glspl{data artefact}. Cross-referencing these categories against the system description can highlight the relevant artefacts. 
+
+Another way of identifying \index{Artefact, Data}\glspl{data artefact} is to consider the functions that the system performs and to establish the data that is required to support these.
+
+A way to confirm that all relevant \index{Artefact, Data}\glspl{data artefact} have been identified is to consider the different phases of the system lifecycle\index{Lifecycle!System}. This can help prevent too narrow a focus on operational use of the system at the expense of, for example, \glspl{data artefact} associated with system test and evaluation.
+
+\subsection{\Glsfmttext{tailoring}}\index{Tailoring}
+
+Including data safety within a project safety management plan is recommended for complex or highly safety-critical systems. In this case the structure of the safety management plan may be maintained, with the \index{Safety Assessment!Data}\gls{data safety assessment} process being tailored to align to the overall safety management process.
+
+A data maturity questionnaire \hl{???Reference questionnaire when it's in its final location} is likely to be useful, particularly when new organizational relationships are being formed. It may offer little value in situations where both organizations are familiar with each other, they have worked on data-related projects together before and there are suitable audit / review arrangements in place.
+
+\index{Artefact, Data}\Glspl{data artefact} may be defined at a number of levels. A \gls{data artefact} associated with a medical system could be described as ``patient data''. Alternatively, this could be split into smaller parts (e.g., ``blood group''). Generally, the highest possible level consistent with the system description should be used; this prevents an excessively long list of \glspl{data artefact} being developed. If necessary, where further detail is needed those \glspl{data artefact} can be refined as part of an iterative process focused on key issues.
+
+Not every data category\index{Data!Category|} will be relevant to every system. Furthermore, for low-risk (ODR1) systems it may be sufficient to simply consider the groupings of categories (e.g., ``context'', ``implementation'', etc.). Conversely, high-risk (ODR4) systems might need to consider every category\index{Category!Data}, even if this results in a conclusion that a specific category\index{Category!Data} is not relevant for the system in question.
+
+A function-based approach to identifying \index{Artefact, Data}\glspl{data artefact} is likely to be enabled by design processes that also adopt a function-based perspective. If \gls{information} from a function-based perspective is readily available, then it should be used to support the identification of \index{Artefact, Data}\glspl{data artefact}. If this \gls{information} is not readily available, it is recommended that it be generated for medium and high-risk systems (i.e., ODR2 to ODR4, inclusive).
+
+Considering data across the system lifecycle\index{Lifecycle!System} is a relatively simple activity, which is applicable to all systems (i.e., ODR1 to ODR4, inclusive).
+
+\clearpage
+\section{Phase 2: Identify Risks}
+\subsection{Overview}
+This phase involves identifying sources of risk and understanding the potential consequences. It should result in a comprehensive list of risks. These activities are likely to be concurrent with the development of more detailed system designs.
+
+\subsection{Activities}
+There are three complementary activities that can be used to identify risks. There is also an activity associated with updating planning documents:
+\begin{itemize}
+	\item Review the general, historical perspective;
+	\item Conduct a top-down analysis;
+	\item Conduct a bottom-up analysis; and
+	\item Update the planning documents.
+\end{itemize}
+
+\subsubsection{Review the general, historical perspective}
+Ideally, data safety risks would be identified and mitigated before they lead to an accident or incident. However, this is not always the case. Historical occurrences can provide an indication of the data safety risks present in planned or existing systems. In particular, accidents and incidents can be analysed to identify potential contributory causes relating to data.
+
+To support this type of analysis a number of previous accidents and incidents have been collected in Part 3 Chapter \autoref{Part3-bkm:accidents}.
+These include cases which relate to a number of \glspl{data property} (see
+\hyperref[bkm:guidance:dataproperties]{section}~\ref{bkm:guidance:dataproperties}), %Clunky, but \autoref inserted "subsubsection"
+for example the properties of \index{Completeness!Property}\gls{completeness}, \index{Integrity Property}\gls{integrity} and \gls{timeliness}\index{Timeliness Property}.
+They also highlight the importance of the \gls{adaptation data}\index{Adaptation Data} category\index{Category!Data} and dangers associated with the inappropriate use of default data values.
+
+Some organizations carry out a ``lessons learned'' review at the end of projects, which can also give insight into potential risks.
+\subsubsection{Conduct a top-down approach}
+If the system under consideration has clearly identified functions, data-related risks can be assessed by considering each function in turn and analysing \cbstart which\cbend\index{Artefact, Data}\glspl{data artefact} and, more particularly, \cbstart which\cbend\ data properties the function depends on. This may be achieved by a variety of methods, including \gls{hazop}\index{HAZOP} and \gls{swift}\index{SWIFT}.
+
+A \gls{hazop} \cite{citation:iec61882:2016}
+provides a structured approach for identifying hazards. It involves a multidisciplinary team collaborating to identify potential hazards and operability problems. Structure and \index{Completeness!Hazard Identification}\gls{completeness} are supported through the use of guideword prompts, for example, considering the implications if software components perform functions early, late or not at all. These prompts are intended to stimulate imaginative thinking, to focus the study and to elicit ideas and discussion.
+
+\autoref{bkm:guidewords} lists a set of guidewords for a data-focused \gls{hazop}, based upon the \index{Property!Data}properties defined in \autoref{bkm:categories}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity Property}\gls{integrity}, and so on.
+The list is non-exhaustive. Other guidewords may be useful for particular systems or may be used to ensure the \gls{data safety assessment}\index{Safety Assessment!Data} is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment|see{Safety Assessment, System}}. Some guidewords might not be relevant for some systems.
+
+If there are a limited number of safety-related functions, this is usually the simplest approach. This approach also has the advantage that it integrates well with other function-based, top-down approaches to assessing system safety. 
+
+\subsubsection{Conduct a bottom-up approach}
+This approach starts from the \glspl{data artefact} and explores the effects of \glspl{error}. In this context an error is a situation where a required \index{Property!Data}\gls{data property} is not exhibited. This may be achieved by a variety of methods, including \gls{hazop}\index{HAZOP} and \gls{fmeca}\index{FMECA}.
+
+\subsubsection{Update planning documents}
+Once the data safety risks have been identified, the \gls{dsmp} requires review to determine if it needs
+updating to take account of the quantity and complexity of the analysis and \gls{mitigation}\index{Mitigation} activities needed to address the risks. While the \gls{dsmp} might be updated throughout the \cbstart data safety management\cbend, updates may not be required for all projects.
+
+\subsection{\Glsfmttext{tailoring}}\index{Tailoring}
+The general, historical perspective review is a simple activity that does not require significant resources. It is recommended for all systems, regardless of risk level.
+
+When conducting a bottom-up approach, it may not be appropriate to explicitly consider every possible property for every single artefact. For low-risk (ODR1) and medium-risk (ODR2 / ODR3) systems some form of \gls{tailoring}\index{Tailoring} may be expected. This might, for example, take the form of pre-selecting the properties that are most relevant, or limiting the layer of abstraction at which the system is considered.
+
+\Gls{tailoring}\index{Tailoring} of the bottom-up approach may also be appropriate for some high-risk (ODR4) systems, but in this case an explicit argument that the \gls{tailoring}\index{Tailoring} has not adversely affected system safety would be expected. Furthermore, the risk identification process for high-risk (ODR4) systems is expected to be highly structured. To support this, a number of data-related \gls{hazop}\index{HAZOP} guidewords are presented in Chapter~\ref{bkm:guidewords}.
+
+The top-down and bottom-up approaches provide different perspectives on data-related risks. For low-risk (ODR1) systems it may be appropriate to consider just one of these perspectives. Both perspectives would be expected to be considered (to some degree) for medium-risk (ODR2 / ODR3) and high-risk (ODR4) systems.
+\section{Phase 3: Analyse Risks}
+\subsection{Overview}
+This phase involves identifying sources of risk and understanding the potential consequences. It should result in a comprehensive list of risks. These activities are likely to be concurrent with the development of more detailed system designs.
+
+\subsection{Activities}
+This part of the risk management process involves developing an understanding of the consequences and likelihood of each risk. This understanding allows system (or safety) \gls{integrity} levels or \glspl{dsal} to be determined.
+%
+%\vspace{-8pt}%Cheat needed to avoid table bleeding over to next page. Only needed since file indexed!
+%
+There are two activities associated with this phase:
+\begin{itemize}
+	\item Establish \glsfmtplural{dsal}\index{Assurance Level!Data|textbf}; and
+	\item Analyse \glsfmtplural{dsal} as part of system safety activities.\index{Assurance Level!Data}
+\end{itemize}
+%
+\subsubsection{Establish required \glsfmtplural{dsal}}\index{Assurance Level!Data|textbf}
+\label{bkm:DSAL-table-section}
+The key activity in this phase is to establish the (untreated) likelihood and severity of each risk identified in the preceding phase.
+
+To analyse risks and, more particularly, to align data safety with other risk management processes, problems stemming from the use of the term ``likelihood'' in situations where there may be no failure rates need to be overcome. For this reason the \gls{dsal}\index{Assurance Level!Data} was developed. The \gls{dsal} metric is not a statistical measure of likelihood, or a literal numeric measure of \index{Integrity Property}\gls{integrity}. Instead, the \gls{dsal} metric is an indicator for the level of rigour that an assurance argument requires. As such, \glspl{dsal} share a common theoretical basis with concepts like \glspl{idal} \index{Assurance Level!Development} \cite{citation:arp4754a2010guidelines} and development process systematic capability \cite{citation:iec615083}.
+
+\glspl{dsal} are measured on a scale of DSAL0 (lowest-assurance) to DSAL4 (highest-assurance). They are typically allocated as indicated in a form similar to  \autoref{tab:DSAL-risk-matrix}. The specific allocation of \glspl{dsal} to likelihoods and severities will vary between industries and applications, and is discussed further in \hl{???insert reference}.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.2}}|C{\dsiwgColumnWidth{0.2}}|C{\dsiwgColumnWidth{0.2}}|C{\dsiwgColumnWidth{0.2}}|}
+  \caption{Illustrative \glsfmtshort{dsal} ``risk'' matrix}
+  \label{tab:DSAL-risk-matrix}
+  \\\hline
+  \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Likelihood}}\\\cline{2-4}
+  \multirow{-2}*{\TableHeadColourCX{Severity}} & \TableDimColourCX{ High} & \TableDimColourCX{Medium} & \TableDimColourCX{Low}\\\hline
+  \endfirsthead
+  \caption[]{Illustrative S\glsfmtshort{dsal} ``Risk'' Matrix (continued)}
+  \\\hline
+  \TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Likelihood}}\\\cline{2-4}
+  \multirow{-2}*{\TableHeadColourCX{Severity}} & \TableDimColourCX{High} & \TableDimColourCX{Medium} & \TableDimColourCX{Low}\\\hline
+  \endhead
+  \multicolumn{4}{r}{\sl Continued on next page}
+  \endfoot
+  \endlastfoot
+  Minor & DSAL1 & DSAL0 & DSAL0\index{Assurance Level!Data}\\\hline
+  Moderate & DSAL2 & DSAL1 & DSAL0\index{Assurance Level!Data}\\\hline
+  Significant & DSAL3 & DSAL2 & DSAL1\index{Assurance Level!Data}\\\hline
+  Major & DSAL4 & DSAL3 & DSAL2\index{Assurance Level!Data}\\\hline
+  Catastrophic & DSAL4 & DSAL4 & DSAL3\index{Assurance Level!Data}\\\hline
+\end{longtable}
+
+Definitions for severity and likelihood in \autoref{tab:DSAL-risk-matrix} may be customised for a specific application. A default approach to the assessment of likelihood is presented in
+Subsection~\ref{bkm:Establishing-DSALS}\index{Assurance Level!Data}
+and Table~\ref{tab:Likelihood}, while default definitions for severity are presented in Table~\ref{tab:Severity}.
+
+Although this allocation of \glspl{dsal}\index{Assurance Level!Data} is typically used, there are some situations where a different allocation matrix may be more appropriate. Hence, it may be appropriate for a tailored allocation matrix to be used. Regardless of whether \gls{tailoring}\index{Tailoring} is used, the matrix should be reviewed and confirmed as being suitable for the intended application.
+
+In principle, \autoref {tab:Likelihood} and \autoref{tab:Severity} are used together with Table~\ref{tab:DSAL-risk-matrix} to determine a \gls{dsal}. However, the methods to determine severity and likelihood, and to combine them to determine a \gls{dsal}, should not be followed rigidly, but should be defined based upon the overall \index{Safety Requirement!System}safety requirements of the system being assessed. Examples of situations that may require such alternate approaches are described in
+Paragraph~\ref{bkm:activities:analyse:partofsystemsafetyactivities},
+while potential approaches to customisation are described in \autoref{bkm:DsalCustomisation}.
+It is essential that any customised approach is recorded in the \gls{dsmp}.
+
+The likelihood of a data safety related risk is qualitatively determined by
+consideration of the significance of a \gls{error}, along with the defences currently in place against such errors. These factors may be addressed by
+considering the following characteristics:
+
+\begin{description}
+	\item[Proximity:] how directly a data failure will lead to an accident;
+	\item[Dependency:] how dependent the application is on the \gls{dataset};
+	\item[Preventability:] the ability of the systems architect / developers to guard against \glspl{error};
+	\item[Detectability:] the likelihood of being able to detect a data failure prior to an accident; and
+	\item[Correctability:] the ability of the system to work around or correct \glspl{error}.
+\end{description}
+
+For example, errors that are easy to guard against are associated with low likelihoods. Conversely, errors that are difficult to detect are associated with high likelihoods. \autoref {tab:Likelihood} illustrates how aspects of these characteristics map to three, qualitative likelihoods.  The table assumes the actions implied are taken. For example, a low likelihood for the ``prevention'' characteristic is only valid if the easy guard / barrier is actually implemented. Similarly, it is assumed that if an error is found, under the ``detection'' characteristic, an appropriate \index{Response}\gls{response} is implemented.
+\clearpage
+\begin{longtable}{|C{\dsiwgColumnWidth{0.19}}|C{\dsiwgColumnWidth{0.27}}|C{\dsiwgColumnWidth{0.27}}|C{\dsiwgColumnWidth{0.27}}|}
+	\caption{Calculation of likelihood}
+	\label{tab:Likelihood}
+	\\\hline
+	\TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Likelihood}}\\\cline{2-4}
+	\multirow{-2}*{\TableHeadColourCX{}} & \TableDimColourCX{ High} & \TableDimColourCX{Medium} & \TableDimColourCX{Low}\\\hline
+	\endfirsthead
+	\caption[]{Calculation of likelihood (continued)}
+	\\\hline\TableHeadColour{} & \multicolumn{3}{c|}{\TableHeadColourCX{Likelihood}}\\\cline{2-4}
+	\multirow{-2}*{\TableHeadColourCX{}} & \TableDimColourCX{High} & \TableDimColourCX{Medium} & \TableDimColourCX{Low}\\\hline
+	\endhead
+	\multicolumn{4}{r}{\sl Continued on next page}
+	\endfoot
+	\endlastfoot
+	Proximity & %
+	A known use of the data is highly likely to lead to an accident. & %
+	A possible use of the data could lead to an accident. & %
+	All currently foreseen uses of the data could lead to harm only via lengthy and indirect routes.\\
+	\hline
+	Dependency & %
+	Data is completely relied upon. & %
+	Data is indirectly relied upon. & %
+	Little reliance on data.\\
+	\hline
+	Prevention & %
+	Difficult or impossible to guard against errors. & %
+	Possible to guard against errors. & %
+	Easy to guard against error.\\
+	\hline
+	Detection & %
+	Low or no chance of anything else detecting an error. & %
+	Some other people / systems are involved in checking the data. & %
+	Many other people / systems are involved in checking the data.\\
+	\hline
+	Correction & %
+	Difficult or impossible to correct or workaround errors. & %
+	Possible to correct or workaround errors. & %
+	Easy to correct or workaround errors.\\
+	\hline
+\end{longtable}
+
+Consideration of different characteristics is likely to result in different likelihoods. The overall \gls{dsal}\index{Assurance Level!Data} is that 
+associated with the lowest likelihood of any characteristic. Taking the lowest likelihood, not the highest, might  seem non-intuitive. However, in doing so, it is important to only apply those rows of the table which are valid for the issue under consideration. For example, if it would be easy to implement a guard against a given error, but that guard is not actually in place, it would not be valid to claim that the likelihood is low based on the prevention row. In theory it should always be possible to determine likelihood based upon proximity and dependency. However, the benefits of prevention, detection and correction will not always be present.
+
+Risk severity is estimated against a five-point scale, as indicated in \autoref{tab:Severity}.
+
+%\clearpage
+\begin{longtable}{|C{\dsiwgColumnWidth{0.2}}|L{\dsiwgColumnWidth{0.6}}|}
+	\caption{Definition of severity}
+	\label{tab:Severity}
+	\\\hline
+	\TableHeadColourCX{Severity} & \TableHeadColour{Description}\\\hline
+	\endfirsthead
+	\caption[]{Definition of severity (continued)}
+	\\\hline
+	\TableHeadColourCX{Severity} & \TableHeadColour{Description}\\\hline
+	\endhead
+	\multicolumn{2}{r}{\sl Continued on next page}
+	\endfoot
+	\endlastfoot
+	Minor & %
+	Minor injury or temporary discomfort for one or two people. Minor environmental impact.\\
+	\hline
+	Moderate & %
+	Minor injuries affecting several people or one serious injury. Some environmental impact.\\
+	\hline
+	Significant & %
+	Minor injuries affecting many people or a few serious injuries. Significant environmental impact.\\
+	\hline
+	Major & %
+	Serious injuries affecting a number of people, or a single death. Major environmental impact.\\
+	\hline
+	Catastrophic & %
+	Several deaths. Possibly affects the general public or has wide and catastrophic environmental impact.\\
+	\hline
+\end{longtable}
+
+As noted earlier, \glspl{dsal}\index{Assurance Level!Data} have some commonality with things like \glspl{idal} and \glspl{fdal}). However, this commonality does not extend across all aspects. For example, there is an accepted calculus of \glspl{fdal} in which two independent \index{Integrity Property}lower-\gls{integrity} functions can be used to replace a single \index{Integrity Property}higher-\gls{integrity} function. There are two reasons why this type of calculus is not appropriate for \glspl{dsal}:
+
+\begin{enumerate}
+	\item The definition of a \gls{dsal}\index{Assurance Level!Data} already caters for interactions. For example, using two independent \index{Artefact, Data}\glspl{data artefact} to provide similar \gls{information} to a system function reduces the ``dependency'' of each artefact.
+	\item These types of consideration are most closely related to system architecture, from which \index{Artefact, Data}\glspl{data artefact}, associated \index{Property!Data}\glspl{data property} and risks are derived. Hence, rather than applying any calculus at the \gls{dsal}\index{Assurance Level!Data} tier it is more appropriate to apply this to, for example, \glspl{fdal}, with \glspl{dsal} changing as a consequence of the revised system definition.
+\end{enumerate}
+
+The additional understanding developed during this part of the process may show that some previously identified \glspl{data artefact} are not of consequence. Similarly, it is possible that this process may identify additional \glspl{data artefact} or a need to refine the description of existing artefacts.
+
+\subsubsection{Analyse \glsfmtplural{dsal} as part of system safety activities}\index{Assurance Level!Data}
+\label{bkm:activities:analyse:partofsystemsafetyactivities}
+Allocating a required \gls{dsal}\index{Assurance Level!Data} is a significant part of controlling data safety risks, but it is not the only part. It is important that \glspl{dsal} are considered as part of wider system safety activities, rather than being viewed as a separate item.
+
+For medium-risk (ODR2 / ODR3) and high-risk (ODR4) systems it is likely that required \index{Integrity Property}\gls{integrity}, or assurance, levels will be calculated from perspectives other than data safety. Possible examples include item / function \index{Assurance Level!Development}development assurance levels from \glspl{arp} 4754A \cite{citation:arp4754a2010guidelines} and safety \gls{integrity} levels from IEC 61508 \cite{citation:iec615083}.
+Where such an approach is used, the mapping to \glspl{dsal}\index{Assurance Level!Data} should be included within the \gls{dsmp}.
+
+This activity involves comparing \glspl{dsal}\index{Assurance Level!Data} with \gls{integrity}, or assurance, levels. Assuming a typical scenario of a system processing or manipulating data flowing through it, there are two cases to consider:
+
+\begin{enumerate}
+  \item Can the data affect the software? In particular, can the data affect the software such that the safe operation of the system is jeopardised? An ideal system would be able to handle any data fed into it safely without problems, but this is often not the case. An example might be a legacy system which has limited error checking and so may fail in unsafe ways if fed with data which is outside of the expected range. Formally: \dsiwgTextIT{given a system containing software written to a particular \index{Assurance Level!Software}\gls{software assurance level} (which may be none), what should the \gls{dsal}\index{Assurance Level!Data} of the processed data be to preserve correct operation of the system?}
+  \item Can the software affect the data? In particular, can the system's software affect the data being processed or manipulated in such a way that \index{Property!Data}\glspl{data property} that are important for safety might be lost? Some examples might be systems which transform messages, losing any associated checksum protections, thereby possibly affecting the \index{Integrity Property}\gls{integrity} of the data within the message; as a minimum, this removes a means of checking data \index{Integrity Property}\gls{integrity}. Another example might be a system that can delay data flowing through it, (e.g., due to buffering) when timely delivery of the data is critical. Formally:\ \dsiwgTextIT{given data at a particular \gls{dsal}\index{Assurance Level!Data}, what should the \index{Assurance Level!Software}\gls{software assurance level} of the software in the system be to preserve the \gls{dsal}\index{Assurance Level!Data} of the data?}
+\end{enumerate}
+
+When considering the possibility of data affecting software or software affecting data, the degree of contribution and existing \gls{mitigation}\index{Mitigation} position are important. The \glspl{mitigation} should be proportionate and full credit for existing \glspl{mitigation} may reduce or remove the need for additional work. A particular case is the use of strong checksums to ``wrap'' the data. If these are preserved through processing and can be checked later on, then undetected  corruption can be largely discounted.
+
+\hl{???This section seems more relevant to Phase 4}
+The issue with data affecting software is that the data used by the system might affect the software execution in a way that could credibly lead to \glspl{hazard}, but only where this data-induced effect is not easily detected or mitigated by other means. If this is the situation then appropriate measures need to be put in place \dsiwgTextIT{within the data} to mitigate this risk. Alternatively (or additionally), if the software within the system can be modified, \glspl{mitigation}\index{Mitigation} could be placed \dsiwgTextIT{within the software} to achieve or enhance the \gls{mitigation} needed:
+
+\begin{description}
+	\item[\Gls{mitigation} within the data:]\index{Mitigation} In many cases, this is the best or only option is to improve the quality of the data to avoid the issue. This can be done by introducing a \gls{dsal}\index{Assurance Level!Data} for the data, related to the severity of the \gls{hazard} which may be induced, and thereby addressing the issue at cause. In this case, the \gls{dsal} is bearing a large amount of responsibility. This may mean that a greater number of the ``recommended'' risk \index{Treatment!Risk}\gls{treatment} methods and approaches (identified in the following phase) need to be implemented.
+	\item[\Gls{mitigation} within the software:] If the data cannot be assured to a \gls{dsal}\index{Assurance Level!Data} (e.g., if it is supplied by a third party or legacy system), sometimes changes can be made to the software in the system to improve the situation. These \glspl{mitigation} could be functional (e.g., introduction of better range checking, rejection of illegal combinations of data values). This requires not only specific software changes but also associated \gls{verification} of these new features, and any software changes will have to be implemented to an appropriate \index{Assurance Level!Software}\gls{software assurance level}. However there may be no particular functional \glspl{mitigation}\index{Mitigation} that can be targeted at the particular issue (e.g., testing for illegal combinations of values might be too complex). In this case, development (or re-development) to a suitable \index{Assurance Level!Software}\gls{software assurance level} of the complete set of software within the system should be considered
+\end{description}
+
+The issue with software affecting data is that the software may affect (e.g., corrupt, delete) the data in a way that key \index{Property!Safety}safety properties may be lost and that such loss may not be easily detected. In general, the key \index{Property!Data}\glspl{data property} should be considered to see if any important ones for this data may be jeopardised. If so, a \index{Assurance Level!Software}\gls{software assurance level} from an appropriate standard or guideline should be introduced that mitigates this risk of undetected property loss. This \index{Assurance Level!Software}\gls{software assurance level} should be determined by the hazards that could be caused and may be localised to the software that can cause the problem.
+
+There are specific functional and architectural approaches that may reduce or avoid the need for a \index{Assurance Level!Software}\gls{software assurance level}, including use of strong checksums and digital signatures, as well as techniques such as storing multiple copies, independent channels and so on. The software performing the check of the \index{Property!Data}\gls{data property} will itself need to be developed to the introduced \index{Assurance Level!Software}\gls{software assurance level}. The key is to establish what the software in the system is doing to the data: if the operations are simple and non-changing, then the risk is lower; if the operations are complex involving transforming the data, using the data to calculate and insert new values, or reformatting the data, then the risk is higher.
+
+The effectiveness of the functional \glspl{mitigation}\index{Mitigation} in reducing impact to the particular \index{Property!Data}data properties needs to be determined. For example, a strong checksum may be very effective at detecting unwanted change and therefore lower the \index{Assurance Level!Software}\gls{software assurance level} (from the perspective of data-related requirements). However, a checksum may not help at all if the issue is one of timely message delivery. More \gls{information} on the use of checksums in the aviation domain is available in \cite{citation:koopman2015selection}; this \gls{information} is likely to be applicable to other domains as well.
+
+
+\subsection{\Glsfmttext{tailoring}}\index{Tailoring}\label{bkm:activities:analyse:tailoring}
+\glspl{dsal}\index{Assurance Level!Data} are determined by the use of the data but are used to define properties of systems that manipulate the data (typically via derived requirements). They can therefore be derived at different levels and from different constructs. For example, in the case of simple, low-risk systems it may be appropriate to derive a single \gls{dsal} for an entire system. Alternatively, it may be appropriate to derive \glspl{dsal} for sub-systems, for example, to match the level at which other \gls{integrity}, or assurance, levels have been determined.
+
+Another option is to derive \glspl{dsal}\index{Assurance Level!Data} from \glspl{data artefact} rather than directly from systems. This approach has the advantage that \index{Treatment!Risk}\glspl{treatment} are often related to \glspl{data artefact}; it can work well where there is a simple relationship between \glspl{data artefact} and risks.
+
+%\clearpage %Manual page break
+\section{Phase 4: Evaluate and \Glsfmttext{treat} Risks}
+\hl{???Treating risks is only one way of managing them. Should this be ``mitigate''? I've used that.}
+\subsection{Overview}
+This phase involves deciding what action (if any) should be taken for each of the risks identified in preceding phases. This decision will be influenced by the organization's risk appetite and other factors determined as part of the establish context phase. From some perspectives it may seem strange that requirements are identified at such a late phase. This is a consequence of explicitly linking \index{Safety Requirement!Data}data safety requirements to risks associated with \index{Property!Data}\glspl{data property} of \index{Artefact, Data}\glspl{data artefact}, and the use of \index{Assurance Level!Data}\glspl{dsal} to describe levels of rigour. 
+
+This phase also involves identifying, implementing and verifying \index{Treatment!Risk}\glspl{treatment} for the risks emerging from the previous phase. Verifying the \index{Treatment!Risk}\gls{treatment} includes checking technical details of the chosen approach and re-assessing the post-\gls{treatment} risk to determine whether it is now acceptable.
+
+\subsection{Activities}
+\subsubsection{Evaluate Risk}
+In this phase each risk, including the associated \gls{dsal}\index{Assurance Level!Data} is reviewed and appropriate \index{Response}\glspl{response} are determined. This phase aims to answer the question: can we accept this risk or does some action need to be taken? This is likely to require discussion amongst a number of \index{Stakeholder}\glspl{stakeholder}. From a system safety perspective, there is nothing intrinsically special about data-related risks. Hence, it is recommended that evaluation of data-related risks be conducted alongside the evaluation of other system risks, as part of an organization's standard risk evaluation process.
+
+\subsubsection{Mitigate risk}
+A range of methods and approaches can be used to mitigate the identified data safety risks. Since \gls{mitigation}\index{Mitigation} can be a complex process, requiring collaboration with all system engineering elements, a collection of high-level data-specific \gls{mitigation} measures is given in \autoref{bkm:high_level_mitigation}. These may particularly assist those attempting to explain the process to non-practitioners or those conducting assessments in less highly regulated environments. These high-level data-related \gls{mitigation} measures may prove sufficient for practitioners \cbstart managing the safety of\cbend systems which do not have a high safety criticality.
+\paragraph{High-level data mitigation}\label{bkm:high_level_mitigation}
+
+\begin{description}
+  \item[Avoid]Risk avoidance can be employed where a risk can be eliminated by using different approaches to the design and / or operation of the system. It may also be the case that very significant risks cannot be adequately treated and the only option is to avoid the untenable risk by not proceeding with the project;
+  \item[Accept]For low likelihood and low severity risks (e.g., those ranked as DSAL0)\index{Assurance Level!Data}, where the cost of further risk reduction is judged to be unacceptable, the risk may be accepted as-is and managed as such. Appropriate justification\index{Justification, Safety} is likely to be required for acceptance of risks ranked higher than DSAL0\index{Assurance Level!Data};
+  \item[Transfer]Ownership of the risk's consequence can be transferred, for example to another organization (for example by taking out an insurance policy if the risk is to equipment or property) or to another part of the system that will address the risk. It is important that any such risk transfers are formally documented, understood and agreed by both parties; or
+  \item[\Gls{treat}]The risk can be reduced. This can be achieved by reducing the severity, or the likelihood or both. Choosing this \index{Response}\gls{response} often involves having an outline view of how the risk may be reduced.
+\end{description}
+
+In addition to deciding on and documenting the appropriate mitigation for each risk, this phase also includes gaining approval for these decisions.
+\subsubsection{Avoiding risks}
+\hl{???Need text}
+\subsubsection{Accepting risks}
+\hl{???Need text}
+\subsubsection{Transferring risk}
+\hl{???Need text}
+\subsubsection{Treating risk}
+If a decision is made to \gls{treat} a risk, suitable methods and approaches should be identified. A range of potential methods and approaches are included in this guidance. These are mapped against \glspl{dsal}\index{Assurance Level!Data}, \index{Property!Data}\glspl{data property} and a selection of lifecycle\index{Lifecycle!Data} data categories.
+
+Once a \index{Treatment!Risk}\gls{treatment} strategy has been established and implemented, whether the expected risk reduction has been achieved needs to be determined. Equivalently, there is a need to consider whether the residual risk may now be accepted or whether another one of the \index{Response}\glspl{response} identified above is necessary.
+
+\subsection{\Glsfmttext{tailoring}}\index{Tailoring}
+Records of the discussions that occur as part of risk evaluation should be kept. For low-risk (ODR1) systems, this may be in the form of a brief memo. For high-risk (ODR4) systems, a detailed, structured record, which is placed under formal control, may be required; in this case these discussions may be recorded as part of the system's \gls{hazard log} or as part of a data safety management plan.
+
+As outlined in
+\hyperref[bkm:activities:analyse:tailoring]{section}~\ref{bkm:activities:analyse:tailoring}, %Clunky, but \autoref inserted "subsubsection"
+\glspl{dsal}\index{Assurance Level!Data} can be applied at varying levels of abstraction. For small-scale or low-risk (ODR1) systems it may be appropriate to consider \index{Treatment!Risk}\glspl{treatment} at higher levels of system abstraction. For example, this could involve applying a single \gls{dsal} to a sub-system or even to the system in its entirety and implementing risk \index{Treatment!Risk}\gls{treatment} techniques at that level. The latter approach could be appropriate where the data in the system interacts in complex ways and the associated safety risk does not warrant a detailed investigation of these interactions.
+
+A significant amount of \gls{tailoring}\index{Tailoring} is implicit in the way the tables of methods and approaches in Chapter~\ref{bkm:activitiestailoring} are constructed. At best a method / approach may be highly recommended as a way of maintaining a required \index{Property!Data}data property at a given \gls{dsal}\index{Assurance Level!Data}. The tables are not exhaustive; additional or alternative methods and approaches can be used.
