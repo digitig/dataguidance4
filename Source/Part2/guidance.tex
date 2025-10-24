@@ -70,7 +70,7 @@ Ideally, data safety risks would be identified and mitigated before they lead to
 To support this type of analysis a number of previous accidents and incidents have been collected in Part 3 Chapter \autoref{Part3-bkm:accidents}.
 These include cases which relate to a number of \glspl{data property} (see
 \hyperref[bkm:guidance:dataproperties]{section}~\ref{bkm:guidance:dataproperties}), %Clunky, but \autoref inserted "subsubsection"
-for example the properties of \index{Completeness!Property}\gls{completeness}, \index{Integrity Property}\gls{integrity} and \gls{timeliness}\index{Timeliness Property}.
+for example the properties of \index{Completeness!Property}\gls{completeness}, \index{Integrity!Property}\gls{integrity} and \gls{timeliness}\index{Timeliness Property}.
 They also highlight the importance of the \gls{adaptation data}\index{Adaptation Data} category\index{Category!Data} and dangers associated with the inappropriate use of default data values.
 
 Most of the current collection of accidents and incidents fall into three categories: aviation, maritime, and medical. However, the lessons that can be learned span a much wider range of application areas.
@@ -83,20 +83,20 @@ There are some risk-inducing issues that are different or more prevalent for dat
 \begin{description}
 \item[Fluidity:] Hardware and software can undergo significant amounts of product assurance and once assured may change relatively infrequently. Where change is required to hardware or software, it can be carefully managed and the impact on the safety case appraised. This is not always the case for data, which is often much more fluid. Indeed, the ease with which data can be changed is one motivation for the move towards \glspl{data-driven system}. This fluidity means that it is not always possible to revisit safety cases when data changes. For example, the safety case for an autonomous vehicle cannot be updated every time that the vehicle acquires new knowledge during operation. Instead, the fact that data can change, along with any associated safety impacts, may need to be captured in the system safety case. Fluidity can also provide a temptation for unscrupulous operators to falsify data, for example, after an incident has occurred. Rigorous configuration control procedures can help protect against this type of behaviour.
 
-\item[Reuse:] For the purposes of this discussion, ``reuse'' is interpreted as use of the same data in a different system or system context (e.g., lifecycle\index{Lifecycle!System} phase). Just because data was valid for use in a particular system, it does not immediately follow that it can be reused again in a similar system. Many considerations associated with data reuse are similar to those of software reuse, for example, similarity of requirements, similarity of role in the system, and similarity of required \index{Integrity Property}\gls{integrity} / \index{Assurance Level}assurance level. One consideration that is different is that of \gls{timeliness}\index{Timeliness Property}: data that was valid for use in a particular system at a particular time is not necessarily valid for reuse in the same system at a different time.
+\item[Reuse:] For the purposes of this discussion, ``reuse'' is interpreted as use of the same data in a different system or system context (e.g., lifecycle\index{Lifecycle!System} phase). Just because data was valid for use in a particular system, it does not immediately follow that it can be reused again in a similar system. Many considerations associated with data reuse are similar to those of software reuse, for example, similarity of requirements, similarity of role in the system, and similarity of required \index{Integrity!Property}\gls{integrity} / \index{Assurance Level}assurance level. One consideration that is different is that of \gls{timeliness}\index{Timeliness Property}: data that was valid for use in a particular system at a particular time is not necessarily valid for reuse in the same system at a different time.
 
-\item[Ageing:] As highlighted above, all safety-related data has a lifetime and this needs to be explicitly managed. This can involve, for example, purging, deleting and alerting. Ageing can occur as a result of changes external to the system (for example, records of the positions of other aircraft, newly discovered drug interactions, or new software patches), or it can result from internal changes (e.g., valves gradually becoming less responsive, \gls{configuration data} becoming out of date, or data schemas evolving over time).
+\item[Ageing:] As highlighted above, all safety-related data has a lifetime\index{Lifetime Property} and this needs to be explicitly managed. This can involve, for example, purging, deleting and alerting. Ageing can occur as a result of changes external to the system (for example, records of the positions of other aircraft, newly discovered drug interactions, or new software patches), or it can result from internal changes (e.g., valves gradually becoming less responsive, \gls{configuration data} becoming out of date, or data schemas evolving over time).
 
-\item[Transformation:] Data is often filtered, mapped or aggregated as it moves through systems, sometimes creating new \glspl{dataset} as a result. \Glspl{data property} are not necessarily preserved by these processes. Sometimes data is filtered too much or only some of the data is selected (either deliberately or inadvertently through accident or unintended bias), such as by the selection of only the test runs that succeeded. The main issues are loss of heritage / history / source \gls{information}. Data can also appear to become something else. Without careful management, the \index{Integrity Property}\gls{integrity} may become lowered to the lowest common denominator and this needs to be recognized. Additional checks (e.g., \gls{validation} checks, credibility checks) or assurance measures may be needed to ensure that required \index{Integrity Property}\gls{integrity} / assurance is maintained.
+\item[Transformation:] Data is often filtered, mapped or aggregated as it moves through systems, sometimes creating new \glspl{dataset} as a result. \Glspl{data property} are not necessarily preserved by these processes. Sometimes data is filtered too much or only some of the data is selected (either deliberately or inadvertently through accident or unintended bias), such as by the selection of only the test runs that succeeded. The main issues are loss of heritage / history / source \gls{information}. Data can also appear to become something else. Without careful management, the \index{Integrity!Property}\gls{integrity} may become lowered to the lowest common denominator and this needs to be recognized. Additional checks (e.g., \gls{validation} checks, credibility checks) or assurance measures may be needed to ensure that required \index{Integrity!Property}\gls{integrity} / assurance is maintained.
 
-\item[Archiving and retrieval:] Safety-related data needs to be available when required. Data \gls{accessibility}\index{Accessibility Property} needs to be considered over the complete system lifetime. It is also important to consider what \index{Property!Data}properties of the data need to be preserved and how this affects the choice of storage medium.
+\item[Archiving and retrieval:] Safety-related data needs to be available when required. Data \gls{accessibility}\index{Accessibility Property} needs to be considered over the complete system lifetime. It is also important to consider what \index{Data Property}properties of the data need to be preserved and how this affects the choice of storage medium.
 
-\item[Biasing:] This is a systemic \index{Accuracy Property}inaccuracy in data due to the characteristics of the process employed in the creation, collection, manipulation, presentation, and interpretation of data. It is usually an unintentional distortion in the \gls{dataset}. One example of this is the confirmation bias that may be applied to safety claims, and another example is that synthetic autonomous vehicle training\index{Training!AI} \glspl{database} can have issues with artificial data if it is not realistic.
+\item[Biasing:] This is a systemic inaccuracy in data due to the characteristics of the process employed in the creation, collection, manipulation, presentation, and interpretation of data. It is usually an unintentional distortion in the \gls{dataset}. One example of this is the confirmation bias that may be applied to safety claims, and another example is that synthetic autonomous vehicle training\index{Training!AI} \glspl{database} can have issues with artificial data if it is not realistic.
 Although there is no perfect way of checking for this within the system, \index{Completeness!Checks}\gls{completeness}, statistical and validity checks on \glspl{dataset} may help.
 
 \item[Falsification / misinformation:] This issue arises where data is created, modified, or deleted either accidentally or deliberately to mislead or misinform potential consumers of that data. Examples from policing and criminal justice might include notes being taken with fabricated times or dates or a crime from the wrong individual in a \gls{database} being accidentally added or removed. Another example might be a supplier falsifying quality records for materials or goods. There have been many cases of misinformation related to the Covid-19\index{Covid-19} pandemic (for example on social media) where people have been deliberately misled, and sometimes this has led to harm (for example, bleach being drunk as a cure). Possible \glspl{mitigation}\index{Mitigation} include digitally signing transmitted data, strong access controls, independent fact-checking, and audit records.
 
-item[Defaulting:] Many systems use default or initial values for \glspl{item data}; sometimes in \glspl{dataset} and sometimes embedded in software. Often these default values are designed to be neutral (e.g., ``0'') or unrealistic (e.g., ``VOID''). There are essentially two cases:
+\item[Defaulting:] Many systems use default or initial values for \glspl{item data}; sometimes in \glspl{dataset} and sometimes embedded in software. Often these default values are designed to be neutral (e.g., ``0'') or unrealistic (e.g., ``VOID''). There are essentially two cases:
 \begin{enumerate}
 	\item initialisation data which may persist and be mistakenly taken as a real value when in fact it should have been changed; and
 	\item data that is used when no meaningful value has been assigned (e.g., during data migration or data exchange between systems).
@@ -145,11 +145,11 @@ Further examples of how data may cause issues in many scenarios is given in the 
 \hl{I can't fit this into the process. Does it belong in Part 3 or Volume 3?}
 \Glspl{data property} are used to establish what aspects of the data (e.g., \gls{timeliness}\index{Timeliness Property}, \gls{accuracy}\index{Accuracy Property}) need to be guaranteed in order that the system operates in a safe manner.
 
-James Inge's work \cite{citation:inge2008improving} produced a useful taxonomy of data categories, and went on to look at faults in data. He concluded that a rigid taxonomy of data categories was unhelpful due to various properties or characteristics of the data which vary independently. In short, it is the combination of data category\index{Category!Data} with the required \index{Property!Data}\glspl{data property} that facilitates safety analysis.
+James Inge's work \cite{citation:inge2008improving} produced a useful taxonomy of data categories, and went on to look at faults in data. He concluded that a rigid taxonomy of data categories was unhelpful due to various properties or characteristics of the data which vary independently. In short, it is the combination of data category\index{Category!Data} with the required \index{Data Property}\glspl{data property} that facilitates safety analysis.
 
-Data categories were discussed in the preceding phase. \autoref{tab:PropertiesOfData} documents a non-exhaustive collection of \index{Property!Data}\glspl{data property}. Typically, it is the loss of one of these \glspl{data property} that presents a \gls{hazard}. This notion of ``loss'' is dependent on the intended use; for example, what is ``timely'' for one use may not be for another.
+Data categories were discussed in the preceding phase. \autoref{tab:PropertiesOfData} documents a non-exhaustive collection of \index{Data Property}\glspl{data property}. Typically, it is the loss of one of these \glspl{data property} that presents a \gls{hazard}. This notion of ``loss'' is dependent on the intended use; for example, what is ``timely'' for one use may not be for another.
 
-The ``\Gls{goldilocks}'' property addresses appropriate sizing and quantity of data. A number of issues have been found to arise when there is too much or too little data. While it is particularly relevant to communications links, it may have relevance to other areas such as \glspl{database} and when people are involved in reviewing or checking data. The property is named ``\gls{goldilocks}'' as it refers to the need to have not too much, not too little, but just the right amount of data%
+The ``\Gls{goldilocks}''\index{Goldilocks Property} property addresses appropriate sizing and quantity of data. A number of issues have been found to arise when there is too much or too little data. While it is particularly relevant to communications links, it may have relevance to other areas such as \glspl{database} and when people are involved in reviewing or checking data. The property is named ``\gls{goldilocks}'' as it refers to the need to have not too much, not too little, but just the right amount of data%
 %
 \footnote{A system where the property was lost involved a high-speed data bus that connected several safety-critical systems. A transceiver of that bus failed and transmitted random noise. The receivers employed parity checks and cyclic redundancy check, but the system had been designed to eliminate occasional \glspl{error}. When random noise filled the bus, several apparently valid messages were created every second, resulting in potentially lethal behaviour.
 
@@ -158,11 +158,11 @@ In a \gls{hazop}\index{HAZOP} carried out during 2020, based upon the \gls{hazop
 The \gls{goldilocks}\index{Goldilocks Property} property is related to the data volume problem discussed in \hyperref[tab:issues]{section}~\ref{tab:issues}, however, given the importance of data sizing and the experience of real-world incidents this is now a separate property.
 
 %
-\subsubsection{The \glsfmttext{analysability}\index{Analysability Property|textbf} property}\label{bkm:guidance:analysability}
+\subsubsection{The \glsfmttext{analysability}\index{Analysability Property} property}\label{bkm:guidance:analysability}
 The \gls{analysability} property recognizes that data is now highly complex and extensive, often large scale, and distributed. And yet, for safety purposes we need to make sure it is of suitable quality and able to support system goals.
 We therefore need to ensure that it is possible to analyse it for key characteristics and establish meaningful results using tools or other means. This property is related to explainabilty and may be performed by the same set of tools or techniques.
 
-\subsubsection{The \glsfmttext{explainability}\index{Explainability Property|textbf} property}\label{bkm:guidance:explainability}
+\subsubsection{The \glsfmttext{explainability}\index{Explainability Property} property}\label{bkm:guidance:explainability}
 \Gls{explainability} describes the ability to establish what the purpose and effect data (and especially changes to data) has on a system
 and explain this to relevant \glspl{stakeholder} in terms that they can understand. It is particularly important for learning and AI-based systems.
 This could be, for example, \gls{ml} training\index{Training!AI} data or system \gls{configuration data}.
@@ -170,7 +170,7 @@ This property is related to \gls{analysability}\index{Analysability Property} an
 %
 
 \begin{longtable}{|L{\dsiwgColumnWidth{0.24}}|C{\dsiwgColumnWidth{0.15}}|L{\dsiwgColumnWidth{0.61}}|}
-  \caption{\index{Property!Data}Properties of data}
+  \caption{\index{Data Property}Properties of data}
   \label{tab:PropertiesOfData}
   \\\hline\TableHeadColour{Property} & \TableHeadColour{Abbreviation} & \TableHeadColour{Description}\\\hline
   \endfirsthead
@@ -180,38 +180,38 @@ This property is related to \gls{analysability}\index{Analysability Property} an
   \multicolumn{3}{r}{\sl Continued on next page}
   \endfoot
   \endlastfoot
-  {\Gls{integrity}}\index{Integrity Property} & I & {The data is correct, true and unaltered}\\\hline
-  {\Gls{completeness}}\index{Completeness!Property} & C & {The data has nothing missing or lost}\\\hline
-  {\Gls{consistency}}\index{Consistency!Property} & N & {The data adheres to a common world view (e.g., units)}\\\hline
-  {\Gls{continuity}}\index{Continuity Property} & Y & {The data is continuous and regular without gaps or breaks}\\\hline
-  {\Gls{format}}\index{Format Property} & O & {The data is represented in a way which is readable by those that need to use it}\\\hline
-  {\Gls{accuracy}}\index{Accuracy Property} & A & {The data has sufficient detail for its intended use}\\\hline
-  {\Gls{resolution}}\index{Resolution Property} & R & {The smallest difference between two adjacent values that can be represented in a data storage, display or transfer system}\\\hline
-  {\Gls{traceability}} & T & {The data can be linked back to its source or derivation}\\\hline
-  {\Gls{timeliness}}\index{Timeliness Property} & M & {The data is as up to date as required}\\\hline
-  {\Gls{verifiability}}\index{Verifiability Property} & V & {The data can be checked and its properties demonstrated to be correct}\\\hline
-  {\Gls{availability}}\index{Availability Property} & L & {The data is accessible and usable when an authorized entity demands access}\\\hline
-  {\Gls{fidelity}}\index{Fidelity / Representation Property} & F & {How well the data maps to the real-world entity it is trying to model}\\\hline
-  {\Gls{priority}}\index{Priority Property} & P & {The data is presented / transmitted / made available in the order required}\\\hline
-  {\Gls{sequencing}\index{Sequencing, Data}} & Q & {The data is preserved in the order required}\\\hline
-  {\Gls{intended_destination}}\index{Intended Destination / Usage Property} & U & {The data is only sent to those that should have
+  {\Gls{integrity}}\index{Data Property!Integrity|see {Integrity, Property}}\index{Integrity!Property} & I & {The data is correct, true and unaltered}\\\hline
+  {\Gls{completeness}}\index{Data Property!Completeness|see {Completeness, Property}}\index{Completeness!Property} & C & {The data has nothing missing or lost}\\\hline
+  {\Gls{consistency}}\index{Data Property!Consistency|see {Consistency Property}}\index{Consistency!Property} & N & {The data adheres to a common world view (e.g., units)}\\\hline
+  {\Gls{continuity}}\index{Data Property!Continuity|see {Continuity Property}}\index{Continuity Property} & Y & {The data is continuous and regular without gaps or breaks}\\\hline
+  {\Gls{format}}\index{Data Property!Format|see {Format Property}}\index{Format Property} & O & {The data is represented in a way which is readable by those that need to use it}\\\hline
+  {\Gls{accuracy}}\index{Data Property!Accuracy|see {Accuracy Property}}\index{Accuracy Property} & A & {The data has sufficient detail for its intended use}\\\hline
+  {\Gls{resolution}}\index{Data Property!Resolution|see {Resolution Property}}\index{Resolution Property} & R & {The smallest difference between two adjacent values that can be represented in a data storage, display or transfer system}\\\hline
+  {\Gls{traceability}}\index{Data Property!Traceability|see {Traceability Property}}\index{Traceability Property} & T & {The data can be linked back to its source or derivation}\\\hline
+  {\Gls{timeliness}}\index{Data Property!Timeliness|see {Timeliness Property}}\index{Timeliness Property} & M & {The data is as up to date as required}\\\hline
+  {\Gls{verifiability}}\index{Data Property!Verifiability|see {Verifiability Property}}\index{Verifiability Property} & V & {The data can be checked and its properties demonstrated to be correct}\\\hline
+  {\Gls{availability}}\index{Data Property!Availability|see {Availability Property}}\index{Availability Property} & L & {The data is accessible and usable when an authorized entity demands access}\\\hline
+  {\Gls{fidelity}}\index{Data Property!Fidelity|see {Fidelity Property}}\index{Fidelity Property} & F & {How well the data maps to the real-world entity it is trying to model}\\\hline
+  {\Gls{priority}}\index{Data Property!Priority|see {Priority Property}}\index{Priority Property} & P & {The data is presented / transmitted / made available in the order required}\\\hline
+  {\Gls{sequencing}}\index{Data Property!Sequencing|see {Sequencing Property}}\index{Sequencing Property} & Q & {The data is preserved in the order required}\\\hline
+  {\Gls{intended_destination}}\index{Data Property!Intended Destination|see {Intended Destination Property}}\index{Intended Destination Property} & U & {The data is only sent to those that should have
   access to
   it}\\\hline
-  {\Gls{accessibility}}\index{Accessibility Property} & B & {The data is visible only to those that should see it}\\\hline
-  {\Gls{suppression}}\index{Suppression Property} & S & {The data is intended never to be used again}\\\hline
-  {\Gls{history}}\index{History Property} & H & {The data has an audit trail of changes}\\\hline
-  {\Gls{lifetime}}\index{Lifetime Property} & E & {When does the safety-related data expire}\\\hline
-  {\Gls{disposability}}\index{Disposability / Deletability Property} & D & {The data can be permanently removed when required}\\\hline
-  {\Gls{goldilocks}\index{Goldilocks Property}} & G & {The data is just the right size -- not too much and not too little}\\\hline
-  {\Gls{analysability}\index{Analysability Property}} & Z & {The data (including any \gls{metadata}) is of a suitable size, type and format to enable it be usefully analysed}\\\hline
-  {\Gls{explainability}\index{Explainability Property}} & X & {The data can be meaningfully explained,by a suitable mechanism, to those who need to understand it}\\\hline
-  {\Gls{clarity}\index{Clarity Property}} & K & {The data is visible, unmasked, not hidden or obscured and not camouflaged}\\\hline
+  {\Gls{accessibility}}\index{Data Property!Accessibility|see {Accessibility Property}}\index{Accessibility Property} & B & {The data is visible only to those that should see it}\\\hline
+  {\Gls{suppression}}\index{Data Property!Suppression|see {Suppression Property}}\index{Suppression Property} & S & {The data is intended never to be used again}\\\hline
+  {\Gls{history}}\index{Data Property!History|see {History Property}}\index{History Property} & H & {The data has an audit trail of changes}\\\hline
+  {\Gls{lifetime}}\index{Data Property!Lifetime|see {Lifetime Property}}\index{Lifetime Property} & E & {When does the safety-related data expire}\\\hline
+  {\Gls{disposability}}\index{Data Property!Disposability|see {Disposability Property}}\index{Disposability Property} & D & {The data can be permanently removed when required}\\\hline
+  {\Gls{goldilocks}}\index{Data Property!Goldilocks|see {Goldilocks Property}}\index{Goldilocks Property} & G & {The data is just the right size -- not too much and not too little}\\\hline
+  {\Gls{analysability}}\index{Data Property!Analysability|see {Analysability Property}}\index{Analysability Property} & Z & {The data (including any \gls{metadata}) is of a suitable size, type and format to enable it be usefully analysed}\\\hline
+  {\Gls{explainability}}\index{Data Property!Explainability|see {Explainability Property}}\index{Explainability Property} & X & {The data can be meaningfully explained,by a suitable mechanism, to those who need to understand it}\\\hline
+  {\Gls{clarity}}\index{Data Property!Clarity|see {Clarity Property}}\index{Clarity Property} & K & {The data is visible, unmasked, not hidden or obscured and not camouflaged}\\\hline
 \end{longtable}
 
 \autoref{tab:issuesCrossReference} illustrates where the data issues discussed in
 \hyperref[tab:issues]{Section}~\ref{tab:issues} %Clunky, but \autoref inserted "subsubsection"
 can result in
-loss of one or more \index{Property!Data}data properties (x = potential loss of property).
+loss of one or more \index{Data Property}data properties (x = potential loss of property).
 
 \begin{longtable}{|L{\dsiwgColumnWidth{0.15}}|%
     C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
@@ -223,29 +223,30 @@ loss of one or more \index{Property!Data}data properties (x = potential loss of 
   \caption{Properties that can be lost through issues}
   \label{tab:issuesCrossReference}
   \\\hline
-  & \rotatebox{90}{\index{Integrity Property}\Gls{integrity}}
+  & \rotatebox{90}{\index{Integrity!Property}\Gls{integrity}}
   & \rotatebox{90}{\index{Completeness!Property}\Gls{completeness}}
   & \rotatebox{90}{\index{Consistency!Property}\Gls{consistency}}
   & \rotatebox{90}{\index{Continuity Property}\Gls{continuity}}
-  & \rotatebox{90}{\Gls{format}\index{Format Property}}
+  & \rotatebox{90}{\index{Format Property}\Gls{format}}
   & \rotatebox{90}{\index{Accuracy Property}\Gls{accuracy}}
   & \rotatebox{90}{\index{Resolution Property}\Gls{resolution}}
-  & \rotatebox{90}{\Gls{traceability}}
-  & \rotatebox{90}{\Gls{timeliness}\index{Timeliness Property}}
-  & \rotatebox{90}{\Gls{verifiability}}\index{Verifiability Property}
+  & \rotatebox{90}{\index{Traceability Property}\Gls{traceability}}
+  & \rotatebox{90}{\index{Timeliness Property}\Gls{timeliness}}
+  & \rotatebox{90}{\index{Verifiability Property}\Gls{verifiability}}
   & \rotatebox{90}{\index{Availability Property}\Gls{availability}}
-  & \rotatebox{90}{\index{Fidelity / Representation Property}\Gls{fidelity}}
-  & \rotatebox{90}{\Gls{priority}}\index{Priority Property} & \rotatebox{90}{\Gls{sequencing}\index{Sequencing, Data}}
-  & \rotatebox{90}{\Gls{intended_destination}\index{Intended Destination / Usage Property}\ }
-  & \rotatebox{90}{\Gls{accessibility}\index{Accessibility Property}}
-  & \rotatebox{90}{\Gls{suppression}\index{Suppression Property}}
-  & \rotatebox{90}{\Gls{history}\index{History Property}}
-  & \rotatebox{90}{\Gls{lifetime}\index{Lifetime Property}}
-  & \rotatebox{90}{\Gls{disposability}\index{Disposability / Deletability Property}}
-  & \rotatebox{90}{\Gls{goldilocks}\index{Goldilocks Property}}
-  & \rotatebox{90}{\Gls{analysability}\index{Analysability Property}}
-  & \rotatebox{90}{\Gls{explainability}\index{Explainability Property}}
-  & \rotatebox{90}{\Gls{clarity}\index{Clarity Property}}
+  & \rotatebox{90}{\index{Fidelity Property}\Gls{fidelity}}
+  & \rotatebox{90}{\index{Priority Property}\Gls{priority}} 
+  & \rotatebox{90}{\index{Sequencing Property}\Gls{sequencing}}
+  & \rotatebox{90}{\index{Intended Destination Property}\Gls{intended_destination}}
+  & \rotatebox{90}{\index{Accessibility Property}\Gls{accessibility}}
+  & \rotatebox{90}{\index{Suppression Property}\Gls{suppression}}
+  & \rotatebox{90}{\index{History Property}\Gls{history}}
+  & \rotatebox{90}{\index{Lifetime Property}\Gls{lifetime}}
+  & \rotatebox{90}{\index{Disposability Property}\Gls{disposability}}
+  & \rotatebox{90}{\index{Goldilocks Property}\Gls{goldilocks}}
+  & \rotatebox{90}{\index{Analysability Property}\Gls{analysability}}
+  & \rotatebox{90}{\index{Explainability Property}\Gls{explainability}}
+  & \rotatebox{90}{\index{Clarity Property}\Gls{clarity}}
   %
   \\\hline\TableHeadColour{Issue} &%
   \TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
@@ -257,30 +258,30 @@ loss of one or more \index{Property!Data}data properties (x = potential loss of 
   \endfirsthead
     \caption[]{Properties that can be lost through issues (continued)}
     \\\hline
-    & \rotatebox{90}{\index{Integrity Property}Integrity}
+    & \rotatebox{90}{\index{Integrity!Property}Integrity}
     & \rotatebox{90}{\index{Completeness!Property}\Gls{completeness}}
     & \rotatebox{90}{\index{Consistency!Property}\Gls{consistency}}
     & \rotatebox{90}{\index{Continuity Property}Continuity}
-    & \rotatebox{90}{\Gls{format}\index{Format Property}}
-    & \rotatebox{90}{\index{Accuracy Property}Accuracy}
-    & \rotatebox{90}{\Gls{resolution}\index{Resolution Property}}
-    & \rotatebox{90}{\Gls{traceability}\index{Traceability Property}}
-    & \rotatebox{90}{\Gls{timeliness}\index{Timeliness Property}}
-    & \rotatebox{90}{\Gls{verifiability}}\index{Verifiability Property}
+    & \rotatebox{90}{\index{Format Property}\Gls{format}}
+    & \rotatebox{90}{\index{Accuracy Property}\Gls{accuracy}}
+    & \rotatebox{90}{\index{Resolution Property}\Gls{resolution}}
+    & \rotatebox{90}{\index{Traceability Property}\Gls{traceability}}
+    & \rotatebox{90}{\index{Timeliness Property}\Gls{timeliness}}
+    & \rotatebox{90}{\index{Verifiability Property}\Gls{verifiability}}
     & \rotatebox{90}{\index{Availability Property}\Gls{availability}}
-    & \rotatebox{90}{\Gls{fidelity}\index{Fidelity / Representation Property}}
-    & \rotatebox{90}{\Gls{priority}} 
-    & \rotatebox{90}{\Gls{sequencing}\index{Sequencing, Data}}
-    & \rotatebox{90}{\Gls{intended_destination}\index{Intended Destination / Usage Property}\ }
-    & \rotatebox{90}{\Gls{accessibility}\index{Accessibility Property}}
-    & \rotatebox{90}{\Gls{suppression}\index{Suppression Property}}
-    & \rotatebox{90}{\Gls{history}\index{History Property}}
-    & \rotatebox{90}{\Gls{lifetime}\index{Lifetime Property}}
-    & \rotatebox{90}{\Gls{disposability}\index{Disposability / Deletability Property}}
-    & \rotatebox{90}{\Gls{goldilocks}\index{Goldilocks Property}}
-    & \rotatebox{90}{\Gls{analysability}\index{Analysability Property}}
-    & \rotatebox{90}{\Gls{explainability}\index{Explainability Property}}
-    & \rotatebox{90}{\Gls{clarity}\index{Clarity Property}}
+    & \rotatebox{90}{\index{Fidelity Property}\Gls{fidelity}}
+    & \rotatebox{90}{\index{Priority Property}\Gls{priority}} 
+    & \rotatebox{90}{\index{Sequencing Property}\Gls{sequencing}}
+    & \rotatebox{90}{\index{Intended Destination Property}\Gls{intended_destination}}
+    & \rotatebox{90}{\index{Accessibility Property}\Gls{accessibility}}
+    & \rotatebox{90}{\index{Suppression Property}\Gls{suppression}}
+    & \rotatebox{90}{\index{History Property}\Gls{history}}
+    & \rotatebox{90}{\index{Lifetime Property}\Gls{lifetime}}
+    & \rotatebox{90}{\index{Disposability Property}\Gls{disposability}}
+    & \rotatebox{90}{\index{Goldilocks Property}\Gls{goldilocks}}
+    & \rotatebox{90}{\index{Analysability Property}\Gls{analysability}}
+    & \rotatebox{90}{\index{Explainability Property}\Gls{explainability}}
+    & \rotatebox{90}{\index{Clarity Property}\Gls{clarity}}
     %
     \\\hline\TableHeadColour{Issue} &%
     \TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
@@ -316,14 +317,14 @@ loss of one or more \index{Property!Data}data properties (x = potential loss of 
 A \gls{hazop} \cite{citation:iec61882:2016}
 provides a structured approach for identifying hazards. It involves a multidisciplinary team collaborating to identify potential hazards and operability problems. Structure and \index{Completeness!Hazard Identification}\gls{completeness} are supported through the use of guideword prompts, for example, considering the implications if software components perform functions early, late or not at all. These prompts are intended to stimulate imaginative thinking, to focus the study and to elicit ideas and discussion.
 
-\autoref{bkm:guidewords} lists a set of guidewords for a data-focused \gls{hazop}, based upon the \index{Property!Data}properties defined in \autoref{bkm:categories}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity Property}\gls{integrity}, and so on.
+\autoref{bkm:guidewords} lists a set of guidewords for a data-focused \gls{hazop}, based upon the \index{Data Property}properties defined in \autoref{bkm:categories}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity!Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity!Property}\gls{integrity}, and so on.
 The list is non-exhaustive. Other guidewords may be useful for particular systems or may be used to ensure the \gls{data safety assessment}\index{Safety Assessment!Data} is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment|see{Safety Assessment, System}}. Some guidewords might not be relevant for some systems.
 \clearpage
 \section{Analyse Risks}
 \subsection{Establishing \glsfmtplural{dsal}}\index{Assurance Level!Data}
 \label{bkm:Establishing-DSALS}
 Paragraph \ref*{bkm:DSAL-table-section}
-presented a method for assigning \glspl{dsal}, by combining severity and likelihood through a risk matrix, such as Table~\ref{tab:DSAL-risk-matrix}. This section describes approaches that may be used to determine the severity and likelihood appropriate to the loss of any given \index{Property!Data}property. In principle, \autoref {tab:Likelihood} and \autoref{tab:Severity} are used together with Table~\ref{tab:DSAL-risk-matrix} to determine a \gls{dsal}. However, the methods to determine severity and likelihood, and to combine them to determine a \gls{dsal}, should not be followed rigidly, but should be defined based upon the overall \index{Safety Requirement!System}safety requirements of the system being assessed. Examples of situations that may require such alternate approaches are described in
+presented a method for assigning \glspl{dsal}, by combining severity and likelihood through a risk matrix, such as Table~\ref{tab:DSAL-risk-matrix}. This section describes approaches that may be used to determine the severity and likelihood appropriate to the loss of any given \index{Data Property}property. In principle, \autoref {tab:Likelihood} and \autoref{tab:Severity} are used together with Table~\ref{tab:DSAL-risk-matrix} to determine a \gls{dsal}. However, the methods to determine severity and likelihood, and to combine them to determine a \gls{dsal}, should not be followed rigidly, but should be defined based upon the overall \index{Safety Requirement!System}safety requirements of the system being assessed. Examples of situations that may require such alternate approaches are described in
 Paragraph~\ref{bkm:activities:analyse:partofsystemsafetyactivities},
 while potential approaches to customisation are described in \autoref{bkm:DsalCustomisation}.
 It is essential that any customised approach is recorded in the \gls{dsmp}.
@@ -419,11 +420,11 @@ Risk severity is estimated against a five-point scale, as indicated in \autoref{
     \hline
 \end{longtable}
 
-As noted earlier, \glspl{dsal}\index{Assurance Level!Data} have some commonality with things like \glspl{idal} and \glspl{fdal}). However, this commonality does not extend across all aspects. For example, there is an accepted calculus of \glspl{fdal} in which two independent \index{Integrity Property}lower-\gls{integrity} functions can be used to replace a single \index{Integrity Property}higher-\gls{integrity} function. There are two reasons why this type of calculus is not appropriate for \glspl{dsal}:
+As noted earlier, \glspl{dsal}\index{Assurance Level!Data} have some commonality with things like \glspl{idal} and \glspl{fdal}). However, this commonality does not extend across all aspects. For example, there is an accepted calculus of \glspl{fdal} in which two independent lower-\gls{integrity}\index{Integrity} functions can be used to replace a single higher-\gls{integrity}\index{Integrity} function. There are two reasons why this type of calculus is not appropriate for \glspl{dsal}:
 
 \begin{enumerate}
   \item The definition of a \gls{dsal}\index{Assurance Level!Data} already caters for interactions. For example, using two independent \index{Artefact, Data}\glspl{data artefact} to provide similar \gls{information} to a system function reduces the ``dependency'' of each artefact.
-  \item These types of consideration are most closely related to system architecture, from which \index{Artefact, Data}\glspl{data artefact}, associated \index{Property!Data}\glspl{data property} and risks are derived. Hence, rather than applying any calculus at the \gls{dsal}\index{Assurance Level!Data} tier it is more appropriate to apply this to, for example, \glspl{fdal}, with \glspl{dsal} changing as a consequence of the revised system definition.
+  \item These types of consideration are most closely related to system architecture, from which \index{Artefact, Data}\glspl{data artefact}, associated \index{Data Property}\glspl{data property} and risks are derived. Hence, rather than applying any calculus at the \gls{dsal}\index{Assurance Level!Data} tier it is more appropriate to apply this to, for example, \glspl{fdal}, with \glspl{dsal} changing as a consequence of the revised system definition.
 \end{enumerate}
 
 \subsection{Analysing \glsfmtplural{dsal}}\index{Assurance Level!Data}
@@ -436,11 +437,11 @@ The issue with data affecting software is that the data used by the system might
   \item[\Gls{mitigation} within the software:] If the data cannot be assured to a \gls{dsal}\index{Assurance Level!Data} (e.g., if it is supplied by a third party or legacy system), sometimes changes can be made to the software in the system to improve the situation. These \glspl{mitigation} could be functional (e.g., introduction of better range checking, rejection of illegal combinations of data values). This requires not only specific software changes but also associated \gls{verification} of these new features, and any software changes will have to be implemented to an appropriate \index{Assurance Level!Software}\gls{software assurance level}. However there may be no particular functional \glspl{mitigation}\index{Mitigation} that can be targeted at the particular issue (e.g., testing for illegal combinations of values might be too complex). In this case, development (or re-development) to a suitable \index{Assurance Level!Software}\gls{software assurance level} of the complete set of software within the system should be considered
 \end{description}
 
-The issue with software affecting data is that the software may affect (e.g., corrupt, delete) the data in a way that key \index{Property!Safety}safety properties may be lost and that such loss may not be easily detected. In general, the key \index{Property!Data}\glspl{data property} should be considered to see if any important ones for this data may be jeopardised. If so, a \index{Assurance Level!Software}\gls{software assurance level} from an appropriate standard or guideline should be introduced that mitigates this risk of undetected property loss. This \index{Assurance Level!Software}\gls{software assurance level} should be determined by the hazards that could be caused and may be localised to the software that can cause the problem.
+The issue with software affecting data is that the software may affect (e.g., corrupt, delete) the data in a way that key \index{Property!Safety}safety properties may be lost and that such loss may not be easily detected. In general, the key \index{Data Property}\glspl{data property} should be considered to see if any important ones for this data may be jeopardised. If so, a \index{Assurance Level!Software}\gls{software assurance level} from an appropriate standard or guideline should be introduced that mitigates this risk of undetected property loss. This \index{Assurance Level!Software}\gls{software assurance level} should be determined by the hazards that could be caused and may be localised to the software that can cause the problem.
 
-There are specific functional and architectural approaches that may reduce or avoid the need for a \index{Assurance Level!Software}\gls{software assurance level}, including use of strong checksums and digital signatures, as well as techniques such as storing multiple copies, independent channels and so on. The software performing the check of the \index{Property!Data}\gls{data property} will itself need to be developed to the introduced \index{Assurance Level!Software}\gls{software assurance level}. The key is to establish what the software in the system is doing to the data: if the operations are simple and non-changing, then the risk is lower; if the operations are complex involving transforming the data, using the data to calculate and insert new values, or reformatting the data, then the risk is higher.
+There are specific functional and architectural approaches that may reduce or avoid the need for a \index{Assurance Level!Software}\gls{software assurance level}, including use of strong checksums and digital signatures, as well as techniques such as storing multiple copies, independent channels and so on. The software performing the check of the \index{Data Property}\gls{data property} will itself need to be developed to the introduced \index{Assurance Level!Software}\gls{software assurance level}. The key is to establish what the software in the system is doing to the data: if the operations are simple and non-changing, then the risk is lower; if the operations are complex involving transforming the data, using the data to calculate and insert new values, or reformatting the data, then the risk is higher.
 
-The effectiveness of the functional \glspl{mitigation}\index{Mitigation} in reducing impact to the particular \index{Property!Data}data properties needs to be determined. For example, a strong checksum may be very effective at detecting unwanted change and therefore lower the \index{Assurance Level!Software}\gls{software assurance level} (from the perspective of data-related requirements). However, a checksum may not help at all if the issue is one of timely message delivery. More \gls{information} on the use of checksums in the aviation domain is available in \cite{citation:koopman2015selection}; this \gls{information} is likely to be applicable to other domains as well.
+The effectiveness of the functional \glspl{mitigation}\index{Mitigation} in reducing impact to the particular \index{Data Property}data properties needs to be determined. For example, a strong checksum may be very effective at detecting unwanted change and therefore lower the \index{Assurance Level!Software}\gls{software assurance level} (from the perspective of data-related requirements). However, a checksum may not help at all if the issue is one of timely message delivery. More \gls{information} on the use of checksums in the aviation domain is available in \cite{citation:koopman2015selection}; this \gls{information} is likely to be applicable to other domains as well.
 
 \clearpage %Manual page break
 \section{Evaluate and \glsfmttext{treat} Risks}
@@ -601,7 +602,7 @@ The five data categories\index{Category!Data} presented in \autoref{tab:DataCate
   Justification\index{Justification Data} & J\\\hline
 \end{longtable}
 
-The tables also map the methods and approaches to the \index{Property!Data}\glspl{data property}. The properties
+The tables also map the methods and approaches to the \index{Data Property}\glspl{data property}. The properties
 which were defined in \autoref{tab:PropertiesOfData} have been assigned abbreviations, shown in that table.
 
 These detailed methods and approaches tables have been organized into eight, loosely defined categories:
@@ -620,13 +621,13 @@ The method for using these tables when considering any given \index{Artefact, Da
 \begin{itemize}
     \item Determine the \gls{dsal}\index{Assurance Level!Data} applicable to the \index{Artefact, Data}\gls{data artefact}, using Table~\ref*{tab:DSAL-risk-matrix} in association with \autoref{tab:Likelihood} and \autoref{tab:Severity}.
     \item Determine the data category\index{Category!Data}, using the abbreviations in \autoref{tab:DataCategoryAbbreviations}.
-    \item Determine the list of applicable \index{Property!Data}\glspl{data property}, using the abbreviations in \autoref{tab:PropertiesOfData}. This will generally provide a list of several applicable abbreviations.
+    \item Determine the list of applicable \index{Data Property}\glspl{data property}, using the abbreviations in \autoref{tab:PropertiesOfData}. This will generally provide a list of several applicable abbreviations.
 \end{itemize}
 
 Then consider each row in each table (or each table that you wish to use for this assessment). For each row, if:
 \begin{itemize}
     \item the data category\index{Category!Data} matches the data category\index{Category!Data} for this \index{Artefact, Data}\gls{data artefact}; and
-    \item at least one of the \index{Property!Data}\glspl{data property} listed in that row matches a \index{Property!Data}\gls{data property} for the \gls{data artefact} 
+    \item at least one of the \index{Data Property}\glspl{data property} listed in that row matches a \index{Data Property}\gls{data property} for the \gls{data artefact} 
 \end{itemize}
 then the row is likely to be applicable to the \index{Artefact, Data}\gls{data artefact}. The result for that row is therefore found from the \gls{dsal}\index{Assurance Level!Data} column, since if:
 \begin{itemize}
@@ -638,11 +639,11 @@ then the row is likely to be applicable to the \index{Artefact, Data}\gls{data a
 To give a specific example, consider the row corresponding to the first technique in \autoref{tab:MethodsSystemDesign}. This technique will apply to \index{Artefact, Data}\glspl{data artefact} where:
 \begin{itemize}
     \item The data category\index{Dynamic Data} is ``dynamic'' (``D'' from \autoref{tab:DataCategoryAbbreviations}) and
-    \item The \index{Artefact, Data}\gls{data artefact} holds one or more of the \index{Integrity Property}properties \index{Integrity Property}\gls{integrity}, \index{Completeness!Property}\gls{completeness} or \gls{verifiability}\index{Verifiability Property} (``I'', ``C'' or ``V'' from \autoref{tab:PropertiesOfData}).
+    \item The \index{Artefact, Data}\gls{data artefact} holds one or more of the properties\index{Integrity!Property}\gls{integrity}, \index{Completeness!Property}\gls{completeness} or \gls{verifiability}\index{Verifiability Property} (``I'', ``C'' or ``V'' from \autoref{tab:PropertiesOfData}).
 \end{itemize}
 In such a case, the technique would be highly recommended if the \index{Artefact, Data}\gls{data artefact} were of \gls{dsal}\index{Assurance Level!Data} 3 or 4, recommended if the \gls{dsal} were 2, or should merely be considered if the \gls{dsal} were 1.
 
-Many dots have been placed in the table to indicate data categories\index{Category!Data} and \index{Property!Data}data properties which are not applicable to the technique under consideration. The dots enable the tables to be assessed very quickly, as they enable the letters representing specific data categories\index{Category!Data} and \index{Property!Data}\glspl{data property} to always be presented in the same position within the table. For example, the \index{Property!Data}\gls{data property} ``\gls{verifiability}''\index{Verifiability Property} (``V'' from \autoref{tab:PropertiesOfData} can easily be seen to appear against the first two techniques of \autoref{tab:MethodsSystemDesign}, whereas it does not appear in the next seven techniques. This can be seen without actually reading the text, but merely looking at the pattern presented by the letters and dots. 
+Many dots have been placed in the table to indicate data categories\index{Category!Data} and \index{Data Property}data properties which are not applicable to the technique under consideration. The dots enable the tables to be assessed very quickly, as they enable the letters representing specific data categories\index{Category!Data} and \index{Data Property}\glspl{data property} to always be presented in the same position within the table. For example, the \index{Data Property}\gls{data property} ``\gls{verifiability}''\index{Verifiability Property} (``V'' from \autoref{tab:PropertiesOfData} can easily be seen to appear against the first two techniques of \autoref{tab:MethodsSystemDesign}, whereas it does not appear in the next seven techniques. This can be seen without actually reading the text, but merely looking at the pattern presented by the letters and dots. 
 
 Within each table, the ``Serial'' column lists a unique serial number for each technique. The serial numbers simply provide a unique reference which aligns with those implemented within the toolset.
 
@@ -664,7 +665,7 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
     \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
     \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}\Glsfmttext{data property}}}\\\hline
+    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}\Glsfmttext{data property}}}\\\hline
   \hline
   \endfirsthead
   \caption[]{\Glsfmttext{mitigation} methods: system design (continued)}\index{Mitigation}
@@ -673,7 +674,7 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
     \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category} & %
     \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}\Glsfmttext{data property}}}\\\hline
+    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}\Glsfmttext{data property}}}\\\hline
   \hline
   \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -691,13 +692,13 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
   \hline
   SD.06 & Checksums / \glspl{crc} / Hashes & \dsiwgTextTT{..D..} & - & R & HR & HR & Digests of \glspl{dataset} are produced, included with the \gls{dataset} and checked to provide confidence that the data is unaltered. & \dsiwgTextTT{IC..................G..}\\
   \hline
-  SD.07 & Digital signatures & \dsiwgTextTT{..D..} & - & R & HR & HR & For non-repudiation and \index{Integrity Property}\gls{integrity} of data. & \dsiwgTextTT{I......T......U.....G..}\\
+  SD.07 & Digital signatures & \dsiwgTextTT{..D..} & - & R & HR & HR & For non-repudiation and \index{Integrity!Property}\gls{integrity} of data. & \dsiwgTextTT{I......T......U.....G..}\\
   \hline
-  SD.08 & Sequence numbers & \dsiwgTextTT{..D..} & R & R & HR & HR & Data bears sequence numbers so the \index{Integrity Property}\gls{integrity} of a data stream can be checked (e.g., monotonic increase, duplicate detection). & \dsiwgTextTT{ICN.........PQ.........}\\
+  SD.08 & Sequence numbers & \dsiwgTextTT{..D..} & R & R & HR & HR & Data bears sequence numbers so the \index{Integrity!Property}\gls{integrity} of a data stream can be checked (e.g., monotonic increase, duplicate detection). & \dsiwgTextTT{ICN.........PQ.........}\\
   \hline
   SD.09 & Automatic repeat request & \dsiwgTextTT{..D..} & R & R & HR & HR & \Gls{arq} to repeat transmission of data which has not been received correctly. & \dsiwgTextTT{IC.Y................G..}\\
   \hline
-  SD.10 & Auditing facilities & \dsiwgTextTT{..DP.} & - & R & HR & HR & Changes to \index{Property!Data}\glspl{data property} are audited so the before and after values are recorded and also other related \gls{information} such as the author and the time of the change. & \dsiwgTextTT{.......T.V.......H...ZX}\\
+  SD.10 & Auditing facilities & \dsiwgTextTT{..DP.} & - & R & HR & HR & Changes to \index{Data Property}\glspl{data property} are audited so the before and after values are recorded and also other related \gls{information} such as the author and the time of the change. & \dsiwgTextTT{.......T.V.......H...ZX}\\
   \hline
   SD.11 & Logging facilities & \dsiwgTextTT{..DP.} & R & R & HR & HR & Data processing events are logged to allow support staff to monitor the health of the system and provide diagnostic \gls{information}. & \dsiwgTextTT{.......T.........H...ZX}\\
   \hline
@@ -709,7 +710,7 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
   \hline
   SD.15 & Heterogeneous redundancy & \dsiwgTextTT{..D..} & - & - & R & HR & Data is processed using heterogeneous redundant channels; detected faults in data of one channel cause processing to switch to another channel. & \dsiwgTextTT{IC.Y....M..............}\\
   \hline
-  SD.16 & Data \index{Integrity Property}\gls{integrity} sampling & \dsiwgTextTT{..D..} & HR & HR & R & R & The \index{Integrity Property}\gls{integrity} of subsets of data is periodically checked, in accordance with a given selection criteria (e.g., random, critical records). & \dsiwgTextTT{IC..O.....L............}\\
+  SD.16 & Data \index{Integrity!Property}\gls{integrity} sampling & \dsiwgTextTT{..D..} & HR & HR & R & R & The \index{Integrity!Property}\gls{integrity} of subsets of data is periodically checked, in accordance with a given selection criteria (e.g., random, critical records). & \dsiwgTextTT{IC..O.....L............}\\
   \hline
   SD.17 &\ Credibility\ / reasonability checks & \dsiwgTextTT{V.D..} & R & R & HR & HR & Dedicated processing is implemented to check that data is within reasonable tolerances and / or logically / semantically consistent (e.g., range checks, date checks, record counts, record sizes, special values - \gls{nan}). & \dsiwgTextTT{I...O...............G..}\\
   \hline
@@ -750,7 +751,7 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
     \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
     \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endfirsthead
    \caption[]{\Glsfmttext{mitigation} methods: data design (continued)}\index{Mitigation}
@@ -759,7 +760,7 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
     \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{\index{Category!Data}} & %
     \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+    \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -809,7 +810,7 @@ A number of issues need to be considered during the implementation phase of a pr
   \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
   \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endfirsthead
   \caption[]{\Glsfmttext{mitigation} methods: data \glsfmttext{verification} (continued)}\index{Mitigation}
@@ -818,7 +819,7 @@ A number of issues need to be considered during the implementation phase of a pr
   \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
   \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -874,7 +875,7 @@ A number of issues need to be considered during the implementation phase of a pr
   \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
   \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endfirsthead
   \caption[]{\Glsfmttext{mitigation} methods: data migration (continued)}\index{Mitigation}
@@ -883,7 +884,7 @@ A number of issues need to be considered during the implementation phase of a pr
   \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
   \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endhead
   \multicolumn{9}{r}{\sl Continued on next page}
@@ -995,7 +996,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
   \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
   \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endfirsthead
   \caption[]{Mitigation methods: data checking (continued)}\index{Mitigation}
@@ -1004,7 +1005,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
   \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
   \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{\index{Category!Data}} & %
   \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+  \multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
   \hline
   \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -1048,7 +1049,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
 \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
 \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
 \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
 \hline
 \endfirsthead
   \caption[]{\Glsfmttext{mitigation} methods: test data (continued)}\index{Mitigation}
@@ -1057,7 +1058,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
 \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
 \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
 \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
 \hline
 \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -1115,7 +1116,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
 \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
 \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
 \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
 \hline
 \endfirsthead
   \caption[]{Mitigation methods: data media handling -- paper / physical storage (continued)}\index{Mitigation}
@@ -1124,7 +1125,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
 \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
 \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
 \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
 \hline
 \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -1170,7 +1171,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
 \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
 \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
 \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
 \hline
 \endfirsthead
   \caption[]{\Glsfmttext{mitigation} methods: data media handling -- electronic storage (continued)}\index{Mitigation}
@@ -1179,7 +1180,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
 \TableHeadColour{} & \TableHeadColour{}\\\cline{3-6}
 \multirow{-2}*{\TableHeadColour{Serial}} & \multirow{-2}*{\TableHeadColourCX{Technique}} & \TableHeadColour{Category\index{Category!Data}} & %
 \TableHeadColourCX{1} & \TableHeadColourCX{2} & \TableHeadColourCX{3} & \TableHeadColourCX{4} & %
-\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Property!Data}Data Property}}\\\hline
+\multirow{-2}*{\TableHeadColour{Notes}} & \multirow{-2}*{\TableHeadColour{\index{Data Property}Data Property}}\\\hline
 \hline
 \endhead
     \multicolumn{9}{r}{\sl Continued on next page}
@@ -1209,7 +1210,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
   \hline
   ME.12 & Copy to cloud storage & \dsiwgTextTT{VIDPJ} & - & R & HR & HR & Must specify whether a private cloud or a public cloud shall be used. Cloud storage may not be suitable for highly confidential data. & \dsiwgTextTT{..........L............}\\
   \hline
-  ME.13 & Copy to archiving organization & \dsiwgTextTT{VIDPJ} & - & R & HR & HR & Consider the required level of data \index{Integrity Property}\gls{integrity} and \gls{confidentiality}; also, the \index{Integrity Property}\gls{integrity} and long-term viability of the archiving organization, and plans in case it ceases to function. & \dsiwgTextTT{..........L............}\\
+  ME.13 & Copy to archiving organization & \dsiwgTextTT{VIDPJ} & - & R & HR & HR & Consider the required level of data \gls{integrity}\index{Integrity} and \gls{confidentiality}; also, the \gls{integrity}\index{Integrity} and long-term viability of the archiving organization, and plans in case it ceases to function. & \dsiwgTextTT{..........L............}\\
   \hline
 \end{longtable}
 

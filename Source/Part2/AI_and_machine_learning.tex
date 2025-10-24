@@ -45,7 +45,7 @@ test \gls{dataset} generation, data fault injection and simulation. It may well 
 \section{Sensor Data}
 In many cases sensors will be on-board and embedded (e.g.\ on an automated vehicle) and will be subject to many real-world influences. Sensor data may be changed or degraded by both internal influences, e.g.\ system environment temperature, and external factors e.g.\ humidity, ambient light, weather conditions such as snow or fog, and rarely encountered extremes such as lightning or flood. 
 Sensors may also suffer degradation due to ageing and specific faults due to their positioning, construction or configuration. Sensors may need to be diverse to increase resilience and give an overall more reliable output. Realistic data variations, informed by an understanding of likely sensor failure modes, need to be incorporated in the training\index{Training!AI} \gls{dataset} (c.f.\ the AoA sensor in the Boeing 737 MAX~8, discussed in Part 3 Section \ref*{Part3-bkm:incacc:737max8}).
-Sensor fusion can effectively create ``composite data'', e.g.\ from merging of lidar, radar and camera data; this will have different (and possibly hard to predict) \index{Property!Data}properties compared to the individual sensors.
+Sensor fusion can effectively create ``composite data'', e.g.\ from merging of lidar, radar and camera data; this will have different (and possibly hard to predict) \index{Data Property}properties compared to the individual sensors.
 
 \section{Data Coverage}
 Some notion of data coverage, that is, how well the training\index{Training!AI} data covers the intended operational domain, is needed: this could be based on use of all known \glspl{dataset}, all known hazardous situations or some other measure. White box techniques involved in exercising all connected sensors or coverage of nodes in a neural network may have some value. Regardless, it will be essential that the training\index{Training!AI} data covers all required safety test scenarios.
@@ -63,9 +63,9 @@ The degree of data diversity is important. Common \glspl{item data} across \glsp
 \gls{ml}
 validation data. Common data may include data derived from the same sources, environments, simulators, tools, techniques or mathematical models.
 
-\section{\index{Property!Data}\ecapitalisewords{\glsentryplural{data property}}}
-Bias, sufficiency and \index{Accuracy Property}\gls{accuracy} are all concerns with the data. \index{Fidelity / Representation Property}\gls{fidelity} may also be a problem as modelling real-life sensor data is difficult.  Errors should be introduced for training\index{Training!AI}: this may be by analytical means, by random, automated sampling of data to determine the degree of similarity between samples, or by deliberate insertion of known edge cases. 
-It is suggested that all the \index{Property!Data}\glspl{data property} mentioned in this guidance document are considered.
+\section{\index{Data Property}\ecapitalisewords{\glsentryplural{data property}}}
+Bias, sufficiency and \index{Accuracy Property}\gls{accuracy} are all concerns with the data. \index{Fidelity Property}\gls{fidelity} may also be a problem as modelling real-life sensor data is difficult.  Errors should be introduced for training\index{Training!AI}: this may be by analytical means, by random, automated sampling of data to determine the degree of similarity between samples, or by deliberate insertion of known edge cases. 
+It is suggested that all the \index{Data Property}\glspl{data property} mentioned in this guidance document are considered.
 
 \section{Hallucinations}
 \label{bkm:MachineLearning:Hallucinations}\index{Hallucinations|textbf}
@@ -162,13 +162,13 @@ such as when millions of representative miles have been driven.
 However such approaches have generally been found insufficiently robust to support safety-critical systems in other domains
 such as aviation, and so must be treated with caution.
 The demonstration of compliance for the data is likely to require a compliance argument for the tools that produced the data,
-the preservation of \index{Property!Data}\glspl{data property} as described within this document, and an update process such as that specified in ISO 21448 (SOTIF)
+the preservation of \index{Data Property}\glspl{data property} as described within this document, and an update process such as that specified in ISO 21448 (SOTIF)
 \cite{citation:ISO21448}.
 
 \section{References}
 This appendix provides only a brief overview of the issues around the application of data safety techniques to machine learning. It is based upon \gls{information} in the following documents, which should be consulted for further details:
 \begin{itemize}
 \item Assuring the Machine Learning Lifecycle: Desiderata, Methods, and Challenges \cite{citation:Ashmore2019}
-\item Quantifying Data Set \index{Property!Data}Properties for Systematic Artificial Neural Network Classifier \Glsfmttext{verification} \cite{citation:Hond2020}
+\item Quantifying Data Set \index{Data Property}Properties for Systematic Artificial Neural Network Classifier \Glsfmttext{verification} \cite{citation:Hond2020}
 \item Safety Critical Integrity Assurance in Large Data Sets \cite{citation:Sutherland2020}
 \end{itemize}

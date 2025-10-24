@@ -25,7 +25,7 @@ If safety-related data is incorrect it can become dangerous when used, either by
   \centering
   \includegraphics[width=0.75\textwidth]{images/producerconsumer}
   %\includegraphics[width=0.75\textwidth]{images/producerconsumer.png}
-  \caption{Consumer-focused \index{Integrity Property}\glsfmttext{integrity} requirements}
+  \caption{Consumer-focused \index{Integrity}\glsfmttext{integrity} requirements}
   \label{fig:producerconsumer}
 \end{figure}
 
@@ -33,10 +33,10 @@ The consumer assesses the use of the safety-related data. (In later phases of th
 
 The producer investigates how the safety-related data is collected and what errors might occur. (Building on activities in later phases of the data safety management process, the producer can provide some form of guarantee, or level of confidence, that the safety-related data meets the specific data-related requirements.)
 
-In some cases a producer will be providing safety-related data without any knowledge of a specific user (e.g., mapping data or generic \glspl{database} that are sold to many users). In these cases the producer will need to make some assumptions about possible users, and then clearly state what level of \index{Integrity Property}\gls{integrity} the data has been produced to. It is then up to the users to check whether the declared \index{Integrity Property}\gls{integrity} matches their need.
+In some cases a producer will be providing safety-related data without any knowledge of a specific user (e.g., mapping data or generic \glspl{database} that are sold to many users). In these cases the producer will need to make some assumptions about possible users, and then clearly state what level of \index{Integrity}\gls{integrity} the data has been produced to. It is then up to the users to check whether the declared \index{Integrity}\gls{integrity} matches their need.
 
 \section{Data in System Lifecycles}
-Like other components of a safety-related system, the safety dependency of data is dictated by the context in which it is used and the causal links that become established where loss of one or more of the required \index{Property!Data}properties can contribute to hazardous system states. For example, a given \gls{dataset} (say \gls{configuration data}) could be used in a number of separate contexts such as:
+Like other components of a safety-related system, the safety dependency of data is dictated by the context in which it is used and the causal links that become established where loss of one or more of the required \index{Data Property}properties can contribute to hazardous system states. For example, a given \gls{dataset} (say \gls{configuration data}) could be used in a number of separate contexts such as:
 \begin{itemize}
   \item prototyping a system to demonstrate solution feasibility of a safety-related system;
   \item development testing of a safety-related system; and
@@ -135,7 +135,7 @@ Further details on tool qualification are presented in \dsiwgRef{Appendix}{bkm:t
 \subsection{Test Data}
 The generation of suitable test data is critical to verification of a safety system. The test data must include both representative ``normal'' values based on intended usage and also values which push at, and beyond, normal use to provoke \glspl{hazard} that the system might produce. This latter type of test data is particularly hard to generate; generally it must be credible, yet it must stress the system to react in a way that the preservation of \index{Property!Safety}safety properties can be assessed. 
 
-In general, all the \index{Property!Data}properties of the test data should be considered and an assessment made as to whether breaking a property (e.g., introducing corrupt or late data) would cause a problem to the system. If it does, then specific test data should be produced to facilitate testing of this potential problem.
+In general, all the \index{Data Property}properties of the test data should be considered and an assessment made as to whether breaking a property (e.g., introducing corrupt or late data) would cause a problem to the system. If it does, then specific test data should be produced to facilitate testing of this potential problem.
 
 Some suggestions for test data for safety-related systems are:
 \begin{itemize}
@@ -152,9 +152,9 @@ Some suggestions for test data for safety-related systems are:
   \item Use data which has incorrect formatting, ordering, or out of sequence, etc.; and
   \item Try data which has repeated sets of values or pseudo-random characteristics.
 \end{itemize}
-Typically very complex test data is derived from recorded live feeds of real data flows. While this data can be extremely useful for regression purposes, it should be recognised that it is unlikely to contain many outlying or boundary \glspl{item data}. Therefore it may need to be modified to test any hazardous situations; this modification can be difficult and may require sophisticated tools to both ensure correct \index{Property!Data}properties and injection of the intended faults (for instance to introduce a statistical bias to the data).
+Typically very complex test data is derived from recorded live feeds of real data flows. While this data can be extremely useful for regression purposes, it should be recognised that it is unlikely to contain many outlying or boundary \glspl{item data}. Therefore it may need to be modified to test any hazardous situations; this modification can be difficult and may require sophisticated tools to both ensure correct \index{Data Property}properties and injection of the intended faults (for instance to introduce a statistical bias to the data).
 
-Simulator / emulator derived values can be useful, but again the issue is how realistic the values are: often the \index{Accuracy Property}\gls{accuracy}, \gls{resolution} or timing of simulated values may be different to real data.
+Simulator / emulator derived values can be useful, but again the issue is how realistic the values are: often the \index{Accuracy Property}\gls{accuracy}, \index{Resolution Property}\gls{resolution} or timing of simulated values may be different to real data.
 
 Coverage with test data is something to consider. Sometimes the same \gls{dataset} is used for multiple test scenarios, when in fact it is not stressing all of them to the same degree. Test data coverage can be collected over requirements, code or design, but it is important not to forget hazards: coverage of the hazards and mitigations\index{Mitigation} identified in the \gls{hazard log} is a key aim. 
 
@@ -172,14 +172,14 @@ While they are interesting, and potentially important, these philosophical consi
 \begin{itemize}
   \item It is easy for data to be reused in a range of contexts and despite appearances it is not trivial to translate an assurance argument that the data is fit for purpose from one context to another.
   \item It is not always clear who owns or is responsible for data, especially when data is shared and processed amongst a collection of disparate systems.
-	\item Data often has a \gls{lifetime}, that is a time after which it is no longer valid. This may be a strict cut off, or a more gradual degradation in the utility (or applicability) of the data.
+	\item Data often has a \gls{lifetime}\index{Lifetime Property}, that is a time after which it is no longer valid. This may be a strict cut off, or a more gradual degradation in the utility (or applicability) of the data.
   \item There is often a default value for data. While this can make systems easier to use and hence more productive it can be difficult to identify a default value that is appropriate for all circumstances.
   \item It can be easy to change data. In some circumstances this can give rise to a temptation to make uncontrolled and potentially untested changes. It can also allow data to be fraudulently changed after an accident.
 \end{itemize}
 In summary, data and software\index{Software vs. Data} are closely related and, as such, need to be considered together in system engineering activities, including system safety analyses. However, data and software emphasise different facets of risk and they are susceptible to different mitigation\index{Mitigation} approaches; this means there is also a need to adopt a data-focused perspective. It also means that \index{Assurance Level!Software}\glspl{software assurance level} cannot be mapped directly to \index{Assurance Level!Data}\glspl{dsal}.
 
 \subsubsection{Data Safety and Security}
-When generating high-level processes and techniques to manage the risks posed by data, it is worthwhile understanding the difference between the safety risks posed by accidental failure to preserve \index{Property!Data}Data Properties and the security risks posed by actors maliciously undermining the properties of data.
+When generating high-level processes and techniques to manage the risks posed by data, it is worthwhile understanding the difference between the safety risks posed by accidental failure to preserve \index{Data Property}Data Properties and the security risks posed by actors maliciously undermining the properties of data.
 
 The relationship between safety and security, as engineering concepts, can be summarised by their relationships to cultural, developmental and aspirational \index{Property!System Development}properties of systems development.
 
@@ -187,13 +187,13 @@ Culturally, embedding both safety and security into an organization is seen as a
 
 For an organization aiming to create systems that are both safe and secure, these connections can be both a benefit and a burden. The shared goal of preventing harm means that both quality factors seek to identify routes to harm through analysis of the system being developed. This can result in shared processes and tools, which in turn can save time and money during systems development. However, safety and security interact in a more volatile way at the functional level. Security failings can undermine the safety case for a system and, conversely, \index{Safety Requirement}safety requirements can prevent the implementation of standard security solutions. For example, the German government published a report in 2014 into a fire at a steel works caused by a cyber attack that resulted in the control system being placed into an unsafe state and the safety system being unable to intervene (Section 3.3.1 of \cite{citation:DieLage} - in German). In addition, ``fail-safe'' states can often leave a system with exposed security vulnerabilities.
 
-These links between safety and security infer that there are connections between the sub-categories of data safety and \gls{information} security: both attempt to take a data-centric view of the system of interest in order to improve the associated quality factor; and both attempt to prevent harm through the preservation of the \index{Property!Data}properties of data within that system.
+These links between safety and security infer that there are connections between the sub-categories of data safety and \gls{information} security: both attempt to take a data-centric view of the system of interest in order to improve the associated quality factor; and both attempt to prevent harm through the preservation of the \index{Data Property}properties of data within that system.
 
-In the security domain, the three key properties of data considered are \gls{confidentiality}, \index{Integrity Property}\gls{integrity}, and \gls{availability}. \Gls{confidentiality}, the failure of which is termed ``\gls{information} disclosure'' in the Microsoft Security Model, \cite{citation:leblanc2002writing} is typically not a safety concern as, without malicious intent, \gls{information} sharing is not inherently unsafe. However, when considering systems where \gls{confidentiality} is an important property, the interaction between data safety and security cannot be trivially resolved. For example, accidental disclosure of \gls{information} can form part of a causal chain which leads to harm from a malicious actor.
+In the security domain, the three key properties of data considered are \gls{confidentiality}, \index{Integrity!Property}\gls{integrity}, and \index{Availability Property}\gls{availability}. \Gls{confidentiality}, the failure of which is termed ``\gls{information} disclosure'' in the Microsoft Security Model, \cite{citation:leblanc2002writing} is typically not a safety concern as, without malicious intent, \gls{information} sharing is not inherently unsafe. However, when considering systems where \gls{confidentiality} is an important property, the interaction between data safety and security cannot be trivially resolved. For example, accidental disclosure of \gls{information} can form part of a causal chain which leads to harm from a malicious actor.
 
-Data \index{Integrity Property}\gls{integrity} is a critical property for both domains. The Microsoft Security Model describes malicious removal of the property of \index{Integrity Property}\gls{integrity} as ``tampering''. Whether by accident or through malicious intent, the potential harm from loss of data \index{Integrity Property}\gls{integrity} can be disastrous to a safety-critical system, from the values of drug dosages to control system parameters. 
+Data \index{Integrity}\gls{integrity} is a critical property for both domains. The Microsoft Security Model describes malicious removal of the property of \index{Integrity!Property}\gls{integrity} as ``tampering''. Whether by accident or through malicious intent, the potential harm from loss of data \index{Integrity!Property}\gls{integrity} can be disastrous to a safety-critical system, from the values of drug dosages to control system parameters. 
 
-Data \gls{availability} is also important to both domains. Loss of \gls{availability}, or ``denial of service'' in the Microsoft Security Model, is another \index{Property!Data}property that can be lost accidentally or through malicious intervention. Loss of \gls{availability} prevents systems from functioning properly and can result in undefined behaviour if not mitigated\index{Mitigation} by design.
+Data \index{Availability Property|(}\gls{availability} is also important to both domains. Loss of \gls{availability}, or ``denial of service'' in the Microsoft Security Model, is another \index{Data Property}property that can be lost accidentally or through malicious intervention. Loss of \gls{availability}\index{Availability Property|)} prevents systems from functioning properly and can result in undefined behaviour if not mitigated\index{Mitigation} by design.
 
 Further guidance on the integration of safety and security can be found in a code of practice published by the IET
 \cite{citation:IetCyber}.

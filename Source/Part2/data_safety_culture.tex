@@ -18,7 +18,7 @@
 
 \dsiwgSectionQuote{Data is the fabric of the modern world: just like we walk down pavements, so we trace routes through data and build knowledge and products out of it.}{Ben Goldacre}
 
-This form helps an organization appreciate the data safety culture. It can be applied at various levels, including at the project level and at the organizational level.
+This form helps an organization appreciate the data safety culture. It can be applied at various levels, including at the project level and at the organizational level. This form should be distributed to all those who are involved with data on the programme / project
 
 \addtocounter{table}{-1} % Kludge because longtable* is wrongly incrementing the table counter
 \begin{longtable*}{|L{\dsiwgColumnWidth{0.25}}|L{\dsiwgColumnWidth{0.25}}|L{\dsiwgColumnWidth{0.25}}|L{\dsiwgColumnWidth{0.25}}|}
@@ -32,7 +32,7 @@ This form helps an organization appreciate the data safety culture. It can be ap
   %Need to have each paragraph as its own table entry, along with blank entries
   %spanning all of the columns for space between the paragraphs.
   %
-  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This form is used to assess the safety culture related to data for a particular programme.}}\\
+%  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextIT{This form is used to assess the safety culture related to data for a particular programme.}}\\
 %  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
   \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{You play a key role in protecting the organization from data safety risks and your views are important. This self-assessment survey is designed to assess our current level of data safety culture within the programme. The output can help us to improve our safety position.}}\\
 %  \multicolumn{4}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
@@ -82,7 +82,7 @@ This form helps an organization appreciate the data safety culture. It can be ap
   \hline
   1c & I understand how data in our solution can contribute to an accident. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
   \hline
-  1d & I think we could be blamed if there were an accident due to our data. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
+  1d & I believe we have a good position regarding data safety. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
   \hline
   \multicolumn{8}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Comments:}}\\*
   \multicolumn{8}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
@@ -105,9 +105,9 @@ This form helps an organization appreciate the data safety culture. It can be ap
   \endfoot\endlastfoot
   2a & I think that the programme is aware of data safety risks. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
   \hline
-  2b & I believe we need to implement measures to manage data safety risks. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
+  2b & I think the programme is adequately resourced to manage data safety risks. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
   \hline
-  2c & I think that the programme meets its obligations (e.g.\ has a Data Management Plan in place and a role with specific responsibilities in this area). & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
+  2c & I think the programme meets its obligations regarding data safety. & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox & \dsiwgCheckBox \\
   \hline
   \multicolumn{8}{|p{\dsiwgColumnWidth{1.0}}|}{\dsiwgTextBF{Comments:}}\\*
   \multicolumn{8}{|p{\dsiwgColumnWidth{1.0}}|}{}\\*
@@ -145,3 +145,10 @@ This form helps an organization appreciate the data safety culture. It can be ap
   \multicolumn{8}{|p{\dsiwgColumnWidth{1.0}}|}{}\\
   \hline
 \end{longtable*}
+\section{Interpretation of Results}
+\begin{itemize}
+\item If all responses are mainly in the ``Agree/Strongly Agree'' areas then the data safety culture on the programme  is strong and data safety risks are likely to be being managed well. There are no further actions needed except that new team members should be be asked to to complete the survey after induction.
+\item If there are some ``Maybes'' then further work to improve the data safety culture may be necessary. This could involve specific data safety training for team members and awareness training for management. It is suggested that the latest version of this guidance document is made part of the programme.
+\item If the responses are mainly ``Disagree'' or below then the data safety culture is poor and data safety is not likely to be being managed on the programme. Immediate remediation is required. This could involve appointment of a data safety champion, training, consultancy from a data safety expert, higher management involvement, safety audits, etc. It is suggested that the questionnaire is repeated after actions have been taken to measure if there has been any changes. If there is  particular trend in one question area then specific actions to improve that area is recommended.
+\item The survey should be given to all staff on a programme periodically, e.g. every 12 months.
+\end{itemize}

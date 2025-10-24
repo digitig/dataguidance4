@@ -117,40 +117,40 @@ The following table summarises some of the safety issues due to migration, maps 
 1.&
 Data format may not map exactly: due to different \gls{database} formats, word lengths, endian issues, etc.&
 Data can be lost or discarded, or substituted for defaults. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}, \gls{completeness}, \gls{format}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}, \gls{format}\index{Format Property}&
 DM.02, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 2.&
 Data may not translate exactly: no equivalent data type / record / field type in new system, etc&
 Data can be lost or discarded, or substituted for defaults. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}, \gls{completeness}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
 DM.02, DM.04, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 3.&
 Data may not be valid: less numeric range available in new system, etc. Subtype of (2).&
 Data can be lost or discarded, or substituted for defaults. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}, \gls{completeness}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
 DM.02, DM.04, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 4.&
 \Gls{metadata} (data about the data) may be lost, including \gls{data dictionary} aspects, derivation, history, signoffs, authorisations,
 logs, etc.&
 Data may be migrated / imported / exported losing \gls{information}.&
-\Gls{traceability}, \gls{history}\index{History Property}&
+\Gls{traceability}\index{Traceability Property}, \gls{history}\index{History Property}&
 DM.04, DM.09\\\hline
 %
 5.&
 Data may have a different meaning or interpretation in the new system context.
 E.g. if a fluid value is ‘gallons’ and this is migrated from a UK to a US-developed system without applying an adjustment factor.&
 Meaning of data can be altered even if migration apparently successful.&
-\Gls{consistency}, \gls{fidelity}&
+\Gls{consistency}\index{Consistency!Property}, \gls{fidelity}\index{Fidelity Property}
 DM.01, DM.04, DM.11\\\hline
 %
 6.
 &
 Data may be correctly rejected (detection of error on import / export)&
 Data is lost. Not necessarily a problem if notified and fixed.&
-\Gls{completeness}&
+\Gls{completeness}\index{Completeness!Property}&
 DM.07, DM.08, DM.09, DM.10\\\hline
 %
 7.
@@ -158,32 +158,32 @@ DM.07, DM.08, DM.09, DM.10\\\hline
 Data may be wrongly filtered or rejected as incompatible&
 Correct data is rejected. If data can’t be imported what should happen? a. Rejected and migration halted,
 b. Rejected and notified, c. Rejected silently, d. Substituted?&
-\Gls{integrity}, \gls{completeness}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
 DM.02, DM.03, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 8.&
 Two or more \glspl{item data} may map to the same item in the new system – one may overwrite the other with the last one ‘winning’.&
 This is a case of aliasing (See 6.2.2 ref). Data can be lost or discarded. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}, \gls{completeness}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
 DM.02, DM.03, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 9.&
 There may be situations where the data store has to be ‘live’ and the migration / import / export process takes some time.
-In this case some data may be out of date and become inconsistent (stale), and \gls{integrity} of the whole \gls{dataset} is lost.&
+In this case some data may be out of date and become inconsistent (stale), and \gls{integrity}\index{Integrity} of the whole \gls{dataset} is lost.&
 Data may be migrated / imported / exported incorrectly.&
-\Gls{consistency}, \gls{integrity}, \gls{timeliness}&
+\Gls{consistency}\index{Consistency!Property}, \gls{integrity}\index{Integrity!Property}, \gls{timeliness}\index{Timeliness Property}&
 DM.07, DM.08\\\hline
 %
 10.&
 If a migration is unsuccessful, data changes may have to be undone and stores reverted to original state.
 This may not always be possible or completely done.&
 Original \gls{dataset} may be corrupted.&
-\Gls{consistency}, \Gls{integrity}&
+\Gls{consistency}\index{Consistency!Property}, \Gls{integrity}\index{Integrity!Property}&
 DM.06, DM.07, DM.08\\\hline
 %
 11.&
 The data ‘cleansing’ activity conducted before or during migration may introduce faults.&
 The cleansing activity may miss some data faults or may be over-zealous, deleting good values.&
-\Gls{integrity}, \gls{completeness}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
 DM.07, DM.09, DM.13\\\hline
 \end{longtable}

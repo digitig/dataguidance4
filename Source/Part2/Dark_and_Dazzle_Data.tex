@@ -14,21 +14,21 @@
 %   Appendix regarding Dark and Dazzle Data
 %
 %================================================================================
-\chapter{Dark Data and Dazzle Data\index{Data!Dazzle}}%
+\chapter{Dark Data\index{Data!Dark|see {Dark Data}} and Dazzle Data\index{Data!Dazzle}|see {Dazzle Data}}%
 \label{bkm:darkdazzledata}
 %
 %\dsiwgSectionQuote{Common sense tells us that the government's attempts to solve large problems more often create new ones. Common sense also tells us that a top-down, one-size-fits-all plan will not improve the workings of a nationwide health-care system that accounts for one-sixth of our economy}{Sarah Palin}
 \dsiwgSectionQuote{\ldots we can be blind to missing data \ldots that can lead us to conclusions and actions that are mistaken, dangerous, or even disastrous.}{David Hand}
 
 \section{Introduction}
-Dark\index{Data!Dark} and dazzle data\index{Data!Dazzle} may be viewed as two sides of the same coin. In the former data is hidden, whilst in the latter the important \gls{information} is hidden by an abundance of other data.
+Dark and dazzle data may be viewed as two sides of the same coin. In the former data is hidden, whilst in the latter the important \gls{information} is hidden by an abundance of other data.
 
 \section{Dark Data}%
-\index{Dark Data|textbf}\index{Data!Dark|see{Dark Data}}%
+\index{Dark Data|(}%
 \label{bkm:darkdata}
 %
 \subsection{Introduction to Dark Data}
-This \cbstart section\cbend\ outlines some of the safety implications arising from the issues identified by Prof. David Hand in his work on ``dark data'' presented in his book: ``Dark Data: Why What You Don't Know Matters'' \cite{citation:darkdata:hand} and website \cite{citation:darkdata:website}. Dark data relates to data that is not available, but nevertheless is important, and indeed, in some cases, more important than the data that is available.
+This section outlines some of the safety implications arising from the issues identified by Prof. David Hand in his work on ``dark data'' presented in his book: ``Dark Data: Why What You Don't Know Matters'' \cite{citation:darkdata:hand} and website \cite{citation:darkdata:website}. Dark data relates to data that is not available, but nevertheless is important, and indeed, in some cases, more important than the data that is available.
 
 Unintentionally Donald Rumsfeld\index{Rumsfeld, Donald} popularised the concept of dark data with his famous speech:
 
@@ -36,13 +36,13 @@ Unintentionally Donald Rumsfeld\index{Rumsfeld, Donald} popularised the concept 
 \dsiwgTextIT{``…there are known knowns\index{Known Knowns}; there are things we know we know. We also know there are known unknowns\index{Known Unknowns}; that is to say we know there are some things we do not know. But there are also unknown unknowns\index{Unknown Unknowns}—the ones we don't know we don't know…''}
 \end{quote}
 
-\autoref{fig:lightanddark} neatly shows the dark varieties\index{Dark Data!Varieties} in grey:
+\autoref{fig:lightanddark} neatly shows the dark varieties in grey:
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth/2]{images/darkknowns.pdf}
   %\input{images/darkknowns.latex}
-  \caption{Varieties of dark data\index{Dark Data!Varieties|textbf}}
+  \caption{Varieties of dark data}
   \label{fig:lightanddark}
 \end{figure}\index{Unknown Knowns}
 
@@ -69,10 +69,10 @@ However, there was dark data in this \gls{dataset} -- the data points that show 
 
 When the Dark Data is included, there is an obvious correlation between temperature and O-ring failures and it is possible the decision to launch may have been different if this additional data had been presented.
 
-\subsection{Dark Data Varieties\index{Dark Data!Varieties} and Safety Examples}
+\subsection{Dark Data Varieties and Safety Examples}
 In his book, David introduces a taxonomy of 15 varieties of dark data. This section discuses each of these from a data safety perspective.
 
-\subsubsection{Data We Know Are Missing: ``Known Unknowns''}\index{Dark Data!Data We Know are Missing}\label{bkm:dark1}
+\subsubsection{Data We Know Are Missing: ``Known Unknowns''}\label{bkm:dark1}
 
 This case is very common in safety justifications\index{Justification, Safety} where assurance \gls{information} may be withheld for commercial reasons or does not exist, but we know, or are informed, that it isn’t available. Common examples include:
 \begin{itemize}
@@ -82,7 +82,7 @@ This case is very common in safety justifications\index{Justification, Safety} w
 \end{itemize}
     If this is the case, it can be mitigated\index{Mitigation} in several ways, including use of warnings, training\index{Training!Personnel}, restrictions of use, etc. Evidence can also be substituted with other more indirect assurance e.g.\ established organisational track-record in the sector, or audit reports.
     
-\subsubsection{Data We Don’t Know Are Missing: ``Unknown unknowns''}\index{Dark Data!Data We Don't Know are Missing|textbf}\index{Unknown Unknowns}\label{bkm:dark2}
+\subsubsection{Data We Don’t Know Are Missing: ``Unknown unknowns''}\index{Unknown Unknowns}\label{bkm:dark2}
 This is the most serious and far-reaching case. Occurrence is hopefully less common than case~\ref{bkm:dark1}, but it is important to acknowledge that it does happen. Some examples are:
 \begin{itemize}
   \item The Covid-19 Track and Trace data loss (Part 3 Section~\ref*{Part3-bkm:incacc:covidexcel}), where the organisation handling the data was unaware that rows were missing from a spreadsheet for some time is illustrated in \autoref {fig:darknewcases}
@@ -111,7 +111,7 @@ Data that was missing can subsequently be found. The following options show poss
   \item Perform an impact analysis on the missing data and then act according to the results
 \end{enumerate}
 
-\subsubsection{Choosing Just Some Cases}\index{Dark Data!Choosing Just Some Cases}\label{bkm:dark3}
+\subsubsection{Choosing Just Some Cases}\label{bkm:dark3}
 This is where something or somebody has been selective. Examples might be:
 \begin{itemize}
 \item Selection of test runs that succeeded (ignoring failed runs and their diagnostics) 
@@ -132,10 +132,10 @@ Note that with complex or informal criteria the effects could be as case~\ref{bk
 
 Mitigations\index{Mitigation} include use of peer review, independent teams, and audits. It is important to ask questions and challenge the data selected to be sure it can be justified.
 
-\subsubsection{Self-Selection}\index{Dark Data!Self-selection}\label{bkm:dark4}
+\subsubsection{Self-Selection}\label{bkm:dark4}
 This is considered to be similar to case~\ref{bkm:dark3}, but could be even more informal or ambiguous. Again mitigations\index{Mitigation} include: use of peer review, independent teams, and audits.
 
-\subsubsection{Missing What Matters}\index{Dark Data!Missing What Matters|textbf}\label{bkm:dark5}
+\subsubsection{Missing What Matters}\label{bkm:dark5}
 This was considered similar to case~\ref{bkm:dark2} in impact terms, and might well be considered the “Elephant in the Room”. Examples might be:
 \begin{itemize}
 \item Measuring the wrong things, e.g.\ poor safety metrics / indicators
@@ -146,14 +146,14 @@ This was considered similar to case~\ref{bkm:dark2} in impact terms, and might w
 
 Mitigations\index{Mitigation} include independence as~\ref{bkm:dark3} and~\ref{bkm:dark4} but also “taking a step back” to look at the bigger picture.
 
-\subsubsection{Data Which Might Have Been}\index{Dark Data!Data Which Might Have Been}\label{bkm:dark6}
+\subsubsection{Data Which Might Have Been}\label{bkm:dark6}
 This is where it is impossible to obtain the relevant data as a consequence of how the system / scenario is constructed. This was considered an interesting and important case.
 
 This could for example, be due to an inappropriate system architecture e.g.\ single data channel when a multiple channel approach should have been used, such as in the \index{Boeing 737}Boeing 737 MAX~8 accidents (see section H.2). It is therefore important that Mitigations\index{Mitigation} are in place at design time, as they are often very difficult to retro-fit.
 
 Mitigations\index{Mitigation} include assessing the data collection opportunities gained or lost from the design or architectural approach -- at design time.
 
-\subsubsection{Changes with Time}\index{Dark Data!Changes With Time}\label{bkm:dark7}
+\subsubsection{Changes with Time}\label{bkm:dark7}
 This is a common problem in a safety context. Data in safety systems often becomes obsolete or out of date and may still be mistakenly used. Some examples are:
 \begin{itemize}
 \item System \gls{configuration data} not kept up to date as software\index{Software Changes} or hardware changes
@@ -163,7 +163,7 @@ This is a common problem in a safety context. Data in safety systems often becom
 
 Mitigations\index{Mitigation} include keeping \gls{critical data} up to date and regularly refreshed, and knowing how old the data is in the first place.
 
-\subsubsection{Definitions of Data}\index{Dark Data!Definitions of Data}\label{bkm:dark8}
+\subsubsection{Definitions of Data}\label{bkm:dark8}
 This was considered a common case for systems with \glspl{database} or those exchanging data with external systems, e.g.
 \begin{itemize}
 \item Taxonomies e.g.\ in machine learning categorisation schemes
@@ -173,7 +173,7 @@ This was considered a common case for systems with \glspl{database} or those exc
 
 Mitigations\index{Mitigation} include keeping a list of known changes / incompatibilities and documenting the changes or fixes that have to be applied to make the data usable or consistent.
 
-\subsubsection{Summaries of Data}\index{Dark Data!Summaries of Data}\label{bkm:dark9}
+\subsubsection{Summaries of Data}\label{bkm:dark9}
 This is often seen in data about safety systems and projects:
 \begin{itemize}
 \item Safety metrics or indicators where data is aggregated to create a composite value
@@ -183,7 +183,7 @@ Summaries can be misleading or cause “boundary reactions”, e.g. Red-Amber bo
 
 Mitigations\index{Mitigation} include thinking about what missing data could cause (i.e.\ performing sensitivity analysis) -- for instance, what decisions might be made erroneously due to certain data values being omitted, late or slightly perturbed.
 
-\subsubsection{Measurement Error and Uncertainty}\index{Dark Data!Measurement Error and Uncertainty}\label{bkm:dark10}
+\subsubsection{Measurement Error and Uncertainty}\label{bkm:dark10}
 Sensors can degrade and fail over time, especially in harsh environments such as automotive, marine or aviation:
 \begin{itemize}
 \item Sensors may feed faulty or biased data into systems
@@ -194,7 +194,7 @@ Sensors can degrade and fail over time, especially in harsh environments such as
 
 Hence sensors need to be regularly maintained and calibrated or replaced, and their interfaces\index{Interface!Sensor} need to be able to detect any problems and report faults. 
 
-\subsubsection{Feedback and Gaming}\index{Dark Data!Feedback and Gaming}\label{bkm:dark11}
+\subsubsection{Feedback and Gaming}\label{bkm:dark11}
 This can often happen in safety justifications\index{Justification!Safety} or test case production:
 \begin{itemize}
 \item Early production of a safety argument could lead to only those artefacts that support the claim being generated, e.g.\ requirements-based testing vs.\ stress testing
@@ -203,7 +203,7 @@ This can often happen in safety justifications\index{Justification!Safety} or te
 
 Mitigations\index{Mitigation} include the use of dialectic argument approaches (where both positive and negative cases can be considered). It is also useful to get a second opinion, independent review or a ‘fresh pair of eyes’ to check the justification.
 
-\subsubsection{\glsfmttext{information} Asymmetry}\index{Dark Data!Information Asymmetry}\label{bkm:dark12}
+\subsubsection{\glsfmttext{information} Asymmetry}\label{bkm:dark12}
 This is common where there are multiple stores or sources of the same data:
 \begin{itemize}
 \item Multiple / backup \glspl{database} where they are not kept in sync
@@ -213,7 +213,7 @@ This is common where there are multiple stores or sources of the same data:
 
 Comparisons, reviews and data audits may help in these cases. In general the issue of divergence across multiple data sources needs to be recognised and addressed in the most appropriate technical, and ideally automated, way.
 
-\subsubsection{Intentionally Darkened Data}\index{Dark Data!Intentionally Darkened Data}\label{bkm:dark13}
+\subsubsection{Intentionally Darkened Data}\label{bkm:dark13}
 This can and does happen, e.g.
 \begin{itemize}
 \item Defence, security and government sectors where data is purposefully hidden or destroyed
@@ -222,7 +222,7 @@ This can and does happen, e.g.
 
 This can be mitigated\index{Mitigation} using appropriate technical measures (e.g.\ blockchain, digital signatures, off-site backups), and also robust procedures with oversight.
 
-\subsubsection{Fabricated and Synthetic Data}\index{Dark Data!Fabricated and Synthetic Data}\label{bkm:dark14}
+\subsubsection{Fabricated and Synthetic Data}\label{bkm:dark14}
 Fabrication (i.e.\ making up the data) is surprisingly common, e.g.\ in medical, policing and maritime sectors. Sometimes it is created with the best of intentions as it was not produced or collected at the right time and is now required (e.g.\ for an audit), but sometimes it is created to mask a problem. Synthetic data is often used where there are difficulties in producing enough real data with the right characteristics:
 \begin{itemize}
 \item Data is retrospectively entered / patched to make a “clean” record
@@ -231,32 +231,32 @@ Fabrication (i.e.\ making up the data) is surprisingly common, e.g.\ in medical,
 
 Possible mitigations\index{Mitigation} include comparisons with current real-world data and checking with historical data.
 
-\subsubsection{Extrapolating Beyond Your Data}\index{Dark Data!Extrapolating Beyond Your Data}\label{bkm:dark15}
+\subsubsection{Extrapolating Beyond Your Data}\label{bkm:dark15}
 Systems, especially machine learning systems (see Appendix J) have to cope with values outside of their training\index{Training!AI} data\index{Machine Learning Data}, but the outcomes may be unexpected:
 \begin{itemize}
 \item Bizarre results from recognition / detection systems may result
 \end{itemize}
 
 Mitigations\index{Mitigation} include use of machine learning training\index{Training!AI} data\index{Machine Learning Data} containing edge / corner cases, boundary cases, and testing well beyond normal or acceptable ranges to give insight into the system degradation behaviour.
-\subsection{Summary of Dark Data}\index{Data!Dark}
-Dark data\index{Data!Dark} is a very useful way of thinking about problems and solutions. It is important to always think of the bigger picture, considering what \gls{information} is not known:
+\subsection{Summary of Dark Data}
+Dark data is a very useful way of thinking about problems and solutions. It is important to always think of the bigger picture, considering what \gls{information} is not known:
 
 \begin{itemize}
   \item What might have been left out, intentionally or otherwise?
   \item What might be missing due to the way things are done (or the way those things are being executed)?
   \item Could missing \glspl{item data} cause any safety problems?
   \item What is outside of the defined operational domain?
-  \item Can you present your results / outputs in a way that shows the dark data\index{Data!Dark}?
+  \item Can you present your results / outputs in a way that shows the dark data?
 \end{itemize}
 
 \subsection{Further Reading}
-A number of resources are available for further \gls{information} on how dark data\index{Data!Dark} relates to data safety:
+A number of resources are available for further \gls{information} on how dark relates to data safety:
 \begin{itemize}
-\item The October 2020 edition of the SCSC Newsletter \cite{citation:SCSC160} contains articles both by David Hand and on dark data\index{Data!Dark} safety.
-  \item A presentation on dark data\index{Data!Dark} given by David Hand to the \gls{dsiwg} \cite{citation:darkdata:presentation1};
+\item The October 2020 edition of the SCSC Newsletter \cite{citation:SCSC160} contains articles both by David Hand and on dark data safety.
+  \item A presentation on dark data given by David Hand to the \gls{dsiwg} \cite{citation:darkdata:presentation1};
   \item A presentation by Mike Parsons given at the University of York \cite{citation:darkdata:presentation2}.
 \end{itemize}
-%
+\index{Dark Data|)}%
 %
 % Start of Dazzle Data section
 %
@@ -271,7 +271,7 @@ A number of resources are available for further \gls{information} on how dark da
 %\dsiwgSectionQuote{Camouflage is a game we all like to play, but our secrets are as surely revealed by what we want to seem to be as by what we want to conceal}{Russell Lynes}
 
 \subsection{Introduction to Dazzle Data\index{Data!Dazzle}}
-\cbstart ``Dazzle data''\index{Data!Dazzle} refers to data hiding by spurious, superfluous or unwanted data; this obscuring data confuses and can reduce the ability to see the whole picture. The data which is obscured becomes `dark' because you can't see it or use it. Examples of dazzle data\index{Data!Dazzle} might be electrical noise masking a weak signal or camouflage hiding military assets. Dazzle data\index{Data!Dazzle} may be data that you don’t want, arrives more frequently than expected or data that arrives at an unexpected or inconvenient time.\cbend
+``Dazzle data''\index{Data!Dazzle} refers to data hiding by spurious, superfluous or unwanted data; this obscuring data confuses and can reduce the ability to see the whole picture. The data which is obscured becomes `dark' because you can't see it or use it. Examples of dazzle data\index{Data!Dazzle} might be electrical noise masking a weak signal or camouflage hiding military assets. Dazzle data\index{Data!Dazzle} may be data that you don’t want, arrives more frequently than expected or data that arrives at an unexpected or inconvenient time.
 
 
 At first sight it might be thought that dazzle data\index{Data!Dazzle} hiding the wanted data is just an annoyance rather than a problem; however, this can lead to prevention of use of the real data. It can hide the true picture as in ``wood for the trees'' and in the worst case create serious problems. Examples include false positive alerts that cause real alerts to be ignored as in the classic case of ``Crying Wolf''. Another example is a \gls{dos}\index{Denial of Service} attack, when servers can be blocked with useless requests that cannot be distinguished from the real requests. Data which is truly missed (e.g. masked by extensive electrical noise, or hidden by fabricated data to mask a fraud) could lead to potentially hazardous results.
@@ -301,8 +301,8 @@ In many cases we do not know what changes or corruptions may affect the data, bu
 An example of this is where data is mistakenly added to a machine learning training\index{Training!AI} \gls{dataset}\index{Machine Learning Data} resulting in bizarre and possibly hazardous behaviours of the system using it (e.g. an autonomous road vehicle). It is paramount that data used for such image recognition systems filters and excludes potentially dangerous extraneous data arising from unanticipated situations 
 
 \subsection{Dazzle Data Varieties\index{Data!Dazzle} and Safety Examples}
-In his book, David Hand introduces a taxonomy of fifteen varieties of Dark Data\index{Data!Dark}. This section discuses each form of Dazzle Data and considers it from a systems and safety assurance perspective.
-Some of the varieties are the same as Dark Data\index{Data!Dark}, but some are very different.
+In his book, David Hand introduces a taxonomy of fifteen varieties of Dark Data\index{Dark Data}. This section discuses each form of Dazzle Data and considers it from a systems and safety assurance perspective.
+Some of the varieties are the same as Dark Data\index{Dark Data}, but some are very different.
 
 \subsubsection{Data We Know are Superfluous or Unneeded: ``Known Extras''}\index{Data!Dazzle}
 \label{bkm:dazzledata:case1}
@@ -356,7 +356,7 @@ This is where the extra data specifically masks, obscures or hides particular da
     \item Incorrect filtering of the data, leaving in some cases that should have been excluded
 \end{itemize}
 
-Mitigations\index{Mitigation} include use of review and \index{Completeness!Checks}completeness checks. Note that over-aggressive filtering would create cases of Dark Data\index{Data!Dark}.
+Mitigations\index{Mitigation} include use of review and \index{Completeness!Checks}completeness checks. Note that over-aggressive filtering would create cases of Dark Data\index{Dark Data}.
 \subsubsection{Masquerade or Fraudulent Data}\index{Data!Dazzle}
 This is where data has been constructed to fool the system consuming it, hiding, overlaying or replacing the correct data. Often this will be malicious and should be filtered or rejected by the target system, but of course may not be. 
 \begin{itemize}
@@ -446,92 +446,92 @@ considering what \gls{information} is superfluous and may be distorting or maski
 %
 \section{Links between dark data / Dazzle Data and \ecapitalisewords{\glsentryplural{Data Properties}}}
 \index{Data!Dazzle}
-\index{Dark Data!Comparison with Dazzle Data}\index{Data!Dark}
-Fundamentally, dark data\index{Data!Dark} is data that is not available, but nevertheless is important, and indeed, in some cases, more important than the data that is available.
+\index{Dark Data!Comparison with Dazzle Data}\index{Dark Data}
+Fundamentally, dark data\index{Dark Data} is data that is not available, but nevertheless is important, and indeed, in some cases, more important than the data that is available.
 
 Similarly, Dazzle data\index{Data!Dazzle} refers to spurious, superfluous or unexpected data that masks and confuses the picture and
 can reduce your ability to see details, and indeed the whole picture -- a bit like noise or camouflage.
 
-The opposite attributes of dark data\index{Data!Dark} and dazzle data\index{Data!Dazzle} might be termed Brightness and Clarity respectively. These are potential new properties or meta-properties of data.
+The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data!Dazzle} might be termed Brightness and Clarity respectively. These are potential new properties or meta-properties of data.
 
-\autoref{tab:DarkDazzleComparison} illustrates the properties which can be affected by dark data\index{Data!Dark} and dazzle data\index{Data!Dazzle} issues.
+\autoref{tab:DarkDazzleComparison} illustrates the properties which can be affected by dark data\index{Dark Data} and dazzle data\index{Data!Dazzle} issues.
 
 \begin{longtable}{|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.17}}|C{\dsiwgColumnWidth{0.17}}|C{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.32}}|}
-  \caption{\Glsentryplural{data property} affected by dark data\index{Data!Dark} and / or dazzle data\index{Data!Dazzle} issues}
+  \caption{\Glsentryplural{data property} affected by dark data\index{Dark Data} and / or dazzle data\index{Data!Dazzle} issues}
   \label{tab:DarkDazzleComparison}
   \\\hline\TableHeadColour{\Glsentrytext{data property}} & \TableHeadColour{Explanation} & \TableHeadColour{Dark Data -- missing data} & \TableHeadColour{Dazzle data -- obscuring data} & \TableHeadColour{Notes}\\\hline
   \endfirsthead
-  \caption[]{\Glsentryplural{data property} affected by dark data\index{Data!Dark} and / or dazzle data issues (continued)}
+  \caption[]{\Glsentryplural{data property} affected by dark data\index{Dark Data} and / or dazzle data issues (continued)}
   \\\hline\TableHeadColour{\Glsentrytext{data property}} & \TableHeadColour{Explanation} & \TableHeadColour{Dark Data -- missing data} & \TableHeadColour{Dazzle data -- obscuring data} & \TableHeadColour{Notes}\\\hline
   \endhead
   \multicolumn{5}{r}{\sl Continued on next page}
   \endfoot\endlastfoot
   %
-  \Gls{integrity} (I) & The data is correct, true and unaltered & \tick & \tick &
+  \Gls{integrity}\index{Integrity!Property} (I) & The data is correct, true and unaltered & \tick & \tick &
   E.g., Corruptions to a \gls{database} could change the original values so the original data is lost, or hide or mask values such as by inserting End-of-File markers\\
   \hline
   %
-  \Gls{completeness} (C) & The data has nothing missing or lost & \tick & - &
+  \Gls{completeness}\index{Completeness!Property} (C) & The data has nothing missing or lost & \tick & - &
   If data is lost then it is usually unknown and hence dark. However use of parity, \glspl{crc} and digital signatures may be able to detect the loss and, in some cases, fill in the missing data.\\
   \hline
   %
-  \Gls{consistency} (N) & The data adheres to a common world view (e.g., units) & - & - &\\
+  \Gls{consistency}\index{Consistency!Property} (N) & The data adheres to a common world view (e.g., units) & - & - &\\
   \hline
   %
-  \Gls{continuity} (Y) & The data is continuous and regular without gaps or breaks & \tick & - &
+  \Gls{continuity}\index{Continuity Property} (Y) & The data is continuous and regular without gaps or breaks & \tick & - &
   Gaps or breaks in a data stream would be dark -- the missing values are unknown.
   Methods may be available to mitigate if detected, e.g., interpolation.\\
   \hline
   %
-  \Gls{format}{\index{Format Property}} (O) & The data is represented in a way which is readable by those that need to use it & \tick & \tick &
+  \Gls{format}\index{Format Property} (O) & The data is represented in a way which is readable by those that need to use it & \tick & \tick &
   If data is not in the correct format then it may not be usable so becomes dark. If lots of data is in the wrong format it may obscure other (good) data, and hence can dazzle.\\
   \hline
   %
-  \Gls{accuracy} (A) & The data has sufficient detail for its intended use & \tick & - &
+  \Gls{accuracy}\index{Accuracy Property} (A) & The data has sufficient detail for its intended use & \tick & - &
   If the data has lost detail (e.g., due to sensor sampling or representation) then this is a dark case.\\
   \hline
   %
-  \Gls{resolution} (R) & The smallest difference between two adjacent values that can be represented
+  \Gls{resolution}\index{Resolution Property} (R) & The smallest difference between two adjacent values that can be represented
   in a data storage, display or transfer system & \tick & \tick &
   If the system cannot distinguish between different data values that actually are different, then data could become hidden or lost and hence dark. If the data is masked then it may also be a case of dazzle data\index{Data!Dazzle}.\\
   \hline
   %
-  \Gls{traceability} (T) & The data can be linked back to its source or derivation & \tick & - &
+  \Gls{traceability}\index{Traceability Property} (T) & The data can be linked back to its source or derivation & \tick & - &
   If \gls{traceability} is lost then the data effectively becomes darker as its origins and derivation are lost, and may not be able to be used.\\
   \hline
   %
-  \Gls{timeliness} (M) & The data is as up to date as required & \tick & \tick &
-  If data is not, or thought to be not, up to date then it may be rejected and hence become dark data\index{Data!Dark}. But clocks can become out of sync across different systems leading to erroneous rejection so the timestamps may then be thought of as dazzling the system.\\
+  \Gls{timeliness}\index{Timeliness Property} (M) & The data is as up to date as required & \tick & \tick &
+  If data is not, or thought to be not, up to date then it may be rejected and hence become dark data\index{Dark Data}. But clocks can become out of sync across different systems leading to erroneous rejection so the timestamps may then be thought of as dazzling the system.\\
   \hline
   %
-  \Gls{verifiability} (V) & The data can be checked and its properties demonstrated to be correct & \tick & - &
+  \Gls{verifiability}\index{Verifiability Property} (V) & The data can be checked and its properties demonstrated to be correct & \tick & - &
   If data can’t be checked then it may be rejected (and become dark), even if it is valid.\\
   \hline
   %
-  \Gls{availability} (L) & The data is accessible and usable when an authorised entity demands access & \tick & - &
+  \Gls{availability}\index{Availability Property} (L) & The data is accessible and usable when an authorised entity demands access & \tick & - &
   If data is not available as required then it is dark (whether it exists or not).\\
   \hline
   %
-  \Gls{fidelity} (F) & How well the data maps to the real-world entity it is trying to model &
+  \Gls{fidelity}\index{Fidelity Property} (F) & How well the data maps to the real-world entity it is trying to model &
   - & - &\\
   \hline
   %
-  \Gls{priority}\index{Priority Priority} (P) & The data is presented / transmitted / made available in the order required &
+  \Gls{priority}\index{Priority Property} (P) & The data is presented / transmitted / made available in the order required &
   \tick & \tick &
   If data is not prioritised to be available when needed it is effectively dark. This could be because other data is taking precedence so could be a dazzle case.\\
   \hline
   %
-  \gls{sequencing}\index{Sequencing, Data} (Q) & The data is preserved in the order required &
+  \gls{sequencing}\index{Sequencing Property} (Q) & The data is preserved in the order required &
   \tick & \tick &
   If data is not sequenced as needed it may be rejected or ignored and then is effectively dark. Other data which is out of order or sequence may cause the whole message, set or file to be rejected – a dazzle case.\\
   \hline
   %
-  \Gls{intended_destination}\index{Intended Destination / Usage Property} (U) & The data is only sent to those that should have access to it &
+  \Gls{intended_destination}\index{Intended Destination Property} (U) & The data is only sent to those that should have access to it &
   \tick & - &
-  If data is not sent to the correct destination it may be a dark data\index{Data!Dark} situation as it is effectively missing.\\
+  If data is not sent to the correct destination it may be a dark data\index{Dark Data} situation as it is effectively missing.\\
   \hline
   %
-  \Gls{accessibility}\index{Accessibility Property} (B) & The data is visible only to those that should see it &
+  \Gls{accessibility} \index{Accessibility Property}(B) & The data is visible only to those that should see it &
   - & \tick &
   If data is more widely visible or distributed than intended it could cause a dazzle situation due to e.g. bandwidth issues.\\
   \hline
@@ -548,22 +548,22 @@ The opposite attributes of dark data\index{Data!Dark} and dazzle data\index{Data
   %
   \Gls{lifetime}\index{Lifetime Property} (E) & When does the safety-related data expire &
   \tick & \tick &
-  If the \gls{lifetime} erroneously ends too early then the data is lost -- a dark data\index{Data!Dark} problem. Conversely if the \gls{lifetime} is too long it is potentially a dazzle situation.\\
+  If the \gls{lifetime} erroneously ends too early then the data is lost -- a dark data\index{Dark Data} problem. Conversely if the \gls{lifetime} is too long it is potentially a dazzle situation.\\
   \hline
   %
-  \Gls{disposability}\index{Disposability / Deletability Property} (D) & The data can be permanently removed when required &
+  \Gls{disposability}\index{Disposability Property} (D) & The data can be permanently removed when required &
   - & \tick &
   If the data cannot be removed it is potentially a dazzle situation, as it may obscure the real or current data.\\
   \hline
   %
   \Gls{goldilocks}\index{Goldilocks Property} (G) & The data is just the right size — not too much and not too little &
   \tick & \tick &
-  Too little data may be a dark data\index{Data!Dark} case and too much data to deal with is a dazzle case.\\
+  Too little data may be a dark data\index{Dark Data} case and too much data to deal with is a dazzle case.\\
   \hline
   %
-  Analysability (Z) & The data is of a suitable size, type and representation (including any \gls{metadata}) to enable it be usefully analysed &
+  \Gls{analysability}\index{Analysability Property} (Z) & The data is of a suitable size, type and representation (including any \gls{metadata}) to enable it be usefully analysed &
   \tick & \tick &
-  If the data can’t be analysed it may not be able to be used causing a dark data\index{Data!Dark} issue. If there is too much of it or it is obscured (e.g., by noise on a comms line) then it is a dazzle case.\\
+  If the data can’t be analysed it may not be able to be used causing a dark data\index{Dark Data} issue. If there is too much of it or it is obscured (e.g., by noise on a comms line) then it is a dazzle case.\\
   \hline
   %
   \Gls{explainability}\index{Explainability Property} (X) & The data can be meaningfully explained to those who need to understand it by a suitable mechanism &
