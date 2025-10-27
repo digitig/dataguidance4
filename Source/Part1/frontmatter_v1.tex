@@ -42,7 +42,6 @@ Cover design by DeepAI.org and Tim Rowe, based on an original by Paul Hampton.
 
 \clearpage
 \pagestyle{ContinuationInsideFrontCover}
-\hl{???Completely rewrite front matter}
 The \gls{scsc} is the professional network for sharing knowledge regarding safety-critical systems. It brings together: 
 \begin{itemize}
 	\item engineers and specialists from a range of disciplines working on safety-critical systems in a wide variety of industries;
@@ -54,18 +53,13 @@ The \gls{scsc} is the professional network for sharing knowledge regarding safet
 Through publications, seminars, workshops, tutorials, a web site and, most importantly, at the annual \gls{sss}, it provides opportunities for these people to network and benefit from each other’s experience in working hard at the accidents that don’t happen. It focuses on current and emerging practices in safety engineering, software engineering, and product and process safety standards.
 
 This document was written by the \gls{dsiwg}, which is convened under the auspices of the \gls{scsc}. The document supports the \gls{dsiwg}'s vision, which is to have clear guidance that reflects emerging best practice on how data (as distinct from software and hardware) should be managed in a safety-related context. This update takes account of the consensus that a process-based guidance document will complement existing safety management processes, making it more usable. It was formally released at
-\gls{sss}'25, 4--6 February 2025\hl{???Update publication event},
+\gls{sss}'26, 10--12 February 2026,
 details of which may be found at
-\href{https://scsc.uk/e1099}{https://scsc.uk/e1099}%\todo{Update e797 reference}.
+\href{https://scsc.uk/events-diary/safety-critical-systems-club-symposia/safety-critical-systems-symposium-2026}{https://scsc.uk/events-diary/safety-critical-systems-club-symposia/safety-critical-systems-symposium-2026}%\todo{Update e797 reference}.
 
 Comments on this document are actively encouraged. These can be emailed to: 
 \begin{center}
 	\href{mailto:comments@data-safety.scsc.uk}{comments@data-safety.scsc.uk}.
-\end{center}
-
-Alternatively, a comments submission form is available at:
-\begin{center}
-	\href{http://scsc.uk/data-comments.html}{data-safety.scsc.uk/comments}.
 \end{center}
 
 While the authors and the publishers have used reasonable endeavours to ensure that the information and guidance given in this work is correct, all parties must rely on their own skill and judgement when making use of this work and obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content of this work. Neither the authors nor the publishers make any representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to such information and guidance for any purpose, and they will not be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever (including as a result of negligence) arising out of, or in connection with, the use of this work. The views and opinions expressed in this publication are those of the authors and do not necessarily reflect those of their employers, the \gls{scsc} or other organizations.
@@ -80,7 +74,6 @@ While the authors and the publishers have used reasonable endeavours to ensure t
 \clearpage
 \section*{Change History}
 \thispagestyle{empty}% Suppress page number on Change History page
-\hl{???Add SSS'26 dates and publication details}
 
 \addtocounter{table}{-1}% Number this table as zero, so the first one in ChangeLog table is 1
 \begin{longtable}
@@ -127,10 +120,10 @@ While the authors and the publishers have used reasonable endeavours to ensure t
 	\\\hline
 \end{longtable}
 %
-\subsection*{Changes Since the Last Edition}hl{???Update this whole section}
+\subsection*{Changes Since the Last Edition}
 \cbstart This is a major rewrite of the guidance. The document has been split into three volumes , each giving progressively more detail.
 
-The process remains substantially the same. The intention is that compliance with this version does imply compliance with earlier versions, but some informative material has been made normative so compliance with earlier versions of the guidance does not guarantee compliance with this version.\cbend\
+The process remains substantially the same. The intention is that compliance with this version does imply compliance with earlier versions \hl{???Need to check this is still true}, but some material that was informative in earlier versions has been made normative, so compliance with earlier versions of the guidance does not guarantee compliance with this version.\cbend\
 \subsection*{Future work}
 %An \gls{scsc} Ontology Working Group is currently developing a formal ontology for risk management.\todo{Update this later}
 %Once this model is sufficiently mature, the intention is to apply it to data safety risk management and thus formalise the terminology and conceptual relationships used in this guidance.
@@ -222,16 +215,24 @@ Because of this focus, this guidance should help organizations identify, analyse
 This section provides a single-page introduction to \gls{dsg}. For first-time readers this should help place individual sections within an appropriate context. It should also help returning readers quickly navigate the document's contents.
 
 Systems are changing. The role of data is becoming more prominent. Hence, data needs to be considered as a ``first-class citizen'' in system safety analyses. This will help mitigate organizational and system-level risks associated with the use of data.
+
+The guidance is in three volumes, published as separate documents.
+\begin{description}
+	\item[Volume 1] (this volume) contains the normative material. It describes the ``what'' of the guidance and states what is needed to ensure conformance with this guidance, if required. It should be of use to those establishing processes and procedures for data safety assurance and for those doing the actual assurance;
+	\item[Volume 2] contains the informative material. It describes the ``how'' of the guidance and should be of particular value to data safety practitioners;
+	\item[Volume 3] contains the discursive material. It describes the ``why'' of the guidance and gives background and supporting material intended to improve practitioner's understanding of the data safety management processes and of issues relating to data safety management.
+\end{description}
 	
+A data safety management process has been developed. This is based on four phases:
 \begin{itemize}
-	\item A data safety management process has been developed. This is based on four phases:
-	\begin{itemize}
-		\item establish context;
-		\item identify risks;
-		\item analyse risks; and
-		\item evaluate and \gls{treat} risks.
-	\end{itemize}
+	\item establish context;
+	\item identify risks;
+	\item analyse risks; and
+	\item evaluate and \gls{treat} risks.
+\end{itemize}
+\hl{???This part needs rewriting when structure is stable}
 \cbstart
+\begin{itemize}
 	\item The underlying principles of the guidance are described in \dsiwgRef{Chapter}{bkm:principles}.
 	\item The objectives and outputs to satisfy the principles are described in \dsiwgRef{Chapter}{bkm:objectives}.
 	\item Normative definitions and abbreviations are described in \dsiwgRef{Chapter}{bkm:definitionsabbreviations}.
@@ -263,6 +264,8 @@ Systems are changing. The role of data is becoming more prominent. Hence, data n
 	\end{itemize}
 \cbend
 \end{itemize}
+When reference is made to the content of other volumes, this is indicated by a right-arrow and the volume number shown in bold text. So ``Chapter$\,\to\,$\textbf{3:}\ref*{Part3-bkm:accidents}'' refers to chapter \ref*{Part3-bkm:accidents} in volume 3.\hl{??? I didn't like the ``Volume \textbf{V}:x'' format. This is the format used by The LaTeX companion. What do people think?}
+
 
 %
 % Table of Contents
