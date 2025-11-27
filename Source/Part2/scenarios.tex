@@ -24,46 +24,107 @@ The levels of necessary assurance given in \hl{???Insert reference}
 depend on the relevant scenario, and these scenarios
 are also used in subsequent chapters to indicate the relevance of
 different tools and techniques. 
-\begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.77}}|}
+The scenarios may be applicable one-off, regular, scheduled, or on update.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.5}}|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.1}}|}
 	\caption{Data Safety Scenarios}
 	\label{tab:Scenarios}
-	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Scenario} & \TableHeadColour{Description} \\\hline
+	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Name} & \TableHeadColour{Description} & \TableHeadColour{Guidance ref.} & \TableHeadColour{Dev. (D) or maint. (M)}\\\hline
 	\endfirsthead
 	\caption[]{Data Safety Scenarios (continued)}
-	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Scenario} & \TableHeadColour{Description} \\\hline
+	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Name} & \TableHeadColour{Description} & \TableHeadColour{Guidance ref.} & \TableHeadColour{Dev. (D) or maint. (M)}\\\hline
 	\endhead
-	\multicolumn{3}{r}{\sl Continued on next page}
+	\multicolumn{5}{r}{\sl Continued on next page}
 	\endfoot\endlastfoot
 	\hline
-	S-0 & Check & New or changed data may affect a system and the impact is to be checked. This could be a regular check or ad-hoc.\\
+	\multicolumn{5}{|c|}{\textbf{Scenarios with Systems Using Data}}\\\hline
+	S-0 & Assure & A safety assurance position is to be created for a system that uses or produces data & & D\\
 	\hline
-	S-1 & New Dataset & A new dataset for a system is to be created from scratch.\\
+	S-1 & Investigate & A safety incident related to data has occurred and the cause of this needs to be understood and	mitigations proposed& & M\\
 	\hline
-	S-5 & New Use & The way the data is used has changed and an impact analysis needs to be undertaken.\\
+	S-2 & New Use & The system using data has changed use and an impact analysis needs to be undertaken & & M\\
 	\hline
-	S-3 & Restructuring & A dataset for a system is to be restructured, reformatted or otherwise reworked.\\
+	S-3 & Check & New or changed data may affect a system and the impact of this is to be checked & & M\\
 	\hline
-	S-4 & Assurance & An assurance position for data used or produced by a system is to be created to address safety concerns.\\
+	S-4 & Change & A new or replacement operational system is to be used with data & & D\\
 	\hline
-	S-2 & Assembly & A new dataset for a system is to be created from existing data sets.\\
+	S-5 & Test case production & Test cases for the system/software are created	involving data& & D\\
 	\hline
-	S-6 & Degradation & The data for a system is reduced in quantity or quality, or the system itself operates in a reduced manner and the impact of this needs analysis.\\
+	S-6 & Train & An ML model is trained using training data & & D\\
 	\hline
-	S-7 & Investigation & A safety incident related to data has occurred and the cause of this needs to be understood and mitigations proposed if necessary to reduce the risk in the future.\\
+	S-7 & V\&V & A system is verified and validated using data& & D\\
 	\hline
-	S-8 & Migration & Data is to be migrated from one system to another or one data set to another. This may involve re-formatting, transformations, mappings or other changes.\\
+	S-7a & Validate ML & An ML model is validated using a specific data set & & D\\
 	\hline
-	S-9 & Cleansing & A dataset is to be cleaned to remove old, obsolete, incorrect or other unwanted data.\\
+	\multicolumn{5}{|c|}{\textbf{Data Scenarios}}\\
 	\hline
-	S-10 & Audit & A dataset is checked for certain aspects on a sampling basis. \\
+	D-1 & Migrate & Data is to be migrated from one system to another, or one version of software to another. This may involve re-formatting, transformations, mappings, translations or other changes.& & M\\
 	\hline
-	S-11 & Selection & A dataset is to be filtered or selected to produce a new subset of data.\\
+	D-2 & Create & A new data set for a system is to be created from scratch. This may use a variety of methods including simulation, other system, prototypes, or 	manual means. & & D \\
 	\hline
-	S-12 & Curation & A dataset is to be formally managed and change controlled.\\
+	D-2a & Create: Training &A new training data set for an ML system is to be 	created from scratch. This may use a variety of methods including simulation, other system, prototypes, or manual means.& & D\\
+	\hline 
+	D-2b & Create: Validation & A new validation data set for an ML system is to be created from scratch. This may use a variety of	methods including simulation, other system, prototypes, or manual means.& & D/M\\
 	\hline
-	S-13 & Identification of Missing & Missing or obscured parts of the data sets are to be identified.\\
+	D-3 & Aggregate & A new data set for a system is to be created from combinations of existing data sets & & D\\
 	\hline
-	S-14 & Archival & A dataset is to be copied to long-term storage and possibly removed from current use.\\
+	D-3a & Mash-up & Data is to be re-purposed from various sources, primarily not intended for this usage, and may be re-interpreted in its use & & D\\
+	\hline
+	D-4 & Restructure & A data set for a system is to be reorganised, reformatted or reworked & & M\\
+	\hline
+	D-5 & Increment & A data set is incrementally added to (may be over some time) & & M\\
+	\hline
+	D-6 & Degrade & The data for a system is reduced in quantity or	quality, and the impact of this needs analysis & & M\\
+	\hline
+	D-7 & Cleanse & A data set is to be cleaned to remove old, obsolete, incorrect or other unwanted data & & M\\
+	\hline
+	D-8 & Audit & A data set is checked for certain aspects on a sampling basis & & M\\
+	\hline
+	D-9 & Select & A data set is to be filtered or selected to produce a new subset of data & & M\\
+	\hline
+	D-10 & Find & Missing or obscured parts of the data set are to be identified and made available & & D/M\\
+	\hline
+	D-11 & Control & A data set is to be formally managed and change controlled & & D/M\\
+	\hline
+	D-12 & Archive &  A data set is to be copied to long-term storage and removed from current use & & M\\
+	\hline
+	D-13 & Delete & A data set or part of a data set is to be deleted & & M\\
+	\hline
+	D-14 & Secure & A data set is to be checked for security-sensitive or insecure content, which may be flagged or removed & & M\\
+	\hline
+	D-15 & Safe & A data set is to be checked for dangerous or harmful content which may be removed & & M\\
+	\hline
+	D-16 & Anonymise & A data set has all parts which could be used to identify a person, location or other sensitive aspect, removed or obscured & & M\\
+	\hline
+	D-17 & Split & A data set is to be decomposed into smaller data sets, which could be based on the data itself (e.g. by date), by its storage location, or other aspect. & & M\\
+	\hline
+	D-18 & Distribute & A data set is to be distributed across several systems; this could involve duplication or splitting & & M\\
+	\hline
+	D-19 & Measure & A new set of data is created by measuring the system & & M\\
+	\hline
+	\multicolumn{5}{|c|}{\textbf{Development/Engineering Data}}\\
+	\hline
+	E-1 & Specify & A requirements specification (data) of a system is created & & D\\
+	\hline
+	E-2 & Design & A design/architecture data is created documenting the architecture of a system & & D\\
+	\hline
+	E-3 & Implement & The implementation of a system / software is created & & D\\
+	\hline
+	\multicolumn{5}{|c|}{\textbf{Tool/Transforming Data}}\\
+	\hline
+	T-1 & Input & Inputs data for a tool/transformer can be used & & D\\
+	\hline
+	T-2 & Output & Output data from a tool/transformer that has been produced & & D\\
+	\hline
+	T-3 & Constructive & Constructive data is data that is used to construct the system, e.g. a requirement or source code& & D\\
+	\hline
+	T-4 & Verification & Verification data is data which is produced when verifying the system, e.g. a test report & & D\\
+	\hline
+	T-5 & Persistent & Persistent data is data that is stored permanently, e.g. in a configuration management system & & D\\
+	\hline
+	T-6 & Temporarily & Temporarily data is data which is not stored, e.g. is only temporarily available, e.g. the values of a memory (RAM) & & D\\
+	\hline
+	T-7	& AI Model & A set of data (“weights”) that relates the inputs to the outputs & & D\\
 	\hline
 \end{longtable}
 
