@@ -14,10 +14,10 @@
 %   Principles section
 %
 %================================================================================
-\cbstart\chapter{Principles (Normative)} \label{bkm:principles}\cbend
+\cbstart\chapter{Principles} \label{bkm:principles}\cbend
 
 \dsiwgSectionQuote{Errors using inadequate data are much less than those using no data at all.}{Charles Babbage}
-
+\index{Principles|(}
 Hawkins \dsiwgTextIT{et.\ al.} established some generic software safety assurance principles, which are commonly referred to as ``4 + 1'' \cite{citation:hawkins2013principles}. Given the close links between software and data it is helpful to consider these principles from a data safety assurance perspective. The results are detailed below, with each principle being considered in turn.
 
 \section{Principle 1: \index{Safety Requirement!Data}\glsfmtplural{data safety requirement} shall be defined to address the data contribution to system hazards}
@@ -27,9 +27,8 @@ Data pervades active system operation, as well as the system's specification, re
 \section{Principle 3: \index{Safety Requirement!Data}\glsfmtplural{data safety requirement} shall be satisfied}
 Evidence is required that the system satisfies all of the \index{Safety Requirement!Data}\glspl{data safety requirement} imposed on it for all anticipated operating conditions. Moreover, the \index{Safety Requirement!Data}\glspl{data safety requirement} that pertain to the data's lifecycle\index{Lifecycle!Data} outside of the system shall be evidentially demonstrated prior to the system acting on such data, or the system shall be able to adequately defend against unsatisfied \index{Safety Requirement!Data}\glspl{data safety requirement}. In other words, either the data can be shown to demonstrate the required \index{Property!Data}\glspl{data property} prior to being used or the system can implement adequate defences and \glspl{mitigation}\index{Mitigation} against data that does not conform to the required \index{Property!Safety}safety properties. 
 \section{Principle 4: Hazardous system behaviour arising from the system's use of data shall be identified and mitigated\index{Mitigation}}
-This is an intentionally broad statement because data is conceptual and not physical; it is the contextualised use of data that could result in a system hazard. Data safety assurance principle 1 deals with system-level hazards arising from data, whereas Data safety assurance principle 4 is concerned with hazards that arise from the way the system uses its data, that is, whether the system's design and implementation introduce further hazards. An example is a ship navigation system's display of hydrographic chart data, where a wide field display results in small features disappearing (due to image scale) when it is critical that situational awareness of such hazards is maintained. The associated objectives and outputs are shown in Part 2 Chapter \ref{Part2-tab:p4_principles}.
+This is an intentionally broad statement because data is conceptual and not physical; it is the contextualised use of data that could result in a system hazard. Data safety assurance principle 1 deals with system-level hazards arising from data, whereas Data safety assurance principle 4 is concerned with hazards that arise from the way the system uses its data, that is, whether the system's design and implementation introduce further hazards. An example is a ship navigation system's display of hydrographic chart data, where a wide field display results in small features disappearing (due to image scale) when it is critical that situational awareness of such hazards is maintained. The associated objectives and outputs are shown in Part Table \ref{tab:p4_principles}.
 \section{Principle 5: The confidence established in addressing the data safety assurance principles shall be commensurate to the contribution of the data to system risk}
 (Called Principle 4+1 by Hawkins.) The confidence in the evidence that demonstrates establishment of the first four Data Safety Assurance Principles shall be proportionate to the contribution data (or a particular \index{Artefact, Data}\gls{data artefact}) makes to the system hazards. 
-\hl{???expand dark data, make into objective}
-\hl{???Add definitions for cygnology types}
 \hl{???Identify process for dark data}
+\index{Principles|)}

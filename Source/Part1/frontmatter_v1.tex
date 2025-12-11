@@ -183,21 +183,21 @@ The \gls{scsc} sponsors initiatives to develop methods and techniques through a 
 
 \dsiwgTextBF{Data is here}:
 Data is becoming ever more important in our lives: influencing, managing and even controlling many critical aspects.
-The use of \gls{ai} systems is a new, exciting, but potentially hazardous use of data. \Gls{llm} based systems are trained on vast amounts of data, and it is this data which enables them to be useful.
+The use of \gls{ai} systems is a new, exciting, but potentially hazardous use of data. \Gls{llm} \todo{Also true of ML. Mention that?} based systems are trained on vast amounts of data, and it is this data which enables them to be useful.
 
 Some of this data is related to our personal safety and well-being.
 Consider, for example, the importance of data defining the layout of railway signals,
-data that indicates the position of underwater obstructions in nautical channels or data that
+data that indicates the position of underwater obstructions in nautical channels, or data that
 is used to train a vision recognition system to detect tumours in medical images.
 Organizations now make significant decisions (including safety-related decisions) based solely on data held in systems.
 Hence, organizations need to safely manage, control and process their data.
 In particular, they must actively manage key \index{Property!Data}\glspl{data property} that preserve safety.
 
-\dsiwgTextBF{Data is growing}: There are at least two reasons why the use of data has grown and, equally important, why it is expected to continue to grow. The  first relates to the rapid expansion of the area loosely termed ``Big Data'', including the use of large \glspl{dataset} to support machine learning and \gls{ai} applications. The second is the growing use of systems of systems, where data is the lifeblood that connects together disparate elements and allows a cohesive capability to be built. Put simply, the need to address data-related issues is a pressing problem and will continue to be so.
+\dsiwgTextBF{Data is growing}: There are at least two reasons why the use of data has grown and, equally important, why it is expected to continue to grow. The  first relates to the rapid expansion of the area loosely termed ``Big Data'', including the use of large \glspl{dataset} to support machine learning and \gls{ai} applications. The second is the growing use of systems of systems, where data is the lifeblood that connects together disparate elements and allows a cohesive capability to be built. Put simply, the need to address data-related issues is a pressing problem and will continue to be.
 
 \dsiwgTextBF{Data is causing harm}: Strictly speaking,
 data can neither cause nor prevent harm.
-However, mistakes in data, or the inappropriate use of data, within safety-related systems have been factors in a number of documented accidents and incidents. Examples include aircraft attempting to take off from the wrong runway (and consequently crashing), ships running aground, and patients being exposed to higher than planned doses of radiation.
+However, mistakes in data or inappropriate uses of data within safety-related systems have been factors in a number of documented accidents and incidents. Examples include aircraft attempting to take off from the wrong runway (and consequently crashing), ships running aground, and patients being exposed to higher than planned doses of radiation.
 
 Against this background, the \gls{dsiwg} was established under the auspices of the \gls{scsc}. The \gls{dsiwg}'s aim is to develop clear, cross-sector guidance that reflects emerging best practice on how data (as opposed to software or hardware) should be managed in a safety-related context.
 For the most part, this guidance is based on well-established techniques,
@@ -207,12 +207,14 @@ Because of this focus, this guidance should help organizations identify, analyse
 
 \clearpage
 \section*{Quick Start Guide}
-\hl{???Revise quick start guide for new structure}
 \pagestyle{ContinuationPageFrontMatter}
 
 \dsiwgSectionQuote{Data really powers everything that we do.}{Jeff Weiner}
 
 This section provides a single-page introduction to \gls{dsg}. For first-time readers this should help place individual sections within an appropriate context. It should also help returning readers quickly navigate the document's contents.
+
+When reference is made to the content of other volumes, this is indicated by the volume number shown in bold text. So ``\dsiwgExtRef{Chapter}{3}{Part3-bkm:accidents}'' refers to chapter \ref*{Part3-bkm:accidents} in volume 3.
+
 
 Systems are changing. The role of data is becoming more prominent. Hence, data needs to be considered as a ``first-class citizen'' in system safety analyses. This will help mitigate organizational and system-level risks associated with the use of data.
 
@@ -236,36 +238,19 @@ A data safety management process has been developed. This is based on four phase
 	\item The underlying principles of the guidance are described in \dsiwgRef{Chapter}{bkm:principles}.
 	\item The objectives and outputs to satisfy the principles are described in \dsiwgRef{Chapter}{bkm:objectives}.
 	\item Normative definitions and abbreviations are described in \dsiwgRef{Chapter}{bkm:definitionsabbreviations}.
-	\item The activities of each phase (and associated \gls{tailoring} \gls{information}) are described in \autoref{bkm:activities}.
-	\item Additional guidance \gls{information} for each phase is described in \autoref{bkm:guidance}.
-	\item A worked example is provided in \autoref{bkm:workedexample}.
-	\item A collection of appendices provide more detail, including:
-	\begin{itemize}
-		\item A discussion illustrating how the underlying principles link to the objectives (\dsiwgRef{Appendix}{bkm:principlesobjectives}); 
-		\item An \gls{odr} assessment questionnaire (\dsiwgRef{Appendix}{bkm:assessment});
-		\item A data safety culture questionnaire (\dsiwgRef{Appendix}{bkm:culture});
-		\item A questionnaire to help assess the data maturity of a supplier (\dsiwgRef{Appendix}{bkm:maturity});
-		\item A list of data categories (\dsiwgRef{Appendix}{bkm:categories});
-		\item A collection of \gls{hazop} guidewords (\dsiwgRef{Appendix}{bkm:guidewords});
-		\item The suggested contents of a \gls{dsmp} (\dsiwgRef{Appendix}{bkm:plan});
-		\item A summary of accidents and incidents in which data was potentially a causal factor (\dsiwgRef{Appendix}{bkm:accidents});
-		\item A discussion of topics loosely related to system lifecycles (\dsiwgRef{Appendix}{bkm:lifecycle});
-		\item Considerations regarding \gls{ml} (\dsiwgRef{Appendix}{bkm:MachineLearning});
-		\item A discussion of the risks of AI and autonomy (\dsiwgRef{Appendix}{bkm:autonomy});
-		\item An introduction to the concepts of both dark and dazzle data (\dsiwgRef{Appendix}{bkm:darkdazzledata});
-		\item The concepts of black swan, dragon king, perfect storm and Pudding Lane data (\dsiwgRef{Appendix}{bkm:cygnology}).
-		\item Considerations for the assurance and qualification of data-handling tools (\dsiwgRef{Appendix}{bkm:tools}).
-		\item An introduction to the RADISH tool, that has been developed to assist in the application of the guidance within this document (\dsiwgRef{Appendix}{bkm:radish}).
-		\item Issues that may arise when migrating, porting, importing or exporting data (\dsiwgRef{Appendix}{bkm:migration}).            
-		\item Some of the data issues that made management of the Covid-19 virus difficult (\dsiwgRef{Appendix}{bkm:Covid19});
-		\item Examples of ways that \glspl{dsal} may be customised, with particular focus on likelihood (\dsiwgRef{Appendix}{bkm:DsalCustomisation});
-		\item Lists of acronyms, definitions and glossary entries (\dsiwgRef{Appendix}{bkm:acronyms}); and
-		\item A collection of references (\dsiwgRef{Appendix}{bkm:references}).
-	\end{itemize}
+	\item The activities of each phase (and associated \gls{tailoring} \gls{information}) are described in \dsiwgExtRef{Chapter}{2}{Part2-bkm:activities}.
+	\item A worked example is provided in Chapter \ref*{Part2-bkm:workedexample}.
+	\item Guidance for the assignment of \glspl{dsal} is given in \dsiwgExtRef{Chapter}{2}{Part2-bkm:DsalCustomisation}.
+	\item Examples of ways that \glspl{dsal} may be customised, with particular focus on likelihood are given in \dsiwgExtRef{Chapter}{2}{Part2-bkm:tools}.
+	\item Issues relating to \gls{ai} and \gls{ml} are considered in \dsiwgExtRef{Chapter}{2}{Part2-bkm:MachineLearning} and \dsiwgExtRef{Chapter}{2}{Part2-bkm:autonomy}.
+	\item Additional information on data categories \todo{We never seem to explain what we mean by data categories. Consider doing so.}is given in \dsiwgExtRef{Chapter}{2}{Part2-bkm:categories}.
+	\item Issues that may arise when migrating, porting, importing or exporting data are discussed in \dsiwgExtRef{Chapter}{2}{Part2-bkm:migration}).            
+	\item Lifecycle considerations are addressed in \dsiwgExtRef{Chapter}{3}{Part3-bkm:lifecycle}.
+	\item The data safety tool RADISH is described in \dsiwgExtRef{Chapter}{3}{Part3-bkm:radish}.
+	\item Some of the data issues that made management of the Covid-19 virus difficult are discussed in \dsiwgExtRef{Chapter}{3}{Part3-bkm:Covid19}.
+	\item A summary of accidents and incidents in which data was potentially a causal factor is given in Chapter \dsiwgExtRef{Chapter}{3}{Part3-bkm:accidents};
 \cbend
 \end{itemize}
-When reference is made to the content of other volumes, this is indicated by a right-arrow and the volume number shown in bold text. So ``Chapter$\,\to\,$\textbf{3:}\ref*{Part3-bkm:accidents}'' refers to chapter \ref*{Part3-bkm:accidents} in volume 3.\hl{??? I didn't like the ``Volume \textbf{V}:x'' format. This is the format used by The LaTeX companion. What do people think?}
-
 
 %
 % Table of Contents

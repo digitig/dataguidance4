@@ -29,7 +29,7 @@ The data safety assurance principles (Chapter \ref{bkm:principles}) provide the 
 \section{Principle 1}
 \dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} shall be defined to address the data contribution to system hazards.}}
 
-This guidance uses a metric called \glsfirst{dsal} for this purpose.\index{Assurance Level!Data}\index{DSAL|see{Assurance Level, Data}}, described in more detail in Part 2:\ref*{Part2-bkm:activities} and Part 2:\ref*{Part2-bkm:guidance}. The objectives and outputs supporting this principle are shown in Table \ref{tab:p1_principles}.
+This guidance uses a metric called \glsfirst{dsal} for this purpose.\index{Assurance Level!Data}\index{DSAL|see{Assurance Level, Data}}, described in more detail in \dsiwgExtRef{Chapter}{2}{Part2-bkm:activities} and \dsiwgExtRef{Chapter}{2}{Part2-bkm:guidance}. The objectives and outputs supporting this principle are shown in Table \ref{tab:p1_principles}.
 \begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.39}}|L{\dsiwgColumnWidth{0.39}}|L{\dsiwgColumnWidth{0.16}}|}
 	\caption{P1 Objectives and Outputs}\label{tab:p1_principles}
 	\\\hline\TableHeadColourC{Id} & \TableHeadColour{Objectives} & \TableHeadColour{Outputs} & \TableHeadColour{Reference} \\\hline
@@ -41,57 +41,71 @@ This guidance uses a metric called \glsfirst{dsal} for this purpose.\index{Assur
 	\hline
 	1.a &%
 	  System context and intended use SHALL be established.&%
-	  A description of the system and its intended use e.g. in a \gls{conops}. This SHOULD include an estimate of the level of data risks. & %
+	  A description of the system and its intended use e.g. in a \gls{conops}. This SHOULD include an estimate of the level of data risks.  %
+	  & \dsiwgExtRef{Section}{2}{Part2-bkm:establishcontext}%
 	  \\\hline
 	1.b & %
 	  Legal and regulatory obligations and requirements SHALL be incorporated. &%
-	  A record of all applicable laws and regulations. &%
+	  A record of all applicable laws and regulations. & %
+	  \dsiwgExtRef{Section}{2}{Part2-bkm:establishcontext}%
 	  \\\hline
 	1.c & %
 	  Applicable standards and relevant guidance SHALL be incorporated & %
-	  A record of all applicable standards and relevant guidance. &%
+	  A record of all applicable standards and relevant guidance. & %
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	1.d & % 
 	  Existing data quality and data assurance requirements and	constraints SHALL be identified & %
-	  A record of applicable existing quality and data assurance requirements and constraints.&%
+	  A record of applicable existing quality and data assurance requirements and constraints.& %
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	1.e & %
 	  Data safety artefacts SHALL be identified &%
-	  A collection of data artefacts, described at an appropriate level of detail. & %
+	  A collection of data artefacts, described at an appropriate level of detail. & % 
+	  \dsiwgExtRef{Section}{2}{Part2-bkm:establishcontext} %
 	  \\\hline
 	\multirow{2}{*}{1.f} & %
 	  \multirow{2}{6cm}{Risks SHALL be identified and linked to data safety artefacts} & %
-	  A list of risks, linked to data artefacts and data properties. & \\\cline{3-4} %
+	  A list of risks, linked to data artefacts and data properties. & %
+	  \dsiwgExtRef{Section}{2}{Part2-bkm:identifyrisks} \\\cline{3-4} %
 	 & & %
-		A description of the process used for risk identification & 
+		A description of the process used for risk identification & %
+		\dsiwgExtRef{Section}{2}{Part2-bkm:identifyrisks} %
 		\\\hline
 	1.g & %
 	  Data safety activities SHALL be defined and documented &%
-	  A plan for covering all data safety relevant aspects needs to be created. &%
+	  A plan for covering all data safety relevant aspects needs to be created. &% 
+	  \dsiwgExtRef{Chapter}{2}{Part2-bkm:activities} %
 	  \\\hline
 	1.h & %
 	  Key data stakeholders SHALL be identified &%
-	  A list of key stakeholders for data safety activities, including those affected by the data. &%
+	  A list of key stakeholders for data safety activities, including those affected by the data. & %
+	  \dsiwgExtRef{Section}{2}{Part2-bkm:establishcontext} %
 	  \\\hline
 	1.i & %
 	  Missing, hidden, and obscured data SHALL be considered for safety impact &%
 	  A plan to address potential relevant missing (Dark Data) and obscured data (Dazzle Data).&%
+	  \hl{???Don't seem to have an activity for this, though could reference chapter on dark and dazzle data.} %
 	  \\\hline
 	1.j & %
 	  External interfaces SHALL be defined. This MAY include a list of data owners, linked to data artefacts.&%
 	  An interface control plan. &%
+	  \hl{???Don't seem to have an activity for this.}
 	  \\\hline
 	1.k & %
 	  A complete list of data assurance requirements SHALL be compiled, based on all the legal and regulatory needs, external inputs, known risks, etc. & %
-	  A complete list of data assurance requirements. &%
+	  A complete list of data assurance requirements. &
+	  \dsiwgExtRef{Section}{2}{Part2-bkm:establishcontext}%
 	  \\\hline
 	1.l & %
 	  Relevant historical data-related accidents and incidents SHOULD be reviewed for additional requirements &%
 	  A documented review of relevant historical data-related accidents and incidents. &%
+	  \dsiwgExtRef{Chapter}{2}{Part2-bkm:guidance} %
 	  \\\hline
 	1.m & %
 	  \glspl{dsal} SHALL be established and justified.&%
 	  A list of \glspl{dsal} and their justifications.&%
+	  \dsiwgExtRef{Chapter}{2}{Part2-bkm:guidance} %
 	  \\\hline
 \end{longtable}
 \cbend
@@ -112,38 +126,47 @@ This principle is based on standard systems engineering practices whereby a syst
 	2.a & %
 	  Levels of abstraction of the data SHALL be defined. &%
 	  Levels of Abstraction report. This MAY be in diagrammatic form. There MAY be several levels of data  abstraction, presenting different relevant perspectives. &%
+      \hl{???Don't seem to address this in the guidance}%
       \\\hline
 	2.b &%
 	  \glspl{dsal} SHALL be flowed through levels of the design &%
 	  Traceability records showing the flow of \glspl{dsal} through the design.&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.c &%
 	  Data assurance requirements SHALL be established for each level of system design. &%
 	  Requirements documents. &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.d &%
 	  Data assurance requirements SHALL be traced between each level of system design &%
 	  Traceability report &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.e &%
 	  Data-related interactions between components SHALL be considered.&%
 	  Interactions report. &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.f &%
 	  Data-related interactions with other systems SHALL be considered.&%
 	  Interactions report.&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.g &%
 	  Techniques and approaches for mitigating data risks SHALL be identified&%
 	  Mitigation report.&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.h &%
 	  Unintended interactions affecting data SHALL be identified.&%
 	  Interactions report.&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	2.i &%
 	  Techniques and tools used for data analysis SHALL be justified.&%
 	  Technique and tool justification.&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 \end{longtable}
 \cbend
@@ -165,41 +188,52 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	3.a &%
 	  Methods and techniques used to verify data safety requirements SHALL be documented and justified &%
 	  A record of the treatment adopted for each of the identified risks &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	\multirow{2}{*}{3.b} &%
 	  \multirow{2}{5cm}{Data safety requirements SHALL be verified.}&%
 	  Evidence that the treatment has been successfully implemented E.g. through test, analysis, review or other methods&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\cline{3-4}
 	  & & Verification reports &
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	3.c &%
 	   Methods and tools used to provide supplemental and supporting assurance SHALL be documented.&%
-	   &%
-	  \\\hline
+	   & %
+	   \hl{???Don't seem to address this in the guidance}%
+	   \\\hline
 	3.d &%
 	  \Glspl{dsal} SHALL be satisfied. &%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	3.e &%
 	  Trusted tools SHALL be used to produce verification evidence &%
-	  &%
+	  \dsiwgExtRef{Chapter}{2}{Part2-bkm:tools}&%
 	  \\\hline
 	3.f &%
 	  Verification evidence SHOULD include evidence acquired from field or historical usage where available &%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	\multirow{2}{*}{3.g} &%
 	  \multirow{2}{5cm}{Conformance with data safety requirements SHALL be documented.}&%
-	  Conformance matrix & \\\cline{3-4}
+	  Conformance matrix & %
+	  \hl{???Don't seem to address this in the guidance}%
+	  \\\cline{3-4}
 	  & & An assessment as to whether the risk has been suitably mitigated (and, if not, plans for further mitigation activities). &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	3.h &%
 	  Data safety requirements which are partially or not met SHALL identified and justified &%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	3.i &%
 	  Data which is missing or hidden SHALL be assessed for impact. &%
 	  A missing and hidden data resilience report.&%
+	  \hl{???Don't seem to have an activity for this, though could reference chapter on dark and dazzle data.} %
 	  \\\hline
 \end{longtable}
 \cbend
@@ -221,26 +255,32 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	4.a &%
 	  Key properties of the data SHALL be analysed for failures which lead to safety risks.&%
 	  Data-focussed Functional Failure Analysis. &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	4.b &%
 	  Unintended behaviour resulting from data SHALL be identified and analysed. The analysis SHOULD include \gls{black swan data}\index{Cygnology!Black Swan Data}, \gls{dragon king data}\index{Cygnology!Dragon King Data}, \gls{perfect storm data}\index{Cygnology!Perfect Storm Data}, and \gls{Pudding Lane data}\index{Cygnology!Pudding Lane Data}.&%
 	  Unintended Behaviours Report. &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	4.c &% Unintended behaviour resulting from
       reduced or absent data SHALL be identified and analysed. &%
       Unintended Behaviours Report.&%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	4.d &%
 	  Emergent and unanticipated effects due to data SHALL be investigated.&%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	4.e &%
 	  Resilience measures to deal with unknowns of the data SHALL be considered. &%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	4.f &%
 	  Unintended behaviour resulting from malicious data SHALL be identified and analysed.&%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 \end{longtable}
 \cbend
@@ -264,22 +304,27 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	5.a & %
 	  \Glspl{dsal} SHALL be demonstrably applied.&%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	5.b &%
 	  Assurance artefacts SHALL be produced with a level of rigour commensurate with the \gls{dsal} and data safety requirements.&%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	5.c &%
 	  Activities, methods, analyses, and tools used to provide assurance SHALL be appropriate for the \gls{dsal} and stakeholder group. &%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	5.d &%
 	  Specific confidence demands from stakeholder groups SHALL be addressed.&%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
 	5.e &%
 	  Residual risks SHALL be documented. &%
 	  &%
+	  \hl{???Don't seem to address this in the guidance}%
 	  \\\hline
   \end{longtable}
 \cbend
