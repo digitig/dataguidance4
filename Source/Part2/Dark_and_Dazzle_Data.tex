@@ -119,7 +119,7 @@ This is where something or somebody has been selective. Examples might be:
   \item Incorrect filtering of the data, leaving out more cases than intended
   \item Using data from completed forms, finished tasks or only including data which,
     intentionally or not, meets some criteria which excludes the important data.
-    This can lead to "Survivorship Bias",
+    This can lead to ``Survivorship Bias'',
     [Wikipedia ref:
       \href{https://en.wikipedia.org/wiki/Survivorship\_bias}
            {https://en.wikipedia.org/wiki/Survivorship\_bias}]
@@ -425,7 +425,7 @@ Mitigations\index{Mitigation} include independent monitoring of sensors and regu
 An example may be found in\index{Qantas}
 \href{https://en.wikipedia.org/wiki/Qantas\_Flight\_72}{https://en.wikipedia.org/wiki/Qantas\_Flight\_72}
 where:
-\begin{quotation}
+\begin{quotation}\hl{The use of footnotes for abbreviations doesn't match the style of the rest of the document. Can we use the document convention instead, maybe with a footnote to explain that?}
   \dots the \glsxtrshort{cpu}\footnote{\Glsxtrlong{cpu}} of the \glsxtrshort{adiru}\index{ADIRU}\footnote{\Glsxtrlong{adiru}} corrupted the \glsxtrshort{aoa}\footnote{\Glsxtrlong{aoa}} data. The exact nature of the corruption was that the \glsxtrshort{adiru} \glsxtrshort{cpu} erroneously re-labelled the altitude data word so that the binary data that represented 37,012 (the altitude at the time of the incident) would represent an angle of attack of 50.625 degrees. The \glsxtrshort{fcpc}\footnote{\Glsxtrlong{fcpc}} then processed the erroneously high \gls{aoa} data, triggering the high-\gls{aoa} protection mode, which sent a command to the electrical flight control system (EFCS) to pitch the nose down.
   
   The \glsxtrshort{fcpc} algorithm was very effective, but it could not correctly manage a scenario where there were multiple spikes in either \gls{aoa} 1 or \gls{aoa} 2 that were 1.2 seconds apart -- i.e., if the 1.2-second period of use of the memorised value happened to end while another spike was happening.

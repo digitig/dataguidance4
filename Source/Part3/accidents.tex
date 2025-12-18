@@ -196,14 +196,14 @@ Two tables are presented to assist the reader in finding incidents and accidents
   French misconceptions about English longbow led to devastating losses &
   Defence & 1415 &
   \Gls{integrity}\index{Integrity Property}, \gls{completeness}\index{Completeness Property},
-  accuracy\index{Accuracy Property}, \gls{fidelity}\index{Fidelity / Representation Property},
+  \gls{accuracy}\index{Accuracy Property}, \gls{fidelity}\index{Fidelity / Representation Property},
   \gls{timeliness}\index{Timeliness Property}\\
   %
   \hline
   \ref{bkm:incacc:geminiV} & Gemini V\index{Gemini V} &
   Erroneous `` schoolchild knowledge'' that Earth rotates 360$^\circ$ per day sends spacecraft off course
   &
-  Space & 1965 & \index{Accuracy Property}Accuracy,
+  Space & 1965 & \index{Accuracy Property}\Gls{accuracy},
   \index{Traceability Property}\gls{traceability},
   \index{Fidelity / Representation Property}\gls{fidelity}\\
   \hline
@@ -214,7 +214,7 @@ Two tables are presented to assist the reader in finding incidents and accidents
   &
   Policing and Medical & 2021 & \index{Integrity Property}\Gls{integrity},
   \index{Consistency Property}\gls{consistency},
-  \index{Aliasing Property}Aliasing\\
+  \index{Aliasing Property}\gls{aliasing}\\
   \hline
   %
         \ref{bkm:incacc:log4j} & log4j\index{Log4j} Java\index{Java} library vulnerability &
@@ -288,7 +288,7 @@ Two tables are presented to assist the reader in finding incidents and accidents
         \hline
         \ref{bkm:incacc:comair5191} & Comair Flight 5191 & Inaccurate (out-of-date) aerodrome charts led to take-off being attempted from the wrong runway. Aircraft overran the runway; 49 fatalities. & Air & 2006 & \Gls{timeliness}\index{Timeliness Property}, \index{Completeness!Property}\gls{completeness} \\
 	\hline
-	\ref{bkm:incacc:uberlingen} & \"Uberlingen Mid-Air Collision & Contradictory advice from \gls{tcas} and an air traffic controller led to a mid-air collision between two \gls{tcas}-equipped aircraft. 71 fatalities. & Air & 2002 & \index{Consistency!Property}\Gls{consistency}, \index{Availability Property}\gls{availability}, Timeliness\index{Timeliness Property} \\
+	\ref{bkm:incacc:uberlingen} & \"Uberlingen Mid-Air Collision & Contradictory advice from \gls{tcas} and an air traffic controller led to a mid-air collision between two \gls{tcas}-equipped aircraft. 71 fatalities. & Air & 2002 & \index{Consistency!Property}\Gls{consistency}, \index{Availability Property}\gls{availability}, \gls{timeliness}\index{Timeliness Property} \\
 	\hline
 	\ref{bkm:incacc:fortdrum} & Fort Drum Artillery Incident & Movement of an artillery site led to errors in targeting. Artillery shells were fired more than a mile off target: 2 soldiers killed; 13 injured. & Defence & 2002 & \index{Integrity Property}\Gls{integrity}, \gls{verifiability}\index{Verifiability Property} \\
 	\hline
@@ -513,7 +513,7 @@ Professor Deepti Gurdasani\index{Gurdasani, Professor Deepti}, a senior lecturer
 estimates that the false negatives may have caused up to 200,000 further Covid-19\index{Covid-19} infections, and more than 1,000 avoidable deaths.
 
 On Monday, November 1st 2021 the Good Law Project\index{Good Law Project} launched legal proceedings against the Secretary of State, Sajid Javid\index{Javid, Sajid}, over the Immensa\index{Immensa} testing scandal,
-citing the lack of a proper system to monitor the \gls{accuracy} of tests at such labs breached the Department of Health and Social Care's duty to protect life, and the human rights of those affected.
+citing the lack of a proper system to monitor the \gls{accuracy} of tests at such labs breached the Department of Health and Social Care's duty to protect life, and the human rights of those affected.\hl{But they don't seem to have followed through with the case following the UKHSA report on the incident. The last they seem to have said was ``We will review the report closely – with our lawyers – and reflect on what more we might accomplish by pursuing the case.'' in November 2022}
 
 \Glspl{data property} involved: \index{Integrity Property}\gls{integrity}, \index{Accuracy Property}\gls{accuracy} and possibly \dsiwgTextIT{\gls{traceability}} and \gls{verifiability}\index{Verifiability Property}.
 
@@ -628,9 +628,9 @@ This incident highlights the importance of the \dsiwgTextIT{\index{Availability 
 \section{Loss of Irish Rescue Helicopter} \label{bkm:incacc:irishsar}
 On 14 March 2017, an Irish \gls{sar} helicopter\index{Search and Rescue} apparently suffered \gls{cfit}\index{CFIT}; all four crew members were killed. \dsiwgTextIT{Note: At the time of writing the investigation\index{Investigation!Incident / Accident} is continuing. The following discussion is based on a preliminary report from the Air Accident Investigation Unit, Ireland}.
 
-The \gls{sar}\index{Search and Rescue} helicopter was responding to a medical emergency on board a fishing vessel. It left Dublin\index[locationidx]{Ireland, republic of!Dublin} and requested a route to Blacksod\index[locationidx]{Ireland, republic of!Blacksod} to refuel. The flight data recorded on the \gls{hums} showed the helicopter was in stable level flight until the final few seconds, when it pitched up rapidly and impacted with terrain at the western end of Black rock\index[locationidx]{Ireland, republic of!Black rock}.
+The \gls{sar}\index{Search and Rescue} helicopter was responding to a medical emergency on board a fishing vessel. It left Dublin\index[locationidx]{Ireland, Republic of!Dublin} and requested a route to Blacksod\index[locationidx]{Ireland, Republic of!Blacksod} to refuel. The flight data recorded on the \gls{hums} showed the helicopter was in stable level flight until the final few seconds, when it pitched up rapidly and impacted with terrain at the western end of Black rock\index[locationidx]{Ireland, Republic of!Black rock}.
 
-The helicopter was equipped with an \gls{egpws}. This is designed to decrease instances of \gls{cfit}\index{CFIT}\index{Controlled Flight into Terrain|see{CFIT}} by increasing pilot situational awareness, including the use of alerts and warnings: it is not intended to be used for aircraft navigation. The \gls{egpws} can provide terrain alerting using look ahead algorithms, which take \gls{information} from the aircraft (e.g.\ position., attitude, heading) and use this in conjunction with internal terrain and obstacle \glspl{database}. Neither the Black rock\index[locationidx]{Ireland, republic of!Black rock} lighthouse nor the island's terrain were included in the \gls{egpws} \glspl{database}; these \glspl{database} had been sourced from external suppliers by the \gls{egpws} manufacturer.
+The helicopter was equipped with an \gls{egpws}. This is designed to decrease instances of \gls{cfit}\index{CFIT}\index{Controlled Flight into Terrain|see{CFIT}} by increasing pilot situational awareness, including the use of alerts and warnings: it is not intended to be used for aircraft navigation. The \gls{egpws} can provide terrain alerting using look ahead algorithms, which take \gls{information} from the aircraft (e.g.\ position., attitude, heading) and use this in conjunction with internal terrain and obstacle \glspl{database}. Neither the Black rock\index[locationidx]{Ireland, Republic of!Black rock} lighthouse nor the island's terrain were included in the \gls{egpws} \glspl{database}; these \glspl{database} had been sourced from external suppliers by the \gls{egpws} manufacturer.
 
 The preliminary investigation\index{Investigation!Incident / Accident} also notes that the flight crew were following an operator-specific route guide: a review of such guides has been recommended.
 
@@ -714,9 +714,9 @@ This incident highlights the importance of the \dsiwgTextIT{\gls{resolution}}\in
 
 
 \section{Turkish Airlines\index{Turkish Airlines} A330\index{Airbus!A330-303}} \label{bkm:accinc:turkisha330}
-During March 2015, an Airbus A330-303, operated by THY Turkish Airlines, suffered a runway excursion accident upon landing at Kathmandu-Tribhuvan\index[locationidx]{Nepal!Kathmandu!Kathmandu-Tribhuvan Airport} (KTM)\index{KTM|see{Turkey, Kathmandu-Tribhuvan in location index}}.
+During March 2015, an Airbus A330-303, operated by THY Turkish Airlines, suffered a runway excursion accident upon landing at Kathmandu-Tribhuvan\index[locationidx]{Nepal!Kathmandu!Kathmandu-Tribhuvan Airport} (KTM)\index{KTM|see{T\"urkiye, Kathmandu-Tribhuvan in location index}}.
 
-Flight TK726 was a regular passenger service from Istanbul-Atat{\"u}rk\index[locationidx]{Turkey!Istanbul!Istanbul-Atat{\"u}rk International Airport} (IST)\index{IST|see{Istanbul-Atat{\"u}rk in location index}} to Kathmandu, Nepal\index[locationidx]{Nepal!Kathmandu}. The flight was the first international flight to arrive that morning. After descending from cruising altitude, it entered a holding pattern. It was subsequently cleared for a \gls{vor} / \gls{dme} approach to runway 02. 
+Flight TK726 was a regular passenger service from Istanbul-Atat{\"u}rk\index[locationidx]{T\"urkiye!Istanbul!Istanbul-Atat{\"u}rk International Airport} (IST)\index{IST|see{Istanbul-Atat{\"u}rk in location index}} to Kathmandu, Nepal\index[locationidx]{Nepal!Kathmandu}. The flight was the first international flight to arrive that morning. After descending from cruising altitude, it entered a holding pattern. It was subsequently cleared for a \gls{vor} / \gls{dme} approach to runway 02. 
 
 This approach was abandoned at about the Missed Approach Point at 1DME and the aircraft performed a go around. The aircraft circled and positioned for a second approach to runway 02. The aircraft touched down to the left of the runway centre line with the left hand main gear off the paved runway surface. It ran onto soft soil and the nose landing gear collapsed. Following the accident the aircraft was written off.
 
@@ -1006,10 +1006,10 @@ This incident highlights the importance of the \dsiwgTextIT{\gls{timeliness}\ind
 \end{samepage}
 
 
-\section{\"Uberlingen Mid-Air Collision}\index[locationidx]{Switzerland!Uberlingen} \label{bkm:incacc:uberlingen}
-On 1 July 2002, a passenger jet (Bashkirian Airlines\index{Bashkirian Airlines Flight 2937}) and a cargo jet (DHL Flight 611\index{DHL Flight 611}) collided in mid-air. The collision happened over the south German town of \"Uberlingen\index[locationidx]{Switzerland!{\"Uberlingen}}; it occurred despite both aircraft being equipped with \gls{tcas}.
+\section{\"Uberlingen Mid-Air Collision}\index[locationidx]{Switzerland!\"Uberlingen} \label{bkm:incacc:uberlingen}
+On 1 July 2002, a passenger jet (Bashkirian Airlines\index{Bashkirian Airlines Flight 2937}) and a cargo jet (DHL Flight 611\index{DHL Flight 611}) collided in mid-air. The collision happened over the south German town of \"Uberlingen\index[locationidx]{Switzerland!\"Uberlingen}; it occurred despite both aircraft being equipped with \gls{tcas}.
 
-The two aircraft were in airspace that was controlled from Z\"urich\index[locationidx]{Swizerland!Z\"urich} and were on a collision course. A single controller was on duty and they were responsible for controlling two workstations. This arrangement was against regulations, but was tolerated by management and had become accepted practice. Initially, the controller did not appreciate the dangerous situation that was developing.
+The two aircraft were in airspace that was controlled from Z\"urich\index[locationidx]{Switzerland!Z\"urich} and were on a collision course. A single controller was on duty and they were responsible for controlling two workstations. This arrangement was against regulations, but was tolerated by management and had become accepted practice. Initially, the controller did not appreciate the dangerous situation that was developing.
 
 Maintenance was being conducted on the main radar system, which meant that the controller was reliant on a backup system. This delayed the presentation of radar \gls{information}. In addition, a ground-based optical system that would have provided warning of the impending collision was turned off, also for maintenance: the controller was unaware of this.
 

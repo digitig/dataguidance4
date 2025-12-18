@@ -38,9 +38,9 @@
 \externaldocument[Part2-]{../Part2/Part2}
 
 % Add part number to index entries
-\let\LATEXindex\index % save old definition to prevent recursion
-\renewcommand\index[1]{\LATEXindex{#1|docname{2}}}
-\newcommand\docname[2]{#2}
+%\let\LATEXindex\index % save old definition to prevent recursion
+%\renewcommand\index[1]{\LATEXindex{#1|docname{2}}}
+%\newcommand\docname[2]{#2}
 
 %================================================================================
 %Add a DRAFT watermark
@@ -101,14 +101,13 @@
 %Frontmatter - inner title pages, ToC
 %
 \frontmatter
-\include{frontmatter}
+\include{frontmatter_v3}
 \mainmatter
 %
 %Load each of the main sections of the document
 %
 
 \include{introduction}
-\include{definitions}
 \include{lifecycle}
 \include{radish}
 \include{covid19}

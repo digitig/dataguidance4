@@ -230,54 +230,51 @@ What is new, however, is the explicit and relentless focus on data, making it a 
 Because of this focus, this guidance should help organizations identify, analyse, evaluate and treat data-related risks, thus reducing the likelihood of data-related issues causing harm in the future.
 
 \clearpage
-\section*{Quick Start Guide}
+\section*{Quick Start Guide}\hl{???consider whether the quick start guide needs to be included in all parts}
 \pagestyle{ContinuationPageFrontMatter}
 
 \dsiwgSectionQuote{Data really powers everything that we do.}{Jeff Weiner}
 
 This section provides a single-page introduction to \gls{dsg}. For first-time readers this should help place individual sections within an appropriate context. It should also help returning readers quickly navigate the document's contents.
 
+When reference is made to the content of other volumes, this is indicated by the volume number shown in bold text. So ``\dsiwgExtRef{Chapter}{2}{Part2-bkm:activities}'' refers to chapter \ref*{Part2-bkm:activities} in volume 2.
+
+
+Systems are changing. The role of data is becoming more prominent. Hence, data needs to be considered as a ``first-class citizen'' in system safety analyses. This will help mitigate organizational and system-level risks associated with the use of data.
+
+The guidance is in three volumes, published as separate documents.
+\begin{description}
+	\item[Volume 1] contains the normative material. It describes the ``what'' of the guidance and states what is needed to ensure conformance with this guidance, if required. It should be of use to those establishing processes and procedures for data safety assurance and for those doing the actual assurance;
+	\item[Volume 2] contains the informative material. It describes the ``how'' of the guidance and should be of particular value to data safety practitioners;
+	\item[Volume 3] (this volume) contains the discursive material. It describes the ``why'' of the guidance and gives background and supporting material intended to improve practitioner's understanding of the data safety management processes and of issues relating to data safety management.
+\end{description}
+
+A data safety management process has been developed. This is based on four phases:
 \begin{itemize}
-  \item Systems are changing. The role of data is becoming more prominent. Hence, data needs to be considered as a ``first-class citizen'' in system safety analyses. This will help mitigate organizational and system-level risks associated with the use of data.
-
-  \item A data safety management process has been developed. This is based on four phases:
-    \begin{itemize}
-      \item establish context;
-      \item identify risks;
-      \item analyse risks; and
-      \item evaluate and \gls{treat} risks.
-    \end{itemize}
-	\item The underlying principles and an overview of the process are described in \autoref{bkm:principlesprocess}.
-	\item Normative definitions and abbreviations are described in \autoref{bkm:definitionsabbreviations}.
-	\item The objectives associated with, and the outputs produced by, each phase are described in \autoref{bkm:objectivesoutputs}.
-	\item The activities of each phase (and associated \gls{tailoring} \gls{information}) are described in \autoref{bkm:activities}.
-	\item Additional guidance \gls{information} for each phase is described in \autoref{bkm:guidance}.
-  \item A worked example is provided in \autoref{bkm:workedexample}.
-  \item A collection of appendices provide more detail, including:
-    \begin{itemize}
-      \item A discussion illustrating how the underlying principles link to the objectives (\dsiwgRef{Appendix}{bkm:principlesobjectives}); 
-      \item An \gls{odr} assessment questionnaire (\dsiwgRef{Appendix}{bkm:assessment});
-      \item A data safety culture questionnaire (\dsiwgRef{Appendix}{bkm:culture});
-      \item A questionnaire to help assess the data maturity of a supplier (\dsiwgRef{Appendix}{bkm:maturity});
-      \item A list of data categories (\dsiwgRef{Appendix}{bkm:categories});
-      \item A collection of \gls{hazop} guidewords (\dsiwgRef{Appendix}{bkm:guidewords});
-      \item The suggested contents of a \gls{dsmp} (\dsiwgRef{Appendix}{bkm:plan});
-      \item A summary of accidents and incidents in which data was potentially a causal factor (\dsiwgRef{Appendix}{bkm:accidents});
-      \item A discussion of topics loosely related to system lifecycles (\dsiwgRef{Appendix}{bkm:lifecycle});
-      \item Considerations regarding \gls{ml} (\dsiwgRef{Appendix}{bkm:MachineLearning});
-      \item A discussion of the risks of AI and autonomy (\dsiwgRef{Appendix}{bkm:autonomy});
-      \item An introduction to the concepts of both dark and dazzle data (\dsiwgRef{Appendix}{bkm:darkdazzledata});
-      \item The concepts of black swan, dragon king, perfect storm and Pudding Lane data (\dsiwgRef{Appendix}{bkm:cygnology}).
-      \item Considerations for the assurance and qualification of data-handling tools (\dsiwgRef{Appendix}{bkm:tools}).
-      \item An introduction to the RADISH tool, that has been developed to assist in the application of the guidance within this document (\dsiwgRef{Appendix}{bkm:radish}).
-      \item Issues that may arise when migrating, porting, importing or exporting data (\dsiwgRef{Appendix}{bkm:migration}).            
-      \item Some of the data issues that made management of the Covid-19 virus difficult (\dsiwgRef{Appendix}{bkm:Covid19});
-      \item Examples of ways that \glspl{dsal} may be customised, with particular focus on likelihood (\dsiwgRef{Appendix}{bkm:DsalCustomisation});
-      \item Lists of acronyms, definitions and glossary entries (\dsiwgRef{Appendix}{bkm:acronyms}); and
-      \item A collection of references (\dsiwgRef{Appendix}{bkm:references}).
-    \end{itemize}
+	\item establish context;
+	\item identify risks;
+	\item analyse risks; and
+	\item evaluate and \gls{treat} risks.
 \end{itemize}
-
+\hl{???This part needs rewriting when structure is stable}
+\cbstart
+\begin{itemize}
+	\item The underlying principles of the guidance are described in \dsiwgExtRef{Chapter}{1}{Part1-bkm:principles}.
+	\item The objectives and outputs to satisfy the principles are described in \dsiwgExtRef{Chapter}{1}{Part1-bkm:objectives}.
+	\item Normative definitions and abbreviations are described in \dsiwgExtRef{Chapter}{1}{Part1-bkm:definitionsabbreviations}.
+	\item The activities of each phase (and associated \gls{tailoring} \gls{information}) are described in \dsiwgRef{Chapter}{bkm:activities}.
+	\item A worked example is provided in Chapter \dsiwgExtRef{Chapter}{2}{bkm:workedexample}.
+	\item Guidance for the assignment of \glspl{dsal} is given in \dsiwgExtRef{Chapter}{2}{bkm:DsalCustomisation}.
+	\item Examples of ways that \glspl{dsal} may be customised, with particular focus on likelihood are given in \dsiwgExtRef{Chapter}{2}{bkm:tools}.
+	\item Issues relating to \gls{ai} and \gls{ml} are considered in \dsiwgExtRef{Chapter}{2}{bkm:MachineLearning} and \dsiwgExtRef{Chapter}{2}{bkm:autonomy}.
+	\item Additional information on data categories \todo{We never seem to explain what we mean by data categories. Consider doing so.}is given in \dsiwgExtRef{Chapter}{2}{Part2-bkm:categories}.
+	\item Issues that may arise when migrating, porting, importing or exporting data are discussed in \dsiwgExtRef{Chapter}{2}{bkm:migration}).            
+	\item Lifecycle considerations are addressed in \dsiwgRef{Chapter}{Part3-bkm:lifecycle}.
+	\item The data safety tool RADISH is described in \dsiwgRef{Chapter}{Part3-bkm:radish}.
+	\item Some of the data issues that made management of the Covid-19 virus difficult are discussed in \dsiwgRef{Chapter}{Part3-bkm:Covid19}.
+	\item A summary of accidents and incidents in which data was potentially a causal factor is given in Chapter \dsiwgRef{Chapter}{Part3-bkm:accidents};
+	\cbend
+\end{itemize}
 %
 % Table of Contents
 %
