@@ -561,12 +561,13 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
   \hline
   DD.10 & Sensitivity analysis & \dsiwgTextTT{..D..} & - & R & R & HR & Assess impact of missing data, for instance, what decisions might be made erroneously due to certain data values being omitted, late or slightly perturbed. Assess impact of missing data, for instance, what decisions might be made erroneously due to certain data values being omitted, late or slightly perturbed. & \dsiwgTextTT{IC.YOARTMVL.PQU..HE.GZXK}\\
   \hline
-  DD.11 & Outlier analysis in design\hl{Do we need to say ``in design'' since this is in DD?} & \dsiwgTextTT{..D..} & - & R & R & HR & Use of machine learning training data containing edge / corner cases, boundary
+  DD.11 & Outlier analysis in design\hl & \dsiwgTextTT{..D..} & - & R & R & HR & Use of edge / corner cases, boundary
   cases, and testing well beyond normal or acceptable ranges to give insight into the system
-  degradation behaviour. & \dsiwgTextTT{IC.YOARTMVL.PQU..HE.GZXK}\\
+  degradation behaviour. This could apply to machine learning training data or other data.& \dsiwgTextTT{IC.YOARTMVL.PQU..HE.GZXK}\\
   \hline
-  DD.12 & Outlier analysis in verification & \dsiwgTextTT{V....} & - & R & R & HR & Data used for such image recognition systems \hl{What image recognition systems? We've not mentioned them.}filters and excludes potentially
-  dangerous extraneous data arising from unanticipated situations. & \dsiwgTextTT{IC.YOARTMVL.PQU..HE.GZXK}\\
+  DD.12 & Outlier analysis in verification & \dsiwgTextTT{V....} & - & R & R & HR & Use of edge / corner cases, boundary
+  cases, and testing well beyond normal or acceptable ranges to give insight into the system
+  degradation behaviour. This could apply to machine learning verification data or other data. & \dsiwgTextTT{IC.YOARTMVL.PQU..HE.GZXK}\\
   \hline
   DD.13 & Sensor data management & \dsiwgTextTT{..D..} & - & R & HR & HR & Independently monitor sensors and ensure regular maintenance, calibration or
   replacement of hardware. Sensor interfaces need to be able to detect any problems and
