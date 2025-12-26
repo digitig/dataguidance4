@@ -14,7 +14,7 @@
 %   Appendix regarding Dark and Dazzle Data
 %
 %================================================================================
-\chapter{Dark Data\index{Data!Dark|see {Dark Data}} and Dazzle Data\index{Data!Dazzle}|see {Dazzle Data}}%
+\chapter{Dark Data\index{Data!Dark|see {Dark Data}} and Dazzle Data\index{Data!Dazzle|see {Dazzle Data}}}%
 \label{bkm:darkdazzledata}
 %
 %\dsiwgSectionQuote{Common sense tells us that the government's attempts to solve large problems more often create new ones. Common sense also tells us that a top-down, one-size-fits-all plan will not improve the workings of a nationwide health-care system that accounts for one-sixth of our economy}{Sarah Palin}
@@ -425,8 +425,8 @@ Mitigations\index{Mitigation} include independent monitoring of sensors and regu
 An example may be found in\index{Qantas}
 \href{https://en.wikipedia.org/wiki/Qantas\_Flight\_72}{https://en.wikipedia.org/wiki/Qantas\_Flight\_72}
 where:
-\begin{quotation}\hl{The use of footnotes for abbreviations doesn't match the style of the rest of the document. Can we use the document convention instead, maybe with a footnote to explain that?}
-  \dots the \glsxtrshort{cpu}\footnote{\Glsxtrlong{cpu}} of the \glsxtrshort{adiru}\index{ADIRU}\footnote{\Glsxtrlong{adiru}} corrupted the \glsxtrshort{aoa}\footnote{\Glsxtrlong{aoa}} data. The exact nature of the corruption was that the \glsxtrshort{adiru} \glsxtrshort{cpu} erroneously re-labelled the altitude data word so that the binary data that represented 37,012 (the altitude at the time of the incident) would represent an angle of attack of 50.625 degrees. The \glsxtrshort{fcpc}\footnote{\Glsxtrlong{fcpc}} then processed the erroneously high \gls{aoa} data, triggering the high-\gls{aoa} protection mode, which sent a command to the electrical flight control system (EFCS) to pitch the nose down.
+\begin{quotation}
+  \dots the [\Glsxtrlong{cpu}] of the \glsxtrshort{adiru}\index{ADIRU} [\Glsxtrlong{adiru}] corrupted the \glsxtrshort{aoa} [\Glsxtrlong{aoa}] data. The exact nature of the corruption was that the \glsxtrshort{adiru} \glsxtrshort{cpu} erroneously re-labelled the altitude data word so that the binary data that represented 37,012 (the altitude at the time of the incident) would represent an angle of attack of 50.625 degrees. The \glsxtrshort{fcpc} [\Glsxtrlong{fcpc}] then processed the erroneously high \gls{aoa} data, triggering the high-\gls{aoa} protection mode, which sent a command to the electrical flight control system (EFCS) to pitch the nose down.
   
   The \glsxtrshort{fcpc} algorithm was very effective, but it could not correctly manage a scenario where there were multiple spikes in either \gls{aoa} 1 or \gls{aoa} 2 that were 1.2 seconds apart -- i.e., if the 1.2-second period of use of the memorised value happened to end while another spike was happening.
   \end{quotation}

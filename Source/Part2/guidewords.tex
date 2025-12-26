@@ -18,8 +18,11 @@
 
 \dsiwgSectionQuote{I don't see the logic of rejecting data just because they seem incredible.}{Fred Hoyle}
 
-\autoref{tab:HazopFull}
-expands upon the \gls{hazop} guidewords presented in \autoref{tab:HazopShort} by adding data considerations which may be helpful in determining how to apply the guidewords to a specific instance of a \index{Data Property}property.
+A \gls{hazop} \cite{citation:iec61882:2016}
+provides a structured approach for identifying hazards. It involves a multidisciplinary team collaborating to identify potential hazards and operability problems. Structure and \index{Completeness!Hazard Identification}\gls{completeness} are supported through the use of guideword prompts, for example, considering the implications if software components perform functions early, late or not at all. These prompts are intended to stimulate imaginative thinking, to focus the study and to elicit ideas and discussion.
+
+\autoref{tab:HazopFull}\index{HAZOP} lists a set of guidewords for a data-focused \gls{hazop}, based on the \index{Property!Data}properties defined in \dsiwgExtRef{Section}{1}{tab:PropertiesOfData}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity Property}\gls{integrity}, and so on.
+The list is non-exhaustive. Other guidewords may be useful for particular systems, or may be used to ensure the data safety assessment is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment|see{Safety Assessment, System}}.
 
 \begin{longtable}{|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.28}}|L{\dsiwgColumnWidth{0.20}}|L{\dsiwgColumnWidth{0.35}}|}
   \caption{\glsfmtshort{hazop} guidewords: detailed definitions}

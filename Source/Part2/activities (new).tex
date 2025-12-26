@@ -14,7 +14,7 @@
 %   Activities and Tailoring section.
 %
 %================================================================================
-\chapter{Activities (TGR Revised)}\index{Tailoring|textbf}\label{bkm:activities}
+\chapter{Activities}\index{Tailoring|textbf}\label{bkm:activities}
 \hl{This chapter is intended to ultimately replace Activities, Guidance and Tailoring. }
 \dsiwgSectionQuote
   {It is a capital mistake to theorise before one has data.}
@@ -150,7 +150,7 @@ A way to confirm that all relevant \index{Artefact, Data}\glspl{data artefact} h
 
 Including data safety within a project safety management plan is recommended for complex or highly safety-critical systems. In this case the structure of the safety management plan may be maintained, with the \index{Safety Assessment!Data}\gls{data safety assessment} process being tailored to align to the overall safety management process.
 
-A data maturity questionnaire (\dsiwgRef{bkm:maturity}) is likely to be useful, particularly when new organizational relationships are being formed. It may offer little value in situations where both organizations are familiar with each other, they have worked on data-related projects together before and there are suitable audit / review arrangements in place.
+A data maturity questionnaire (\dsiwgRef{Section}{bkm:maturity}) is likely to be useful, particularly when new organizational relationships are being formed. It may offer little value in situations where both organizations are familiar with each other, they have worked on data-related projects together before and there are suitable audit / review arrangements in place.
 
 \index{Artefact, Data}\Glspl{data artefact} may be defined at a number of levels. A \gls{data artefact} associated with a medical system could be described as ``patient data''. Alternatively, this could be split into smaller parts (e.g., ``blood group''). Generally, the highest possible level consistent with the system description should be used; this prevents an excessively long list of \glspl{data artefact} being developed. If necessary, where further detail is needed those \glspl{data artefact} can be refined as part of an iterative process focused on key issues.
 
@@ -256,7 +256,7 @@ To analyse risks and, more particularly, to align data safety with other risk ma
 
 Definitions for severity and likelihood in \autoref{tab:DSAL-risk-matrix} may be customised for a specific application. A default approach to the assessment of likelihood is presented in
 \dsiwgRef{Section}{bkm:DSAL-table-section}\index{Assurance Level!Data}
-and \dsiwgRef{tab:Likelihood}, while default definitions for severity are presented in Table~\ref{tab:Severity}.
+and \dsiwgRef{Table}{tab:Likelihood}, while default definitions for severity are presented in Table~\ref{tab:Severity}.
 
 Although this allocation of \glspl{dsal}\index{Assurance Level!Data} is typically used, there are some situations where a different allocation matrix may be more appropriate. Hence, it may be appropriate for a tailored allocation matrix to be used. Regardless of whether \gls{tailoring}\index{Tailoring} is used, the matrix should be reviewed and confirmed as being suitable for the intended application.
 
@@ -429,7 +429,7 @@ There are specific functional and architectural approaches that may reduce or av
 
 The effectiveness of the functional \glspl{mitigation}\index{Mitigation} in reducing impact to the particular \index{Data Property}data properties needs to be determined. For example, a strong checksum may be very effective at detecting unwanted change and therefore lower the \index{Assurance Level!Software}\gls{software assurance level} (from the perspective of data-related requirements). However, a checksum may not help at all if the issue is one of timely message delivery. More \gls{information} on the use of checksums in the aviation domain is available in \cite{citation:koopman2015selection}; this \gls{information} is likely to be applicable to other domains as well.
 
-A range of methods and approaches can be used to mitigate the identified data safety risks. Since \gls{mitigation}\index{Mitigation} can be a complex process, requiring collaboration with all system engineering elements, a collection of high-level data-specific \gls{mitigation} measures is given in \autoref{bkm:high_level_mitigation}. These may particularly assist those attempting to explain the process to non-practitioners or those conducting assessments in less highly regulated environments. These high-level data-related \gls{mitigation} measures may prove sufficient for practitioners \cbstart managing the safety of\cbend systems which do not have a high safety criticality.
+A range of methods and approaches can be used to mitigate the identified data safety risks. Since \gls{mitigation}\index{Mitigation} can be a complex process, requiring collaboration with all system engineering elements, a collection of high-level data-specific \gls{mitigation} measures is given in \autoref{tab:HighLevelMitigations}. These may particularly assist those attempting to explain the process to non-practitioners or those conducting assessments in less highly regulated environments. These high-level data-related \gls{mitigation} measures may prove sufficient for practitioners \cbstart managing the safety of\cbend systems which do not have a high safety criticality.
 %\paragraph{High-level data mitigation}\label{bkm:high_level_mitigation}
 
 \begin{description}
@@ -451,4 +451,4 @@ As outlined in
 \hyperref[bkm:activities:analyse:tailoring]{section}~\ref{bkm:activities:analyse:tailoring}, %Clunky, but \autoref inserted "subsubsection"
 \glspl{dsal}\index{Assurance Level!Data} can be applied at varying levels of abstraction. For small-scale or low-risk (ODR1) systems it may be appropriate to consider \index{Treatment!Risk}\glspl{treatment} at higher levels of system abstraction. For example, this could involve applying a single \gls{dsal} to a sub-system or even to the system in its entirety and implementing risk \index{Treatment!Risk}\gls{treatment} techniques at that level. The latter approach could be appropriate where the data in the system interacts in complex ways and the associated safety risk does not warrant a detailed investigation of these interactions.
 
-A significant amount of \gls{tailoring}\index{Tailoring} is implicit in the way the tables of methods and approaches in Chapter~\ref{bkm:activitiestailoring} are constructed. At best a method / approach may be highly recommended as a way of maintaining a required \index{Data Property}data property at a given \gls{dsal}\index{Assurance Level!Data}. The tables are not exhaustive; additional or alternative methods and approaches can be used.
+A significant amount of \gls{tailoring}\index{Tailoring} is implicit in the way the tables of methods and approaches are constructed. At best a method / approach may be highly recommended as a way of maintaining a required \index{Data Property}data property at a given \gls{dsal}\index{Assurance Level!Data}. The tables are not exhaustive; additional or alternative methods and approaches can be used.
