@@ -105,7 +105,12 @@
 \usepackage{multirow}           %Used to allow multiple row spanning in tables
 \usepackage{pifont}             %Used to print ZipfDingbats characters (\ding)
 \usepackage[many]{tcolorbox}    %Used to place coloured boxes around text
-
+\usepackage{tocloft}
+\makeatletter
+\renewcommand{\numberline}[1]{%
+	\@cftbsnum #1\@cftasnum~\@cftasnumb%
+}
+\makeatother
 \ifx\withToDo\undefined
 % Shortcut to create version without todo notes
 \newcommand{\todo}[1]{}
@@ -221,6 +226,7 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
 %Mark intentionally blank pages as such
 %================================================================================
 \makeatletter
+
 \def\dsiwg@intblankpage{%
 	\clearpage% this line has no effect if invoked from dsiwg@cleardoublepage
 	\null\vfil
@@ -236,8 +242,6 @@ linewidth=2pt]{aibox} % Environment to display AI-generated text
 	\fi
 }
 \let\cleardoublepage=\dsiwg@cleardoublepage
-\makeatother
-
 %================================================================================
 %Define the colours to be used for this template style
 %================================================================================
