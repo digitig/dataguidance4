@@ -22,7 +22,7 @@
 \dsiwgSectionQuote{I don't think you'll ever have a perfect world because we humans are prone to error, and so we're always in search of an upgrade}{Henry Rollins}
 
 Migrating, Porting and Import or Export of data between systems is a large and complex topic.
-This appendix highlights some of the issues that arise, links to the data safety properties and suggests some mitigations.
+This chapter highlights some of the issues that arise, links to the data safety properties and suggests some mitigations.
 
 \section{Introduction and rationale}\label{bkm:migrationintro}
 All of these activities involve moving data around, with the expectation that the data will be re-used or re-purposed to some extent after the move. Why is this a problem? Because data can be lost, transformed or misinterpreted due to the migration. If some of this data is safety-related then there is the possibility of creating a data \gls{hazard}. The worst cases are the silent ones: where data is not migrated or modified or changed into something else on migration, and no notification or warning is provided.
@@ -117,19 +117,19 @@ The following table summarises some of the safety issues due to migration, maps 
 1.&
 Data format may not map exactly: due to different \gls{database} formats, word lengths, endian issues, etc.&
 Data can be lost or discarded, or substituted for defaults. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}, \gls{format}\index{Format Property}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}, \gls{format}\index{Format Property}&
 DM.02, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 2.&
 Data may not translate exactly: no equivalent data type / record / field type in new system, etc&
 Data can be lost or discarded, or substituted for defaults. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}&
 DM.02, DM.04, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 3.&
 Data may not be valid: less numeric range available in new system, etc. Subtype of (2).&
 Data can be lost or discarded, or substituted for defaults. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}&
 DM.02, DM.04, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 4.&
@@ -150,7 +150,7 @@ DM.01, DM.04, DM.11\\\hline
 &
 Data may be correctly rejected (detection of error on import / export)&
 Data is lost. Not necessarily a problem if notified and fixed.&
-\Gls{completeness}\index{Completeness!Property}&
+\Gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}&
 DM.07, DM.08, DM.09, DM.10\\\hline
 %
 7.
@@ -158,13 +158,13 @@ DM.07, DM.08, DM.09, DM.10\\\hline
 Data may be wrongly filtered or rejected as incompatible&
 Correct data is rejected. If data can’t be imported what should happen? a. Rejected and migration halted,
 b. Rejected and notified, c. Rejected silently, d. Substituted?&
-\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}&
 DM.02, DM.03, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 8.&
 Two or more \glspl{item data} may map to the same item in the new system – one may overwrite the other with the last one ‘winning’.&
 This is a case of aliasing (See 6.2.2 ref). Data can be lost or discarded. Data may be migrated / imported / exported incorrectly.&
-\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}&
 DM.02, DM.03, DM.07, DM.08, DM.09, DM.10\\\hline
 %
 9.&
@@ -184,6 +184,6 @@ DM.06, DM.07, DM.08\\\hline
 11.&
 The data ‘cleansing’ activity conducted before or during migration may introduce faults.&
 The cleansing activity may miss some data faults or may be over-zealous, deleting good values.&
-\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}&
+\Gls{integrity}\index{Integrity!Property}, \gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness}&
 DM.07, DM.09, DM.13\\\hline
 \end{longtable}

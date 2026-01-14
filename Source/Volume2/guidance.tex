@@ -53,14 +53,14 @@ The \gls{odr} assessment includes assessing the organization's maturity in manag
 To support this, \autoref{bkm:culture} includes a separate data safety culture questionnaire to explore the specific area of assessing the data safety culture for a particular activity, whether this be for the organization as a whole or for a particular project, service, or activity. Here the focus is on a personal view rather than a project or company view, so the questionnaire would be completed by all or a significant subset of staff. \index{Response}\Glspl{response} can be aggregated to give an overall data safety culture value. This approach can be periodically repeated to determine trends. For example, if overall scores are declining this may suggest that further training\index{Training!Personnel} and briefings will be required.
 
 \subsection{System Definition}
-The system under consideration should be understood and documented, including interfaces\index{Interface!System} and safety-related data aspects. The process of documenting the system of interest furthers the understanding of \index{Stakeholder}\glspl{stakeholder} and approvers so they can make sensible judgements about the system. It also formally declares assumptions that are being made in the system assessment and clearly defines the limits of the assessment. In addition, different levels of risk may be associated with composites of safety-related data, which may be easier to manage than individual \index{Artefact, Data}\glspl{data artefact}, or where independence cannot be demonstrated or maintained. Hence, the partitioning of \glspl{dataset} should also be considered during this phase.
+The system under consideration should be understood and documented, including interfaces\index{Interface!System} and safety-related data aspects. The process of documenting the system of interest furthers the understanding of \index{Stakeholder}\glspl{stakeholder} and approvers so they can make sensible judgements about the system. It also formally declares assumptions that are being made in the system assessment and clearly defines the limits of the assessment. In addition, different levels of risk may be associated with composites of safety-related data, which may be easier to manage than individual \index{Artefact, Data}\index{Data!Artefact}\glspl{data artefact}, or where independence cannot be demonstrated or maintained. Hence, the partitioning of \glspl{dataset} should also be considered during this phase.
 
 \subsection{Supplier Data Maturity}
 As already noted, some usage scenarios involve data being supplied by subcontracted organizations. Some formal process will typically be used to select these suppliers. \autoref{bkm:maturity} includes a questionnaire to help ensure that the supplier has suitable processes in place to manage data safety-related issues.
 
-\subsection{Data Categories\index{Category!Data|textbf}}
+\subsection{Lifecycle Data Categories\index{Category!Lifecycle Data|textbf}}
 \label{bkm:datacategories}
-The full set of data categories which can have safety implications is large: to date more than twenty categories and one meta-category have been identified. 
+The full set of lifecycle data categories which can have safety implications is large: to date more than twenty categories and one meta-category have been identified. 
 
 \autoref{bkm:categories} gives the current view of the categories of safety-related data that contribute to, are used by, produced by, or affected by safety-related systems. They are roughly organized according to the system lifecycle\index{Lifecycle!System}. 
 \section{Identify Risks}
@@ -70,7 +70,7 @@ Ideally, data safety risks would be identified and mitigated before they lead to
 To support this type of analysis a number of previous accidents and incidents have been collected in Part 3 Chapter \autoref{Part3-bkm:accidents}.
 These include cases which relate to a number of \glspl{data property} (see
 \dsiwgExtRef{Section}{3}{bkm:guidance:dataproperties}),
-for example the properties of \index{Completeness!Property}\gls{completeness}, \index{Integrity!Property}\gls{integrity} and \gls{timeliness}\index{Timeliness Property}.
+for example the properties of \index{Completeness!Property}\index{Data Property!Completeness}\gls{completeness}, \index{Integrity!Property}\gls{integrity} and \gls{timeliness}\index{Timeliness Property}.
 They also highlight the importance of the \gls{adaptation data}\index{Adaptation Data} category\index{Category!Data} and dangers associated with the inappropriate use of default data values.
 
 Most of the current collection of accidents and incidents fall into three categories: aviation, maritime, and medical. However, the lessons that can be learned span a much wider range of application areas.
@@ -185,8 +185,8 @@ Risk severity is estimated against a five-point scale, as indicated in \autoref{
 As noted earlier, \glspl{dsal}\index{Assurance Level!Data} have some commonality with things like \glspl{idal} and \glspl{fdal}). However, this commonality does not extend across all aspects. For example, there is an accepted calculus of \glspl{fdal} in which two independent lower-\gls{integrity}\index{Integrity} functions can be used to replace a single higher-\gls{integrity}\index{Integrity} function. There are two reasons why this type of calculus is not appropriate for \glspl{dsal}:
 
 \begin{enumerate}
-  \item The definition of a \gls{dsal}\index{Assurance Level!Data} already caters for interactions. For example, using two independent \index{Artefact, Data}\glspl{data artefact} to provide similar \gls{information} to a system function reduces the ``dependency'' of each artefact.
-  \item These types of consideration are most closely related to system architecture, from which \index{Artefact, Data}\glspl{data artefact}, associated \index{Data Property}\glspl{data property} and risks are derived. Hence, rather than applying any calculus at the \gls{dsal}\index{Assurance Level!Data} tier it is more appropriate to apply this to, for example, \glspl{fdal}, with \glspl{dsal} changing as a consequence of the revised system definition.
+  \item The definition of a \gls{dsal}\index{Assurance Level!Data} already caters for interactions. For example, using two independent \index{Artefact, Data}\index{Data!Artefact}\glspl{data artefact} to provide similar \gls{information} to a system function reduces the ``dependency'' of each artefact.
+  \item These types of consideration are most closely related to system architecture, from which \index{Artefact, Data}\index{Data!Artefact}\glspl{data artefact}, associated \index{Data Property}\glspl{data property} and risks are derived. Hence, rather than applying any calculus at the \gls{dsal}\index{Assurance Level!Data} tier it is more appropriate to apply this to, for example, \glspl{fdal}, with \glspl{dsal} changing as a consequence of the revised system definition.
 \end{enumerate}
 
 \subsection{Analysing \glsfmtplural{dsal}}\index{Assurance Level!Data}
@@ -337,21 +337,21 @@ For each \index{Assurance Level!Data}\gls{dsal}, the tables indicate whether the
 
 \subsubsection{Detailed methods and approaches}
 \label{bkm:DetailedMethods}
-The following tables detail methods and approaches which may be used by practitioners conducting safety \cbstart management\cbend. The tables map the methods and approaches to data categories. These data categories are abbreviated using the scheme shown in
+The following tables detail methods and approaches which may be used by practitioners conducting safety \cbstart management\cbend. The tables map the methods and approaches to lifecycle data categories. These lifecycle data categories are abbreviated using the scheme shown in
 \autoref{tab:DataCategoryAbbreviations}.
 
-The five data categories\index{Category!Data} presented in \autoref{tab:DataCategoryAbbreviations} are a subset of those presented in \autoref{tab:Categories}, which presents a comprehensive list of data categories\index{Category!Data}. The five presented in \autoref{tab:DataCategoryAbbreviations} have been used to populate the tables used for the selection of methods and approaches. Users of the guidance are also encouraged to add to this table as part of the customisation process associated with their own organizations or projects.
+The five lifecycle data categories\index{Category!Data} presented in \autoref{tab:DataCategoryAbbreviations} are a subset of those presented in \autoref{tab:Categories}, which presents a comprehensive list of lifecycle data categories\index{Category!Data}. The five presented in \autoref{tab:DataCategoryAbbreviations} have been used to populate the tables used for the selection of methods and approaches. Users of the guidance are also encouraged to add to this table as part of the customisation process associated with their own organizations or projects.
 
 \begin{longtable}{|L{\dsiwgColumnWidth{0.2}}|C{\dsiwgColumnWidth{0.2}}|}
-  \caption{Data category\index{Category!Data} abbreviations}
+  \caption{Lifecycle data category\index{Category!Lifecycle Data} abbreviations}
   \label{tab:DataCategoryAbbreviations}
   \\\hline
-  \TableHeadColour{Data Category} & \TableHeadColourCX{Abbreviation}\\
+  \TableHeadColour{Lifecycle Data Category} & \TableHeadColourCX{Abbreviation}\\
   \hline
   \endfirsthead
-    \caption[]{Data category abbreviations (continued)}
+    \caption[]{Lifecycle data category abbreviations (continued)}
   \\\hline
-  \TableHeadColour{Data Category} & \TableHeadColourCX{Abbreviation}\\
+  \TableHeadColour{Lifecycle Data Category} & \TableHeadColourCX{Abbreviation}\\
   \hline
   \endhead
     \multicolumn{2}{r}{\sl Continued on next page}
@@ -379,33 +379,33 @@ These detailed methods and approaches tables have been organized into eight, loo
   \item Media -- electronic\index{Category!Approach!Media -- Electronic}.
 \end{itemize}
 
-The method for using these tables when considering any given \index{Artefact, Data}\gls{data artefact} is:
+The method for using these tables when considering any given \index{Artefact, Data}\index{Data!Artefact}\gls{data artefact} is:
 \begin{itemize}
-    \item Determine the \gls{dsal}\index{Assurance Level!Data} applicable to the \index{Artefact, Data}\gls{data artefact}, using Table~\ref*{tab:DSAL-risk-matrix} in association with \autoref{tab:Likelihood} and \autoref{tab:Severity}.
-    \item Determine the data category\index{Category!Data}, using the abbreviations in \autoref{tab:DataCategoryAbbreviations}.
+    \item Determine the \gls{dsal}\index{Assurance Level!Data} applicable to the \index{Artefact, Data}\index{Data!Artefact}\gls{data artefact}, using Table~\ref*{tab:DSAL-risk-matrix} in association with \autoref{tab:Likelihood} and \autoref{tab:Severity}.
+    \item Determine the lifecycle data category\index{Category!Data}, using the abbreviations in \autoref{tab:DataCategoryAbbreviations}.
     \item Determine the list of applicable \index{Data Property}\glspl{data property}, using the abbreviations in \autoref{tab:Categories}. This will generally provide a list of several applicable abbreviations.
 \end{itemize}
 
 Then consider each row in each table (or each table that you wish to use for this assessment). For each row, if:
 \begin{itemize}
-    \item the data category\index{Category!Data} matches the data category\index{Category!Data} for this \index{Artefact, Data}\gls{data artefact}; and
+    \item the lifecycle data category\index{Category!Data} matches the lifecycle data category\index{Category!Data} for this \index{Artefact, Data}\index{Data!Artefact}\gls{data artefact}; and
     \item at least one of the \index{Data Property}\glspl{data property} listed in that row matches a \index{Data Property}\gls{data property} for the \gls{data artefact} 
 \end{itemize}
-then the row is likely to be applicable to the \index{Artefact, Data}\gls{data artefact}. The result for that row is therefore found from the \gls{dsal}\index{Assurance Level!Data} column, since if:
+then the row is likely to be applicable to the \index{Artefact, Data}\index{Data!Artefact}\gls{data artefact}. The result for that row is therefore found from the \gls{dsal}\index{Assurance Level!Data} column, since if:
 \begin{itemize}
     \item The relevant \gls{dsal} entry is ``HR'', then use of the technique on this row is highly recommended.
     \item The relevant \gls{dsal} entry is ``R'', then use of the technique is recommended.
     \item The relevant \gls{dsal} entry is ``-'', then the technique should be considered, as it may be relevant in certain application domains, but  generic guidance would not be appropriate for specific contexts.
 \end{itemize}
 
-To give a specific example, consider the row corresponding to the first technique in \autoref{tab:MethodsSystemDesign}. This technique will apply to \index{Artefact, Data}\glspl{data artefact} where:
+To give a specific example, consider the row corresponding to the first technique in \autoref{tab:MethodsSystemDesign}. This technique will apply to \index{Artefact, Data}\index{Data!Artefact}\glspl{data artefact} where:
 \begin{itemize}
-    \item The data category\index{Dynamic Data} is ``dynamic'' (``D'' from \autoref{tab:DataCategoryAbbreviations}) and
-    \item The \index{Artefact, Data}\gls{data artefact} holds one or more of the properties\index{Integrity!Property}\gls{integrity}, \index{Completeness!Property}\gls{completeness} or \gls{verifiability}\index{Verifiability Property} (``I'', ``C'' or ``V'' from \autoref{tab:Categories}).
+    \item The lifecycle data category\index{Dynamic Data} is ``dynamic'' (``D'' from \autoref{tab:DataCategoryAbbreviations}) and
+    \item The \index{Artefact, Data}\index{Data!Artefact}\gls{data artefact} holds one or more of the properties\index{Integrity!Property}\gls{integrity}, \index{Completeness!Property}\index{Data Property!Completeness}\gls{completeness} or \gls{verifiability}\index{Verifiability Property} (``I'', ``C'' or ``V'' from \autoref{tab:Categories}).
 \end{itemize}
-In such a case, the technique would be highly recommended if the \index{Artefact, Data}\gls{data artefact} were of \gls{dsal}\index{Assurance Level!Data} 3 or 4, recommended if the \gls{dsal} were 2, or should merely be considered if the \gls{dsal} were 1.
+In such a case, the technique would be highly recommended if the \index{Artefact, Data}\index{Data!Artefact}\gls{data artefact} were of \gls{dsal}\index{Assurance Level!Data} 3 or 4, recommended if the \gls{dsal} were 2, or should merely be considered if the \gls{dsal} were 1.
 
-Many dots have been placed in the table to indicate data categories\index{Category!Data} and \index{Data Property}data properties which are not applicable to the technique under consideration. The dots enable the tables to be assessed very quickly, as they enable the letters representing specific data categories\index{Category!Data} and \index{Data Property}\glspl{data property} to always be presented in the same position within the table. For example, the \index{Data Property}\gls{data property} ``\gls{verifiability}''\index{Verifiability Property} (``V'' from \autoref{tab:Categories} can easily be seen to appear against the first two techniques of \autoref{tab:MethodsSystemDesign}, whereas it does not appear in the next seven techniques. This can be seen without actually reading the text, but merely looking at the pattern presented by the letters and dots. 
+Many dots have been placed in the table to indicate lifecycle data categories\index{Category!Data} and \index{Data Property}data properties which are not applicable to the technique under consideration. The dots enable the tables to be assessed very quickly, as they enable the letters representing specific lifecycle data categories\index{Category!Data} and \index{Data Property}\glspl{data property} to always be presented in the same position within the table. For example, the \index{Data Property}\gls{data property} ``\gls{verifiability}''\index{Verifiability Property} (``V'' from \autoref{tab:Categories} can easily be seen to appear against the first two techniques of \autoref{tab:MethodsSystemDesign}, whereas it does not appear in the next seven techniques. This can be seen without actually reading the text, but merely looking at the pattern presented by the letters and dots. 
 
 Within each table, the ``Serial'' column lists a unique serial number for each technique. The serial numbers simply provide a unique reference which aligns with those implemented within the toolset.
 
@@ -585,7 +585,7 @@ Within each table, the ``Serial'' column lists a unique serial number for each t
 	\item[Note 1] One useful approach is to keep a list of known changes /
 	incompatibilities and documenting the changes or fixes that have to be applied to make the
 	data usable or consistent.
-	\item[Note 2] For verification data categories,
+	\item[Note 2] For verification lifecycle data categories,
 	comparisons, reviews and data audits may help to manage the risk of information
 	asymmetry . In general, the issue of divergence across multiple data sources needs to be
 	recognised and addressed in the most appropriate technical, and ideally automated, way.
@@ -669,11 +669,11 @@ incompatibilities and documenting the changes or fixes that have to be applied t
 data usable or consistent.
 \item[Note 4] So sensors need to be regularly maintained and calibrated or
 replaced and their interfaces need to be able to detect any problems and report faults.
-\item[Note 5] For justification data categories, the use of dialectic
+\item[Note 5] For justification lifecycle data categories, the use of dialectic
 argument approaches may be useful (where both positive and negative cases can be
 considered) to deal with the risks of feedback and gaming. It is also useful to get a second
 opinion, independent review or a "fresh pair of eyes" to check the justification.
-\item[Note 6] For verification data categories, comparisons,
+\item[Note 6] For verification lifecycle data categories, comparisons,
 reviews and data audits may help to manage the risk of Information Asymmetry. In general,
 the issue of divergence across multiple data sources needs to be recognised and addressed in
 the most appropriate technical, and ideally automated, way.
@@ -895,7 +895,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
   \hline
   TD.03 & Using simulator & \dsiwgTextTT{V....} & - & R & HR & HR & Simulators (software or hardware) may be able to produce very good test data, obviously depending on how close and detailed a simulation they can achieve. & \dsiwgTextTT{ICNYOAR....F........G...}\\
   \hline
-  TD.04 & Using prototype & \dsiwgTextTT{V....} & - & R & HR & HR & Prototypes are often a good way of generating test data for the real system. However they may not produce data with the appropriate range, \index{Accuracy Property}\gls{accuracy} or precision. & \dsiwgTextTT{ICNY.A.....F........G...}\\
+  TD.04 & Using prototype & \dsiwgTextTT{V....} & - & R & HR & HR & Prototypes are often a good way of generating test data for the real system. However they may not produce data with the appropriate range, \index{Accuracy Property}\index{Data Property!Accuracy}\gls{accuracy} or precision. & \dsiwgTextTT{ICNY.A.....F........G...}\\
   \hline
   TD.05 & Using manual means & \dsiwgTextTT{V....} & R & R & - & - & Simple test data can be produced by manual means, although this may be prone to human error. & \dsiwgTextTT{ICNY.A.....F........G...}\\
   \hline
@@ -968,7 +968,7 @@ Any meta-data as part of the original \gls{dataset} which cannot be incorporated
   \hline
   MP.08 & Defined handling procedures & \dsiwgTextTT{VIDPJ} & - & R & HR & HR & To ensure that changes to the data can be attributed. & \dsiwgTextTT{I.............UB.H......}\\
   \hline
-  MP.09 & Repair / restoration programme & \dsiwgTextTT{VIDPJ} & - & - & R & HR & To protect against degradation and to ensure \index{Availability Property}\gls{availability}. & \dsiwgTextTT{I.........L.............}\\
+  MP.09 & Repair / restoration programme & \dsiwgTextTT{VIDPJ} & - & - & R & HR & To protect against degradation and to ensure \index{Availability Property}\index{Data Property!Availability}\gls{availability}. & \dsiwgTextTT{I.........L.............}\\
   \hline
   MP.10 & Indexing / cataloguing & \dsiwgTextTT{VIDPJ} & R & R & HR & HR & To support efficient availability. & \dsiwgTextTT{..........L.............}\\
   \hline

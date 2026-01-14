@@ -34,8 +34,8 @@
 %Load the template containing all of the style for the doc
 \input{../dsiwgTemplate}
 \loadglsentries{../glossary}
-\externaldocument[Part2-]{../Part2/Part2}
-\externaldocument[Part3-]{../Part3/Part3}
+\externaldocument[Part2-]{../Volume2/Volume2}
+\externaldocument[Part3-]{../Volume3/Volume3}
 % Add part number to index entries
 \let\LATEXindex\index % save old definition to prevent recursion
 \renewcommand\index[1]{\LATEXindex{#1|docname{1}}}
@@ -109,18 +109,15 @@
 \include{DataProperties}
 \include{Principles}
 %\include{objectives_and_outputs}
-%\include{Objectives}
+\include{Objectives}
 \include{Definitions}
 \backmatter
 \include{Acronyms}
 \include{References}
 \include{history}
-%\cbstart
-%Check this \cbstart - have any new locations been added?
 %Include the index
 \printindex[locationidx]
 \printindex
-%\cbend
 \clearpage% Needed to avoid a Roman page number on last page!
 %
 %\section{Feedback (Discursive)}

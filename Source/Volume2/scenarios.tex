@@ -1,0 +1,138 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Miscellanea section.
+%
+%================================================================================
+\chapter{Scenarios\index{Scenario|textbf}} \label{bkm:scenario}
+
+\dsiwgSectionQuote{Scenarios help solve problems differently because they can illuminate new possibilities and ignite hope.}{Roger Spitz}
+
+Table \ref{tab:Scenarios} identifies several scenarios under which it might be useful to recognise data as safety significant.
+
+The levels of necessary assurance given in \dsiwgRef{Section}{bkm:analyserisks}
+depend on the relevant scenario, and these scenarios
+are also used in subsequent chapters to indicate the relevance of
+different tools and techniques. 
+The scenarios may be applicable one-off, regular, scheduled, or on update.
+
+\begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.77}}|}
+	\caption{Data Safety Scenarios}
+	\label{tab:Scenarios}
+	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Name} & \TableHeadColour{Description} \\\hline
+	\endfirsthead
+	\caption[]{Data Safety Scenarios (continued)}
+	\\\hline\TableHeadColourC{No.} & \TableHeadColour{Name} & \TableHeadColour{Description} \\\hline
+	\endhead
+	\multicolumn{3}{r}{\sl Continued on next page}
+	\endfoot\endlastfoot
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Scenarios with Systems Using Data}}\\\hline
+	S-0 & %
+		Assure & A safety assurance position is to be created for a system that uses or produces data
+		\\\hline
+	S-1 & About & %
+		Development/Engineering data about the system that uses data is produced or acquired. This could include requirements, design, implementation, deployment or performance monitoring data.
+		\\\hline
+	S-2 & %
+		Investigate & %
+		A safety incident has occurred with the system related to data and the cause of this needs to be understood and mitigations proposed.\\
+	\hline
+	S-3 & New Use &The system using data has changed use and an impact analysis needs to be undertaken.\\
+	\hline
+	S-4 & Change & AA new or replacement operational system using data is created, procured or made operational.\\
+	\hline
+	S-5 & V\&V & A system is verified or validated using data (e.g. test cases).\\
+	\hline
+	S-6 & Analysis & Behaviours or results from a system are analysed producing reports or conclusions \\
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Scenarios for Tools and Data Chains}}\\
+	\hline
+	A-1 & Train ML & An ML model is developed using training data. \\
+	\hline
+	A-2 & Train ML & An ML model is validated using a data set. \\
+	\multicolumn{3}{|c|}{\textbf{Data Scenarios}}\\
+	\hline
+	T-1 & Train ML & A data processing chain is constructed or configured from tools or processing elements. \\
+	\hline
+	T-2 & Train ML & A tool which can transform or change the data (as part of a chain) is constructed or configured. \\
+	\multicolumn{3}{|c|}{\textbf{Data Scenarios}}\\
+	\hline
+	D-1 & Create & A new data set for a system is to be created from scratch. This may use a variety of methods including simulation, other system, prototypes, or 	manual means. \\
+	\hline
+	D-1a & Create: Training &A new training data set for an ML system is to be 	created from scratch. This may use a variety of methods including simulation, other system, prototypes, or manual means.\\
+	\hline 
+	D-1b & Create: Validation & A new validation data set for an ML system is to be created from scratch. This may use a variety of	methods including simulation, other system, prototypes, or manual means. \\
+	\hline 
+	D-1c & Create: Measure & New data is created by measuring the environment or system. E.g. acquiring or observing from sensors. \\
+	\hline 
+	D-1e & Create: Mash-up & Data is to be re-purposed from various sources, primarily not intended for this usage, and may be re-interpreted in its use \\
+	\hline
+	D-2 & Migrate & Data is to be migrated from one system to another, or one version of software to another. This may involve re-formatting, transformations, mappings, translations or other changes. \\
+	\hline
+	D-3 & Restructure & A data set for a system is to be reorganised, reformatted or reworked. \\
+	\hline
+	D-4 & Increment & A data set is incrementally added to (may be over some time). \\
+	\hline
+	D-5 & Degrade & The data for a system is reduced in quantity or	quality, and the impact of this needs analysis. \\
+	\hline
+	D-6 & Cleanse & A data set is to be cleaned to remove old, obsolete, incorrect or other unwanted data. \\
+	\hline
+	D-7 & Audit & A data set is checked for certain aspects on a sampling basis. \\
+	\hline
+	D-8 & Select & A data set is to be filtered or selected to produce a new subset of data. \\
+	\hline
+	D-9 & Find & Missing or obscured parts of the data set are to be identified and made available. \\
+	\hline
+	D-10 & Control & A data set is to be formally managed and change controlled. \\
+	\hline
+	D-11 & Archive &  A data set is to be copied to long-term storage and removed from current use. \\
+	\hline
+	D-12 & Delete & A data set or part of a data set is to be deleted. \\
+	\hline
+	D-13 & Secure & A data set is to be checked for security-sensitive or insecure content, which may be flagged or removed. \\
+	\hline
+	D-14 & Safe & A data set is to be checked for dangerous or harmful content which may be removed. \\
+	\hline
+	D-15 & Anonymise & A data set has all parts which could be used to identify a person, location or other sensitive aspect, removed or obscured. \\
+	\hline
+	D-16 & Split & A data set is to be decomposed into smaller data sets, which could be based on the data itself (e.g. by date), by its storage location, or other aspect. \\
+	\hline
+	D-17 & Distribute & A data set is to be distributed across several systems; this could involve duplication or splitting. \\
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Development/Engineering Data}}\\
+	\hline
+	E-1 & Specify & A requirements specification (data) of a system is created \\
+	\hline
+	E-2 & Design & A design/architecture data is created documenting the architecture of a system \\
+	\hline
+	E-3 & Implement & The implementation of a system / software is created \\
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Tool/Transforming Data}}\\
+	\hline
+	T-1 & Input & Inputs data for a tool/transformer can be used \\
+	\hline
+	T-2 & Output & Output data from a tool/transformer that has been produced \\
+	\hline
+	T-3 & Constructive & Constructive data is data that is used to construct the system, e.g. a requirement or source code \\
+	\hline
+	T-4 & Verification & Verification data is data which is produced when verifying the system, e.g. a test report \\
+	\hline
+	T-5 & Persistent & Persistent data is data that is stored permanently, e.g. in a configuration management system \\
+	\hline
+	T-6 & Temporarily & Temporarily data is data which is not stored, e.g. is only temporarily available, e.g. the values of a memory (RAM) \\
+	\hline
+	T-7	& AI Model & A set of data (“weights”) that relates the inputs to the outputs \\
+	\hline
+\end{longtable}
+

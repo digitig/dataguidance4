@@ -471,14 +471,14 @@ The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data
   E.g., Corruptions to a \gls{database} could change the original values so the original data is lost, or hide or mask values such as by inserting End-of-File markers\\
   \hline
   %
-  \Gls{completeness}\index{Completeness!Property} (C) & The data has nothing missing or lost & \tick & - &
+  \Gls{completeness}\index{Completeness!Property}\index{Data Property!Completeness} (C) & The data has nothing missing or lost & \tick & - &
   If data is lost then it is usually unknown and hence dark. However use of parity, \glspl{crc} and digital signatures may be able to detect the loss and, in some cases, fill in the missing data.\\
   \hline
   %
   \Gls{consistency}\index{Consistency!Property} (N) & The data adheres to a common world view (e.g., units) & - & - &\\
   \hline
   %
-  \Gls{continuity}\index{Continuity Property} (Y) & The data is continuous and regular without gaps or breaks & \tick & - &
+  \Gls{continuity}\index{Continuity Property}\index{Data Property!Continuity} (Y) & The data is continuous and regular without gaps or breaks & \tick & - &
   Gaps or breaks in a data stream would be dark -- the missing values are unknown.
   Methods may be available to mitigate if detected, e.g., interpolation.\\
   \hline
@@ -487,7 +487,7 @@ The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data
   If data is not in the correct format then it may not be usable so becomes dark. If lots of data is in the wrong format it may obscure other (good) data, and hence can dazzle.\\
   \hline
   %
-  \Gls{accuracy}\index{Accuracy Property} (A) & The data has sufficient detail for its intended use & \tick & - &
+  \Gls{accuracy}\index{Accuracy Property}\index{Data Property!Accuracy} (A) & The data has sufficient detail for its intended use & \tick & - &
   If the data has lost detail (e.g., due to sensor sampling or representation) then this is a dark case.\\
   \hline
   %
@@ -508,7 +508,7 @@ The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data
   If data can’t be checked then it may be rejected (and become dark), even if it is valid.\\
   \hline
   %
-  \Gls{availability}\index{Availability Property} (L) & The data is accessible and usable when an authorised entity demands access & \tick & - &
+  \Gls{availability}\index{Availability Property}\index{Data Property!Availability} (L) & The data is accessible and usable when an authorised entity demands access & \tick & - &
   If data is not available as required then it is dark (whether it exists or not).\\
   \hline
   %
@@ -531,7 +531,7 @@ The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data
   If data is not sent to the correct destination it may be a dark data\index{Dark Data} situation as it is effectively missing.\\
   \hline
   %
-  \Gls{accessibility} \index{Accessibility Property}(B) & The data is visible only to those that should see it &
+  \Gls{accessibility} \index{Accessibility Property}\index{Data Property!Accessibility}(B) & The data is visible only to those that should see it &
   - & \tick &
   If data is more widely visible or distributed than intended it could cause a dazzle situation due to e.g. bandwidth issues.\\
   \hline
@@ -561,7 +561,7 @@ The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data
   Too little data may be a dark data\index{Dark Data} case and too much data to deal with is a dazzle case.\\
   \hline
   %
-  \Gls{analysability}\index{Analysability Property} (Z) & The data is of a suitable size, type and representation (including any \gls{metadata}) to enable it be usefully analysed &
+  \Gls{analysability}\index{Analysability Property}\index{Data Property!Analysability} (Z) & The data is of a suitable size, type and representation (including any \gls{metadata}) to enable it be usefully analysed &
   \tick & \tick &
   If the data can’t be analysed it may not be able to be used causing a dark data\index{Dark Data} issue. If there is too much of it or it is obscured (e.g., by noise on a comms line) then it is a dazzle case.\\
   \hline
@@ -571,7 +571,7 @@ The opposite attributes of dark data\index{Dark Data} and dazzle data\index{Data
   If the data can’t be explained it may not be able to be used causing a dark data issue. If there is too much of it or suitable management and analysis tools are not available then it is potentially both cases.\\
   \hline
   %
-  \Gls{clarity}\index{Clarity Property} (K) & The data is visible, unmasked, not hidden or obscured, and not camouflaged &
+  \Gls{clarity}\index{Clarity Property}\index{Data Property!Clarity} (K) & The data is visible, unmasked, not hidden or obscured, and not camouflaged &
   \tick & \tick &
   Clarity covers the cases where data is invisible or not included for some reason, often because it is hidden by other data. This could be due to either.\\
   \hline

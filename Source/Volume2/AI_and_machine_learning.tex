@@ -15,7 +15,7 @@
 %
 %================================================================================
 \chapter{\Glsfmtshort{ai} and \ecapitalisewords{\glsentrylong{ml}}} \label{bkm:MachineLearning}
-
+\index{AI|(}
 \dsiwgSectionQuote{Learning never exhausts the mind.}{Leonardo da Vinci}
 
 
@@ -29,9 +29,9 @@ ISO~21448 \cite{citation:ISO21448} captures this process by introducing the term
 
 For more general guidance on managing the safety of autonomous systems, please refer to the safety assurance objectives guidance produced by the SCSC \gls{saswg} \cite{citation:SASWG:Objectives}.
 
-\section{Data Categories}
-Three data categories are discussed: \gls{ml} training\index{Training!AI} data\index{Machine Learning Data} (the data used to train the model),
-\gls{ml} test data\index{Category!Data!Verification} (used to provide a measure the trained model’s \index{Accuracy Property}\gls{accuracy}), and \gls{ml}
+\section{Lifecycle Data Categories}
+Three \index{Lifecycle}lifecycle data categories are discussed: \gls{ml} training\index{Training!AI} data\index{Machine Learning Data} (the data used to train the model),
+\gls{ml} test data\index{Category!Data!Verification} (used to provide a measure the trained model's \index{Accuracy Property}\index{Data Property!Accuracy}\gls{accuracy}), and \gls{ml}
 validation data (used to independently verify the trained model).  
 
 \section{Real-world Data}
@@ -64,7 +64,7 @@ The degree of data diversity is important. Common \glspl{item data} across \glsp
 validation data. Common data may include data derived from the same sources, environments, simulators, tools, techniques or mathematical models.
 
 \section{\index{Data Property}\ecapitalisewords{\glsentryplural{data property}}}
-Bias, sufficiency and \index{Accuracy Property}\gls{accuracy} are all concerns with the data. \index{Fidelity Property}\gls{fidelity} may also be a problem as modelling real-life sensor data is difficult.  Errors should be introduced for training\index{Training!AI}: this may be by analytical means, by random, automated sampling of data to determine the degree of similarity between samples, or by deliberate insertion of known edge cases. 
+Bias, sufficiency and \index{Accuracy Property}\index{Data Property!Accuracy}\gls{accuracy} are all concerns with the data. \index{Fidelity Property}\gls{fidelity} may also be a problem as modelling real-life sensor data is difficult.  Errors should be introduced for training\index{Training!AI}: this may be by analytical means, by random, automated sampling of data to determine the degree of similarity between samples, or by deliberate insertion of known edge cases. 
 It is suggested that all the \index{Data Property}\glspl{data property} mentioned in this guidance document are considered.
 
 \section{Hallucinations}
@@ -172,3 +172,4 @@ This appendix provides only a brief overview of the issues around the applicatio
 \item Quantifying Data Set \index{Data Property}Properties for Systematic Artificial Neural Network Classifier \Glsfmttext{verification} \cite{citation:Hond2020}
 \item Safety Critical Integrity Assurance in Large Data Sets \cite{citation:Sutherland2020}
 \end{itemize}
+\index{AI|)}

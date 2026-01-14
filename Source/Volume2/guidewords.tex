@@ -22,7 +22,7 @@ A \gls{hazop} \cite{citation:iec61882:2016}
 provides a structured approach for identifying hazards. It involves a multidisciplinary team collaborating to identify potential hazards and operability problems. Structure and \index{Completeness!Hazard Identification}\gls{completeness} are supported through the use of guideword prompts, for example, considering the implications if software components perform functions early, late or not at all. These prompts are intended to stimulate imaginative thinking, to focus the study and to elicit ideas and discussion.
 
 \autoref{tab:HazopFull}\index{HAZOP} lists a set of guidewords for a data-focused \gls{hazop}, based on the \index{Property!Data}properties defined in \dsiwgExtRef{Section}{1}{tab:PropertiesOfData}. The intent here is to assess the impact of each guideword on the property under consideration. For example, the first row considers \dsiwgTextIT{loss} of \index{Integrity Property}\gls{integrity}, \dsiwgTextIT{partial loss} of \index{Integrity Property}\gls{integrity}, and so on.
-The list is non-exhaustive. Other guidewords may be useful for particular systems, or may be used to ensure the data safety assessment is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment|see{Safety Assessment, System}}.
+The list is non-exhaustive. Other guidewords may be useful for particular systems, or may be used to ensure the data safety assessment is fully integrated within the system safety assessment\index{Safety Assessment!System}\index{System Safety Assessment}.
 
 \begin{longtable}{|L{\dsiwgColumnWidth{0.17}}|L{\dsiwgColumnWidth{0.28}}|L{\dsiwgColumnWidth{0.20}}|L{\dsiwgColumnWidth{0.35}}|}
   \caption{\glsfmtshort{hazop} guidewords: detailed definitions}
@@ -41,18 +41,18 @@ The list is non-exhaustive. Other guidewords may be useful for particular system
   \endfoot\endlastfoot
   \index{Integrity!Property}\Gls{integrity} & The data is correct, true and unaltered & Loss, partial loss, incorrect, multiple & \Gls{correctness}, truth, original, trustworthy, coherency, stability, perfect, unquestionable, faithful, certain, ordered, unadulterated, unmodified, unchanged, clean, uncontaminated, untainted, proper, flawless, organized, exact, undistorted, faultless, guided, connected, linked, traced, unbiased.\\
   \hline
-  \index{Completeness!Property}\Gls{completeness} &
+  \index{Completeness!Property}\index{Data Property!Completeness}\Gls{completeness} &
   The data has nothing missing or lost &
   Loss, partial loss, incorrect, insufficient &
   Whole, complete, entire, finished, done, stable, qualified, certified.\\
   \hline
   \Gls{consistency}\index{Consistency!Property} & The data adheres to a common world view, e.g., units & Loss, partial loss, incorrect, too early, too late, loss of sequence & Coherent, compatible, congruent, congruous, harmonious, deconflicted, consistent, appropriate, suitable, sound, cleansed.\\
   \hline
-\index{Continuity Property}\Gls{continuity} & The data is continuous and regular without gaps or breaks & Loss, partial loss, incorrect, late, loss of sequence & Smooth, continuous, regular, gapless, whole, complete, entire, unfragmented.\\
+\index{Continuity Property}\index{Data Property!Continuity}\Gls{continuity} & The data is continuous and regular without gaps or breaks & Loss, partial loss, incorrect, late, loss of sequence & Smooth, continuous, regular, gapless, whole, complete, entire, unfragmented.\\
   \hline
 \index{Format Property}\Gls{format} & The data is represented in a way which is readable by those that need to use it & Loss, partial loss, incorrect & Conformant, suitable, valid, configured, well-formed, set-up, composed, well structured, arranged, compliant, organized, exact, unaliased, migrated, transformed.\\
   \hline
-\index{Accuracy Property}\Gls{accuracy} &
+\index{Accuracy Property}\index{Data Property!Accuracy}\Gls{accuracy} &
   The data has sufficient detail for its intended use &
   Loss, partial loss, incorrect, insufficient &
   Accurate, true, correct, undistorted, unbiased, faultless.\\
@@ -68,7 +68,7 @@ The list is non-exhaustive. Other guidewords may be useful for particular system
   \hline
   \Gls{verifiability}\index{Verifiability Property} & The data can be checked and its \index{Data Property}properties demonstrated to be correct & Loss, partial loss, incorrect, too early, too late, loss of sequence & Verifiable, provable, checkable, supportable, demonstrable, sustainable, certifiable, defensible, excusable, justifiable, undisputable, irrefutable, validated.\\
   \hline
-\index{Availability Property}\Gls{availability} & The data is accessible and usable when an authorized entity demands access & Loss,
+\index{Availability Property}\index{Data Property!Availability}\Gls{availability} & The data is accessible and usable when an authorized entity demands access & Loss,
   partial loss, too early, too late & Ready, available, obtainable, reachable, accessible, serviceable, operable, functional, usable, capable, released, issued, disseminated, distributed.\\
   \hline
 \index{Fidelity Property}\Gls{fidelity} & How well the data maps to the real-world entity it is trying to model & Loss, partial loss, incorrect, too early, too late & Representative, accurate, faithful, trustworthy, characteristic, normal, standard, real, expected, natural, typical, regular, fit for purpose, validated, separable, associated, correct units / dimensions, stable, unbiased.\\
@@ -79,7 +79,7 @@ The list is non-exhaustive. Other guidewords may be useful for particular system
   \hline
   \Gls{intended_destination}\index{Intended Destination Property} & The data is only sent to those that should have it & Loss, partial loss, incorrect, too early, too late, loss of sequence & Directed, delivered, copied, sent, transmitted, correct recipient, unintercepted, unseen, integral, received, acknowledged, forwarded, filtered.\\
   \hline
-  \Gls{accessibility}\index{Accessibility Property} & The data is visible only to those that should see it & Loss, partial loss, incorrect, too early, too late & Secure, open, visible, reachable, seen, usable, accessible, obtainable, uncompromised, secure, encrypted, preserved.\\
+  \Gls{accessibility}\index{Accessibility Property}\index{Data Property!Accessibility} & The data is visible only to those that should see it & Loss, partial loss, incorrect, too early, too late & Secure, open, visible, reachable, seen, usable, accessible, obtainable, uncompromised, secure, encrypted, preserved.\\
   \hline
   \Gls{suppression}\index{Suppression Property} & The data is intended never to be used again & Loss, partial loss, incorrect, too early, too late, too much, too little & Hidden, encrypted, private, confidential, erased, unlinked, unavailable, unaccessible, redacted.\\
   \hline
@@ -94,7 +94,7 @@ The list is non-exhaustive. Other guidewords may be useful for particular system
   {Loss, partial loss, incorrect, too early, too late, too much, too little (insufficient), spurious} &
   Manageable data rate, manageable error rate, expected, within acceptable limits, without system overload, size, volume, sufficient\\
   \hline
-  \Gls{analysability}\index{Analysability Property} &
+  \Gls{analysability}\index{Analysability Property}\index{Data Property!Analysability} &
   The data is of a suitable size, type and representation (including any \gls{metadata}) to enable it be usefully analysed &
   {Loss, partial loss, incorrect, too much, too little, loss of sequence, loss of tooling} &
   Readability, representation, methods \& techniques, statistical, parameters, characteristics, anonymisation, \gls{format}\index{Format Property}, media, volume, tools
@@ -106,7 +106,7 @@ The list is non-exhaustive. Other guidewords may be useful for particular system
   Justifiable, traceable, \gls{metadata}, interpretation, evidenced, supported, argued, logical, inference, derived, tools
   \\
   \hline
-  \Gls{clarity}\index{Clarity Property} &
+  \Gls{clarity}\index{Clarity Property}\index{Data Property!Clarity}&
   The Data is visible, unmasked, not hidden or obscured, and not camouflaged &
   Dark, Invisible, Obfuscated, Murky, Indistinct, Noisy & ``Hiding in plain sight'', ``Wood for Trees'', ``Cry Wolf'', ``Elephant in the Room''
   \\

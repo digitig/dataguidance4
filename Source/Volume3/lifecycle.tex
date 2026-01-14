@@ -35,10 +35,112 @@ The consumer assesses the use of the safety-related data. In later phases of the
 
 In some cases a producer will be providing safety-related data without any knowledge of a specific user (e.g., mapping data or generic \glspl{database} that are sold to many users). In these cases the producer will need to make some assumptions about possible users, and then clearly state what level of \index{Integrity Property}\gls{integrity} the data has been produced to. It is then up to the users to check whether the declared \index{Integrity Property}\gls{integrity} matches their need.
 
-\section{Ways that Data Can Cause Problems}
+\section{Additional Ways that Data Can Cause Problems}
 \label{bkm:issues}
-\hl{???Originally said Volume 1, but it seems to fit here better.}
-There are some risk-inducing issues that are different or more prevalent for data than for other system elements. An incomplete collection of examples is provided below. This list may provide a quick way of identifying risks, which could be especially useful at an early stage of a project:
+\hl{???Move to section of its own in Vol2 Additional data safety considerations.}
+There are some risk-inducing issues that are different or more prevalent for data than for other system elements. An incomplete collection of examples is provided below. This list may provide a quick way of identifying risks, which could be especially useful at an early stage of a project. 
+
+\autoref{tab:issuesCrossReference} illustrates where the likely relationships between data properties and these issues.
+
+\begin{longtable}{|L{\dsiwgColumnWidth{0.15}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|}
+	\caption{Properties that can be lost through issues}
+	\label{tab:issuesCrossReference}
+	\\\hline
+	& \rotatebox{90}{\index{Data Property!Integrity}\index{Integrity!Property}\Gls{integrity}}
+	& \rotatebox{90}{\index{Data Property!Completeness}\index{Completeness!Property}\Gls{completeness}}
+	& \rotatebox{90}{\index{Data Property!Consistency}\index{Consistency!Property}\Gls{consistency}}
+	& \rotatebox{90}{\index{Data Property!Continuity}\index{Continuity Property}\Gls{continuity}}
+	& \rotatebox{90}{\index{Data Property!Format}\index{Format Property}\Gls{format}}
+	& \rotatebox{90}{\index{Data Property!Accuracy}\index{Accuracy Property}\Gls{accuracy}}
+	& \rotatebox{90}{\index{Data Property!Resolution}\index{Resolution Property}\Gls{resolution}}
+	& \rotatebox{90}{\index{Data Property!Traceability}\index{Traceability Property}\Gls{traceability}}
+	& \rotatebox{90}{\index{Data Property!Timeliness}\index{Timeliness Property}\Gls{timeliness}}
+	& \rotatebox{90}{\index{Data Property!Verifiability}\index{Verifiability Property}\Gls{verifiability}}
+	& \rotatebox{90}{\index{Data Property!Availability}\index{Availability Property}\Gls{availability}}
+	& \rotatebox{90}{\index{Data Property!Fidelity}\index{Fidelity Property}\Gls{fidelity}}
+	& \rotatebox{90}{\index{Data Property!Priority}\index{Priority Property}\Gls{priority}} 
+	& \rotatebox{90}{\index{Data Property!Sequencing}\index{Sequencing Property}\Gls{sequencing}}
+	& \rotatebox{90}{\index{Data Property!Intended Destination}\index{Intended Destination Property}\Gls{intended_destination}}
+	& \rotatebox{90}{\index{Data Property!Accessibility}\index{Accessibility Property}\Gls{accessibility}}
+	& \rotatebox{90}{\index{Data Property!Suppression}\index{Suppression Property}\Gls{suppression}}
+	& \rotatebox{90}{\index{Data Property!History}\index{History Property}\Gls{history}}
+	& \rotatebox{90}{\index{Data Property!Lifetime}\index{Lifetime Property}\Gls{lifetime}}
+	& \rotatebox{90}{\index{Data Property!Disposability}\index{Disposability Property}\Gls{disposability}}
+	& \rotatebox{90}{\index{Data Property!Goldilocks}\index{Goldilocks Property}\Gls{goldilocks}}
+	& \rotatebox{90}{\index{Data Property!Analysability}\index{Analysability Property}\Gls{analysability}}
+	& \rotatebox{90}{\index{Data Property!Explainability}\index{Explainability Property}\Gls{explainability}}
+	& \rotatebox{90}{\index{Data Property!Clarity}\index{Clarity Property}\Gls{clarity}}
+	%
+	\\\hline\TableHeadColour{Issue} &%
+	\TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
+	\TableHeadColour{O} & \TableHeadColour{A} & \TableHeadColour{R} & \TableHeadColour{T} &%
+	\TableHeadColour{M} & \TableHeadColour{V} & \TableHeadColour{L} & \TableHeadColour{F} &%
+	\TableHeadColour{P} & \TableHeadColour{Q} & \TableHeadColour{U} & \TableHeadColour{B} &%
+	\TableHeadColour{S} & \TableHeadColour{H} & \TableHeadColour{E} & \TableHeadColour{D} &%
+	\TableHeadColour{G} & \TableHeadColour{Z} & \TableHeadColour{X} & \TableHeadColour{K} \\\hline
+	\endfirsthead
+	\caption[]{Properties that can be lost through issues (continued)}
+	\\\hline
+	& \rotatebox{90}{\index{Data Property!Integrity}\index{Integrity!Property}\Gls{integrity}}
+	& \rotatebox{90}{\index{Data Property!Completeness}\index{Completeness!Property}\Gls{completeness}}
+	& \rotatebox{90}{\index{Data Property!Consistency}\index{Consistency!Property}\Gls{consistency}}
+	& \rotatebox{90}{\index{Data Property!Continuity}\index{Continuity Property}\Gls{continuity}}
+	& \rotatebox{90}{\index{Data Property!Format}\index{Format Property}\Gls{format}}
+	& \rotatebox{90}{\index{Data Property!Accuracy}\index{Accuracy Property}\Gls{accuracy}}
+	& \rotatebox{90}{\index{Data Property!Resolution}\index{Resolution Property}\Gls{resolution}}
+	& \rotatebox{90}{\index{Data Property!Traceability}\index{Traceability Property}\Gls{traceability}}
+	& \rotatebox{90}{\index{Data Property!Timeliness}\index{Timeliness Property}\Gls{timeliness}}
+	& \rotatebox{90}{\index{Data Property!Verifiability}\index{Verifiability Property}\Gls{verifiability}}
+	& \rotatebox{90}{\index{Data Property!Availability}\index{Availability Property}\Gls{availability}}
+	& \rotatebox{90}{\index{Data Property!Fidelity}\index{Fidelity Property}\Gls{fidelity}}
+	& \rotatebox{90}{\index{Data Property!Priority}\index{Priority Property}\Gls{priority}} 
+	& \rotatebox{90}{\index{Data Property!Sequencing}\index{Sequencing Property}\Gls{sequencing}}
+	& \rotatebox{90}{\index{Data Property!Intended Destination}\index{Intended Destination Property}\Gls{intended_destination}}
+	& \rotatebox{90}{\index{Data Property!Accessibility}\index{Data Property!Accessibility}\index{Accessibility Property}\Gls{accessibility}}
+	& \rotatebox{90}{\index{Data Property!Suppression}\index{Suppression Property}\Gls{suppression}}
+	& \rotatebox{90}{\index{Data Property!History}\index{History Property}\Gls{history}}
+	& \rotatebox{90}{\index{Data Property!Lifetime}\index{Lifetime Property}\Gls{lifetime}}
+	& \rotatebox{90}{\index{Data Property!Disposability}\index{Disposability Property}\Gls{disposability}}
+	& \rotatebox{90}{\index{Data Property!Goldilocks}\index{Goldilocks Property}\Gls{goldilocks}}
+	& \rotatebox{90}{\index{Data Property!Analysability}\index{Analysability Property}\Gls{analysability}}
+	& \rotatebox{90}{\index{Data Property!Explainability}\index{Explainability Property}\Gls{explainability}}
+	& \rotatebox{90}{\index{Data Property!Clarity}\index{Clarity Property}\Gls{clarity}}
+	%
+	\\\hline\TableHeadColour{Issue} &%
+	\TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
+	\TableHeadColour{O} & \TableHeadColour{A} & \TableHeadColour{R} & \TableHeadColour{T} &%
+	\TableHeadColour{M} & \TableHeadColour{V} & \TableHeadColour{L} & \TableHeadColour{F} &%
+	\TableHeadColour{P} & \TableHeadColour{Q} & \TableHeadColour{U} & \TableHeadColour{B} &%
+	\TableHeadColour{S} & \TableHeadColour{H} & \TableHeadColour{E} & \TableHeadColour{D} &%
+	\TableHeadColour{G} & \TableHeadColour{Z} & \TableHeadColour{X} & \TableHeadColour{K}\\\hline
+	\endhead
+	\multicolumn{22}{r}{\sl Continued on next page}
+	\endfoot
+	\endlastfoot
+	Fluidity       &   &   &   &   &   &   &   & x &   & x &   & x &   &   &   &   &   & x &   &   & x & x & x & x \\\hline
+	Reuse          &   & x &   &   &   & x &   & x & x & x &   & x &   &   & x &   & x & x & x & x & x &   & x & \\\hline
+	Ageing         &   & x &   &   &   & x &   &   & x &   &   & x &   &   & x & x & x & x & x & x & &   & x & \\\hline
+	Transformation & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
+	\index{Data!Owner}Ownership      &   &   &   &   &   &   &   & x &   & x & x &   &   &   & x & x &   & x &   &   &   &   & x & \\\hline
+	Archiving / retrieval &   &   &   &   &   &   &   &   &   &   &   &   &   &   & x & x & x & x & x & x &   & x & & x \\\hline
+	Biasing        & x & x & x & x &   & x &   &   & x & x &   & x & x & x &   &   &   &   &   &   &   & x & x & \\\hline
+	Falsification / misinformation & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
+	Defaulting     & x & x & x & x &   & x &   &   &   &   &   & x &   &   &   &   &   &   &   &   &   & x & & x \\\hline
+	Sentinels      & x & x &   & x &   & x &   &   &   &   &   &   &   & x &   &   &   &   &   &   &   & x & & x \\\hline
+	Aliasing       & x & x &   & x &   & x & x & x &   & x & x & x &   &   &   &   &   &   &   &   &   & x & x &  x \\\hline
+	Disassociation & x &   &   & x &   & x &   & x & x & x & x & x & x & x & x & x & x & x & x & x &   & x & x & x \\\hline
+	Masking        & x & x & x & x &   & x &   &   &   & x &   & x &   &   &   &   &   &   &   &   &   & x & x & x \\\hline
+	\index{Completeness!Property}Incompleteness & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
+	Volume         &   &   &   &   &   &   &   &   &   & x &   &   &   &   &   &   &   &   &   &   & x & x & x & x \\\hline
+	Interpretation & x & x & x &   & x & x & x &   & x & x &   & x &   &   &   &   &   &   &   &   &   & x & x & \\\hline
+	Distribution   & x & x & x & x &   &   &   & x &   &   & x &   & x & x & x & x &   & x &   & x &   & x & x & x \\\hline
+\end{longtable}
 
 \begin{description}
 	\item[Fluidity:] Hardware and software can undergo significant amounts of product assurance and once assured may change relatively infrequently. Where change is required to hardware or software, it can be carefully managed and the impact on the safety case appraised. This is not always the case for data, which is often much more fluid. Indeed, the ease with which data can be changed is one motivation for the move towards \glspl{data-driven system}. This fluidity means that it is not always possible to revisit safety cases when data changes. For example, the safety case for an autonomous vehicle cannot be updated every time that the vehicle acquires new knowledge during operation. Instead, the fact that data can change, along with any associated safety impacts, may need to be captured in the system safety case. Fluidity can also provide a temptation for unscrupulous operators to falsify data, for example, after an incident has occurred. Rigorous configuration control procedures can help protect against this type of behaviour.
@@ -102,173 +204,7 @@ There are some risk-inducing issues that are different or more prevalent for dat
 
 Further examples of how data may cause issues in many scenarios is given in the book \dsiwgTextIT{Data-Centric Safety: Challenges, Approaches, and Incident Investigation} \cite{citation:datacentric}.
 
-\section{\ecapitalisewords{\glsentryplural{data property}}}\label{bkm:guidance:dataproperties}
-\Glspl{data property} are used to establish what aspects of the data (e.g., \gls{timeliness}\index{Timeliness Property}, \gls{accuracy}\index{Accuracy Property}) need to be guaranteed in order that the system operates in a safe manner.
 
-James Inge's work \cite{citation:inge2008improving} produced a useful taxonomy of data categories, and went on to look at faults in data. He concluded that a rigid taxonomy of data categories was unhelpful due to various properties or characteristics of the data which vary independently. In short, it is the combination of data category\index{Category!Data} with the required \index{Data Property}\glspl{data property} that facilitates safety analysis.
-
-Data categories were discussed \dsiwgExtRef{Chapter}{2}{bkm:categories}. \autoref{tab:PropertiesOfData} documents a non-exhaustive collection of \index{Data Property}\glspl{data property}. Typically, it is the loss of one of these \glspl{data property} that presents a \gls{hazard}. This notion of ``loss'' is dependent on the intended use; for example, what is ``timely'' for one use may not be for another.
-
-The ``\Gls{goldilocks}''\index{Goldilocks Property} property\footnote{The authors are aware that some of the names of categories are very culturally dependent. For example, we are informed that the folk-tale of Goldilocks is not well known in Chinese culture but the idiom gu\`oy\'oub\`uj\'\i, interpreted as ``doing too much is just as bad as not doing enough'' is well known. The intention of the names is simply to evoke the associations, so users of this guidance are encouraged to use names for the categories that are more appropriate to their cultures.} addresses appropriate sizing and quantity of data. A number of issues have been found to arise when there is too much or too little data. While it is particularly relevant to communications links, it may have relevance to other areas such as \glspl{database} and when people are involved in reviewing or checking data. The property is named ``\gls{goldilocks}'' as it refers to the need to have not too much, not too little, but just the right amount of data%
-%
-A system where the property was lost involved a high-speed data bus that connected several safety-critical systems. A transceiver of that bus failed and transmitted random noise. The receivers employed parity checks and cyclic redundancy check, but the system had been designed to eliminate occasional \glspl{error}. When random noise filled the bus, several apparently valid messages were created every second, resulting in potentially lethal behaviour.
-	
-	In a \gls{hazop}\index{HAZOP} carried out during 2020, based upon the \gls{hazop}\index{HAZOP} guidewords in this guidance, the facilitator realised that certain failure modes had not been identified by the \gls{hazop} team. In addition to the issue of system overload already discussed, those omissions also concerned system behaviour following data rejection. In these cases, bad data was detected and rejected, but the consequences of data rejection over an extended period had not been considered.
-
-The \gls{goldilocks}\index{Goldilocks Property} property is related to the data volume problem discussed in dsiwgRef{Section}{bkm:issues}, however, given the importance of data sizing and the experience of real-world incidents this is now a separate property.
-
-%
-\subsection{The \glsfmttext{analysability}\index{Analysability Property} property}\label{bkm:guidance:analysability}
-The \gls{analysability} property recognizes that data is now highly complex and extensive, often large scale, and distributed. And yet, for safety purposes we need to make sure it is of suitable quality and able to support system goals.
-We therefore need to ensure that it is possible to analyse it for key characteristics and establish meaningful results using tools or other means. This property is related to explainabilty and may be performed by the same set of tools or techniques.
-
-\subsection{The \glsfmttext{explainability}\index{Explainability Property} property}\label{bkm:guidance:explainability}
-\Gls{explainability} describes the ability to establish what the purpose and effect data (and especially changes to data) has on a system
-and explain this to relevant \glspl{stakeholder} in terms that they can understand. It is particularly important for learning and AI-based systems.
-This could be, for example, \gls{ml} training\index{Training!AI} data or system \gls{configuration data}.
-This property is related to \gls{analysability}\index{Analysability Property} and may be performed by the same set of tools or techniques.
-%
-\begin{longtable}{|L{\dsiwgColumnWidth{0.24}}|C{\dsiwgColumnWidth{0.15}}|L{\dsiwgColumnWidth{0.61}}|}
-	\caption{\index{Data Property}Properties of data}
-	\label{tab:PropertiesOfData}
-	\\\hline\TableHeadColour{Property} & \TableHeadColour{Abbreviation} & \TableHeadColour{Description}\\\hline
-	\endfirsthead
-	\caption[]{Properties of data (continued)}
-	\\\hline\TableHeadColour{Property} & \TableHeadColour{Abbreviation} & \TableHeadColour{Description}\\\hline
-	\endhead
-	\multicolumn{3}{r}{\sl Continued on next page}
-	\endfoot
-	\endlastfoot
-	\Gls{integrity}\index{Data Property!Integrity|see {Integrity, Property}}\index{Integrity!Property} & I & The data is correct, true and unaltered\\\hline
-	\Gls{completeness}\index{Data Property!Completeness|see {Completeness, Property}}\index{Completeness!Property} & C & The data has nothing missing or lost\\\hline
-	\Gls{consistency}\index{Data Property!Consistency|see {Consistency Property}}\index{Consistency!Property} & N & The data adheres to a common world view (e.g., units)\\\hline
-	{\Gls{continuity}}\index{Data Property!Continuity|see {Continuity Property}}\index{Continuity Property} & Y & {The data is continuous and regular without gaps or breaks}\\\hline
-	{\Gls{format}}\index{Data Property!Format|see {Format Property}}\index{Format Property} & O & {The data is represented in a way which is readable by those that need to use it}\\\hline
-	{\Gls{accuracy}}\index{Data Property!Accuracy|see {Accuracy Property}}\index{Accuracy Property} & A & {The data has sufficient detail for its intended use}\\\hline
-	{\Gls{resolution}}\index{Data Property!Resolution|see {Resolution Property}}\index{Resolution Property} & R & {The smallest difference between two adjacent values that can be represented in a data storage, display or transfer system}\\\hline
-	{\Gls{traceability}}\index{Data Property!Traceability|see {Traceability Property}}\index{Traceability Property} & T & {The data can be linked back to its source or derivation}\\\hline
-	{\Gls{timeliness}}\index{Data Property!Timeliness|see {Timeliness Property}}\index{Timeliness Property} & M & {The data is as up to date as required}\\\hline
-	{\Gls{verifiability}}\index{Data Property!Verifiability|see {Verifiability Property}}\index{Verifiability Property} & V & {The data can be checked and its properties demonstrated to be correct}\\\hline
-	{\Gls{availability}}\index{Data Property!Availability|see {Availability Property}}\index{Availability Property} & L & {The data is accessible and usable when an authorized entity demands access}\\\hline
-	{\Gls{fidelity}}\index{Data Property!Fidelity|see {Fidelity Property}}\index{Fidelity Property} & F & {How well the data maps to the real-world entity it is trying to model}\\\hline
-	{\Gls{priority}}\index{Data Property!Priority|see {Priority Property}}\index{Priority Property} & P & {The data is presented / transmitted / made available in the order required}\\\hline
-	{\Gls{sequencing}}\index{Data Property!Sequencing|see {Sequencing Property}}\index{Sequencing Property} & Q & {The data is preserved in the order required}\\\hline
-	{\Gls{intended_destination}}\index{Data Property!Intended Destination|see {Intended Destination Property}}\index{Intended Destination Property} & U & {The data is only sent to those that should have access to it}\\\hline
-	{\Gls{accessibility}}\index{Data Property!Accessibility|see {Accessibility Property}}\index{Accessibility Property} & B & {The data is visible only to those that should see it}\\\hline
-	{\Gls{suppression}}\index{Data Property!Suppression|see {Suppression Property}}\index{Suppression Property} & S & {The data is intended never to be used again}\\\hline
-	{\Gls{history}}\index{Data Property!History|see {History Property}}\index{History Property} & H & {The data has an audit trail of changes}\\\hline
-	{\Gls{lifetime}}\index{Data Property!Lifetime|see {Lifetime Property}}\index{Lifetime Property} & E & {When does the safety-related data expire}\\\hline
-	{\Gls{disposability}}\index{Data Property!Disposability|see {Disposability Property}}\index{Disposability Property} & D & {The data can be permanently removed when required}\\\hline
-	{\Gls{goldilocks}}\index{Data Property!Goldilocks|see {Goldilocks Property}}\index{Goldilocks Property} & G & {The data is just the right size -- not too much and not too little}\\\hline
-	{\Gls{analysability}}\index{Data Property!Analysability|see {Analysability Property}}\index{Analysability Property} & Z & {The data (including any \gls{metadata}) is of a suitable size, type and format to enable it be usefully analysed}\\\hline
-	{\Gls{explainability}}\index{Data Property!Explainability|see {Explainability Property}}\index{Explainability Property} & X & {The data can be meaningfully explained,by a suitable mechanism, to those who need to understand it}\\\hline
-	{\Gls{clarity}}\index{Data Property!Clarity|see {Clarity Property}}\index{Clarity Property} & K & {The data is visible, unmasked, not hidden or obscured and not camouflaged}\\\hline
-\end{longtable}
-
-\autoref{tab:issuesCrossReference} illustrates where the data issues discussed in
-\dsiwgRef{Section}{bkm:issues}
-can result in
-loss of one or more \index{Data Property}data properties (x = potential loss of property).
-
-\begin{longtable}{|L{\dsiwgColumnWidth{0.15}}|%
-		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
-		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
-		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
-		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
-		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
-		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|}
-	\caption{Properties that can be lost through issues}
-	\label{tab:issuesCrossReference}
-	\\\hline
-	& \rotatebox{90}{\index{Integrity!Property}\Gls{integrity}}
-	& \rotatebox{90}{\index{Completeness!Property}\Gls{completeness}}
-	& \rotatebox{90}{\index{Consistency!Property}\Gls{consistency}}
-	& \rotatebox{90}{\index{Continuity Property}\Gls{continuity}}
-	& \rotatebox{90}{\index{Format Property}\Gls{format}}
-	& \rotatebox{90}{\index{Accuracy Property}\Gls{accuracy}}
-	& \rotatebox{90}{\index{Resolution Property}\Gls{resolution}}
-	& \rotatebox{90}{\index{Traceability Property}\Gls{traceability}}
-	& \rotatebox{90}{\index{Timeliness Property}\Gls{timeliness}}
-	& \rotatebox{90}{\index{Verifiability Property}\Gls{verifiability}}
-	& \rotatebox{90}{\index{Availability Property}\Gls{availability}}
-	& \rotatebox{90}{\index{Fidelity Property}\Gls{fidelity}}
-	& \rotatebox{90}{\index{Priority Property}\Gls{priority}} 
-	& \rotatebox{90}{\index{Sequencing Property}\Gls{sequencing}}
-	& \rotatebox{90}{\index{Intended Destination Property}\Gls{intended_destination}}
-	& \rotatebox{90}{\index{Accessibility Property}\Gls{accessibility}}
-	& \rotatebox{90}{\index{Suppression Property}\Gls{suppression}}
-	& \rotatebox{90}{\index{History Property}\Gls{history}}
-	& \rotatebox{90}{\index{Lifetime Property}\Gls{lifetime}}
-	& \rotatebox{90}{\index{Disposability Property}\Gls{disposability}}
-	& \rotatebox{90}{\index{Goldilocks Property}\Gls{goldilocks}}
-	& \rotatebox{90}{\index{Analysability Property}\Gls{analysability}}
-	& \rotatebox{90}{\index{Explainability Property}\Gls{explainability}}
-	& \rotatebox{90}{\index{Clarity Property}\Gls{clarity}}
-	%
-	\\\hline\TableHeadColour{Issue} &%
-	\TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
-	\TableHeadColour{O} & \TableHeadColour{A} & \TableHeadColour{R} & \TableHeadColour{T} &%
-	\TableHeadColour{M} & \TableHeadColour{V} & \TableHeadColour{L} & \TableHeadColour{F} &%
-	\TableHeadColour{P} & \TableHeadColour{Q} & \TableHeadColour{U} & \TableHeadColour{B} &%
-	\TableHeadColour{S} & \TableHeadColour{H} & \TableHeadColour{E} & \TableHeadColour{D} &%
-	\TableHeadColour{G} & \TableHeadColour{Z} & \TableHeadColour{X} & \TableHeadColour{K} \\\hline
-	\endfirsthead
-	\caption[]{Properties that can be lost through issues (continued)}
-	\\\hline
-	& \rotatebox{90}{\index{Integrity!Property}\Gls{integrity}}
-	& \rotatebox{90}{\index{Completeness!Property}\Gls{completeness}}
-	& \rotatebox{90}{\index{Consistency!Property}\Gls{consistency}}
-	& \rotatebox{90}{\index{Continuity Property}\Gls{continuity}}
-	& \rotatebox{90}{\index{Format Property}\Gls{format}}
-	& \rotatebox{90}{\index{Accuracy Property}\Gls{accuracy}}
-	& \rotatebox{90}{\index{Resolution Property}\Gls{resolution}}
-	& \rotatebox{90}{\index{Traceability Property}\Gls{traceability}}
-	& \rotatebox{90}{\index{Timeliness Property}\Gls{timeliness}}
-	& \rotatebox{90}{\index{Verifiability Property}\Gls{verifiability}}
-	& \rotatebox{90}{\index{Availability Property}\Gls{availability}}
-	& \rotatebox{90}{\index{Fidelity Property}\Gls{fidelity}}
-	& \rotatebox{90}{\index{Priority Property}\Gls{priority}} 
-	& \rotatebox{90}{\index{Sequencing Property}\Gls{sequencing}}
-	& \rotatebox{90}{\index{Intended Destination Property}\Gls{intended_destination}}
-	& \rotatebox{90}{\index{Accessibility Property}\Gls{accessibility}}
-	& \rotatebox{90}{\index{Suppression Property}\Gls{suppression}}
-	& \rotatebox{90}{\index{History Property}\Gls{history}}
-	& \rotatebox{90}{\index{Lifetime Property}\Gls{lifetime}}
-	& \rotatebox{90}{\index{Disposability Property}\Gls{disposability}}
-	& \rotatebox{90}{\index{Goldilocks Property}\Gls{goldilocks}}
-	& \rotatebox{90}{\index{Analysability Property}\Gls{analysability}}
-	& \rotatebox{90}{\index{Explainability Property}\Gls{explainability}}
-	& \rotatebox{90}{\index{Clarity Property}\Gls{clarity}}
-	%
-	\\\hline\TableHeadColour{Issue} &%
-	\TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
-	\TableHeadColour{O} & \TableHeadColour{A} & \TableHeadColour{R} & \TableHeadColour{T} &%
-	\TableHeadColour{M} & \TableHeadColour{V} & \TableHeadColour{L} & \TableHeadColour{F} &%
-	\TableHeadColour{P} & \TableHeadColour{Q} & \TableHeadColour{U} & \TableHeadColour{B} &%
-	\TableHeadColour{S} & \TableHeadColour{H} & \TableHeadColour{E} & \TableHeadColour{D} &%
-	\TableHeadColour{G} & \TableHeadColour{Z} & \TableHeadColour{X} & \TableHeadColour{K}\\\hline
-	\endhead
-	\multicolumn{22}{r}{\sl Continued on next page}
-	\endfoot
-	\endlastfoot
-	Fluidity       &   &   &   &   &   &   &   & x &   & x &   & x &   &   &   &   &   & x &   &   & x & x & x & x \\\hline
-	Reuse          &   & x &   &   &   & x &   & x & x & x &   & x &   &   & x &   & x & x & x & x & x &   & x & \\\hline
-	Ageing         &   & x &   &   &   & x &   &   & x &   &   & x &   &   & x & x & x & x & x & x & &   & x & \\\hline
-	Transformation & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
-	\index{Data!Owner}Ownership      &   &   &   &   &   &   &   & x &   & x & x &   &   &   & x & x &   & x &   &   &   &   & x & \\\hline
-	Archiving / retrieval &   &   &   &   &   &   &   &   &   &   &   &   &   &   & x & x & x & x & x & x &   & x & & x \\\hline
-	Biasing        & x & x & x & x &   & x &   &   & x & x &   & x & x & x &   &   &   &   &   &   &   & x & x & \\\hline
-	Falsification / misinformation & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
-	Defaulting     & x & x & x & x &   & x &   &   &   &   &   & x &   &   &   &   &   &   &   &   &   & x & & x \\\hline
-	Sentinels      & x & x &   & x &   & x &   &   &   &   &   &   &   & x &   &   &   &   &   &   &   & x & & x \\\hline
-	Aliasing       & x & x &   & x &   & x & x & x &   & x & x & x &   &   &   &   &   &   &   &   &   & x & x &  x \\\hline
-	Disassociation & x &   &   & x &   & x &   & x & x & x & x & x & x & x & x & x & x & x & x & x &   & x & x & x \\\hline
-	Masking        & x & x & x & x &   & x &   &   &   & x &   & x &   &   &   &   &   &   &   &   &   & x & x & x \\\hline
-	\index{Completeness!Property}Incompleteness & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
-	Volume         &   &   &   &   &   &   &   &   &   & x &   &   &   &   &   &   &   &   &   &   & x & x & x & x \\\hline
-	Interpretation & x & x & x &   & x & x & x &   & x & x &   & x &   &   &   &   &   &   &   &   &   & x & x & \\\hline
-	Distribution   & x & x & x & x &   &   &   & x &   &   & x &   & x & x & x & x &   & x &   & x &   & x & x & x \\\hline
-\end{longtable}
 \section{Data in System Lifecycles}
 Like other components of a safety-related system, the safety dependency of data is dictated by the context in which it is used and the causal links that become established where loss of one or more of the required \index{Property!Data}properties can contribute to hazardous system states. For example, a given \gls{dataset} (say \gls{configuration data}) could be used in a number of separate contexts such as:
 \begin{itemize}
