@@ -1,0 +1,184 @@
+%================================================================================
+%       Safety Critical Systems Club - Data Safety Initiative Working Group
+%================================================================================
+%                       DDDD    SSSS  IIIII  W   W   GGGG
+%                       D   D  S        I    W   W  G   
+%                       D   D   SSS     I    W W W  G  GG
+%                       D   D      S    I    WW WW  G   G
+%                       DDDD   SSSS   IIIII  W   W   GGG
+%================================================================================
+%               Data Safety Guidance Document - LaTeX Source File
+%================================================================================
+%
+% Description:
+%   Additional Ways section.
+%
+%================================================================================
+\chapter{Additional Ways that Data Can Cause Problems}\label{bkm:additionalways}
+\dsiwgSectionQuote{When solving problems, dig at the roots instead of just hacking at the leaves.}{Anthony J. D'Angelo}
+\label{bkm:issues}
+There are some risk-inducing issues that are different or more prevalent for data than for other system elements. An incomplete collection of examples is provided below. This list may provide a quick way of identifying risks, which could be especially useful at an early stage of a project. 
+
+\autoref{tab:issuesCrossReference} illustrates where the likely relationships between data properties and these issues.
+
+\begin{longtable}{|L{\dsiwgColumnWidth{0.15}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|%
+		C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|C{\dsiwgColumnWidth{0.034}}|}
+	\caption{Properties that can be lost through issues}
+	\label{tab:issuesCrossReference}
+	\\\hline
+	& \rotatebox{90}{\index{Data Property!Integrity}\index{Integrity!Property}\Gls{integrity}}
+	& \rotatebox{90}{\index{Data Property!Completeness}\index{Completeness!Property}\Gls{completeness}}
+	& \rotatebox{90}{\index{Data Property!Consistency}\index{Consistency!Property}\Gls{consistency}}
+	& \rotatebox{90}{\index{Data Property!Continuity}\index{Continuity Property}\Gls{continuity}}
+	& \rotatebox{90}{\index{Data Property!Format}\index{Format Property}\Gls{format}}
+	& \rotatebox{90}{\index{Data Property!Accuracy}\index{Accuracy Property}\Gls{accuracy}}
+	& \rotatebox{90}{\index{Data Property!Resolution}\index{Resolution Property}\Gls{resolution}}
+	& \rotatebox{90}{\index{Data Property!Traceability}\index{Traceability Property}\Gls{traceability}}
+	& \rotatebox{90}{\index{Data Property!Timeliness}\index{Timeliness Property}\Gls{timeliness}}
+	& \rotatebox{90}{\index{Data Property!Verifiability}\index{Verifiability Property}\Gls{verifiability}}
+	& \rotatebox{90}{\index{Data Property!Availability}\index{Availability Property}\Gls{availability}}
+	& \rotatebox{90}{\index{Data Property!Fidelity}\index{Fidelity Property}\Gls{fidelity}}
+	& \rotatebox{90}{\index{Data Property!Priority}\index{Priority Property}\Gls{priority}} 
+	& \rotatebox{90}{\index{Data Property!Sequencing}\index{Sequencing Property}\Gls{sequencing}}
+	& \rotatebox{90}{\index{Data Property!Intended Destination}\index{Intended Destination Property}\Gls{intended_destination}}
+	& \rotatebox{90}{\index{Data Property!Accessibility}\index{Accessibility Property}\Gls{accessibility}}
+	& \rotatebox{90}{\index{Data Property!Suppression}\index{Suppression Property}\Gls{suppression}}
+	& \rotatebox{90}{\index{Data Property!History}\index{History Property}\Gls{history}}
+	& \rotatebox{90}{\index{Data Property!Lifetime}\index{Lifetime Property}\Gls{lifetime}}
+	& \rotatebox{90}{\index{Data Property!Disposability}\index{Disposability Property}\Gls{disposability}}
+	& \rotatebox{90}{\index{Data Property!Goldilocks}\index{Goldilocks Property}\Gls{goldilocks}}
+	& \rotatebox{90}{\index{Data Property!Analysability}\index{Analysability Property}\Gls{analysability}}
+	& \rotatebox{90}{\index{Data Property!Explainability}\index{Explainability Property}\Gls{explainability}}
+	& \rotatebox{90}{\index{Data Property!Clarity}\index{Clarity Property}\Gls{clarity}}
+	%
+	\\\hline\TableHeadColour{Issue} &%
+	\TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
+	\TableHeadColour{O} & \TableHeadColour{A} & \TableHeadColour{R} & \TableHeadColour{T} &%
+	\TableHeadColour{M} & \TableHeadColour{V} & \TableHeadColour{L} & \TableHeadColour{F} &%
+	\TableHeadColour{P} & \TableHeadColour{Q} & \TableHeadColour{U} & \TableHeadColour{B} &%
+	\TableHeadColour{S} & \TableHeadColour{H} & \TableHeadColour{E} & \TableHeadColour{D} &%
+	\TableHeadColour{G} & \TableHeadColour{Z} & \TableHeadColour{X} & \TableHeadColour{K} \\\hline
+	\endfirsthead
+	\caption[]{Properties that can be lost through issues (continued)}
+	\\\hline
+	& \rotatebox{90}{\index{Data Property!Integrity}\index{Integrity!Property}\Gls{integrity}}
+	& \rotatebox{90}{\index{Data Property!Completeness}\index{Completeness!Property}\Gls{completeness}}
+	& \rotatebox{90}{\index{Data Property!Consistency}\index{Consistency!Property}\Gls{consistency}}
+	& \rotatebox{90}{\index{Data Property!Continuity}\index{Continuity Property}\Gls{continuity}}
+	& \rotatebox{90}{\index{Data Property!Format}\index{Format Property}\Gls{format}}
+	& \rotatebox{90}{\index{Data Property!Accuracy}\index{Accuracy Property}\Gls{accuracy}}
+	& \rotatebox{90}{\index{Data Property!Resolution}\index{Resolution Property}\Gls{resolution}}
+	& \rotatebox{90}{\index{Data Property!Traceability}\index{Traceability Property}\Gls{traceability}}
+	& \rotatebox{90}{\index{Data Property!Timeliness}\index{Timeliness Property}\Gls{timeliness}}
+	& \rotatebox{90}{\index{Data Property!Verifiability}\index{Verifiability Property}\Gls{verifiability}}
+	& \rotatebox{90}{\index{Data Property!Availability}\index{Availability Property}\Gls{availability}}
+	& \rotatebox{90}{\index{Data Property!Fidelity}\index{Fidelity Property}\Gls{fidelity}}
+	& \rotatebox{90}{\index{Data Property!Priority}\index{Priority Property}\Gls{priority}} 
+	& \rotatebox{90}{\index{Data Property!Sequencing}\index{Sequencing Property}\Gls{sequencing}}
+	& \rotatebox{90}{\index{Data Property!Intended Destination}\index{Intended Destination Property}\Gls{intended_destination}}
+	& \rotatebox{90}{\index{Data Property!Accessibility}\index{Data Property!Accessibility}\index{Accessibility Property}\Gls{accessibility}}
+	& \rotatebox{90}{\index{Data Property!Suppression}\index{Suppression Property}\Gls{suppression}}
+	& \rotatebox{90}{\index{Data Property!History}\index{History Property}\Gls{history}}
+	& \rotatebox{90}{\index{Data Property!Lifetime}\index{Lifetime Property}\Gls{lifetime}}
+	& \rotatebox{90}{\index{Data Property!Disposability}\index{Disposability Property}\Gls{disposability}}
+	& \rotatebox{90}{\index{Data Property!Goldilocks}\index{Goldilocks Property}\Gls{goldilocks}}
+	& \rotatebox{90}{\index{Data Property!Analysability}\index{Analysability Property}\Gls{analysability}}
+	& \rotatebox{90}{\index{Data Property!Explainability}\index{Explainability Property}\Gls{explainability}}
+	& \rotatebox{90}{\index{Data Property!Clarity}\index{Clarity Property}\Gls{clarity}}
+	%
+	\\\hline\TableHeadColour{Issue} &%
+	\TableHeadColour{I} & \TableHeadColour{C} & \TableHeadColour{N} & \TableHeadColour{Y} &%
+	\TableHeadColour{O} & \TableHeadColour{A} & \TableHeadColour{R} & \TableHeadColour{T} &%
+	\TableHeadColour{M} & \TableHeadColour{V} & \TableHeadColour{L} & \TableHeadColour{F} &%
+	\TableHeadColour{P} & \TableHeadColour{Q} & \TableHeadColour{U} & \TableHeadColour{B} &%
+	\TableHeadColour{S} & \TableHeadColour{H} & \TableHeadColour{E} & \TableHeadColour{D} &%
+	\TableHeadColour{G} & \TableHeadColour{Z} & \TableHeadColour{X} & \TableHeadColour{K}\\\hline
+	\endhead
+	\multicolumn{22}{r}{\sl Continued on next page}
+	\endfoot
+	\endlastfoot
+	Fluidity       &   &   &   &   &   &   &   & x &   & x &   & x &   &   &   &   &   & x &   &   & x & x & x & x \\\hline
+	Reuse          &   & x &   &   &   & x &   & x & x & x &   & x &   &   & x &   & x & x & x & x & x &   & x & \\\hline
+	Ageing         &   & x &   &   &   & x &   &   & x &   &   & x &   &   & x & x & x & x & x & x & &   & x & \\\hline
+	Transformation & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
+	\index{Data!Owner}Ownership      &   &   &   &   &   &   &   & x &   & x & x &   &   &   & x & x &   & x &   &   &   &   & x & \\\hline
+	Archiving / retrieval &   &   &   &   &   &   &   &   &   &   &   &   &   &   & x & x & x & x & x & x &   & x & & x \\\hline
+	Biasing        & x & x & x & x &   & x &   &   & x & x &   & x & x & x &   &   &   &   &   &   &   & x & x & \\\hline
+	Falsification / misinformation & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
+	Defaulting     & x & x & x & x &   & x &   &   &   &   &   & x &   &   &   &   &   &   &   &   &   & x & & x \\\hline
+	Sentinels      & x & x &   & x &   & x &   &   &   &   &   &   &   & x &   &   &   &   &   &   &   & x & & x \\\hline
+	Aliasing       & x & x &   & x &   & x & x & x &   & x & x & x &   &   &   &   &   &   &   &   &   & x & x &  x \\\hline
+	Disassociation & x &   &   & x &   & x &   & x & x & x & x & x & x & x & x & x & x & x & x & x &   & x & x & x \\\hline
+	Masking        & x & x & x & x &   & x &   &   &   & x &   & x &   &   &   &   &   &   &   &   &   & x & x & x \\\hline
+	\index{Completeness!Property}Incompleteness & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x & x \\\hline
+	Volume         &   &   &   &   &   &   &   &   &   & x &   &   &   &   &   &   &   &   &   &   & x & x & x & x \\\hline
+	Interpretation & x & x & x &   & x & x & x &   & x & x &   & x &   &   &   &   &   &   &   &   &   & x & x & \\\hline
+	Distribution   & x & x & x & x &   &   &   & x &   &   & x &   & x & x & x & x &   & x &   & x &   & x & x & x \\\hline
+\end{longtable}
+
+\begin{description}
+	\item[Fluidity:] Hardware and software can undergo significant amounts of product assurance and once assured may change relatively infrequently. Where change is required to hardware or software, it can be carefully managed and the impact on the safety case appraised. This is not always the case for data, which is often much more fluid. Indeed, the ease with which data can be changed is one motivation for the move towards \glspl{data-driven system}. This fluidity means that it is not always possible to revisit safety cases when data changes. For example, the safety case for an autonomous vehicle cannot be updated every time that the vehicle acquires new knowledge during operation. Instead, the fact that data can change, along with any associated safety impacts, may need to be captured in the system safety case. Fluidity can also provide a temptation for unscrupulous operators to falsify data, for example, after an incident has occurred. Rigorous configuration control procedures can help protect against this type of behaviour.
+	
+	\item[Reuse:] For the purposes of this discussion, ``reuse'' is interpreted as use of the same data in a different system or system context (e.g., lifecycle\index{Lifecycle!System} phase). Just because data was valid for use in a particular system, it does not immediately follow that it can be reused again in a similar system. Many considerations associated with data reuse are similar to those of software reuse, for example, similarity of requirements, similarity of role in the system, and similarity of required \index{Integrity!Property}\gls{integrity} / \index{Assurance Level}assurance level. One consideration that is different is that of \gls{timeliness}\index{Timeliness Property}: data that was valid for use in a particular system at a particular time is not necessarily valid for reuse in the same system at a different time.
+	
+	\item[Ageing:] As highlighted above, all safety-related data has a lifetime\index{Lifetime Property} and this needs to be explicitly managed. This can involve, for example, purging, deleting and alerting. Ageing can occur as a result of changes external to the system (for example, records of the positions of other aircraft, newly discovered drug interactions, or new software patches), or it can result from internal changes (e.g., valves gradually becoming less responsive, \gls{configuration data} becoming out of date, or data schemas evolving over time).
+	
+	\item[Transformation:] Data is often filtered, mapped or aggregated as it moves through systems, sometimes creating new \glspl{dataset} as a result. \Glspl{data property} are not necessarily preserved by these processes. Sometimes data is filtered too much or only some of the data is selected (either deliberately or inadvertently through accident or unintended bias), such as by the selection of only the test runs that succeeded. The main issues are loss of heritage / history / source \gls{information}. Data can also appear to become something else. Without careful management, the \index{Integrity!Property}\gls{integrity} may become lowered to the lowest common denominator and this needs to be recognized. Additional checks (e.g., \gls{validation} checks, credibility checks) or assurance measures may be needed to ensure that required \index{Integrity!Property}\gls{integrity} / assurance is maintained.
+	
+	\item[Archiving and retrieval:] Safety-related data needs to be available when required. Data \gls{accessibility}\index{Accessibility Property} needs to be considered over the complete system lifetime. It is also important to consider what \index{Data Property}properties of the data need to be preserved and how this affects the choice of storage medium.
+	
+	\item[Biasing:] This is a systemic inaccuracy in data due to the characteristics of the process employed in the creation, collection, manipulation, presentation, and interpretation of data. It is usually an unintentional distortion in the \gls{dataset}. One example of this is the confirmation bias that may be applied to safety claims, and another example is that synthetic autonomous vehicle training\index{Training!AI} \glspl{database} can have issues with artificial data if it is not realistic.
+	Although there is no perfect way of checking for this within the system, \index{Completeness!Checks}\gls{completeness}, statistical and validity checks on \glspl{dataset} may help.
+	
+	\item[Falsification / misinformation:] This issue arises where data is created, modified, or deleted either accidentally or deliberately to mislead or misinform potential consumers of that data. Examples from policing and criminal justice might include notes being taken with fabricated times or dates or a crime from the wrong individual in a \gls{database} being accidentally added or removed. Another example might be a supplier falsifying quality records for materials or goods. There have been many cases of misinformation related to the Covid-19\index{Covid-19} pandemic (for example on social media) where people have been deliberately misled, and sometimes this has led to harm (for example, bleach being drunk as a cure). Possible \glspl{mitigation}\index{Mitigation} include digitally signing transmitted data, strong access controls, independent fact-checking, and audit records.
+	
+	\item[Defaulting:] Many systems use default or initial values for \glspl{item data}; sometimes in \glspl{dataset} and sometimes embedded in software. Often these default values are designed to be neutral (e.g., ``0'') or unrealistic (e.g., ``VOID''). There are essentially two cases:
+	\begin{enumerate}
+		\item initialisation data which may persist and be mistakenly taken as a real value when in fact it should have been changed; and
+		\item data that is used when no meaningful value has been assigned (e.g., during data migration or data exchange between systems).
+	\end{enumerate}	
+	These issues can often be managed through good design of data structures, for example by the inclusion of a validity flag.
+	
+	\item[Sentinels:] A sentinel value is a data value that is used to indicate a special action needs to be taken, typically indicating the end of a record or a \gls{dataset}. The sentinel value should be one that is not allowable in the \gls{dataset} itself but often is not properly considered and may use common sequences (e.g., five zeroes). Sentinels can cause problems in two ways:
+	\begin{enumerate}
+		\item where they are not recognized and so, for example, processing includes or continues past the sentinel; and
+		\item where the data itself somehow contains the sentinel value and so processing is erroneously interrupted.
+	\end{enumerate}
+	Sentinels can be a particular risk in long-lived systems and \glspl{dataset}. As with defaulting, the management or elimination of this issue may often be achieved through improved data structures.
+	
+	\item[Aliasing:] This is an effect that causes different data to become indistinguishable when accessed; that is, there is only one record when there should be several -- for example, two patients with similar names inadvertently sharing a single set of medical records. This could be due to the way the data is filtered, sampled, indexed, stored, or retrieved. The data issues are typically related to loss of resolution leading to similar data points appearing to be identical. Methods to maintain resolution, including use of unique indexes, may be beneficial.
+	
+	One specific case of aliasing  concerns homophones -- words which sound the same but are different such as ``flower'' / ``flour'' and ``bare'' / ``bear'' \cite{citation:homonym}.
+	If these words are read out over a phone there may be confusion as to which is intended.
+	Location services based on a number of words such as W3W don't avoid all homophones,
+	and so there may be issues when the words are given verbally in an emergency. The issue is discussed further in \dsiwgExtRef{Section}{3}{bkm:incacc:w3w}.
+	
+	\item[Disassociation:] This effect is, in some senses, the opposite of aliasing: there are several records when there should only be one. This could occur, for example, if two records are created for the same individual using slightly different names. It could also arise if different systems use different indexing methods and the association between the indexes becomes corrupted. Again, methods to maintain data resolution can be beneficial.
+	
+	\item[Masking:] This issue can arise if a notable proportion of a \gls{dataset} is of a poor \gls{quality}, for example, if sensors producing the data are faulty or measurements are taken from the wrong source. This poor quality data can mask errors in the way that the system handles the good quality data. One way of protecting against this issue is the generation and use of test sets of appropriate size and quality, although for some applications this may be a non-trivial task.
+	
+	\item[Incompleteness:]\index{Completeness!Property} Not all the data that is needed is always available; there may be known, and sometimes, unknown gaps or missing data points. The missing data points (``dark data''\index{Dark Data} -- see \dsiwgRef{Section}{bkm:darkdata})
+	can be critical and in some cases, more important than the data that is available. Incomplete data can arise, for example, from limitations on how much data can be physically captured (e.g. sampling frequencies, storage / time constraints) or from the unintentional or deliberate darkening of data (e.g. for privacy, security, political or commercial reasons).
+	
+	\item[Volume:] Data can be so large and unstructured that it is not manageable in practicable timeframes.
+	For example, video records of rail track could take days to inspect manually.
+	
+	\item[Interpretation:] Data can be misinterpreted -- too much or too little deduced from available data, or data extrapolated incorrectly to derive unsound results.
+	An example is \gls{ml} data\index{Machine Learning Data}, especially real or recorded data that may not contain critical edge / corner cases.
+	
+	\item[Distribution:] Data can be decentralised, decomposed or distributed across many sources (e.g. channels, \glspl{database}, websites) and needs to be consistently integrated to make a coherent picture. In the health sector many IT systems often have to work together feeding in different parts of a patient medical record to make a complete health picture. If parts of this distributed data are missing (for instance diagnostic test results) then it is difficult if not impossible to obtain the complete picture, and mistakes may be made.
+	There are several parts to this problem:
+	\begin{description}
+		\item[Integration] -- multiple elements of data have to be brought together in a coherent way, addressing aspects such as which data should supercede or replace other data;
+		\item[Communication] -- having correct and current \gls{information} about what data is available and its location so it can be requested; and
+		\item[Contingency:] -- what to to if part of the distributed data is unavailable or late.
+	\end{description}
+\end{description}
+
+
+Further examples of how data may cause issues in many scenarios is given in the book \dsiwgTextIT{Data-Centric Safety: Challenges, Approaches, and Incident Investigation} \cite{citation:datacentric}.

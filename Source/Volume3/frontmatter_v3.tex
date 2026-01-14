@@ -36,14 +36,13 @@ This document was prepared using the \LaTeXe\/ typesetting system.
 
 Editing and typesetting by Mark Templeton and Tim Rowe.
 
-Cover design by DeepAI.org and Tim Rowe, based on an original by Paul Hampton.
+Front cover design by DeepAI.org and Tim Rowe, based on an original by Paul Hampton.
+Back cover design by vector\_corp on Freepik and Tim Rowe
 
 \glsreset{scsc} %So that SCSC is spelt out in full on the next page as well!
 
-
 \clearpage
 \pagestyle{ContinuationInsideFrontCover}
-
 The \gls{scsc} is the professional network for sharing knowledge regarding safety-critical systems. It brings together: 
 \begin{itemize}
 	\item engineers and specialists from a range of disciplines working on safety-critical systems in a wide variety of industries;
@@ -55,27 +54,20 @@ The \gls{scsc} is the professional network for sharing knowledge regarding safet
 Through publications, seminars, workshops, tutorials, a web site and, most importantly, at the annual \gls{sss}, it provides opportunities for these people to network and benefit from each other’s experience in working hard at the accidents that don’t happen. It focuses on current and emerging practices in safety engineering, software engineering, and product and process safety standards.
 
 This document was written by the \gls{dsiwg}, which is convened under the auspices of the \gls{scsc}. The document supports the \gls{dsiwg}'s vision, which is to have clear guidance that reflects emerging best practice on how data (as distinct from software and hardware) should be managed in a safety-related context. This update takes account of the consensus that a process-based guidance document will complement existing safety management processes, making it more usable. It was formally released at
-\gls{sss}'25, 4--6 February 2025
+\gls{sss}'26, 10--12 February 2026,
 details of which may be found at
-\href{https://scsc.uk/e1099}{https://scsc.uk/e1099}%\todo{Update e797 reference}.
+\href{https://scsc.uk/sss}.
 
 Comments on this document are actively encouraged. These can be emailed to: 
 \begin{center}
-  \href{mailto:comments@data-safety.scsc.uk}{comments@data-safety.scsc.uk}.
-\end{center}
-
-Alternatively, a comments submission form is available at:
-\begin{center}
-  \href{http://scsc.uk/data-comments.html}{data-safety.scsc.uk/comments}.
+	\href{mailto:comments@data-safety.scsc.uk}{comments@data-safety.scsc.uk}.
 \end{center}
 
 While the authors and the publishers have used reasonable endeavours to ensure that the information and guidance given in this work is correct, all parties must rely on their own skill and judgement when making use of this work and obtain professional or specialist advice before taking, or refraining from, any action on the basis of the content of this work. Neither the authors nor the publishers make any representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to such information and guidance for any purpose, and they will not be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever (including as a result of negligence) arising out of, or in connection with, the use of this work. The views and opinions expressed in this publication are those of the authors and do not necessarily reflect those of their employers, the \gls{scsc} or other organizations.
 
 \thispagestyle{empty}% Suppress page number on this intro page
 \clearpage
-%\cbstart % KEEP: Probably want to keep this \cbstart...\cbend pair, as \maketitle always updated
 \maketitle
-%\cbend % KEEP
 \thispagestyle{empty}% Suppress page number on this title page
 
 \clearpage
@@ -83,111 +75,84 @@ While the authors and the publishers have used reasonable endeavours to ensure t
 \thispagestyle{empty}% Suppress page number on Change History page
 
 \addtocounter{table}{-1}% Number this table as zero, so the first one in ChangeLog table is 1
-  
 \begin{longtable}
-  {%
-    |L{\dsiwgColumnWidth{0.10}}|L{\dsiwgColumnWidth{0.20}}|L{\dsiwgColumnWidth{0.55}}|L{\dsiwgColumnWidth{0.15}}|%
-  }%
-  \hline
-  \TableHeadColour{Version} & \TableHeadColour{By} & \TableHeadColour{Status} & \TableHeadColour{Date}\\
-  \hline
-  \endfirsthead
-  \hline
-  \TableHeadColour{Version} & \TableHeadColour{By} & \TableHeadColour{Status} & \TableHeadColour{Date}\\
-  \endhead
-  \hline
-  \endfoot
-  \endlastfoot
-  {1.0} & The \gls{dsiwg} Team & {First draft for external review} & {31-JAN-2014}
-  \\\hline
-  {1.1} & {The \gls{dsiwg} Team} & {(Internal edition for \gls{dsiwg} use only)} & {09-DEC-2014}
-  \\\hline
-  {1.2} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'15} & {23-JAN-2015}
-  \\\hline
-  {1.3} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'16} & {29-JAN-2016}
-  \\\hline
-  {2.0} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'17} & {30-JAN-2017}
-  \\\hline
-  {3.0} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'18} & {26-JAN-2018}
-  \\\hline
-  {3.1} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'19} & {01-FEB-2019}
-  \\\hline
-  {3.2} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'20} & {11-FEB-2020}
-  \\\hline
-  {3.3} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'21} & {09-FEB-2021}
-  \\\hline
-  {3.4} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'22} & {08-FEB-2022}
-  \\\hline
-  {3.5} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'23} & {07-FEB-2023}
-  \\\hline
-  {3.6} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'24} & {13-FEB-2024}
-  \\\hline
-  {3.7} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'25} & {04-FEB-2025}
-  \\\hline
-  {4.0} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'26} & {10-FEB-2026}
-  \\\hline
+	{%
+		|L{\dsiwgColumnWidth{0.10}}|L{\dsiwgColumnWidth{0.20}}|L{\dsiwgColumnWidth{0.55}}|L{\dsiwgColumnWidth{0.15}}|%
+	}%
+	\hline
+	\TableHeadColour{Version} & \TableHeadColour{By} & \TableHeadColour{Status} & \TableHeadColour{Date}\\
+	\hline
+	\endfirsthead
+	\hline
+	\TableHeadColour{Version} & \TableHeadColour{By} & \TableHeadColour{Status} & \TableHeadColour{Date}\\
+	\endhead
+	\hline
+	\endfoot
+	\endlastfoot
+	{1.0} & The \gls{dsiwg} Team & {First draft for external review} & {31-JAN-2014}
+	\\\hline
+	{1.1} & {The \gls{dsiwg} Team} & {(Internal edition for \gls{dsiwg} use only)} & {09-DEC-2014}
+	\\\hline
+	{1.2} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'15} & {23-JAN-2015}
+	\\\hline
+	{1.3} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'16} & {29-JAN-2016}
+	\\\hline
+	{2.0} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'17} & {30-JAN-2017}
+	\\\hline
+	{3.0} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'18} & {26-JAN-2018}
+	\\\hline
+	{3.1} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'19} & {01-FEB-2019}
+	\\\hline
+	{3.2} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'20} & {11-FEB-2020}
+	\\\hline
+	{3.3} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'21} & {09-FEB-2021}
+	\\\hline
+	{3.4} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'22} & {08-FEB-2022}
+	\\\hline
+	{3.5} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'23} & {07-FEB-2023}
+	\\\hline
+	{3.6} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'24} & {13-FEB-2024}
+	\\\hline
+	{3.7} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'25} & {04-FEB-2025}
+	\\\hline
+	{4.0} & {The \gls{dsiwg} Team} & {For publication at \gls{sss}'26} & {10-FEB-2026}
+	\\\hline
 \end{longtable}
 %
-\subsection*{Changes Since the Last Edition}%\todo{Update this whole section}
-The main changes in this edition are:
-\begin{itemize}
-\item the inclusion of a process flow diagram at \hyperref[bkm:principlesprocess]{{Section}~\ref{bkm:principlesprocess}};
-\item the inclusion of an appendix (\hyperref[bkm:autonomy]{{Appendix}~\ref{bkm:autonomy}}) on \glsxtrshort{ai} and autonomy; and
-\item the inclusion of an appendix (\hyperref[bkm:radish]{{Appendix}~\ref{bkm:radish}}) on the RADISH tool.
-\end{itemize}
-The inclusion of the new \hyperref[bkm:autonomy]{{Appendix}~\ref{bkm:autonomy}} and \hyperref[bkm:radish]{{Appendix}~\ref{bkm:radish}} means that subsequent appendix numbers have changed.
+\subsection*{Changes Since the Last Edition}
+This is a major rewrite of the guidance. The document has been split into three volumes, each giving progressively more detail.
 
-Hyperlinks (in the electronic edition) to abbreviations, acronyms and defined terms have been substantially expanded and further abbreviations, acronyms and defined terms have been added.
-
-The body of text the guidance, but not yet the appendices, has been edited for clarity and consistency.
-
-Discursive definitions of terms and abbreviations not used in the document have been removed, and new discursive definitions and definitions have been addded.
-
-The definition of hazard has been expanded to include harm, not just accidents.
-
-An inconsistency in the worked example regarding whether there is a contract for the system has been corrected.
-
-To assist users of earlier 3.x versions of the guidance in ensuring that their existing data safety arguments have not been impacted by this update, a version of this document is available which has been annotated with change bars. To avoid clutter, minor changes that should not affect the meaning of the text have not been marked with change bars. The annotated version is available at \href{http://scsc.uk/scsc-127J}{http://scsc.uk/scsc-127J}
-
+The process remains substantially the same. The intention is that conformance with this version does imply conformance with earlier versions , but some material that was informative\index{Informative Text} in earlier versions has been made normative\index{Normative Text}, so conformance with earlier versions of the guidance does not guarantee conformance with this version.
 \subsection*{Future work}
 %An \gls{scsc} Ontology Working Group is currently developing a formal ontology for risk management.\todo{Update this later}
 %Once this model is sufficiently mature, the intention is to apply it to data safety risk management and thus formalise the terminology and conceptual relationships used in this guidance.
 %An introduction to the ontological modelling was provided in the proceedings to \acrshort{sss}’20 \cite{citation:Banham2020} and a progress update on the work was presented at \acrshort{sss}’22.
+Proposed future work includes elaboration and expansion of scenarios to enable different routes into this guidance. An appendix of scenarios is included as a starting point at \dsiwgExtRef{Appendix}{2}{bkm:scenario}.
 
 MCA Ltd has continued to work with the \gls{dsiwg} to develop a prototype software tool to assist in the automation of the processes described in this guidance document.
 A working version of the tool has been developed and organizations that could benefit from the use and further development of the tool are urged to contact MCA at \href{mailto:radish@mca-ltd.com}{Mission Critical Applications Limited (radish@mca-ltd.com)}.
 %A description of the tool is presented in \dsiwgRef{Appendix}{bkm:radish}.
 
 A number of improvements to the guidance are currently planned.
-These improvements are intended to clarify the application of the data safety process
-and include:
+These improvements are intended to clarify the application of the data safety process and include:
 \begin{itemize}
-\item further detail on the assurance of communications and data flows,
-\item data safety considerations associated with distributed \glspl{dataset} and Blockchain,
-\item addition of new \glspl{treatment} to the tables in \autoref{bkm:guidance},
-\item review of the tables of \glspl{treatment}, with the aim of making them easier to use,
-\item further explanation of some \glspl{treatment}, where their use or benefit is not immediately apparent, 
-\item reordering of parts of the document to improve readability, especially as regards likelihood, 
-\item further detail on tool assurance,
-\item harmonisation of language and guidance on how organizations may expand the tables to incorporate their own internal processes.
-\item guidance on the application of the data safety culture questionnaire,
-\end{itemize}
-Several of these changes are likely to
-cause parts of the document to be re-ordered -- they have therefore been deferred to the next major update, in version 4.0 of the guidance.
+	\item further detail on the assurance of communications and data flows;
+	\item data safety considerations associated with distributed \glspl{dataset} and Blockchain;
+	\item further explanation of some \glspl{treatment}, where their use or benefit is not immediately apparent; and 
+	\item further elaboration of issues related to machine learning, \glspl{llm} and generative \gls{ai}.
+	\end{itemize}
 
-If you or your organization are interested in learning more about the work of the \gls{dsiwg} or joining any of the sub-groups,
-please visit the \gls{scsc} website, where more information including contact details may be found on the ``Working groups'' section of the site.
 %
 %
 %
 \subsection*{Related working groups}
-The \gls{scsc} sponsors initiatives to develop methods and techniques through a number of working groups. These groups each address safety aspects peculiar to their domain, including data aspects when appropriate. The current list of working groups includes:
+Related \gls{scsc} working groups include:
 %
 \begin{itemize}
-  \item Assurance Cases,
-\item Security Informed Safety,
-  \item \Glsfmtlong{saiwg},
-  \item Safer Complex Systems. 
+	\item Assurance Cases,
+	\item Security Informed Safety,
+	\item \Glsfmtlong{saiwg},
+	\item Safer Complex Systems. 
 \end{itemize}
 %
 %
@@ -207,21 +172,21 @@ The \gls{scsc} sponsors initiatives to develop methods and techniques through a 
 
 \dsiwgTextBF{Data is here}:
 Data is becoming ever more important in our lives: influencing, managing and even controlling many critical aspects.
-The use of \gls{ai} systems is a new, exciting, but potentially hazardous use of data. \Gls{llm} based systems are trained on vast amounts of data, and it is this data which enables them to be useful.
+The use of \gls{ai} systems is a new, exciting, but potentially hazardous use of data. \Gls{llm} based systems are trained on vast amounts of data, and it is this data which enables them to be useful. Although \gls{ml} systems tend to be trained on specifically curated data, these can also be subject to issues such as bias, poisoning and omission.
 
 Some of this data is related to our personal safety and well-being.
 Consider, for example, the importance of data defining the layout of railway signals,
-data that indicates the position of underwater obstructions in nautical channels or data that
+data that indicates the position of underwater obstructions in nautical channels, or data that
 is used to train a vision recognition system to detect tumours in medical images.
 Organizations now make significant decisions (including safety-related decisions) based solely on data held in systems.
 Hence, organizations need to safely manage, control and process their data.
 In particular, they must actively manage key \index{Property!Data}\glspl{data property} that preserve safety.
 
-\dsiwgTextBF{Data is growing}: There are at least two reasons why the use of data has grown and, equally important, why it is expected to continue to grow. The  first relates to the rapid expansion of the area loosely termed ``Big Data'', including the use of large \glspl{dataset} to support machine learning and \gls{ai} applications. The second is the growing use of systems of systems, where data is the lifeblood that connects together disparate elements and allows a cohesive capability to be built. Put simply, the need to address data-related issues is a pressing problem and will continue to be so.
+\dsiwgTextBF{Data is growing}: There are many reasons why the use of data has grown and, equally important, why it is expected to continue to grow. The  first relates to the rapid expansion \gls{ai}, particularly \glspl{llm} which are trained on vast amounts of data. A second area is ``Big Data''. A further area is the growing use of systems-of-systems, where data is the lifeblood that connects together disparate elements and allows a cohesive capability to be built. Put simply, the need to address data-related issues is a pressing problem and will continue to be.
 
 \dsiwgTextBF{Data is causing harm}: Strictly speaking,
 data can neither cause nor prevent harm.
-However,  mistakes in data, or the inappropriate use of data, within safety-related systems have been factors in a number of documented accidents and incidents. Examples include aircraft attempting to take off from the wrong runway (and consequently crashing), ships running aground, and patients being exposed to higher than planned doses of radiation.
+However, mistakes in data or inappropriate uses of data within safety-related systems have been factors in a number of documented accidents and incidents. Examples include aircraft attempting to take off from the wrong runway (and consequently crashing), ships running aground, and patients being exposed to higher than planned doses of radiation.
 
 Against this background, the \gls{dsiwg} was established under the auspices of the \gls{scsc}. The \gls{dsiwg}'s aim is to develop clear, cross-sector guidance that reflects emerging best practice on how data (as opposed to software or hardware) should be managed in a safety-related context.
 For the most part, this guidance is based on well-established techniques,
@@ -237,44 +202,39 @@ Because of this focus, this guidance should help organizations identify, analyse
 
 This section provides a single-page introduction to \gls{dsg}. For first-time readers this should help place individual sections within an appropriate context. It should also help returning readers quickly navigate the document's contents.
 
-When reference is made to the content of other volumes, this is indicated by the volume number shown in bold text. So ``\dsiwgExtRef{Chapter}{2}{bkm:activities}'' refers to chapter \ref*{Part2-bkm:activities} in volume 2.
+When reference is made to the content of other volumes, this is indicated by the volume number followed by the reference within that volume in parentheses. So ``\dsiwgExtRef{Chapter}{2}{bkm:DsalCustomisation}'' refers to chapter \ref*{Part2-bkm:DsalCustomisation} in volume 2.
 
 
 Systems are changing. The role of data is becoming more prominent. Hence, data needs to be considered as a ``first-class citizen'' in system safety analyses. This will help mitigate organizational and system-level risks associated with the use of data.
 
 The guidance is in three volumes, published as separate documents.
 \begin{description}
-	\item[Volume 1] contains the normative material. It describes the ``what'' of the guidance and states what is needed to ensure conformance with this guidance, if required. It should be of use to those establishing processes and procedures for data safety assurance and for those doing the actual assurance;
-	\item[Volume 2] contains the informative material. It describes the ``how'' of the guidance and should be of particular value to data safety practitioners;
-	\item[Volume 3] (this volume) contains the discursive material. It describes the ``why'' of the guidance and gives background and supporting material intended to improve practitioner's understanding of the data safety management processes and of issues relating to data safety management.
+	\item[Volume 1] contains the normative\index{Normative Text} material. It describes the ``what'' of the guidance and states what is needed to ensure conformance with this guidance, if required. It should be of use to those establishing processes and procedures for data safety assurance and for those doing the actual assurance;
+	\item[Volume 2] contains the informative\index{Informative Text} material. It describes the ``how'' of the guidance and should be of particular value to data safety practitioners;
+	\item[Volume 3] (this volume) contains the discursive\index{Discursive Text} material. It describes the ``why'' of the guidance and gives background and supporting material intended to improve practitioner's understanding of the data safety management processes and of issues relating to data safety management.
 \end{description}
-
-A data safety management process has been developed. This is based on four phases:
+	
 \begin{itemize}
-	\item establish context;
-	\item identify risks;
-	\item analyse risks; and
-	\item evaluate and \gls{treat} risks.
-\end{itemize}
-\hl{???This part needs rewriting when structure is stable}
-\cbstart
-\begin{itemize}
-	\item The underlying principles of the guidance are described in \dsiwgExtRef{Chapter}{1}{Part1-bkm:principles}.
-	\item The objectives and outputs to satisfy the principles are described in \dsiwgExtRef{Chapter}{1}{Part1-bkm:objectives}.
-	\item Normative definitions and abbreviations are described in \dsiwgExtRef{Chapter}{1}{Part1-bkm:definitionsabbreviations}.
-	\item The activities of each phase (and associated \gls{tailoring} \gls{information}) are described in \dsiwgRef{Chapter}{bkm:activities}.
-	\item A worked example is provided in Chapter \dsiwgExtRef{Chapter}{2}{bkm:workedexample}.
+	\item The data properties that need to be guaranteed to ensure system safety are described in \dsiwgExtRef{Chapter}{1}{bkm:dataProperties}
+	\item The underlying principles of the guidance are described in \dsiwgExtRef{Chapter}{1}{bkm:principles}.
+	\item The objectives and outputs to satisfy the principles are described in \dsiwgExtRef{Chapter}{1}{bkm:objectives}.
+	\item Definitions and abbreviations are described in \dsiwgExtRef{Chapter}{1}{bkm:definitionsabbreviations}.
+	\item A possible data safety management process is outlined in \dsiwgExtRef{Chapter}{2}{bkm:process}
+	\item The activities of each phase (and associated \gls{tailoring} \gls{information}) are described in \dsiwgExtRef{Chapter}{2}{bkm:activities}.
+	\item More detailed guidance is given in \dsiwgExtRef{Chapter}{2}{bkm:guidance}
+	\item A worked example is provided in \dsiwgExtRef{Chapter}{2}{bkm:workedexample}.
 	\item Guidance for the assignment of \glspl{dsal} is given in \dsiwgExtRef{Chapter}{2}{bkm:DsalCustomisation}.
-	\item Examples of ways that \glspl{dsal} may be customised, with particular focus on likelihood are given in \dsiwgExtRef{Chapter}{2}{bkm:tools}.
+	\item Tool qualification is addressed in \dsiwgExtRef{Chapter}{2}{bkm:tools}.
 	\item Issues relating to \gls{ai} and \gls{ml} are considered in \dsiwgExtRef{Chapter}{2}{bkm:MachineLearning} and \dsiwgExtRef{Chapter}{2}{bkm:autonomy}.
-	\item Additional information on data categories \todo{We never seem to explain what we mean by data categories. Consider doing so.}is given in \dsiwgExtRef{Chapter}{2}{Part2-bkm:categories}.
-	\item Issues that may arise when migrating, porting, importing or exporting data are discussed in \dsiwgExtRef{Chapter}{2}{bkm:migration}).            
-	\item Lifecycle considerations are addressed in \dsiwgRef{Chapter}{Part3-bkm:lifecycle}.
-	\item The data safety tool RADISH is described in \dsiwgRef{Chapter}{Part3-bkm:radish}.
-	\item Some of the data issues that made management of the Covid-19 virus difficult are discussed in \dsiwgRef{Chapter}{Part3-bkm:Covid19}.
-	\item A summary of accidents and incidents in which data was potentially a causal factor is given in Chapter \dsiwgRef{Chapter}{Part3-bkm:accidents};
-	\cbend
+	\item Additional information on lifecycle data categories is given in \dsiwgExtRef{Chapter}{2}{bkm:categories}.
+	\item Issues that may arise when migrating, porting, importing or exporting data are discussed in \dsiwgExtRef{Chapter}{2}{bkm:migration}).
+	\item Rare events are addressed in \dsiwgExtRef{Chapter}{2}{bkm:cygnology}.
+	\item Lifecycle considerations are addressed in \dsiwgRef{Chapter}{bkm:lifecycle}.
+	\item The data safety tool RADISH is described in \dsiwgRef{Chapter}{bkm:radish}.
+	\item Some of the data issues that made management of the Covid-19 virus difficult are discussed in \dsiwgRef{Chapter}{bkm:Covid19}.
+	\item A summary of accidents and incidents in which data was potentially a causal factor is given in Chapter \dsiwgRef{Chapter}{bkm:accidents};
 \end{itemize}
+
 %
 % Table of Contents
 %
@@ -296,5 +256,5 @@ A data safety management process has been developed. This is based on four phase
 %
 %\section*{List of Figures}
 %\medskip
-\listoffigures
-\cleardoublepage%ensures body of document will start on a right-hand page
+%\listoffigures
+%\cleardoublepage%ensures body of document will start on a right-hand page
