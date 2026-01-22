@@ -21,7 +21,7 @@
   {Gus O'Donnell}
 \section{General}
 
-The data safety assurance principles (Chapter \ref{bkm:principles}) provide the underpinning philosophy for this guidance. An implementation of the guidance would be based around these objectives. This section identifies the objectives to satisfy the principles.
+The data safety assurance principles (Chapter \ref{bkm:principles}) provide the underpinning philosophy for this guidance. Conformance to this guidance could be based around these principles. This section identifies the objectives to satisfy the principles.
 
 
 \section{Principle 1}
@@ -99,13 +99,13 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	  \\\hline
 	1.m & %
 	  \glspl{dsal} SHALL be established and justified.&%
-	  A list of \glspl{dsal} and their justifications.&%
+	  A list of \glspl{dsal} assigned to components and their justifications.&%
 	  \dsiwgExtRef{Chapter}{2}{bkm:guidance} %
 	  \\\hline
 	1.n &%
 	The risk appetite of stakeholders regarding data risks SHALL be established.&%
-	Data safety management plan.&
-	\hl{???Don't seem to address this in the guidance}%
+	The \gls{dsmp}&
+	\dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	\\\hline
 	 \end{longtable}
 \cbend
@@ -146,12 +146,12 @@ This principle is based on standard systems engineering practices whereby a syst
 	2.e &%
 	  Data-related interactions between components SHALL be considered.&%
 	  Interactions report. &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:interactions}%
 	  \\\hline
 	2.f &%
 	  Data-related interactions with other systems SHALL be considered.&%
 	  Interactions report.&%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:interactions}%
 	  \\\hline
 	2.g &%
 	  Techniques and approaches for mitigating data risks SHALL be identified&%
@@ -161,7 +161,7 @@ This principle is based on standard systems engineering practices whereby a syst
 	2.h &%
 	  Unintended interactions affecting data SHALL be identified.&%
 	  Interactions report.&%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:interactions}%
 	  \\\hline
 	2.i &%
 	  Techniques and tools used for data analysis SHALL be justified.&%
@@ -189,54 +189,48 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	3.a &%
 	  Methods and techniques used to verify data safety requirements SHALL be documented and justified &%
 	  A record of the treatment adopted for each of the identified risks &%
-   \dsiwgExtRef{Chapter}{2}{bkm:guidance}%
+   \dsiwgExtRef{Chapter}{2}{bkm:guidance}; \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	  \\\hline
-	\multirow{2}{*}{3.b} &%
-	  \multirow{2}{5cm}{Data safety requirements SHALL be verified.}&%
-	  Evidence that the treatment has been successfully implemented E.g. through test, analysis, review or other methods&%
-	  \hl{???Don't seem to address this in the guidance}%
-	  \\\cline{3-4}
-	  & & Verification reports &
-   \dsiwgExtRef{Chapter}{2}{bkm:guidance}%
+	3.b &
+	  Data safety requirements shall be verified.&%
+	  Verification reports &%
+	  \dsiwgExtRef{Chapter}{2}{bkm:guidance}%
 	  \\\hline
 	3.c &%
 	   Methods and tools used to provide supplemental and supporting assurance SHALL be documented.&%
-	   & %
-	   \hl{???Don't seem to address this in the guidance}%
+	   A description of the addition processes, methods and tools which provide backing assurance.& %
+	   \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	   \\\hline
 	3.d &%
 	  \Glspl{dsal} SHALL be satisfied. &%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Conformance to \glspl{dsal} by reference to the mitigation tables.&%
+	  \dsiwgExtRef{Section}{2}{bkm:EvaluateAndTreat}%
 	  \\\hline
 	3.e &%
 	  Trusted tools SHALL be used to produce verification evidence &%
-	  &%
+	  Tools used to produce verification evidence should be appropriately qualified and justified.&%
 	  \dsiwgExtRef{Chapter}{2}{bkm:tools}\\\hline
 	3.f &%
 	  Verification evidence SHOULD include evidence acquired from field or historical usage where available &%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Ideally, real-world usage evidence should be used to support verification. The usage scenarios SHOULD accurately reflect the intended usage of the system being verified.&%
+	  External%
 	  \\\hline
-	\multirow{2}{*}{3.g} &%
-	  \multirow{2}{5cm}{Conformance with data safety requirements SHALL be documented.}&%
+	3.g &%
+	  Conformance with data safety requirements SHALL be documented.&%
 	  Conformance matrix & %
-	  \hl{???Don't seem to address this in the guidance}%
-	  \\\cline{3-4}
-	  & & An assessment as to whether the risk has been suitably mitigated (and, if not, plans for further mitigation activities). &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Normal engineering process%
 	  \\\hline
 	3.h &%
-	  Data safety requirements which are partially or not met SHALL identified and justified &%
+	  Data safety requirements which are partially or not met SHALL be identified and justified &%
 	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Normal engineering process%
 	  \\\hline
 	3.i &%
 	  Data which is missing or hidden SHALL be assessed for impact. &%
 	  A missing and hidden data resilience report.&%
-	  \hl{???Don't seem to have an activity for this, though could reference chapter on dark and dazzle data.} %
+	  \dsiwgExtRef{Chapter}{2}{bkm:darkdazzledata} %
 	  \\\hline
-\end{longtable}
+	\end{longtable}
 \cbend
 
 \section{Principle 4}
@@ -256,32 +250,33 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	4.a &%
 	  Key properties of the data SHALL be analysed for failures which lead to safety risks.&%
 	  Data-focussed Functional Failure Analysis. &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  TBA and \dsiwgExtRef{Appendix}{2}{bkm:interactions}%
 	  \\\hline
 	4.b &%
 	  Unintended behaviour resulting from data SHALL be identified, analysed and addressed.&%
 	  Unintended Behaviours Report. &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:unintended} and \dsiwgExtRef{Appendix}{2}{bkm:interactions}%
 	  \\\hline
 	4.c & Unintended behaviour resulting from
       hidden or absent data SHALL be identified and analysed. &%
       Unintended Behaviours Report.&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:unintended} and
 	  \dsiwgExtRef{Chapter}{2}{bkm:darkdazzledata}%
 	  \\\hline
 	4.d &%
 	  Emergent and unanticipated effects due to data SHALL be investigated.&%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Unintended Behaviours Report.&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:unintended} and \dsiwgExtRef{Appendix}{2}{bkm:interactions}
 	  \\\hline
 	4.e &%
 	  Resilience measures to deal with unknowns of the data SHALL be considered. &%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Unintended Behaviours Report.&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:unintended} and \dsiwgExtRef{Appendix}{2}{bkm:interactions}
 	  \\\hline
 	4.f &%
 	  Unintended behaviour resulting from malicious data SHALL be identified and analysed.&%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Unintended Behaviours Report.&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:unintended} and \dsiwgExtRef{Appendix}{2}{bkm:interactions}
 	  \\\hline
 \end{longtable}
 \cbend
@@ -303,29 +298,29 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	\endfoot\endlastfoot
 	\hline
 	5.a & %
-	  \Glspl{dsal} SHALL be demonstrably applied.&%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \Glspl{dsal} SHALL be appropriately applied.&%
+	  The application and conformance to \glspl{dsal} needs to be appropriate for the level of risk presented by the system.&%
+	  \dsiwgExtRef{Chapter}{2}{bkm:activities} and \dsiwgExtRef{Section}{2}{bkm:EvaluateAndTreat}%
 	  \\\hline
 	5.b &%
 	  Assurance artefacts\index{Artefact!Assurance} SHALL be produced with a level of rigour commensurate with the \gls{dsal} and data safety requirements.&%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Artefacts used to demonstrate the safety of the system need  to be produced in an appropriate way for the system risk.&%
+	  \dsiwgExtRef{Chapter}{2}{bkm:activities} and \dsiwgExtRef{Section}{2}{bkm:EvaluateAndTreat}%
 	  \\\hline
 	5.c &%
 	  Activities, methods, analyses, and tools used to provide assurance SHALL be appropriate for the \gls{dsal} and stakeholder group. &%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  This is addressed in the \gls{smp}.&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:plan} and \dsiwgExtRef{Chapter}{2}{bkm:tools}%
 	  \\\hline
 	5.d &%
 	  Specific confidence demands from stakeholder groups  regarding data SHALL be addressed.&%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  This is addressed in the \gls{smp}&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	  \\\hline
 	5.e &%
-	  Residual risks  regarding data SHALL be documented. &%
-	  &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  Residual risks regarding conformance to the data safety principles SHALL be documented. &%
+	  Residual conformance risks would typically be recorded in an overall system safety justification document such as a safety case.&%
+	  External%
 	  \\\hline
   \end{longtable}
 \cbend
@@ -346,31 +341,38 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	\hline
 	6.a &%
       All changes that impact these principles and objectives SHALL be assessed and managed.&%
-	  \hl{populate this table}&%
+	  The \gls{dsmp} continues to apply through system life.&%
+	  \dsiwgExtRef{Appendix}{2}{bkm:plan}
 	  \\\hline
     6.b &%
       Assurance artefacts\index{Artefact!Assurance} SHALL be maintained.&%
-      &%
+      The \gls{dsmp} continues to apply through system life.&%
+      \dsiwgExtRef{Appendix}{2}{bkm:plan}
       \\\hline
     6.c &%
       Measures SHALL be in place to monitor the behaviour of the SCS at appropriate intervals throughout its life.&%
-      &%
+      The \gls{dsmp} continues to apply through system life.&%
+      \dsiwgExtRef{Appendix}{2}{bkm:plan}
       \\\hline
     6.d &%
       Use SHALL be monitored for change and an assurance impact analysis undertaken  where necessary.&%
-      &%
-      External\\\hline
+      The \gls{dsmp} continues to apply through system life.&%
+      \dsiwgExtRef{Appendix}{2}{bkm:plan}
+      \\\hline
     6.e &%
       Evolution and incremental change SHALL be considered.&%
-      &%
+      The \gls{dsmp} continues to apply through system life.&%
+      \dsiwgExtRef{Appendix}{2}{bkm:plan}
       \\\hline
     6.f &%
       Longevity and obsolescence of data SCS SHALL be considered.&%
-      &%
+      The \gls{dsmp} continues to apply through system life.&%
+      \dsiwgExtRef{Appendix}{2}{bkm:plan}
       \\\hline
     6.g &%
       Lessons learned from successful operation, failures and incidents SHOULD be reviewed&%
-      &%
+      The \gls{dsmp} continues to apply through system life.&%
+      \dsiwgExtRef{Appendix}{2}{bkm:plan}
       \\\hline
 \end{longtable}
 
