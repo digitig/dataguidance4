@@ -17,15 +17,15 @@
 \chapter{Objectives \label{bkm:objectives}}
 
 \dsiwgSectionQuote
-  {I'm a bit of a freak for evidence-based analysis. I strongly believe in data.}
-  {Gus O'Donnell}
+  {Management by objective works -- if you know the objectives. Ninety percent of the time you don't.}
+  {Peter Drucker}
 \section{General}
 
 The data safety assurance principles (Chapter \ref{bkm:principles}) provide the underpinning philosophy for this guidance. Conformance to this guidance could be based around these principles. This section identifies the objectives to satisfy the principles.
 
 
 \section{Principle 1}
-\dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} shall be defined to address the data contribution to system hazards.}}
+\dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} SHALL be defined to address the data contribution to system hazards.}}
 
 The objectives and outputs supporting this principle are shown in Table \ref{tab:p1_principles}.
 \begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.29}}|L{\dsiwgColumnWidth{0.29}}|L{\dsiwgColumnWidth{0.2}}|}
@@ -111,10 +111,9 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 \cbend
 
 \section{Principle 2}
-\dsiwgTextBF{\dsiwgTextIT{The intent of \index{Safety Requirement!Data}\glspl{data safety requirement} shall be maintained throughout requirements decomposition.}}
+\dsiwgTextBF{\dsiwgTextIT{The intent of \index{Safety Requirement!Data}\glspl{data safety requirement} SHALL be maintained throughout requirements decomposition.}}
 
 This principle is based on standard systems engineering practices whereby a system is gradually developed at increasing levels of design detail. In order to cater for a wide range of systems, across a wide range of economic sectors, \gls{dsg} does not specifically require an explicit hierarchical decomposition of requirements. However, it does note that \glspl{data artefact}\index{Artefact!Data|)} MAY be defined at a number of levels of increasing detail. The objectives and outputs supporting this principle are shown in Table \ref{tab:p2_principles}.
-
 \begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.39}}|L{\dsiwgColumnWidth{0.39}}|L{\dsiwgColumnWidth{0.16}}|}
 	\caption{P2 Objectives and Outputs}\label{tab:p2_principles}
 	\\\hline\TableHeadColourC{Id} & \TableHeadColour{Objectives} & \TableHeadColour{Brief Explanation and Deliverables} & \TableHeadColour{Reference in the Guidance} 	\endfirsthead
@@ -126,22 +125,22 @@ This principle is based on standard systems engineering practices whereby a syst
 	2.a & %
 	  Levels of abstraction of the data SHALL be defined. &%
 	  Levels of Abstraction report. This MAY be in diagrammatic form. There MAY be several levels of data  abstraction, presenting different relevant perspectives. &%
-      \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Subsection}{2}{bkm:abstraction}%
       \\\hline
 	2.b &%
 	  \glspl{dsal} SHALL be flowed through levels of the design &%
 	  Traceability records showing the flow of \glspl{dsal} through the design.&%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	  \\\hline
 	2.c &%
 	  Data assurance requirements SHALL be established for each level of system design. &%
 	  Requirements documents. &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	  \\\hline
 	2.d &%
 	  Data assurance requirements SHALL be traced between each level of system design &%
 	  Traceability report &%
-	  \hl{???Don't seem to address this in the guidance}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	  \\\hline
 	2.e &%
 	  Data-related interactions between components SHALL be considered.&%
@@ -172,7 +171,7 @@ This principle is based on standard systems engineering practices whereby a syst
 \cbend
 
 \section{Principle 3}
-\dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} shall be satisfied.}}
+\dsiwgTextBF{\dsiwgTextIT{\index{Safety Requirement!Data}\Glspl{data safety requirement} SHALL be satisfied.}}
 
 The objectives and outputs supporting this principle are shown in Table \ref{tab:p3_principles}.
 
@@ -192,7 +191,7 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
    \dsiwgExtRef{Chapter}{2}{bkm:guidance}; \dsiwgExtRef{Appendix}{2}{bkm:plan}%
 	  \\\hline
 	3.b &
-	  Data safety requirements shall be verified.&%
+	  Data safety requirements SHALL be verified.&%
 	  Verification reports &%
 	  \dsiwgExtRef{Chapter}{2}{bkm:guidance}%
 	  \\\hline
@@ -234,7 +233,7 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 \cbend
 
 \section{Principle 4}
-\dsiwgTextBF{\dsiwgTextIT{Hazardous system behaviour arising from the system's use of data shall be identified and mitigated\index{Mitigation}.}}
+\dsiwgTextBF{\dsiwgTextIT{Hazardous system behaviour arising from the system's use of data SHALL be identified and mitigated\index{Mitigation}.}}
 
 The objectives and outputs supporting this principle are shown in Table \ref{tab:p4_principles}.
 \begin{longtable}{|C{\dsiwgColumnWidth{0.06}}|L{\dsiwgColumnWidth{0.39}}|L{\dsiwgColumnWidth{0.39}}|L{\dsiwgColumnWidth{0.16}}|}
@@ -250,7 +249,7 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 	4.a &%
 	  Key properties of the data SHALL be analysed for failures which lead to safety risks.&%
 	  Data-focussed Functional Failure Analysis. &%
-	  TBA and \dsiwgExtRef{Appendix}{2}{bkm:interactions}%
+	  \dsiwgExtRef{Appendix}{2}{bkm:interactions}. Future work to develop this further.%
 	  \\\hline
 	4.b &%
 	  Unintended behaviour resulting from data SHALL be identified, analysed and addressed.&%
@@ -283,7 +282,7 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
 
 
 \section{Principle 5}
-\dsiwgTextBF{\dsiwgTextIT{The confidence established in addressing the data safety assurance principles shall be commensurate to the contribution of data to system risk.}}
+\dsiwgTextBF{\dsiwgTextIT{The confidence established in addressing the data safety assurance principles SHALL be commensurate to the contribution of data to system risk.}}
 
 The objectives and outputs supporting this principle are shown in Table \ref{tab:p5_principles}.
 
@@ -375,4 +374,3 @@ The objectives and outputs supporting this principle are shown in Table \ref{tab
       \dsiwgExtRef{Appendix}{2}{bkm:plan}
       \\\hline
 \end{longtable}
-

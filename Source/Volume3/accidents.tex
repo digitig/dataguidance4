@@ -53,23 +53,24 @@ Two tables are presented to assist the reader in finding incidents and accidents
   \hline
     %%%
     \multicolumn{4}{|l|}{\TableDimColour{\sl Air}}\\\hline
-    \ref{bkm:incacc:737max8} & Boeing 737 MAX~8 crashes &
+    \ref{bkm:mac991} & A320-214 Catania incident September 2025 &
+    \ref{bkm:incacc:737max8} & Boeing 737 MAX~8 crashes \\
     %
-    \ref{bkm:incacc:lot282} & LOT Flight 282\\    
+    \ref{bkm:incacc:lot282} & LOT Flight 282&    
     %%
-    \ref{bkm:accinc:turkisha330} & Turkish Airlines A330 &
+    \ref{bkm:accinc:turkisha330} & Turkish Airlines A330 \\
     %
-    \ref{bkm:incacc:comair5191} & Comair Flight 5191\\
+    \ref{bkm:incacc:comair5191} & Comair Flight 5191&
     %%
-    \ref{bkm:incacc:qantastakeoff} & Qantas Boeing 737 Take-Off &
+    \ref{bkm:incacc:qantastakeoff} & Qantas Boeing 737 Take-Off \\
     %
-    \ref{bkm:incacc:uberlingen} & \"Uberlingen Mid-Air Collision\\
+    \ref{bkm:incacc:uberlingen} & \"Uberlingen Mid-Air Collision&
     %%
-    \ref{bkm:incacc:qantasloading} & Qantas Boeing 737 Loading &
+    \ref{bkm:incacc:qantasloading} & Qantas Boeing 737 Loading \\
     %
-    \ref{bkm:incacc:nimitzhill} & Crash into Nimitz Hill, Guam\\
+    \ref{bkm:incacc:nimitzhill} & Crash into Nimitz Hill, Guam&
     %%
-    \ref{bkm:incacc:737-33A} & Boeing 737-33A at Chambery Airport, France & &\\%%%
+    \ref{bkm:incacc:737-33A} & Boeing 737-33A at Chambery Airport, France\\%%%
     \hline
     %%%
     \multicolumn{4}{|l|}{\TableDimColour{\sl Air (Defence)}}\\\hline
@@ -184,6 +185,8 @@ Two tables are presented to assist the reader in finding incidents and accidents
   %
   \hline
   %
+  \ref{bkm:inacc:mac991} & A320-214 Catania incident September 2025\index[locationidx]{Italy} & Failure to enter takeoff parameters into the \gls{fms} contributed to an unexpected loss of altitude on takeoff.&Flight&2025 &\gls{completeness}\index{Completeness Property}\\
+  \hline
   \ref{bkm:incacc:horizon} & Post Office Horizon System\index[locationidx]{United Kingdom} &
   Non-atomic transactions and other errors in accounting software lead to false prosecutions, lost livelihoods, and suicides. &
   Accountancy & 1999 & \Gls{integrity}\index{Integrity Property}, \gls{completeness}\index{Completeness Property}, \gls{traceability}\index{Traceability Property}, \gls{verifiability}\index{Verifiability Property}, \gls{history}\index{History Property}\\ 
@@ -308,7 +311,15 @@ Two tables are presented to assist the reader in finding incidents and accidents
 
 \end{longtable}
 
-%\clearpage% Inserted to better format 737 MAX 8 after inserting Soyuz - a new war story may make this unnecessary
+\section{A320-214 Catania incident September 2025}\index[locationidx]{Italy}\label{bkm:inacc:mac991}
+On September 20, 2025, an Air Arabia Maroc Airbus A320-214, registration CN-NML, took off from Catania Fontanarossa International Airport in Sicily for a positioning flight. Shortly after takeoff, the aircraft experienced an unexpected descent, causing multiple ground proximity warning alerts. The crew initiated a successful recovery manoeuvrer and continued the flight without incident. The minimum recorded altitude was 41ft  (12.5m). The operator reported the descent to the \gls{ansv} which classified it as a serious incident and initiated a safety investigation.
+
+The preliminary investigation indicates that the takeoff performance data was not entered into the \gls{fms}. The \gls{fms} had not been fitted with an upgrade which would have given a warning in this case. Had the takeoff performance data been entered into the \gls{fms}, the \gls{fms} would have maintained the reference speed during the climb. However, without the takeoff performance data, the \gls{fms} engaged vertical speed mode and attempted a vertical speed profile derived from the initial climb rate, which actually led to a descending profile.
+
+At the time of writing, the reason for the performance data not being entered has not been identified. Some other crew actions are as yet unexplained. The omission of the performance data does, however, seem to have been a significant contribution to this serious incident. \cite{citation:mac991}, \cite{citation:mac991:prelim}.
+
+\Glspl{data property} involved. The performance data not being entered amounted to a loss of the \dsiwgTextIT{\index{Completeness Property}\gls{completeness}}.
+
 \section{Post Office Horizon System}\index[locationidx]{United Kingdom}\label{bkm:incacc:horizon}
 Post Office Limited is a company wholly owned by the UK government, and provides a variety of counter services to the general public. These include postal services, banking services including currency exchange, issue of international driving permits, driving licence renewals, passport application checks, benefits payments, and various other services. A small number of branches are operated by Post Office Limited itself (``Crown Post Offices''), but the vast majority are operated under contract (``Branch Post Offices'') by independent persons known as \glspl{spm}.
 
