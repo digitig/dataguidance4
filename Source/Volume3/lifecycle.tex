@@ -25,7 +25,7 @@ If safety-related data is incorrect it can become dangerous when used, either by
   \centering
   \includegraphics[width=0.75\textwidth]{images/producerconsumer}
   %\includegraphics[width=0.75\textwidth]{images/producerconsumer.png}
-  \caption{Consumer-focused \index{Integrity Property}\glsfmttext{integrity} requirements}
+  \caption{Consumer-focused \index{Integrity Property}\index{Data Property!Integrity}\glsfmttext{integrity} requirements}
   \label{fig:producerconsumer}
 \end{figure}
 
@@ -33,7 +33,7 @@ The producer investigates how the safety-related data is collected and what erro
 
 The consumer assesses the use of the safety-related data. In later phases of the data safety management process this \gls{information} is used to define the required \glspl{data property}: for example, how accurate a particular safety-related \index{Artefact, Data}\gls{data artefact} must be.
 
-In some cases a producer will be providing safety-related data without any knowledge of a specific user (e.g., mapping data or generic \glspl{database} that are sold to many users). In these cases the producer will need to make some assumptions about possible users, and then clearly state what level of \index{Integrity Property}\gls{integrity} the data has been produced to. It is then up to the users to check whether the declared \index{Integrity Property}\gls{integrity} matches their need.
+In some cases a producer will be providing safety-related data without any knowledge of a specific user (e.g., mapping data or generic \glspl{database} that are sold to many users). In these cases the producer will need to make some assumptions about possible users, and then clearly state what level of \index{Integrity Property}\index{Data Property!Integrity}\gls{integrity} the data has been produced to. It is then up to the users to check whether the declared \index{Integrity Property}\index{Data Property!Integrity}\gls{integrity} matches their need.
 
 
 
@@ -156,7 +156,7 @@ Some suggestions for test data for safety-related systems are:
 \end{itemize}
 Typically very complex test data is derived from recorded live feeds of real data flows. While this data can be extremely useful for regression purposes, it should be recognised that it is unlikely to contain many outlying or boundary \glspl{item data}. Therefore it may need to be modified to test any hazardous situations; this modification can be difficult and may require sophisticated tools to both ensure correct \index{Property!Data}properties and injection of the intended faults (for instance to introduce a statistical bias to the data).
 
-Simulator / emulator derived values can be useful, but again the issue is how realistic the values are: often the \index{Accuracy Property}\gls{accuracy}, \gls{resolution} or timing of simulated values may be different to real data.
+Simulator / emulator derived values can be useful, but again the issue is how realistic the values are: often the \index{Accuracy Property}\index{Data Property!Accuracy}\gls{accuracy}, \gls{resolution} or timing of simulated values may be different to real data.
 
 Coverage with test data is something to consider. Sometimes the same \gls{dataset} is used for multiple test scenarios, when in fact it is not stressing all of them to the same degree. Test data coverage can be collected over requirements, code or design, but it is important not to forget hazards: coverage of the hazards and mitigations\index{Mitigation} identified in the \gls{hazard log} is a key aim. 
 
@@ -191,9 +191,9 @@ For an organization aiming to create systems that are both safe and secure, thes
 
 These links between safety and security infer that there are connections between the sub-categories of data safety and \gls{information} security: both attempt to take a data-centric view of the system of interest in order to improve the associated quality factor; and both attempt to prevent harm through the preservation of the \index{Property!Data}properties of data within that system.
 
-In the security domain, the three key properties of data considered are \gls{confidentiality}, \index{Integrity Property}\gls{integrity}, and \gls{availability}. \Gls{confidentiality}, the failure of which is termed ``\gls{information} disclosure'' in the Microsoft Security Model, \cite{citation:leblanc2002writing} is typically not a safety concern as, without malicious intent, \gls{information} sharing is not inherently unsafe. However, when considering systems where \gls{confidentiality} is an important property, the interaction between data safety and security cannot be trivially resolved. For example, accidental disclosure of \gls{information} can form part of a causal chain which leads to harm from a malicious actor.
+In the security domain, the three key properties of data considered are \gls{confidentiality}, \index{Integrity Property}\index{Data Property!Integrity}\gls{integrity}, and \gls{availability}. \Gls{confidentiality}, the failure of which is termed ``\gls{information} disclosure'' in the Microsoft Security Model, \cite{citation:leblanc2002writing} is typically not a safety concern as, without malicious intent, \gls{information} sharing is not inherently unsafe. However, when considering systems where \gls{confidentiality} is an important property, the interaction between data safety and security cannot be trivially resolved. For example, accidental disclosure of \gls{information} can form part of a causal chain which leads to harm from a malicious actor.
 
-Data \index{Integrity Property}\gls{integrity} is a critical property for both domains. The Microsoft Security Model describes malicious removal of the property of \index{Integrity Property}\gls{integrity} as ``tampering''. Whether by accident or through malicious intent, the potential harm from loss of data \index{Integrity Property}\gls{integrity} can be disastrous to a safety-critical system, from the values of drug dosages to control system parameters. 
+Data \index{Integrity Property}\index{Data Property!Integrity}\gls{integrity} is a critical property for both domains. The Microsoft Security Model describes malicious removal of the property of \index{Integrity Property}\index{Data Property!Integrity}\gls{integrity} as ``tampering''. Whether by accident or through malicious intent, the potential harm from loss of data \index{Integrity Property}\index{Data Property!Integrity}\gls{integrity} can be disastrous to a safety-critical system, from the values of drug dosages to control system parameters. 
 
 Data \gls{availability} is also important to both domains. Loss of \gls{availability}, or ``denial of service'' in the Microsoft Security Model, is another \index{Property!Data}property that can be lost accidentally or through malicious intervention. Loss of \gls{availability} prevents systems from functioning properly and can result in undefined behaviour if not mitigated\index{Mitigation} by design.
 
